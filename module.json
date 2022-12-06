@@ -1,0 +1,77 @@
+{
+    "id": "wire-srd",
+    "title": "Whistler's Item Rolls Extended - SRD Items",
+    "description": "SRD items for WIRE",
+    "version": "0.10",
+    "authors": [
+        {
+            "name": "Tero Parvinen (Whistler#3253)"
+        }
+    ],
+    "compatibility": {
+        "minimum": 10,
+        "verified": 10
+    },
+    "relationships": {
+        "systems": [{
+            "id": "dnd5e",
+            "type": "system"
+        }],
+        "requires": [{
+            "id": "wire",
+            "type": "module"
+        }]
+    },
+    "dependencies": [
+        {
+            "name": "wire",
+            "type": "module"
+        }
+    ],
+    "packs": [
+        {
+            "name": "items",
+            "label": "Items (WIRE)",
+            "system": "dnd5e",
+            "path": "./packs/items.db",
+            "type": "Item",
+            "flags": {
+                "wireImport": true
+            }
+        },
+        {
+            "name": "spells",
+            "label": "Spells (WIRE)",
+            "system": "dnd5e",
+            "path": "./packs/spells.db",
+            "type": "Item",
+            "flags": {
+                "wireImport": true
+            }
+        },
+        {
+            "name": "classfeatures",
+            "label": "Class Features (WIRE)",
+            "system": "dnd5e",
+            "path": "./packs/classfeatures.db",
+            "type": "Item",
+            "flags": {
+                "wireImport": true
+            }
+        },
+        {
+            "name": "monsterfeatures",
+            "label": "Monster Features (WIRE)",
+            "system": "dnd5e",
+            "path": "./packs/monsterfeatures.db",
+            "type": "Item",
+            "flags": {
+                "wireImport": true
+            }
+        }
+    ],
+    "url": "https://github.com/teroparvinen/foundry-wire-srd",
+    "bugs": "https://github.com/teroparvinen/foundry-wire-srd/issues",
+    "manifest": "https://github.com/teroparvinen/foundry-wire-srd/releases/latest/download/module.json",
+    "download": "https://github.com/teroparvinen/foundry-wire-srd/releases/latest/download/module.zip"
+}

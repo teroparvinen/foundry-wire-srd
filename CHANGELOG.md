@@ -1,5 +1,52 @@
 # Changes by version number
 
+### 0.10.2
+
+Updated spells
+
+- Feeblemind
+- Irresistible Dance
+
+Added Spells
+
+- Arcane Sword
+- Bestow Curse
+- Black Tentacles
+- Blight
+- Blink
+- Compulsion
+- Contagion
+- Enlarge/Reduce
+- Flesh to Stone
+- Harm
+- Hellish Rebuke
+- Hideous Laughter
+- Holy Aura
+- Longstrider
+- Maze
+- Mind Blank
+- Pass without Trace
+- Phantasmal Killer
+- Power Word Kill
+- Power Word Stun
+- Regenerate
+- Revivify
+- Shatter
+- Shocking Grasp
+- Silence
+- Sleet Storm
+- Slow
+- Spare the Dying
+- Spider Climb
+- Stinking Cloud
+- Stoneskin
+- Sunbeam
+- Sunburst
+- True Seeing
+- True Strike
+- Vampiric Touch
+- Vicious Mockery
+
 ### 0.10.1
 
 Updated spells

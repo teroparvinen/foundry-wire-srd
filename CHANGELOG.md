@@ -1,5 +1,19 @@
 # Changes by version number
 
+### 0.10.3
+
+Added spells
+
+- Fear
+
+Added class features
+
+- Fighting style: Protection
+
+Added monster features
+
+- Life Drain
+
 ### 0.10.2
 
 Updated spells

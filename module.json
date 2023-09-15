@@ -2,7 +2,7 @@
     "id": "wire-srd",
     "title": "Whistler's Item Rolls Extended - SRD Items",
     "description": "SRD items for WIRE",
-    "version": "0.10.2",
+    "version": "0.10.3",
     "authors": [
         {
             "name": "Tero Parvinen (Whistler#3253)"

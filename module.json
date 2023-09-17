@@ -36,7 +36,7 @@
             "name": "items",
             "label": "Items (WIRE)",
             "system": "dnd5e",
-            "path": "./packs/items.db",
+            "path": "./packs/items",
             "type": "Item",
             "flags": {
                 "wireImport": true
@@ -46,7 +46,7 @@
             "name": "spells",
             "label": "Spells (WIRE)",
             "system": "dnd5e",
-            "path": "./packs/spells.db",
+            "path": "./packs/spells",
             "type": "Item",
             "flags": {
                 "wireImport": true
@@ -56,7 +56,7 @@
             "name": "classfeatures",
             "label": "Class Features (WIRE)",
             "system": "dnd5e",
-            "path": "./packs/classfeatures.db",
+            "path": "./packs/classfeatures",
             "type": "Item",
             "flags": {
                 "wireImport": true
@@ -66,7 +66,7 @@
             "name": "monsterfeatures",
             "label": "Monster Features (WIRE)",
             "system": "dnd5e",
-            "path": "./packs/monsterfeatures.db",
+            "path": "./packs/monsterfeatures",
             "type": "Item",
             "flags": {
                 "wireImport": true

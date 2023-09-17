@@ -10,6 +10,21 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    # Make sure node is installed
+    - name: Node Setup 
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
+    
+    # Install the FoundryVTT CLI.
+    - run: npm install -g @foundryvtt/foundryvtt-cli 
+
+    # Build Foundry packs
+    - run: fvtt --id "wire-srd" --type "Module" package pack "spells" --in "source/spells" --out "packs"
+    - run: fvtt --id "wire-srd" --type "Module" package pack "classfeatures" --in "source/classfeatures" --out "packs"
+    - run: fvtt --id "wire-srd" --type "Module" package pack "monsterfeatures" --in "source/monsterfeatures" --out "packs"
+    - run: fvtt --id "wire-srd" --type "Module" package pack "items" --in "source/items" --out "packs"
+
     # get part of the tag after the `v`
     - name: Extract tag version number
       id: get_version

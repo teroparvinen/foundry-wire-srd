@@ -1,0 +1,174 @@
+{
+  "name": "Silence",
+  "ownership": {
+    "default": 0,
+    "m7gKrZnSC3XR8ToV": 3
+  },
+  "type": "spell",
+  "system": {
+    "description": {
+      "value": "<p>For the Duration, no sound can be created within or pass through a 20-foot-radius sphere centered on a point you choose within range. Any creature or object entirely inside the sphere is immune to thunder damage, and creatures are Deafened while entirely inside it. Casting a Spell that includes a verbal component is impossible there.</p>",
+      "chat": "",
+      "unidentified": ""
+    },
+    "source": "PHB pg. 275",
+    "activation": {
+      "type": "action",
+      "cost": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 10,
+      "units": "minute"
+    },
+    "target": {
+      "value": 20,
+      "width": null,
+      "units": "ft",
+      "type": "sphere"
+    },
+    "range": {
+      "value": 120,
+      "long": 0,
+      "units": "ft"
+    },
+    "uses": {
+      "value": 0,
+      "max": "0",
+      "per": "",
+      "recovery": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null
+    },
+    "ability": "",
+    "actionType": "util",
+    "attackBonus": 0,
+    "chatFlavor": "",
+    "critical": {
+      "threshold": null,
+      "damage": ""
+    },
+    "damage": {
+      "parts": [],
+      "versatile": "",
+      "value": ""
+    },
+    "formula": "",
+    "save": {
+      "ability": "",
+      "dc": null,
+      "scaling": "spell",
+      "value": ""
+    },
+    "level": 2,
+    "school": "ill",
+    "components": {
+      "value": "",
+      "vocal": true,
+      "somatic": true,
+      "material": false,
+      "ritual": true,
+      "concentration": true
+    },
+    "materials": {
+      "value": "",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "scaling": {
+      "mode": "none",
+      "formula": ""
+    }
+  },
+  "flags": {
+    "wire": {
+      "conditions": [
+        {
+          "condition": "area-envelops-creature",
+          "update": "apply-effects-delayed"
+        },
+        {
+          "condition": "area-reveals-creature",
+          "update": "end"
+        }
+      ],
+      "override": {
+        "target": {
+          "value": "20"
+        }
+      },
+      "checkedAbility": "",
+      "saveImmunity": false,
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.10.2"
+    }
+  },
+  "img": "icons/magic/symbols/runes-triangle-magenta.webp",
+  "effects": [
+    {
+      "label": "Silence",
+      "icon": "icons/magic/symbols/runes-triangle-magenta.webp",
+      "origin": "Actor.isYKP74w0SIExUvl.Item.QdHfAs3vhAdqewci",
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "_id": "iwwTQRFAHaULToSy",
+      "changes": [
+        {
+          "key": "wire.custom.statusEffect",
+          "mode": 2,
+          "value": "Deafened",
+          "priority": 20
+        },
+        {
+          "key": "wire.custom.statusEffect",
+          "mode": 2,
+          "value": "Silenced",
+          "priority": 20
+        }
+      ],
+      "tint": null,
+      "transfer": false,
+      "flags": {
+        "wire": {
+          "applyOnSaveOrMiss": false,
+          "applicationType": "delayed",
+          "blocksAreaConditions": false,
+          "auraTargets": "",
+          "stackEffects": false,
+          "rollEffects": false,
+          "independentDuration": false,
+          "conditions": []
+        }
+      },
+      "_key": "!items.effects!qI9a9r7Z89YNBDax.iwwTQRFAHaULToSy"
+    }
+  ],
+  "_stats": {
+    "systemId": "dnd5e",
+    "systemVersion": "2.0.3",
+    "coreVersion": "10.291",
+    "createdTime": 1661787234069,
+    "modifiedTime": 1672578461259,
+    "lastModifiedBy": "m7gKrZnSC3XR8ToV"
+  },
+  "folder": null,
+  "sort": 0,
+  "_id": "qI9a9r7Z89YNBDax",
+  "_key": "!items!qI9a9r7Z89YNBDax"
+}

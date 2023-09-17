@@ -1,0 +1,169 @@
+{
+  "name": "Blink",
+  "ownership": {
+    "default": 0,
+    "m7gKrZnSC3XR8ToV": 3
+  },
+  "type": "spell",
+  "system": {
+    "description": {
+      "value": "<p>Roll a d20 at the end of each of your turns for the duration of the spell. On a roll of 11 or higher, you vanish from your current plane of existence and appear in the Ethereal Plane (the spell fails and the casting is wasted if you were already on that plane). At the start of your next turn, and when the spell ends if you are on the Ethereal Plane, you return to an unoccupied space of your choice that you can see within 10 feet of the space you vanished from. If no unoccupied space is available within that range, you appear in the nearest unoccupied space (chosen at random if more than one space is equally near). You can dismiss this spell as an action.</p><p>While on the Ethereal Plane, you can see and hear the plane you originated from, which is cast in shades of gray, and you can't see anything there more than 60 feet away. You can only affect and be affected by other creatures on the Ethereal Plane. Creatures that aren't there can't perceive you or interact with you, unless they have the ability to do so.</p>",
+      "chat": "",
+      "unidentified": ""
+    },
+    "source": "PHB pg. 219",
+    "activation": {
+      "type": "action",
+      "cost": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 1,
+      "units": "minute"
+    },
+    "cover": null,
+    "crewed": false,
+    "target": {
+      "value": null,
+      "width": null,
+      "units": "",
+      "type": "self"
+    },
+    "range": {
+      "value": null,
+      "long": null,
+      "units": "self"
+    },
+    "uses": {
+      "value": 0,
+      "max": "0",
+      "per": "",
+      "recovery": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null
+    },
+    "ability": "",
+    "actionType": "util",
+    "attackBonus": 0,
+    "chatFlavor": "",
+    "critical": {
+      "threshold": null,
+      "damage": ""
+    },
+    "damage": {
+      "parts": [],
+      "versatile": "",
+      "value": ""
+    },
+    "formula": "",
+    "save": {
+      "ability": "",
+      "dc": null,
+      "scaling": "spell",
+      "value": ""
+    },
+    "level": 3,
+    "school": "trs",
+    "components": {
+      "vocal": true,
+      "somatic": true,
+      "material": false,
+      "ritual": false,
+      "concentration": false,
+      "value": ""
+    },
+    "materials": {
+      "value": "",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "scaling": {
+      "mode": "none",
+      "formula": ""
+    }
+  },
+  "flags": {
+    "wire": {
+      "override": {
+        "target": {
+          "value": ""
+        }
+      },
+      "checkedAbility": "",
+      "saveImmunity": false,
+      "conditions": [
+        {
+          "condition": "end-of-turn-target",
+          "update": "apply-delayed"
+        },
+        {
+          "condition": "take-an-action",
+          "update": "end"
+        }
+      ],
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.11.0",
+      "script": "this.registerFlowStep(\"roll\", true, async (activation) => {\n    const roll = Roll.create(\"1d20\").evaluate({ async: false });\n    await game.dice3d?.showForRoll(roll, game.user, !game.user.isGM);\n    if (roll.total <= 10) {\n        return false;\n    }\n});\n\nreturn this.pick(\n    this.isDelayedApplication(\n        this.performCustomStep(\"roll\",\n            this.defaultFlow()\n        )\n    ),\n    this.applyDurationEffect(\n        this.defaultFlow()\n    )\n)"
+    }
+  },
+  "img": "icons/magic/control/debuff-energy-hold-pink.webp",
+  "effects": [
+    {
+      "label": "Ethereal",
+      "icon": "icons/magic/air/wind-swirl-gray-blue.webp",
+      "origin": "Actor.m4mjuiVrcZHbrj00.Item.uZJIiFZkh2IFtAal",
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "_id": "DtQP5Cn58tIH7Juk",
+      "changes": [],
+      "tint": null,
+      "transfer": false,
+      "flags": {
+        "wire": {
+          "applyOnSaveOrMiss": true,
+          "applicationType": "delayed",
+          "blocksAreaConditions": false,
+          "auraTargets": "",
+          "stackEffects": false,
+          "rollEffects": false,
+          "conditions": [
+            {
+              "condition": "start-of-turn-target",
+              "update": "end"
+            }
+          ],
+          "independentDuration": false
+        }
+      },
+      "_key": "!items.effects!VfMxmbmbh2uJgqPq.DtQP5Cn58tIH7Juk"
+    }
+  ],
+  "_stats": {
+    "systemId": "dnd5e",
+    "systemVersion": "2.2.2",
+    "coreVersion": "11.306",
+    "createdTime": 1661787234105,
+    "modifiedTime": 1694774675202,
+    "lastModifiedBy": "dBglmdrMUDMEh6ZW"
+  },
+  "folder": null,
+  "sort": 0,
+  "_id": "VfMxmbmbh2uJgqPq",
+  "_key": "!items!VfMxmbmbh2uJgqPq"
+}

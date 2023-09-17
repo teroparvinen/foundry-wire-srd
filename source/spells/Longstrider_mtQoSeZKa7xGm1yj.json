@@ -1,0 +1,159 @@
+{
+  "name": "Longstrider",
+  "ownership": {
+    "default": 0,
+    "m7gKrZnSC3XR8ToV": 3
+  },
+  "type": "spell",
+  "system": {
+    "description": {
+      "value": "<p>You touch a creature. The target's speed increases by 10 feet until the spell ends.</p>",
+      "chat": "",
+      "unidentified": ""
+    },
+    "source": "PHB pg. 256",
+    "activation": {
+      "type": "action",
+      "cost": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 1,
+      "units": "hour"
+    },
+    "target": {
+      "value": 1,
+      "width": null,
+      "units": "",
+      "type": "creature"
+    },
+    "range": {
+      "value": null,
+      "long": null,
+      "units": "touch"
+    },
+    "uses": {
+      "value": 0,
+      "max": "0",
+      "per": "",
+      "recovery": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null
+    },
+    "ability": "",
+    "actionType": "util",
+    "attackBonus": 0,
+    "chatFlavor": "",
+    "critical": {
+      "threshold": null,
+      "damage": ""
+    },
+    "damage": {
+      "parts": [],
+      "versatile": "",
+      "value": ""
+    },
+    "formula": "",
+    "save": {
+      "ability": "",
+      "dc": null,
+      "scaling": "spell",
+      "value": ""
+    },
+    "level": 1,
+    "school": "trs",
+    "components": {
+      "value": "",
+      "vocal": true,
+      "somatic": true,
+      "material": true,
+      "ritual": false,
+      "concentration": false
+    },
+    "materials": {
+      "value": "A pinch of dirt",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "scaling": {
+      "mode": "level",
+      "formula": ""
+    }
+  },
+  "flags": {
+    "wire": {
+      "override": {
+        "target": {
+          "value": "1"
+        }
+      },
+      "checkedAbility": "",
+      "saveImmunity": false,
+      "upcastInterval": null,
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.10.2"
+    }
+  },
+  "img": "icons/magic/air/wind-stream-blue-gray.webp",
+  "effects": [
+    {
+      "label": "Longstrider",
+      "icon": "icons/magic/air/wind-stream-blue-gray.webp",
+      "origin": "Actor.m4mjuiVrcZHbrj00.Item.nRSJGc8HEXhHXi8k",
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "_id": "ULrKvFbxEt06iggp",
+      "changes": [
+        {
+          "key": "system.attributes.movement.all",
+          "mode": 0,
+          "value": "+10",
+          "priority": 20
+        }
+      ],
+      "tint": null,
+      "transfer": false,
+      "flags": {
+        "wire": {
+          "applyOnSaveOrMiss": false,
+          "applicationType": "immediate",
+          "blocksAreaConditions": false,
+          "auraTargets": "",
+          "stackEffects": false,
+          "rollEffects": false,
+          "independentDuration": false,
+          "conditions": []
+        }
+      },
+      "_key": "!items.effects!mtQoSeZKa7xGm1yj.ULrKvFbxEt06iggp"
+    }
+  ],
+  "_stats": {
+    "systemId": "dnd5e",
+    "systemVersion": "2.0.3",
+    "coreVersion": "10.291",
+    "createdTime": 1661787234090,
+    "modifiedTime": 1672294829434,
+    "lastModifiedBy": "m7gKrZnSC3XR8ToV"
+  },
+  "folder": null,
+  "sort": 0,
+  "_id": "mtQoSeZKa7xGm1yj",
+  "_key": "!items!mtQoSeZKa7xGm1yj"
+}

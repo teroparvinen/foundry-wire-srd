@@ -1,0 +1,181 @@
+{
+  "name": "Hypnotic Pattern",
+  "ownership": {
+    "default": 0,
+    "m7gKrZnSC3XR8ToV": 3
+  },
+  "type": "spell",
+  "system": {
+    "description": {
+      "value": "<p>You create a twisting pattern of colors that weaves through the air inside a 30-foot cube within range. The pattern appears for a moment and vanishes. Each creature in the area who sees the pattern must make a Wisdom saving throw. On a failed save, the creature becomes charmed for the duration. While charmed by this spell, the creature is incapacitated and has a speed of 0.</p><p>The spell ends for an affected creature if it takes any damage or if someone else uses an action to shake the creature out of its stupor.</p>",
+      "chat": "",
+      "unidentified": ""
+    },
+    "source": "PHB pg. 252",
+    "activation": {
+      "type": "action",
+      "cost": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 1,
+      "units": "minute"
+    },
+    "cover": null,
+    "crewed": false,
+    "target": {
+      "value": 30,
+      "width": null,
+      "units": "ft",
+      "type": "cube"
+    },
+    "range": {
+      "value": 120,
+      "long": 0,
+      "units": "ft"
+    },
+    "uses": {
+      "value": 0,
+      "max": "0",
+      "per": "",
+      "recovery": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null
+    },
+    "ability": "",
+    "actionType": "save",
+    "attackBonus": 0,
+    "chatFlavor": "",
+    "critical": {
+      "threshold": null,
+      "damage": ""
+    },
+    "damage": {
+      "parts": [],
+      "versatile": "",
+      "value": ""
+    },
+    "formula": "",
+    "save": {
+      "ability": "wis",
+      "dc": 0,
+      "scaling": "spell"
+    },
+    "level": 3,
+    "school": "ill",
+    "components": {
+      "vocal": false,
+      "somatic": true,
+      "material": true,
+      "ritual": false,
+      "concentration": true,
+      "value": ""
+    },
+    "materials": {
+      "value": "A glowing stick of incense or a crystal vial filled with phosphorescent material.",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "scaling": {
+      "mode": "none",
+      "formula": ""
+    }
+  },
+  "flags": {
+    "wire": {
+      "override": {
+        "target": {
+          "value": "30"
+        }
+      },
+      "checkedAbility": "",
+      "saveImmunity": false,
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.11.0",
+      "immunities": [
+        {
+          "type": "conditionImmunity",
+          "value": "blinded"
+        }
+      ],
+      "script": "return this.defaultFlow(\n    this.removeTemplate()\n)"
+    }
+  },
+  "img": "icons/magic/air/air-burst-spiral-pink.webp",
+  "effects": [
+    {
+      "label": "Hypnotic Pattern",
+      "icon": "icons/magic/air/air-burst-spiral-pink.webp",
+      "origin": "Actor.m4mjuiVrcZHbrj00.Item.VaZOTcGMi6SHHpge",
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "_id": "jruqAnEFgVEmLTp4",
+      "changes": [
+        {
+          "key": "wire.custom.statusEffect",
+          "mode": 2,
+          "value": "Charmed",
+          "priority": 20
+        },
+        {
+          "key": "wire.custom.statusEffect",
+          "mode": 2,
+          "value": "Incapacitated",
+          "priority": 20
+        },
+        {
+          "key": "system.attributes.movement.all",
+          "mode": 0,
+          "value": "0",
+          "priority": 20
+        }
+      ],
+      "tint": null,
+      "transfer": false,
+      "flags": {
+        "wire": {
+          "applyOnSaveOrMiss": false,
+          "blocksAreaConditions": false,
+          "auraTargets": "",
+          "applicationType": "immediate",
+          "independentDuration": false,
+          "conditions": [
+            {
+              "condition": "takes-damage",
+              "update": "end"
+            }
+          ]
+        }
+      },
+      "_key": "!items.effects!YaAaKIUtfGKRbEnw.jruqAnEFgVEmLTp4"
+    }
+  ],
+  "_stats": {
+    "systemId": "dnd5e",
+    "systemVersion": "2.2.2",
+    "coreVersion": "11.306",
+    "createdTime": 1661787234072,
+    "modifiedTime": 1694774675228,
+    "lastModifiedBy": "dBglmdrMUDMEh6ZW"
+  },
+  "folder": null,
+  "sort": 0,
+  "_id": "YaAaKIUtfGKRbEnw",
+  "_key": "!items!YaAaKIUtfGKRbEnw"
+}

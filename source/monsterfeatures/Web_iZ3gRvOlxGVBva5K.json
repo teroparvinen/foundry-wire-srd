@@ -1,0 +1,139 @@
+{
+  "name": "Web",
+  "type": "feat",
+  "img": "icons/creatures/webs/web-spider-glowing-purple.webp",
+  "effects": [
+    {
+      "_id": "z7s1hgkol9fli1ud",
+      "changes": [
+        {
+          "key": "wire.custom.statusEffect",
+          "mode": 2,
+          "value": "Restrained",
+          "priority": 20
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "icon": "icons/creatures/webs/web-spider-glowing-purple.webp",
+      "label": "Web",
+      "origin": "Actor.P2dSfPsWzNJclcnb.Item.v1ZncyCaicItFSMM",
+      "transfer": false,
+      "flags": {
+        "wire": {
+          "conditions": [
+            {
+              "condition": "take-an-action",
+              "update": "end-on-check"
+            }
+          ],
+          "applyOnSaveOrMiss": false,
+          "applicationType": "immediate",
+          "independentDuration": true,
+          "blocksAreaConditions": false,
+          "auraTargets": ""
+        }
+      },
+      "tint": null,
+      "_key": "!items.effects!iZ3gRvOlxGVBva5K.z7s1hgkol9fli1ud"
+    }
+  ],
+  "flags": {
+    "wire": {
+      "override": {
+        "target": {
+          "value": 1
+        }
+      },
+      "checkedAbility": "",
+      "compendiumSource": "wire-srd.monsterfeatures",
+      "compendiumVersion": "0.10.1"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<p><em>Ranged Weapon Attack:</em> [[/r 1d20+4]] (+4) to hit, range 30/60 ft., one Large or smaller creature. <em>Hit:</em> The creature is @condition[restrained] by webbing. As an action, the @condition[restrained] creature can make a DC <span class=\"rd__dc\">11</span> Strength check, escaping from the webbing on a success. The effect ends if the webbing is destroyed. The webbing has AC 10, 5 hit points, is vulnerable to fire damage and immune to bludgeoning, poison and psychic damage.</p>\n<div class=\"rd__spc-inline-post\"> </div>",
+      "chat": "",
+      "unidentified": ""
+    },
+    "source": "",
+    "activation": {
+      "type": "action",
+      "cost": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": null,
+      "units": ""
+    },
+    "target": {
+      "value": 1,
+      "width": null,
+      "units": "",
+      "type": "creature"
+    },
+    "range": {
+      "value": 30,
+      "long": 60,
+      "units": "ft"
+    },
+    "uses": {
+      "value": null,
+      "max": "",
+      "per": "",
+      "recovery": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null
+    },
+    "ability": "str",
+    "actionType": "rwak",
+    "attackBonus": "0",
+    "chatFlavor": "",
+    "critical": {
+      "threshold": null,
+      "damage": ""
+    },
+    "damage": {
+      "parts": [],
+      "versatile": ""
+    },
+    "formula": "",
+    "save": {
+      "ability": "str",
+      "dc": null,
+      "scaling": "wis"
+    },
+    "requirements": "",
+    "recharge": {
+      "value": 5,
+      "charged": true
+    }
+  },
+  "ownership": {
+    "default": 0,
+    "BDWtlDQYkOI4gQqd": 3
+  },
+  "_stats": {
+    "systemId": "dnd5e",
+    "systemVersion": "2.0.3",
+    "coreVersion": "10.291",
+    "createdTime": 1671188349278,
+    "modifiedTime": 1671188349303,
+    "lastModifiedBy": "BDWtlDQYkOI4gQqd"
+  },
+  "folder": null,
+  "sort": 0,
+  "_id": "iZ3gRvOlxGVBva5K",
+  "_key": "!items!iZ3gRvOlxGVBva5K"
+}

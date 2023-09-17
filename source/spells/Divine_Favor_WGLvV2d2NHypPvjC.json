@@ -1,0 +1,188 @@
+{
+  "_id": "WGLvV2d2NHypPvjC",
+  "name": "Divine Favor",
+  "type": "spell",
+  "img": "icons/magic/fire/dagger-rune-enchant-flame-blue-yellow.webp",
+  "system": {
+    "description": {
+      "value": "<p>Your prayer empowers you with divine radiance. Until the spell ends, your weapon attacks deal an extra 1d4 radiant damage on a hit. </p>",
+      "chat": "",
+      "unidentified": ""
+    },
+    "source": "PHB pg. 234",
+    "activation": {
+      "type": "bonus",
+      "cost": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 1,
+      "units": "minute"
+    },
+    "target": {
+      "value": null,
+      "width": null,
+      "units": "",
+      "type": "self"
+    },
+    "range": {
+      "value": null,
+      "long": null,
+      "units": "self"
+    },
+    "uses": {
+      "value": 0,
+      "max": "0",
+      "per": "",
+      "recovery": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null
+    },
+    "ability": "",
+    "actionType": "other",
+    "attackBonus": 0,
+    "chatFlavor": "",
+    "critical": {
+      "threshold": null,
+      "damage": null
+    },
+    "damage": {
+      "parts": [],
+      "versatile": "",
+      "value": ""
+    },
+    "formula": "",
+    "save": {
+      "ability": "",
+      "dc": null,
+      "scaling": "spell",
+      "value": ""
+    },
+    "level": 1,
+    "school": "evo",
+    "components": {
+      "value": "",
+      "vocal": true,
+      "somatic": true,
+      "material": false,
+      "ritual": false,
+      "concentration": true
+    },
+    "materials": {
+      "value": "",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "scaling": {
+      "mode": "none",
+      "formula": ""
+    },
+    "attunement": null
+  },
+  "effects": [
+    {
+      "_id": "aVCdeH1iRyP3xIwE",
+      "flags": {
+        "wire": {
+          "applyOnSaveOrMiss": false,
+          "applicationType": "immediate",
+          "independentDuration": false
+        }
+      },
+      "changes": [
+        {
+          "key": "system.bonuses.mwak.damage",
+          "mode": 2,
+          "value": "+1d4[radiant]",
+          "priority": 20
+        },
+        {
+          "key": "system.bonuses.rwak.damage",
+          "mode": 2,
+          "value": "+1d4[radiant]",
+          "priority": 20
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "icon": "icons/magic/fire/dagger-rune-enchant-flame-blue-yellow.webp",
+      "label": "Divine Favor",
+      "tint": null,
+      "transfer": false,
+      "origin": null,
+      "_key": "!items.effects!WGLvV2d2NHypPvjC.aVCdeH1iRyP3xIwE"
+    }
+  ],
+  "folder": null,
+  "sort": 0,
+  "flags": {
+    "dynamiceffects": {
+      "equipActive": true,
+      "alwaysActive": false,
+      "effects": [
+        {
+          "modSpecKey": "data.bonuses.mwak.damage",
+          "value": "1d4",
+          "mode": "+",
+          "targetSpecific": false,
+          "id": 1,
+          "itemId": "pIAJpIhy3y7gkq8N",
+          "active": true,
+          "_targets": [],
+          "label": "Bonuses Melee Weapon Damage"
+        },
+        {
+          "modSpecKey": "data.bonuses.rwak.damage",
+          "value": "1d4",
+          "mode": "+",
+          "targetSpecific": false,
+          "id": 2,
+          "itemId": "ylWHtKMfk5WUheki",
+          "active": true,
+          "_targets": []
+        }
+      ]
+    },
+    "wire": {
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.10",
+      "override": {
+        "target": {
+          "value": ""
+        }
+      },
+      "checkedAbility": "",
+      "saveImmunity": false
+    }
+  },
+  "ownership": {
+    "default": 0,
+    "gSvPH9u5wzkE1oU1": 3,
+    "BDWtlDQYkOI4gQqd": 3
+  },
+  "_stats": {
+    "systemId": "dnd5e",
+    "systemVersion": "2.0.3",
+    "coreVersion": "10.291",
+    "createdTime": null,
+    "modifiedTime": 1672219703277,
+    "lastModifiedBy": "m7gKrZnSC3XR8ToV"
+  },
+  "_key": "!items!WGLvV2d2NHypPvjC"
+}

@@ -1,0 +1,177 @@
+{
+  "name": "Slow",
+  "ownership": {
+    "default": 0,
+    "m7gKrZnSC3XR8ToV": 3
+  },
+  "type": "spell",
+  "system": {
+    "description": {
+      "value": "<p>You alter time around up to six creatures of your choice in a 40-foot cube within range. Each target must succeed on a Wisdom saving throw or be affected by this spell for the duration.</p><p>An affected target's speed is halved, it takes a -2 penalty to AC and Dexterity saving throws, and it can't use reactions. On its turn, it can use either an action or a bonus action, not both. Regardless of the creature's abilities or magic items, it can't make more than one melee or ranged attack during its turn.</p><p>If the creature attempts to cast a spell with a casting time of 1 action, roll a d20. On an 11 or higher, the spell doesn't take effect until the creature's next turn, and the creature must use its action on that turn to complete the spell. If it can't, the spell is wasted.</p><p>A creature affected by this spell makes another Wisdom saving throw at the end of its turn. On a successful save, the effect ends for it.</p>",
+      "chat": "",
+      "unidentified": ""
+    },
+    "source": "PHB pg. 277",
+    "activation": {
+      "type": "action",
+      "cost": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 1,
+      "units": "minute"
+    },
+    "cover": null,
+    "crewed": false,
+    "target": {
+      "value": 40,
+      "width": null,
+      "units": "ft",
+      "type": "cube"
+    },
+    "range": {
+      "value": 120,
+      "long": 0,
+      "units": "ft"
+    },
+    "uses": {
+      "value": 0,
+      "max": "0",
+      "per": "",
+      "recovery": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null
+    },
+    "ability": "",
+    "actionType": "save",
+    "attackBonus": 0,
+    "chatFlavor": "",
+    "critical": {
+      "threshold": null,
+      "damage": ""
+    },
+    "damage": {
+      "parts": [],
+      "versatile": "",
+      "value": ""
+    },
+    "formula": "1d20",
+    "save": {
+      "ability": "wis",
+      "dc": null,
+      "scaling": "spell"
+    },
+    "level": 3,
+    "school": "trs",
+    "components": {
+      "vocal": true,
+      "somatic": true,
+      "material": true,
+      "ritual": false,
+      "concentration": true,
+      "value": ""
+    },
+    "materials": {
+      "value": "A drop of molasses.",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "scaling": {
+      "mode": "none",
+      "formula": ""
+    }
+  },
+  "flags": {
+    "wire": {
+      "override": {
+        "target": {
+          "value": "40"
+        }
+      },
+      "checkedAbility": "",
+      "saveImmunity": false,
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.11.0",
+      "script": "return this.applyConcentration(\n    this.confirmTargets(\n        this.removeTemplate(\n            this.performSavingThrow(\n                this.applyEffects()\n            )\n        )\n    )\n)"
+    }
+  },
+  "img": "icons/magic/air/fog-gas-smoke-dense-pink.webp",
+  "effects": [
+    {
+      "label": "Slow",
+      "icon": "icons/magic/air/fog-gas-smoke-dense-pink.webp",
+      "origin": "Actor.m4mjuiVrcZHbrj00.Item.1nm4oZ2YowHtU1MR",
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "_id": "ehueKvOPw6uvupzn",
+      "changes": [
+        {
+          "key": "system.attributes.ac.bonus",
+          "mode": 2,
+          "value": "-2",
+          "priority": 20
+        },
+        {
+          "key": "system.abilities.dex.bonuses.save",
+          "mode": 2,
+          "value": "-2",
+          "priority": 20
+        },
+        {
+          "key": "system.attributes.movement.all",
+          "mode": 0,
+          "value": "*0.5",
+          "priority": 20
+        }
+      ],
+      "tint": null,
+      "transfer": false,
+      "flags": {
+        "wire": {
+          "applyOnSaveOrMiss": false,
+          "applicationType": "immediate",
+          "blocksAreaConditions": false,
+          "auraTargets": "",
+          "stackEffects": false,
+          "rollEffects": false,
+          "independentDuration": false,
+          "conditions": [
+            {
+              "condition": "end-of-turn-target",
+              "update": "end-on-save"
+            }
+          ]
+        }
+      },
+      "_key": "!items.effects!PLvD1miEMxv07ckC.ehueKvOPw6uvupzn"
+    }
+  ],
+  "_stats": {
+    "systemId": "dnd5e",
+    "systemVersion": "2.2.2",
+    "coreVersion": "11.306",
+    "createdTime": 1661787234243,
+    "modifiedTime": 1694774675137,
+    "lastModifiedBy": "dBglmdrMUDMEh6ZW"
+  },
+  "folder": null,
+  "sort": 0,
+  "_id": "PLvD1miEMxv07ckC",
+  "_key": "!items!PLvD1miEMxv07ckC"
+}

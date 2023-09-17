@@ -1,0 +1,127 @@
+{
+  "name": "Antilife Shell",
+  "ownership": {
+    "default": 0,
+    "m7gKrZnSC3XR8ToV": 3
+  },
+  "type": "spell",
+  "system": {
+    "description": {
+      "value": "<p>A shimmering barrier extends out from you in a 10-foot radius and moves with you, remaining centered on you and hedging out creatures other than undead and constructs. The barrier lasts for the duration.</p><p>The barrier prevents an affected creature from passing or reaching through. An affected creature can cast spells or make attacks with ranged or reach weapons through the barrier.</p><p>If you move so that an affected creature is forced to pass through the barrier, the spell ends.</p>",
+      "chat": "",
+      "unidentified": ""
+    },
+    "source": "PHB pg. 213",
+    "activation": {
+      "type": "action",
+      "cost": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 1,
+      "units": "hour"
+    },
+    "cover": null,
+    "crewed": false,
+    "target": {
+      "value": 10,
+      "width": null,
+      "units": "ft",
+      "type": "radius"
+    },
+    "range": {
+      "value": null,
+      "long": null,
+      "units": "self"
+    },
+    "uses": {
+      "value": 0,
+      "max": "0",
+      "per": "",
+      "recovery": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null
+    },
+    "ability": "",
+    "actionType": "util",
+    "attackBonus": 0,
+    "chatFlavor": "",
+    "critical": {
+      "threshold": null,
+      "damage": ""
+    },
+    "damage": {
+      "parts": [],
+      "versatile": "",
+      "value": ""
+    },
+    "formula": "",
+    "save": {
+      "ability": "",
+      "dc": null,
+      "scaling": "spell",
+      "value": ""
+    },
+    "level": 5,
+    "school": "abj",
+    "components": {
+      "vocal": true,
+      "somatic": true,
+      "material": false,
+      "ritual": false,
+      "concentration": true,
+      "value": ""
+    },
+    "materials": {
+      "value": "",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "scaling": {
+      "mode": "none",
+      "formula": ""
+    }
+  },
+  "flags": {
+    "wire": {
+      "override": {
+        "target": {
+          "value": "10"
+        }
+      },
+      "checkedAbility": "",
+      "saveImmunity": false,
+      "conditions": [
+        {
+          "condition": "creature-moves-within-area",
+          "update": "apply-overtime"
+        }
+      ],
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.11.0",
+      "script": "this.registerFlowStep(\"checkMessage\", true, (activation) => {\n    if (activation.singleTarget && ![\"undead\", \"construct\"].includes(activation.singleTarget.actor.system.details.type?.value)) {\n        game.wire.createScrollingText(activation.singleTarget.token, activation.item.name);\n    }\n});\n\nreturn this.pick(\n    this.isOverTimeApplication(\n        this.removeSelfTarget(\n            this.performCustomStep(\"checkMessage\")\n        )\n    ),\n    this.defaultFlow()\n)"
+    }
+  },
+  "img": "icons/magic/defensive/shield-barrier-flaming-diamond-teal.webp",
+  "effects": [],
+  "_stats": {
+    "systemId": "dnd5e",
+    "systemVersion": "2.2.2",
+    "coreVersion": "11.306",
+    "createdTime": 1661787234237,
+    "modifiedTime": 1694774674999,
+    "lastModifiedBy": "dBglmdrMUDMEh6ZW"
+  },
+  "folder": null,
+  "sort": 0,
+  "_id": "6LMaNVAwOaGXp5Q1",
+  "_key": "!items!6LMaNVAwOaGXp5Q1"
+}

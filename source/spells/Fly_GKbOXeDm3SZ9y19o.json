@@ -1,0 +1,156 @@
+{
+  "name": "Fly",
+  "ownership": {
+    "default": 0,
+    "m7gKrZnSC3XR8ToV": 3
+  },
+  "type": "spell",
+  "system": {
+    "description": {
+      "value": "<p>You touch a willing creature. The target gains a flying speed of 60 feet for the Duration. When the spell ends, the target falls if it is still aloft, unless it can stop the fall.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 4th level or higher, you can target one additional creature for each slot level above 3rd.</p>",
+      "chat": "",
+      "unidentified": ""
+    },
+    "source": "PHB pg. 243",
+    "activation": {
+      "type": "action",
+      "cost": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 10,
+      "units": "minute"
+    },
+    "target": {
+      "value": 1,
+      "width": null,
+      "units": "",
+      "type": "creature"
+    },
+    "range": {
+      "value": null,
+      "long": null,
+      "units": "touch"
+    },
+    "uses": {
+      "value": 0,
+      "max": "0",
+      "per": "",
+      "recovery": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null
+    },
+    "ability": "",
+    "actionType": "util",
+    "attackBonus": 0,
+    "chatFlavor": "",
+    "critical": {
+      "threshold": null,
+      "damage": ""
+    },
+    "damage": {
+      "parts": [],
+      "versatile": "",
+      "value": ""
+    },
+    "formula": "",
+    "save": {
+      "ability": "",
+      "dc": null,
+      "scaling": "spell",
+      "value": ""
+    },
+    "level": 3,
+    "school": "trs",
+    "components": {
+      "value": "",
+      "vocal": true,
+      "somatic": true,
+      "material": true,
+      "ritual": false,
+      "concentration": true
+    },
+    "materials": {
+      "value": "A wing feather from any bird",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "scaling": {
+      "mode": "level",
+      "formula": ""
+    }
+  },
+  "flags": {
+    "wire": {
+      "override": {
+        "target": {
+          "value": "1"
+        }
+      },
+      "checkedAbility": "",
+      "saveImmunity": false,
+      "upcastInterval": null,
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.10.1"
+    }
+  },
+  "img": "icons/creatures/abilities/wings-birdlike-blue.webp",
+  "effects": [
+    {
+      "label": "Fly",
+      "icon": "icons/creatures/abilities/wings-birdlike-blue.webp",
+      "origin": "Actor.m4mjuiVrcZHbrj00.Item.jnCf7Qf8rBXZp3aa",
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "_id": "FoCqASgCt077cQU0",
+      "changes": [
+        {
+          "key": "system.attributes.movement.fly",
+          "mode": 4,
+          "value": "60",
+          "priority": 20
+        }
+      ],
+      "tint": null,
+      "transfer": false,
+      "flags": {
+        "wire": {
+          "applyOnSaveOrMiss": false,
+          "blocksAreaConditions": false,
+          "auraTargets": "",
+          "applicationType": "immediate",
+          "independentDuration": false
+        }
+      },
+      "_key": "!items.effects!GKbOXeDm3SZ9y19o.FoCqASgCt077cQU0"
+    }
+  ],
+  "_stats": {
+    "systemId": "dnd5e",
+    "systemVersion": "2.0.3",
+    "coreVersion": "10.291",
+    "createdTime": 1661787234243,
+    "modifiedTime": 1671880395352,
+    "lastModifiedBy": "m7gKrZnSC3XR8ToV"
+  },
+  "folder": null,
+  "sort": 0,
+  "_id": "GKbOXeDm3SZ9y19o",
+  "_key": "!items!GKbOXeDm3SZ9y19o"
+}

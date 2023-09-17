@@ -1,0 +1,168 @@
+{
+  "name": "Shatter",
+  "ownership": {
+    "default": 0,
+    "m7gKrZnSC3XR8ToV": 3
+  },
+  "type": "spell",
+  "system": {
+    "description": {
+      "value": "<p>A sudden loud ringing noise, painfully intense, erupts from a point of your choice within range. Each creature in a 10-foot-radius sphere centered on that point must make a Constitution saving throw. A creature takes 3d8 thunder damage on a failed save, or half as much damage on a successful one. A creature made of inorganic material such as stone, crystal, or metal has disadvantage on this saving throw.</p><p>A nonmagical object that isn't being worn or carried also takes the damage if it's in the spell's area.</p><p><strong>Higher Levels.</strong> When you cast this spell using a 3 or higher level spell slot, the damage of the spell increases by 1d8 for each level of higher spell slot 2.</p>",
+      "chat": "",
+      "unidentified": ""
+    },
+    "source": "PHB pg. 275",
+    "activation": {
+      "type": "action",
+      "cost": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": null,
+      "units": "inst"
+    },
+    "target": {
+      "value": 10,
+      "width": null,
+      "units": "ft",
+      "type": "sphere"
+    },
+    "range": {
+      "value": 60,
+      "long": 0,
+      "units": "ft"
+    },
+    "uses": {
+      "value": 0,
+      "max": "0",
+      "per": "",
+      "recovery": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null
+    },
+    "ability": "",
+    "actionType": "save",
+    "attackBonus": 0,
+    "chatFlavor": "",
+    "critical": {
+      "threshold": null,
+      "damage": ""
+    },
+    "damage": {
+      "parts": [
+        [
+          "3d8",
+          "thunder"
+        ]
+      ],
+      "versatile": ""
+    },
+    "formula": "",
+    "save": {
+      "ability": "con",
+      "dc": null,
+      "scaling": "spell"
+    },
+    "level": 2,
+    "school": "evo",
+    "components": {
+      "value": "",
+      "vocal": true,
+      "somatic": true,
+      "material": true,
+      "ritual": false,
+      "concentration": false
+    },
+    "materials": {
+      "value": "A chip of mica",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "scaling": {
+      "mode": "level",
+      "formula": "1d8"
+    }
+  },
+  "flags": {
+    "wire": {
+      "override": {
+        "target": {
+          "value": "10"
+        }
+      },
+      "checkedAbility": "",
+      "saveImmunity": false,
+      "upcastInterval": null,
+      "damageParts": [
+        {
+          "halving": "half",
+          "application": "immediate"
+        }
+      ],
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.10.2"
+    }
+  },
+  "img": "icons/magic/fire/explosion-fireball-medium-blue.webp",
+  "effects": [
+    {
+      "label": "Shatter Saves",
+      "icon": "icons/magic/fire/explosion-fireball-medium-blue.webp",
+      "origin": "Actor.m4mjuiVrcZHbrj00.Item.MCyM6jPGTdfOGqcO",
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "_id": "MWYYD51uwQhGHs3k",
+      "changes": [
+        {
+          "key": "flags.wire.disadvantage.ability.save.all",
+          "mode": 2,
+          "value": "and(@isFromItem, eq(@actor.details.type.value, \"construct\"))",
+          "priority": 20
+        }
+      ],
+      "tint": null,
+      "transfer": false,
+      "flags": {
+        "wire": {
+          "applyOnSaveOrMiss": false,
+          "applicationType": "resolving",
+          "blocksAreaConditions": false,
+          "auraTargets": "",
+          "stackEffects": false,
+          "rollEffects": false,
+          "independentDuration": false,
+          "conditions": []
+        }
+      },
+      "_key": "!items.effects!yP2d97SCUjFidyzC.MWYYD51uwQhGHs3k"
+    }
+  ],
+  "_stats": {
+    "systemId": "dnd5e",
+    "systemVersion": "2.0.3",
+    "coreVersion": "10.291",
+    "createdTime": 1661787234237,
+    "modifiedTime": 1672387541023,
+    "lastModifiedBy": "m7gKrZnSC3XR8ToV"
+  },
+  "folder": null,
+  "sort": 0,
+  "_id": "yP2d97SCUjFidyzC",
+  "_key": "!items!yP2d97SCUjFidyzC"
+}

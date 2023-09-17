@@ -1,0 +1,139 @@
+{
+  "name": "Flame Strike",
+  "ownership": {
+    "default": 0,
+    "m7gKrZnSC3XR8ToV": 3
+  },
+  "type": "spell",
+  "system": {
+    "description": {
+      "value": "<p>A vertical column of divine fire roars down from the heavens in a location you specify. Each creature in a 10-foot-radius, 40-foot-high Cylinder centered on a point within range must make a Dexterity saving throw. A creature takes 4d6 fire damage and 4d6 radiant damage on a failed save, or half as much damage on a successful one.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 6th level or higher, the fire damage or the radiant damage (your choice) increases by 1d6 for each slot level above 5th.</p>",
+      "chat": "",
+      "unidentified": ""
+    },
+    "source": "PHB pg. 242",
+    "activation": {
+      "type": "action",
+      "cost": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": null,
+      "units": "inst"
+    },
+    "cover": null,
+    "crewed": false,
+    "target": {
+      "value": 10,
+      "width": null,
+      "units": "ft",
+      "type": "cylinder"
+    },
+    "range": {
+      "value": 60,
+      "long": 0,
+      "units": "ft"
+    },
+    "uses": {
+      "value": 0,
+      "max": "0",
+      "per": "",
+      "recovery": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null
+    },
+    "ability": "",
+    "actionType": "save",
+    "attackBonus": 0,
+    "chatFlavor": "",
+    "critical": {
+      "threshold": null,
+      "damage": ""
+    },
+    "damage": {
+      "parts": [
+        [
+          "(4+@config.radiantUpcast)d6",
+          "radiant"
+        ],
+        [
+          "(4+@config.fireUpcast)d6",
+          "fire"
+        ]
+      ],
+      "versatile": ""
+    },
+    "formula": "",
+    "save": {
+      "ability": "dex",
+      "dc": 0,
+      "scaling": "spell"
+    },
+    "level": 5,
+    "school": "evo",
+    "components": {
+      "vocal": true,
+      "somatic": true,
+      "material": true,
+      "ritual": false,
+      "concentration": false,
+      "value": ""
+    },
+    "materials": {
+      "value": "A pinch of sulfur",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "scaling": {
+      "mode": "none",
+      "formula": ""
+    }
+  },
+  "flags": {
+    "wire": {
+      "override": {
+        "target": {
+          "value": "10"
+        }
+      },
+      "checkedAbility": "",
+      "saveImmunity": false,
+      "upcastInterval": null,
+      "damageParts": [
+        {
+          "halving": "half",
+          "application": "immediate"
+        },
+        {
+          "halving": "half",
+          "application": "immediate"
+        }
+      ],
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.11.0",
+      "script": "this.skipConfigurationDialog();\nthis.requestCustomConfiguration(async (item, requirements) => {\n    const actor = item.actor;\n    const minSpellSlot = item.system.level;\n\n    function getSpellSlots(level) {\n        return actor.system.spells[`spell${level}`];\n    }\n\n    console.log(\"Configuring Flame Strike\");\n\n    const { consumeSlot, spellLevel, fireUpcast, radiantUpcast } = await new Promise(async (resolve, reject) => {\n        // Get options for available slots\n        let optionsText = \"\";\n        for (let i = minSpellSlot; i <= 9; i++) {\n            const slots = getSpellSlots(i);\n            if (slots.value > 0) {\n                const level = CONFIG.DND5E.spellLevels[i];\n                const label = game.i18n.format('DND5E.SpellLevelSlot', { level: level, n: slots.value });\n                optionsText += `<option value=\"${i}\">${label}</option>`;\n            }\n        }\n        \n        let upcastAmount = 0;\n        let radiantLevels = 0;\n        \n        await new Dialog({\n            title: \"Flame Strike: Usage Configuration\",\n            content: `\n                <form id=\"flame-strike-use-form\">\n                    <p>` + game.i18n.format(\"DND5E.AbilityUseHint\", { name: \"Flame Strike\", type: \"spell\" }) + `</p>\n                    <div class=\"form-group\">\n                        <label>Spell Slot Level</label>\n                        <div class=\"form-fields\">\n                            <select name=\"slot-level\">` + optionsText + `</select>\n                        </div>\n                    </div>\n                    <div style=\"border: 2px groove #eeede0; padding: 3px 7px; margin: 10px 0;\">\n                        <div class=\"form-group\">\n                            <label>Upcast bonus damage distribution <span class=\"units\">(<span class=\"upcast-amount\">${upcastAmount}</span> available)</span></label>\n                        </div>\n                        <div class=\"form-group\">\n                            <div class=\"form-fields flexrow\" style=\"gap: 10px\">\n                                <div style=\"flex: 0; white-space: nowrap;\">Fire <span class=\"fire-amount\">0</span></div>\n                                <input class=\"flex1\" type=\"range\" name=\"radiant-levels\" value=\"0\" min=\"0\" max=\"${upcastAmount}\" step=\"1\" />\n                                <div style=\"flex: 0; white-space: nowrap;\">Radiant <span class=\"radiant-amount\">0</span></div>\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"form-group\">\n                        <label class=\"checkbox\">\n                        <input type=\"checkbox\" name=\"consumeCheckbox\" checked/>` + game.i18n.localize(\"DND5E.SpellCastConsume\") + `</label>\n                    </div>\n                </form>\n                `,\n            render: (html) => {\n                function updateUI() {\n                    html.find('.upcast-amount').text(upcastAmount);\n                    html.find('.fire-amount').text(upcastAmount - radiantLevels);\n                    html.find('.radiant-amount').text(radiantLevels);\n                    html.find('input[name=\"radiant-levels\"]').attr('max', upcastAmount);\n                }\n                \n                html.find('select[name=\"slot-level\"').change(function(event) {\n                    upcastAmount = event.target.value - item.system.level;\n                    radiantLevels = Math.min(radiantLevels, upcastAmount);\n                    updateUI();\n                });\n                html.find('input[name=\"radiant-levels\"]').change(function(event) {\n                    radiantLevels = Math.min(event.target.value, upcastAmount);\n                    updateUI();\n                });\n            },\n            buttons: {\n                cast: {\n                    icon: '<i class=\"fas fa-magic\"></i>',\n                    label: \"Cast Spell\",\n                    callback: (html) => {\n                        const spellLevel = parseInt(html.find('[name=slot-level]')[0].value);\n                        const consumeSlot = html.find('[name=consumeCheckbox]')[0].checked;\n                        const fireUpcast = upcastAmount - radiantLevels;\n                        const radiantUpcast = radiantLevels;\n\n                        resolve({ consumeSlot, spellLevel, fireUpcast, radiantUpcast });\n                    }\n                }\n            },\n            default: \"smite\"\n        }).render(true);\n    });\n\n    requirements.consumedSpellLevel = consumeSlot ? `spell${spellLevel}` : null;\n\n    return { spellLevel, fireUpcast, radiantUpcast };\n});\n\nreturn this.defaultFlow();"
+    }
+  },
+  "img": "icons/magic/light/beam-rays-red-large.webp",
+  "effects": [],
+  "_stats": {
+    "systemId": "dnd5e",
+    "systemVersion": "2.2.2",
+    "coreVersion": "11.306",
+    "createdTime": 1661787234070,
+    "modifiedTime": 1694774675397,
+    "lastModifiedBy": "dBglmdrMUDMEh6ZW"
+  },
+  "folder": null,
+  "sort": 0,
+  "_id": "uArvCgdVPxG80tWh",
+  "_key": "!items!uArvCgdVPxG80tWh"
+}

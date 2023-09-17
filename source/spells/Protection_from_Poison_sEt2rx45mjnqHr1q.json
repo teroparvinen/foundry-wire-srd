@@ -1,0 +1,154 @@
+{
+  "_id": "sEt2rx45mjnqHr1q",
+  "name": "Protection from Poison",
+  "type": "spell",
+  "img": "icons/magic/defensive/shield-barrier-glowing-triangle-green.webp",
+  "system": {
+    "description": {
+      "value": "<p>You touch a creature. If it is poisoned, you neutralize the poison. If more than one poison afflicts the target, you neutralize one poison that you know is present, or you neutralize one at random.</p><p>For the duration, the target has advantage on saving throws against being poisoned, and it has resistance to poison damage.</p>",
+      "chat": "",
+      "unidentified": ""
+    },
+    "source": "PHB pg. 270",
+    "activation": {
+      "type": "action",
+      "cost": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 1,
+      "units": "hour"
+    },
+    "target": {
+      "value": 1,
+      "width": null,
+      "units": "",
+      "type": "creature"
+    },
+    "range": {
+      "value": null,
+      "long": null,
+      "units": "touch"
+    },
+    "uses": {
+      "value": 0,
+      "max": "0",
+      "per": "",
+      "recovery": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null
+    },
+    "ability": "",
+    "actionType": "util",
+    "attackBonus": 0,
+    "chatFlavor": "",
+    "critical": {
+      "threshold": null,
+      "damage": ""
+    },
+    "damage": {
+      "parts": [],
+      "versatile": "",
+      "value": ""
+    },
+    "formula": "",
+    "save": {
+      "ability": "",
+      "dc": null,
+      "scaling": "spell",
+      "value": ""
+    },
+    "level": 2,
+    "school": "abj",
+    "components": {
+      "value": "",
+      "vocal": true,
+      "somatic": true,
+      "material": false,
+      "ritual": false,
+      "concentration": false
+    },
+    "materials": {
+      "value": "",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "scaling": {
+      "mode": "none",
+      "formula": ""
+    },
+    "attunement": null
+  },
+  "effects": [
+    {
+      "_id": "xafatnor6llffqz1",
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "poison",
+          "priority": 0
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "icon": "icons/magic/defensive/shield-barrier-glowing-triangle-green.webp",
+      "label": "Protection from Poison",
+      "origin": "Actor.fRkIgd5cHxEEE8tk.Item.xSJqswk2PBZzk41b",
+      "transfer": false,
+      "flags": {
+        "wire": {
+          "applyOnSaveOrMiss": false,
+          "applicationType": "immediate",
+          "independentDuration": false
+        }
+      },
+      "tint": null,
+      "_key": "!items.effects!sEt2rx45mjnqHr1q.xafatnor6llffqz1"
+    }
+  ],
+  "folder": null,
+  "sort": 0,
+  "flags": {
+    "wire": {
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.10",
+      "override": {
+        "target": {
+          "value": "1"
+        }
+      },
+      "checkedAbility": "",
+      "saveImmunity": false
+    }
+  },
+  "ownership": {
+    "default": 0,
+    "BDWtlDQYkOI4gQqd": 3
+  },
+  "_stats": {
+    "systemId": "dnd5e",
+    "systemVersion": "2.0.3",
+    "coreVersion": "10.291",
+    "createdTime": null,
+    "modifiedTime": 1672219970796,
+    "lastModifiedBy": "m7gKrZnSC3XR8ToV"
+  },
+  "_key": "!items!sEt2rx45mjnqHr1q"
+}

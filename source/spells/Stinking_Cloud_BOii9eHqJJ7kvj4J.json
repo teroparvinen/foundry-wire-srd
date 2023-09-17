@@ -1,0 +1,170 @@
+{
+  "name": "Stinking Cloud",
+  "ownership": {
+    "default": 0,
+    "m7gKrZnSC3XR8ToV": 3
+  },
+  "type": "spell",
+  "system": {
+    "description": {
+      "value": "<p>You create a 20-foot-radius sphere of yellow, nauseating gas centered on a point within range. The cloud spreads around corners, and its area is heavily obscured. The cloud lingers in the air for the duration.</p><p>Each creature that is completely within the cloud at the start of its turn must make a Constitution saving throw against poison. On a failed save, the creature spends its action that turn retching and reeling. Creatures that don't need to breathe or are immune to poison automatically succeed on this saving throw.</p><p>A moderate wind (at least 10 miles per hour) disperses the cloud after 4 rounds. A strong wind (at least 20 miles per hour) disperses it after 1 round.</p>",
+      "chat": "",
+      "unidentified": ""
+    },
+    "source": "PHB pg. 278",
+    "activation": {
+      "type": "action",
+      "cost": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 1,
+      "units": "minute"
+    },
+    "target": {
+      "value": 20,
+      "width": null,
+      "units": "ft",
+      "type": "sphere"
+    },
+    "range": {
+      "value": 90,
+      "long": 0,
+      "units": "ft"
+    },
+    "uses": {
+      "value": 0,
+      "max": "0",
+      "per": "",
+      "recovery": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null
+    },
+    "ability": "",
+    "actionType": "save",
+    "attackBonus": 0,
+    "chatFlavor": "",
+    "critical": {
+      "threshold": null,
+      "damage": ""
+    },
+    "damage": {
+      "parts": [],
+      "versatile": "",
+      "value": ""
+    },
+    "formula": "",
+    "save": {
+      "ability": "con",
+      "dc": 0,
+      "scaling": "spell"
+    },
+    "level": 3,
+    "school": "con",
+    "components": {
+      "value": "",
+      "vocal": true,
+      "somatic": true,
+      "material": true,
+      "ritual": false,
+      "concentration": true
+    },
+    "materials": {
+      "value": "A rotten egg or several skunk cabbage leaves",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "scaling": {
+      "mode": "none",
+      "formula": ""
+    }
+  },
+  "flags": {
+    "wire": {
+      "override": {
+        "target": {
+          "value": "20"
+        }
+      },
+      "checkedAbility": "",
+      "saveImmunity": false,
+      "conditions": [
+        {
+          "condition": "creature-starts-turn-inside-area",
+          "update": "apply-overtime"
+        }
+      ],
+      "immunities": [
+        {
+          "type": "conditionImmunity",
+          "value": "poisoned"
+        },
+        {
+          "type": "creatureType",
+          "value": "construct"
+        },
+        {
+          "type": "creatureType",
+          "value": "undead"
+        }
+      ],
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.10.2"
+    }
+  },
+  "img": "icons/magic/air/fog-gas-smoke-dense-green.webp",
+  "effects": [
+    {
+      "label": "Retching and Reeling",
+      "icon": "icons/magic/air/fog-gas-smoke-dense-green.webp",
+      "origin": "Actor.m4mjuiVrcZHbrj00.Item.t0xVy88fSu49qxhY",
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": 1,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "_id": "OEyPVaeNyzNGSIx5",
+      "changes": [],
+      "tint": null,
+      "transfer": false,
+      "flags": {
+        "wire": {
+          "applyOnSaveOrMiss": false,
+          "applicationType": "overtime",
+          "blocksAreaConditions": false,
+          "auraTargets": "",
+          "stackEffects": false,
+          "rollEffects": false,
+          "independentDuration": true,
+          "conditions": []
+        }
+      },
+      "_key": "!items.effects!BOii9eHqJJ7kvj4J.OEyPVaeNyzNGSIx5"
+    }
+  ],
+  "_stats": {
+    "systemId": "dnd5e",
+    "systemVersion": "2.0.3",
+    "coreVersion": "10.291",
+    "createdTime": 1661787234146,
+    "modifiedTime": 1672321642244,
+    "lastModifiedBy": "m7gKrZnSC3XR8ToV"
+  },
+  "folder": null,
+  "sort": 0,
+  "_id": "BOii9eHqJJ7kvj4J",
+  "_key": "!items!BOii9eHqJJ7kvj4J"
+}

@@ -1,0 +1,176 @@
+{
+  "name": "Hunter's Mark",
+  "type": "spell",
+  "img": "icons/magic/perception/eye-ringed-glow-angry-small-red.webp",
+  "system": {
+    "description": {
+      "value": "<p>You choose a creature you can see within range and mystically mark it as your quarry. Until the spell ends, you deal an extra [[/r 1d6]] damage to the target whenever you hit it with a weapon attack, and you have advantage on any Wisdom (Perception) or Wisdom (Survival) check you make to find it. If the target drops to 0 hit points before this spell ends, you can use a bonus action on a subsequent turn of yours to mark a new creature.</p>",
+      "chat": "",
+      "unidentified": ""
+    },
+    "source": "PHB pg. 251",
+    "activation": {
+      "type": "bonus",
+      "cost": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 1,
+      "units": "hour"
+    },
+    "cover": null,
+    "crewed": false,
+    "target": {
+      "value": 1,
+      "width": null,
+      "units": "",
+      "type": "creature"
+    },
+    "range": {
+      "value": 90,
+      "long": 0,
+      "units": "ft"
+    },
+    "uses": {
+      "value": 0,
+      "max": "0",
+      "per": "",
+      "recovery": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null
+    },
+    "ability": "",
+    "actionType": "util",
+    "attackBonus": 0,
+    "chatFlavor": "",
+    "critical": {
+      "threshold": null,
+      "damage": ""
+    },
+    "damage": {
+      "parts": [],
+      "versatile": "",
+      "value": ""
+    },
+    "formula": "",
+    "save": {
+      "ability": "",
+      "dc": null,
+      "scaling": "spell",
+      "value": ""
+    },
+    "level": 1,
+    "school": "div",
+    "components": {
+      "vocal": true,
+      "somatic": false,
+      "material": false,
+      "ritual": false,
+      "concentration": true,
+      "value": ""
+    },
+    "materials": {
+      "value": "",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "scaling": {
+      "mode": "level",
+      "formula": ""
+    },
+    "attunement": null
+  },
+  "effects": [
+    {
+      "_id": "hukqk4y7secftxnh",
+      "changes": [
+        {
+          "key": "placeholder",
+          "mode": 0,
+          "value": "1",
+          "priority": 0
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "icon": "icons/magic/perception/eye-ringed-glow-angry-small-red.webp",
+      "label": "Hunter's Mark",
+      "origin": "Actor.9z8mm9ZzK1lsUOub.Item.SVtUbfO4INlzMK0L",
+      "transfer": false,
+      "flags": {
+        "wire": {
+          "applyOnSaveOrMiss": false,
+          "blocksAreaConditions": false,
+          "auraTargets": "",
+          "applicationType": "immediate",
+          "independentDuration": false
+        }
+      },
+      "tint": null,
+      "_key": "!items.effects!TOpYnkZ3QC5uYFtC.hukqk4y7secftxnh"
+    }
+  ],
+  "flags": {
+    "wire": {
+      "override": {
+        "target": {
+          "value": "1"
+        }
+      },
+      "checkedAbility": "",
+      "upcastInterval": null,
+      "damageParts": [
+        {
+          "halving": "none",
+          "application": "immediate"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "prepare-attack-roll",
+          "update": "Check Hunter's Mark target"
+        },
+        {
+          "condition": "prepare-damage-roll",
+          "update": "Apply Hunter's Mark damage"
+        }
+      ],
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.11.0",
+      "saveImmunity": false,
+      "script": "this.registerUpdater(\"Check Hunter's Mark target\", true, async (condition, item, effect, details) => {\n    console.log(\"Checking Hunter's Mark target\");\n    const childUuids = effect.flags.wire?.childEffectUuids || [];\n    const effectTarget = game.wire.fromUuid(childUuids[0]).parent;\n    const attackTarget = game.user.targets.first()?.actor;\n    const isTargetValid = childUuids.length && (attackTarget == effectTarget || effectTarget.system.attributes.hp.value > 0);\n\n    if (!isTargetValid) {\n        const doApply = await Dialog.confirm({ title: \"Apply Hunter's Mark?\", content: '<div class=\"dialog-bonus\">Use bonus action to apply Hunter\\'s Mark?</h1>' });\n        if (doApply) {\n            await game.wire.removeChildEffects(effect);\n            await game.wire.createChildEffects(effect, \"immediate\", game.user.targets.first().actor);\n        }\n    }\n});\n\nthis.registerUpdater(\"Apply Hunter's Mark damage\", true, (condition, item, effect, details) => {\n    const targetActor = game.user.targets.first().actor;\n    if (targetActor.effects.find(e => e.origin === effect.origin)) {\n        return \"+1d6\";\n    }\n});"
+    }
+  },
+  "ownership": {
+    "default": 0,
+    "m7gKrZnSC3XR8ToV": 3
+  },
+  "_stats": {
+    "systemId": "dnd5e",
+    "systemVersion": "2.2.2",
+    "coreVersion": "11.306",
+    "createdTime": 1670336285649,
+    "modifiedTime": 1694774675178,
+    "lastModifiedBy": "dBglmdrMUDMEh6ZW"
+  },
+  "folder": null,
+  "sort": 0,
+  "_id": "TOpYnkZ3QC5uYFtC",
+  "_key": "!items!TOpYnkZ3QC5uYFtC"
+}

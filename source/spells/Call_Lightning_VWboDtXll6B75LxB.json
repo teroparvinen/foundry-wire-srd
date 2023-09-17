@@ -1,0 +1,150 @@
+{
+  "name": "Call Lightning",
+  "type": "spell",
+  "img": "icons/magic/lightning/bolt-forked-large-blue-yellow.webp",
+  "system": {
+    "description": {
+      "value": "<p>A storm cloud appears in the shape of a cylinder that is 10 feet tall with a 60-foot radius, centered on a point you can see 100 feet directly above you. The spell fails if you can't see a point in the air where the storm cloud could appear (for example, if you are in a room that can't accommodate the cloud).</p><p>When you cast the spell, choose a point you can see within range. A bolt of lightning flashes down from the cloud to that point. Each creature within 5 feet of that point must make a Dexterity saving throw. A creature takes 3d10 lightning damage on a failed save, or half as much damage on a successful one. On each of your turns until the spell ends, you can use your action to call down lightning in this way again, targeting the same point or a different one.</p><p>If you are outdoors in stormy conditions when you cast this spell, the spell gives you control over the existing storm instead of creating a new one. Under such conditions, the spell's damage increases by 1d10.</p><p><strong>Higher Levels.</strong> When you cast this spell using a spell slot of 4th or higher level, the damage increases by 1d10 for each slot level above 3rd.</p>",
+      "chat": "",
+      "unidentified": ""
+    },
+    "source": "PHB pg. 220",
+    "activation": {
+      "type": "action",
+      "cost": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 10,
+      "units": "minute"
+    },
+    "cover": null,
+    "crewed": false,
+    "target": {
+      "value": 60,
+      "width": null,
+      "units": "ft",
+      "type": "cylinder"
+    },
+    "range": {
+      "value": 120,
+      "long": 0,
+      "units": "ft"
+    },
+    "uses": {
+      "value": 0,
+      "max": "0",
+      "per": "",
+      "recovery": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null
+    },
+    "ability": "",
+    "actionType": "save",
+    "attackBonus": 0,
+    "chatFlavor": "",
+    "critical": {
+      "threshold": null,
+      "damage": ""
+    },
+    "damage": {
+      "parts": [
+        [
+          "3d10[Normal]",
+          "lightning"
+        ],
+        [
+          "4d10[Stormy]",
+          "lightning"
+        ]
+      ],
+      "versatile": ""
+    },
+    "formula": "",
+    "save": {
+      "ability": "dex",
+      "dc": null,
+      "scaling": "spell"
+    },
+    "level": 3,
+    "school": "con",
+    "components": {
+      "vocal": true,
+      "somatic": true,
+      "material": false,
+      "ritual": false,
+      "concentration": true,
+      "value": ""
+    },
+    "materials": {
+      "value": "",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "scaling": {
+      "mode": "level",
+      "formula": "1d10"
+    },
+    "attunement": null
+  },
+  "effects": [],
+  "flags": {
+    "wire": {
+      "checkedAbility": "",
+      "upcastInterval": null,
+      "damageParts": [
+        {
+          "halving": "half",
+          "application": "immediate"
+        },
+        {
+          "halving": "half",
+          "application": "immediate"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "take-an-action",
+          "update": "apply-immediate"
+        }
+      ],
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.11.0",
+      "override": {
+        "target": {
+          "value": "60"
+        }
+      },
+      "saveImmunity": false,
+      "variants": [
+        "Normal",
+        "Stormy"
+      ],
+      "script": "this.setTemplateTargetSelection(false);\n\nthis.registerFlowStep(\"placeTemplate\", true, async activation => {\n    game.wire.runInQueue(() => {\n        game.wire.placeTemplate({\n            t: \"circle\",\n            user: game.user.id,\n            distance: 5,\n            direction: 0,\n            x: 0,\n            y: 0,\n            fillColor: game.user.color\n        }).then(async () => {\n            await activation.continue();\n        });\n    });\n\n    await activation.wait();\n});\n\nconst callBolt = this.performCustomStep(\"placeTemplate\",\n    this.confirmTargets(\n        this.performSavingThrow(\n            this.performSaveDamageRoll(\n                this.sequence(\n                    this.applyDamage()\n                )\n            )\n        )\n    )\n)\n\n\nreturn this.pick(\n    this.isConditionTriggered(\n        callBolt\n    ),\n    this.isImmediateApplication(\n        this.applyConcentration(\n            callBolt\n        )\n    )\n);"
+    }
+  },
+  "ownership": {
+    "default": 0,
+    "m7gKrZnSC3XR8ToV": 3
+  },
+  "_stats": {
+    "systemId": "dnd5e",
+    "systemVersion": "2.2.2",
+    "coreVersion": "11.306",
+    "createdTime": 1670102770980,
+    "modifiedTime": 1694774675194,
+    "lastModifiedBy": "dBglmdrMUDMEh6ZW"
+  },
+  "folder": null,
+  "sort": 0,
+  "_id": "VWboDtXll6B75LxB",
+  "_key": "!items!VWboDtXll6B75LxB"
+}

@@ -1,0 +1,235 @@
+{
+  "name": "Fire Shield",
+  "ownership": {
+    "default": 0,
+    "m7gKrZnSC3XR8ToV": 3
+  },
+  "type": "spell",
+  "system": {
+    "description": {
+      "value": "<p>Thin and wispy flames wreathe your body for the Duration, shedding bright light in a 10-foot radius and dim light for an additional 10 feet. You can end the spell early by using an action to dismiss it.</p>\n<p>The flames provide you with a warm shield or a chill shield, as you choose. The warm shield grants you Resistance to cold damage, and the chill shield grants you resistance to fire damage.</p>\n<p>In addition, whenever a creature within 5 feet of you hits you with a melee Attack, the shield erupts with flame. The attacker takes 2d8 fire damage from a warm shield, or 2d8 cold damage from a cold shield.</p>",
+      "chat": "",
+      "unidentified": ""
+    },
+    "source": "PHB pg. 242",
+    "activation": {
+      "type": "action",
+      "cost": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 10,
+      "units": "minute"
+    },
+    "cover": null,
+    "crewed": false,
+    "target": {
+      "value": null,
+      "width": null,
+      "units": "",
+      "type": "self"
+    },
+    "range": {
+      "value": null,
+      "long": null,
+      "units": "self"
+    },
+    "uses": {
+      "value": 0,
+      "max": "0",
+      "per": "",
+      "recovery": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null
+    },
+    "ability": "",
+    "actionType": "save",
+    "attackBonus": 0,
+    "chatFlavor": "",
+    "critical": {
+      "threshold": null,
+      "damage": ""
+    },
+    "damage": {
+      "parts": [
+        [
+          "2d8[Warm Shield]",
+          "fire"
+        ],
+        [
+          "2d8[Chill Shield]",
+          "cold"
+        ]
+      ],
+      "versatile": "",
+      "value": ""
+    },
+    "formula": "",
+    "save": {
+      "ability": "",
+      "dc": null,
+      "scaling": "spell",
+      "value": ""
+    },
+    "level": 4,
+    "school": "evo",
+    "components": {
+      "vocal": true,
+      "somatic": true,
+      "material": true,
+      "ritual": false,
+      "concentration": false,
+      "value": ""
+    },
+    "materials": {
+      "value": "A bit of phosphorus or a firefly",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "scaling": {
+      "mode": "none",
+      "formula": ""
+    }
+  },
+  "flags": {
+    "wire": {
+      "variants": [
+        "Warm Shield",
+        "Chill Shield"
+      ],
+      "override": {
+        "target": {
+          "value": ""
+        }
+      },
+      "checkedAbility": "",
+      "saveImmunity": false,
+      "damageParts": [
+        {
+          "halving": "full",
+          "application": "delayed"
+        },
+        {
+          "halving": "full",
+          "application": "delayed"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "",
+          "update": ""
+        }
+      ],
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.11.0",
+      "script": "this.registerFlowStep(\"targetAttacker\", true, async (activation, details) => {\n    await activation.assignTargets([game.wire.fromUuid(details.attackerUuid)]);\n});\n\nreturn this.pick(\n    this.isDelayedApplication(\n        this.performCustomStep(\"targetAttacker\",\n            this.singleTargetFlow({ skipTargeting: true })\n        )\n    ),\n    this.defaultFlow()\n)"
+    }
+  },
+  "img": "icons/magic/defensive/shield-barrier-flaming-pentagon-red.webp",
+  "effects": [
+    {
+      "_id": "lVKx8swB08jm6IFE",
+      "flags": {
+        "wire": {
+          "applyOnSaveOrMiss": false,
+          "blocksAreaConditions": false,
+          "auraTargets": "",
+          "applicationType": "immediate",
+          "independentDuration": false,
+          "conditions": [
+            {
+              "condition": "target-is-hit.mwak",
+              "update": "apply-delayed"
+            }
+          ]
+        }
+      },
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "cold",
+          "priority": 20
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null,
+        "combat": null
+      },
+      "icon": "icons/magic/defensive/shield-barrier-flaming-pentagon-red.webp",
+      "label": "Warm Shield",
+      "origin": "Item.OtcTsffCQaOFkr9K",
+      "tint": null,
+      "transfer": false,
+      "_key": "!items.effects!eWQlPvZxW4kFB4Jc.lVKx8swB08jm6IFE"
+    },
+    {
+      "_id": "UUXwEKSPX4nYfDzo",
+      "flags": {
+        "wire": {
+          "applyOnSaveOrMiss": false,
+          "blocksAreaConditions": false,
+          "auraTargets": "",
+          "applicationType": "immediate",
+          "independentDuration": false,
+          "conditions": [
+            {
+              "condition": "target-is-hit.mwak",
+              "update": "apply-delayed"
+            }
+          ]
+        }
+      },
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "fire",
+          "priority": 20
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null,
+        "combat": null
+      },
+      "icon": "icons/magic/defensive/shield-barrier-flaming-pentagon-blue.webp",
+      "label": "Chill Shield",
+      "origin": "Item.OtcTsffCQaOFkr9K",
+      "tint": null,
+      "transfer": false,
+      "_key": "!items.effects!eWQlPvZxW4kFB4Jc.UUXwEKSPX4nYfDzo"
+    }
+  ],
+  "_stats": {
+    "systemId": "dnd5e",
+    "systemVersion": "2.2.2",
+    "coreVersion": "11.306",
+    "createdTime": 1661787234170,
+    "modifiedTime": 1694774675279,
+    "lastModifiedBy": "dBglmdrMUDMEh6ZW"
+  },
+  "folder": null,
+  "sort": 0,
+  "_id": "eWQlPvZxW4kFB4Jc",
+  "_key": "!items!eWQlPvZxW4kFB4Jc"
+}

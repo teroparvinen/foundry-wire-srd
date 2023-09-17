@@ -1,0 +1,145 @@
+{
+  "name": "Arcane Sword",
+  "ownership": {
+    "default": 0,
+    "m7gKrZnSC3XR8ToV": 3
+  },
+  "type": "spell",
+  "system": {
+    "description": {
+      "value": "<p>You create a sword-shaped plane of force that hovers within range. It lasts for the Duration.</p><p>When the sword appears, you make a melee spell Attack against a target of your choice within 5 feet of the sword. On a hit, the target takes 3d10 force damage. Until the spell ends, you can use a Bonus Action on each of your turns to move the sword up to 20 feet to a spot you can see and repeat this Attack against the same target or a different one.</p>",
+      "chat": "",
+      "unidentified": ""
+    },
+    "source": "",
+    "activation": {
+      "type": "action",
+      "cost": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 1,
+      "units": "minute"
+    },
+    "cover": null,
+    "crewed": false,
+    "target": {
+      "value": 1,
+      "width": null,
+      "units": "ft",
+      "type": "square"
+    },
+    "range": {
+      "value": 60,
+      "long": 0,
+      "units": "ft"
+    },
+    "uses": {
+      "value": 0,
+      "max": "0",
+      "per": "",
+      "recovery": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null
+    },
+    "ability": "",
+    "actionType": "msak",
+    "attackBonus": "0",
+    "chatFlavor": "",
+    "critical": {
+      "threshold": null,
+      "damage": ""
+    },
+    "damage": {
+      "parts": [
+        [
+          "3d10",
+          "force"
+        ],
+        [
+          "3d10",
+          "force"
+        ]
+      ],
+      "versatile": ""
+    },
+    "formula": "",
+    "save": {
+      "ability": "",
+      "dc": null,
+      "scaling": "spell",
+      "value": ""
+    },
+    "level": 7,
+    "school": "evo",
+    "components": {
+      "vocal": true,
+      "somatic": true,
+      "material": true,
+      "ritual": false,
+      "concentration": true,
+      "value": ""
+    },
+    "materials": {
+      "value": "A miniature platinum sword with a grip and pommel of copper and zinc, worth 250gp",
+      "consumed": false,
+      "cost": 250,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "scaling": {
+      "mode": "none",
+      "formula": ""
+    }
+  },
+  "flags": {
+    "wire": {
+      "override": {
+        "target": {
+          "value": "5"
+        }
+      },
+      "checkedAbility": "",
+      "saveImmunity": false,
+      "damageParts": [
+        {
+          "halving": "none",
+          "application": "immediate"
+        },
+        {
+          "halving": "none",
+          "application": "delayed"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "take-an-action",
+          "update": "apply-delayed"
+        }
+      ],
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.11.0",
+      "script": "const attack = this.confirmTargets(\n    this.performAttackRoll(\n        this.performAttackDamageRoll(\n            this.applyDamage(\n                this.attackCompleted()\n            )\n        )\n    )\n)\n\nreturn this.pick(\n    this.isImmediateApplication(\n        this.applyConcentration(\n            attack\n        )\n    ),\n    this.isDelayedApplication(\n        attack\n    )\n)"
+    }
+  },
+  "img": "icons/skills/melee/strike-blade-hooked-orange-blue.webp",
+  "effects": [],
+  "_stats": {
+    "systemId": "dnd5e",
+    "systemVersion": "2.2.2",
+    "coreVersion": "11.306",
+    "createdTime": 1661787234120,
+    "modifiedTime": 1694774675164,
+    "lastModifiedBy": "dBglmdrMUDMEh6ZW"
+  },
+  "folder": null,
+  "sort": 0,
+  "_id": "Svqtv14f83CXKKY6",
+  "_key": "!items!Svqtv14f83CXKKY6"
+}

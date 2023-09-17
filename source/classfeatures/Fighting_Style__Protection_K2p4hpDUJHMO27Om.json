@@ -1,0 +1,155 @@
+{
+  "name": "Fighting Style: Protection",
+  "type": "feat",
+  "img": "icons/magic/defensive/shield-barrier-deflect-gold.webp",
+  "effects": [
+    {
+      "label": "Target Protected",
+      "icon": "icons/magic/defensive/shield-barrier-deflect-gold.webp",
+      "origin": "Actor.fRkIgd5cHxEEE8tk.Item.gziczMbobAFmF57t",
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "_id": "zGaVhhIoD5HH1OS6",
+      "changes": [
+        {
+          "key": "flags.wire.disadvantage.attack.all",
+          "mode": 2,
+          "value": "1",
+          "priority": 20
+        }
+      ],
+      "tint": null,
+      "transfer": false,
+      "flags": {
+        "wire": {
+          "applyOnSaveOrMiss": false,
+          "applicationType": "immediate",
+          "blocksAreaConditions": false,
+          "auraTargets": "",
+          "stackEffects": false,
+          "rollEffects": false,
+          "independentDuration": false,
+          "conditions": [
+            {
+              "condition": "target-attacks.all",
+              "update": "end"
+            }
+          ]
+        }
+      },
+      "_key": "!items.effects!K2p4hpDUJHMO27Om.zGaVhhIoD5HH1OS6"
+    }
+  ],
+  "flags": {
+    "srd5e": {
+      "page": "optionalfeatures.html",
+      "source": "PHB",
+      "hash": "protection_phb"
+    },
+    "wire": {
+      "override": {
+        "target": {
+          "value": "1"
+        }
+      },
+      "compendiumSource": "wire-srd.classfeatures",
+      "compendiumVersion": "0.10.2"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<div>\n\t\t\t\t\n\t\t\t\t<div class=\"rd__b  rd__b--3\"><p>When a creature you can see attacks a target other than you that is within 5 feet of you, you can use your reaction to impose disadvantage on the attack roll. You must be wielding a shield.</p><div class=\"rd__spc-inline-post\"></div></div>\n\t\t\t</div>",
+      "chat": "",
+      "unidentified": ""
+    },
+    "source": "PHB",
+    "activation": {
+      "type": "reaction",
+      "cost": 0,
+      "condition": ""
+    },
+    "duration": {
+      "value": 1,
+      "units": "turn"
+    },
+    "cover": null,
+    "crewed": false,
+    "target": {
+      "value": 1,
+      "width": null,
+      "units": "",
+      "type": "creature"
+    },
+    "range": {
+      "value": 5,
+      "long": null,
+      "units": "ft"
+    },
+    "uses": {
+      "value": 0,
+      "max": "0",
+      "per": "",
+      "recovery": "",
+      "type": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null
+    },
+    "ability": "",
+    "actionType": "",
+    "attackBonus": 0,
+    "chatFlavor": "",
+    "critical": {
+      "threshold": null,
+      "damage": ""
+    },
+    "damage": {
+      "parts": [],
+      "versatile": "",
+      "value": ""
+    },
+    "formula": "",
+    "save": {
+      "ability": "",
+      "dc": null,
+      "scaling": "spell",
+      "value": ""
+    },
+    "type": {
+      "value": "class",
+      "subtype": "fightingStyle"
+    },
+    "requirements": "Paladin 2",
+    "recharge": {
+      "value": null,
+      "charged": false
+    }
+  },
+  "ownership": {
+    "default": 0,
+    "JNEafaiyE429jyEn": 3,
+    "BDWtlDQYkOI4gQqd": 3
+  },
+  "_stats": {
+    "systemId": "dnd5e",
+    "systemVersion": "2.2.2",
+    "coreVersion": "11.306",
+    "createdTime": 1673107822966,
+    "modifiedTime": 1694935047724,
+    "lastModifiedBy": "dBglmdrMUDMEh6ZW"
+  },
+  "folder": null,
+  "sort": 0,
+  "_id": "K2p4hpDUJHMO27Om",
+  "_key": "!items!K2p4hpDUJHMO27Om"
+}

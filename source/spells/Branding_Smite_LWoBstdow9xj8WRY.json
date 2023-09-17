@@ -1,0 +1,206 @@
+{
+  "name": "Branding Smite",
+  "ownership": {
+    "default": 0,
+    "m7gKrZnSC3XR8ToV": 3
+  },
+  "type": "spell",
+  "system": {
+    "description": {
+      "value": "<p>The next time you hit a creature with a weapon attack before this spell ends, the weapon gleams with astral radiance as you strike. The attack deals an extra 2d6 radiant damage to the target, which becomes visible if it's invisible, and the target sheds dim light in a 5-foot radius and can't become invisible until the spell ends.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 3rd level or higher, the extra damage increases by 1d6 for each slot level above 2nd.</p>",
+      "chat": "",
+      "unidentified": ""
+    },
+    "source": "PHB pg. 219",
+    "activation": {
+      "type": "bonus",
+      "cost": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": 1,
+      "units": "minute"
+    },
+    "cover": null,
+    "crewed": false,
+    "target": {
+      "value": null,
+      "width": null,
+      "units": "",
+      "type": "self"
+    },
+    "range": {
+      "value": null,
+      "long": null,
+      "units": "self"
+    },
+    "uses": {
+      "value": 0,
+      "max": "0",
+      "per": "",
+      "recovery": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null
+    },
+    "ability": "",
+    "actionType": "other",
+    "attackBonus": 0,
+    "chatFlavor": "",
+    "critical": {
+      "threshold": null,
+      "damage": ""
+    },
+    "damage": {
+      "parts": [],
+      "versatile": ""
+    },
+    "formula": "",
+    "save": {
+      "ability": "",
+      "dc": null,
+      "scaling": "spell",
+      "value": ""
+    },
+    "level": 2,
+    "school": "evo",
+    "components": {
+      "vocal": true,
+      "somatic": false,
+      "material": false,
+      "ritual": false,
+      "concentration": true,
+      "value": ""
+    },
+    "materials": {
+      "value": "",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "scaling": {
+      "mode": "level",
+      "formula": "1d6"
+    }
+  },
+  "flags": {
+    "wire": {
+      "override": {
+        "target": {
+          "value": ""
+        }
+      },
+      "checkedAbility": "",
+      "saveImmunity": false,
+      "upcastInterval": null,
+      "damageParts": [
+        {
+          "halving": "none",
+          "application": "immediate"
+        }
+      ],
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.11.0",
+      "script": "return this.pick(\n    this.isDelayedApplication(\n        this.applyTargetFromCondition(\n            this.performSavingThrow(\n                this.applyEffects(\n                    this.endEffect()\n                )\n            )\n        )\n    ),\n    this.defaultFlow()\n);"
+    }
+  },
+  "img": "icons/magic/fire/dagger-rune-enchant-flame-orange.webp",
+  "effects": [
+    {
+      "label": "Branding Smite",
+      "icon": "icons/magic/fire/dagger-rune-enchant-flame-orange.webp",
+      "origin": "Actor.9z8mm9ZzK1lsUOub.Item.qjmk92EwZvVW5qE2",
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "_id": "KHe5kxmgwNkexEe3",
+      "changes": [
+        {
+          "key": "system.bonuses.mwak.damage",
+          "mode": 2,
+          "value": "+2d6[radiant]",
+          "priority": 20
+        }
+      ],
+      "tint": null,
+      "transfer": false,
+      "flags": {
+        "wire": {
+          "applyOnSaveOrMiss": false,
+          "blocksAreaConditions": false,
+          "auraTargets": "",
+          "applicationType": "immediate",
+          "independentDuration": false,
+          "conditions": [
+            {
+              "condition": "target-hits.mwak",
+              "update": "apply-delayed"
+            }
+          ]
+        }
+      },
+      "_key": "!items.effects!LWoBstdow9xj8WRY.KHe5kxmgwNkexEe3"
+    },
+    {
+      "label": "Branding Glow",
+      "icon": "icons/magic/fire/dagger-rune-enchant-flame-orange.webp",
+      "origin": "Actor.9z8mm9ZzK1lsUOub.Item.qjmk92EwZvVW5qE2",
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "_id": "x0CVTrdtaPXdQXWM",
+      "changes": [
+        {
+          "key": "system.traits.ci.value",
+          "mode": 2,
+          "value": "invisible",
+          "priority": 20
+        }
+      ],
+      "tint": null,
+      "transfer": false,
+      "flags": {
+        "wire": {
+          "applyOnSaveOrMiss": true,
+          "blocksAreaConditions": false,
+          "auraTargets": "",
+          "applicationType": "delayed",
+          "independentDuration": false
+        }
+      },
+      "_key": "!items.effects!LWoBstdow9xj8WRY.x0CVTrdtaPXdQXWM"
+    }
+  ],
+  "_stats": {
+    "systemId": "dnd5e",
+    "systemVersion": "2.2.2",
+    "coreVersion": "11.306",
+    "createdTime": 1661787234074,
+    "modifiedTime": 1694774675091,
+    "lastModifiedBy": "dBglmdrMUDMEh6ZW"
+  },
+  "folder": null,
+  "sort": 0,
+  "_id": "LWoBstdow9xj8WRY",
+  "_key": "!items!LWoBstdow9xj8WRY"
+}

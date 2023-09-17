@@ -1,0 +1,181 @@
+{
+  "name": "Strength Drain",
+  "type": "weapon",
+  "img": "icons/magic/unholy/strike-hand-glow-pink.webp",
+  "effects": [
+    {
+      "label": "Strength Drain",
+      "icon": "icons/magic/unholy/strike-hand-glow-pink.webp",
+      "origin": "Scene.Xy2Un3kaNxzH3jmZ.Token.3I9AHl3eC9hop2ZV.Item.2OUOBIN4TJDoL0sJ",
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "_id": "rbwLzbpwQ8pvqxMs",
+      "changes": [
+        {
+          "key": "system.abilities.str.value",
+          "mode": 2,
+          "value": "-1d4",
+          "priority": 20
+        }
+      ],
+      "tint": null,
+      "transfer": false,
+      "flags": {
+        "wire": {
+          "applyOnSaveOrMiss": false,
+          "blocksAreaConditions": false,
+          "auraTargets": "",
+          "applicationType": "immediate",
+          "independentDuration": true,
+          "conditions": [],
+          "stackEffects": true,
+          "rollEffects": true
+        }
+      },
+      "_key": "!items.effects!jmJMjWeoW9S2l0nW.rbwLzbpwQ8pvqxMs"
+    }
+  ],
+  "flags": {
+    "wire": {
+      "override": {
+        "target": {
+          "value": ""
+        }
+      },
+      "checkedAbility": "",
+      "saveImmunity": false,
+      "damageParts": [
+        {
+          "halving": "none",
+          "application": "immediate"
+        }
+      ],
+      "compendiumSource": "wire-srd.monsterfeatures",
+      "compendiumVersion": "0.10.1"
+    }
+  },
+  "system": {
+    "description": {
+      "value": "<section class=\"secret\"><p><em>Melee Weapon Attack:</em><strong>+4 to hit,</strong>, <strong>5 ft.,</strong> one creature. Hit: <strong>9 (2d6 + 2) <em>necrotic damage</em></strong>.</p><p>The target's Strength score is reduced by 1d4. The target dies if this reduces its Strength to 0. Otherwise, the reduction lasts until the target finishes a short or long rest.If a non-evil humanoid dies from this attack, a new shadow rises from the corpse 1d4 hours later.</p></section><p>The Shadow attacks with its Strength Drain.</p>",
+      "chat": "",
+      "unidentified": ""
+    },
+    "source": "",
+    "quantity": 1,
+    "weight": 0,
+    "price": 0,
+    "attunement": 0,
+    "equipped": true,
+    "rarity": "",
+    "identified": true,
+    "activation": {
+      "type": "action",
+      "cost": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": null,
+      "units": ""
+    },
+    "target": {
+      "value": null,
+      "width": null,
+      "units": "",
+      "type": ""
+    },
+    "range": {
+      "value": 5,
+      "long": null,
+      "units": "ft"
+    },
+    "uses": {
+      "value": 0,
+      "max": "0",
+      "per": "",
+      "recovery": ""
+    },
+    "consume": {
+      "type": "",
+      "target": "",
+      "amount": null
+    },
+    "ability": "dex",
+    "actionType": "mwak",
+    "attackBonus": "0",
+    "chatFlavor": "",
+    "critical": {
+      "threshold": null,
+      "damage": ""
+    },
+    "damage": {
+      "parts": [
+        [
+          "2d6 + @mod",
+          "necrotic"
+        ]
+      ],
+      "versatile": ""
+    },
+    "formula": "",
+    "save": {
+      "ability": "",
+      "dc": 10,
+      "scaling": "spell"
+    },
+    "armor": {
+      "value": 10
+    },
+    "hp": {
+      "value": 0,
+      "max": 0,
+      "dt": null,
+      "conditions": ""
+    },
+    "weaponType": "natural",
+    "baseItem": "",
+    "properties": {
+      "amm": false,
+      "fin": false,
+      "fir": false,
+      "foc": false,
+      "hvy": false,
+      "lgt": false,
+      "lod": false,
+      "rch": false,
+      "rel": false,
+      "ret": false,
+      "spc": false,
+      "thr": false,
+      "two": false,
+      "ver": false,
+      "ada": false,
+      "mgc": false,
+      "sil": false
+    },
+    "proficient": true
+  },
+  "ownership": {
+    "default": 0,
+    "m7gKrZnSC3XR8ToV": 3
+  },
+  "_stats": {
+    "systemId": "dnd5e",
+    "systemVersion": "2.0.3",
+    "coreVersion": "10.291",
+    "createdTime": 1672146638342,
+    "modifiedTime": 1672146638374,
+    "lastModifiedBy": "m7gKrZnSC3XR8ToV"
+  },
+  "folder": null,
+  "sort": 0,
+  "_id": "jmJMjWeoW9S2l0nW",
+  "_key": "!items!jmJMjWeoW9S2l0nW"
+}

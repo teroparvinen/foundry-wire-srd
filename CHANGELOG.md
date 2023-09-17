@@ -1,5 +1,9 @@
 # Changes by version number
 
+### 0.11.0
+
+Migrated to the V11 compendium format
+
 ### 0.10.3
 
 Added spells

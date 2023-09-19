@@ -1,144 +1,116 @@
 {
-  "name": "Potion of Heroism",
-  "type": "consumable",
-  "img": "icons/consumables/potions/potion-bottle-corked-fancy-orange.webp",
+  "_id": "MVgehSwV6v6jKZj1",
+  "_key": "!items!MVgehSwV6v6jKZj1",
   "effects": [
     {
       "_id": "s12eyyu4cffv542a",
+      "_key": "!items.effects!MVgehSwV6v6jKZj1.s12eyyu4cffv542a",
       "changes": [
         {
           "key": "system.bonuses.abilities.save",
           "mode": 2,
-          "value": "+1d4",
-          "priority": 0
+          "priority": 0,
+          "value": "+1d4"
         },
         {
           "key": "system.bonuses.msak.attack",
           "mode": 2,
-          "value": "+1d4",
-          "priority": 0
+          "priority": 0,
+          "value": "+1d4"
         },
         {
           "key": "system.bonuses.mwak.attack",
           "mode": 2,
-          "value": "+1d4",
-          "priority": 0
+          "priority": 0,
+          "value": "+1d4"
         },
         {
           "key": "system.bonuses.rsak.attack",
           "mode": 2,
-          "value": "+1d4",
-          "priority": 0
+          "priority": 0,
+          "value": "+1d4"
         },
         {
           "key": "system.bonuses.rwak.attack",
           "mode": 2,
-          "value": "+1d4",
-          "priority": 0
+          "priority": 0,
+          "value": "+1d4"
         }
       ],
       "disabled": false,
       "duration": {
-        "startTime": null,
-        "seconds": null,
         "combat": null,
         "rounds": null,
-        "turns": null,
+        "seconds": null,
         "startRound": null,
-        "startTurn": null
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
+      },
+      "flags": {
+        "wire": {
+          "applicationType": "immediate",
+          "applyOnSaveOrMiss": false,
+          "blocksAreaConditions": false,
+          "independentDuration": false
+        }
       },
       "icon": "icons/consumables/potions/potion-bottle-corked-fancy-orange.webp",
       "label": "Potion of Heroism",
       "origin": "Actor.SAXc7iTM9MbFo5vF.Item.9NjW5RFYF2hEUGyL",
-      "transfer": false,
-      "flags": {
-        "wire": {
-          "applyOnSaveOrMiss": false,
-          "blocksAreaConditions": false,
-          "applicationType": "immediate",
-          "independentDuration": false
-        }
-      },
       "tint": null,
-      "_key": "!items.effects!MVgehSwV6v6jKZj1.s12eyyu4cffv542a"
+      "transfer": false
     }
   ],
-  "folder": null,
-  "sort": 0,
   "flags": {
     "wire": {
       "checkedAbility": "",
+      "compendiumSource": "wire-srd.items",
+      "compendiumVersion": "0.1",
       "damageParts": [
         {
-          "halving": "none",
-          "application": "immediate"
+          "application": "immediate",
+          "halving": "none"
         }
       ],
-      "compendiumVersion": "0.1",
       "override": {
         "target": {
           "value": ""
         }
       },
-      "compendiumSource": "wire-srd.items",
       "saveImmunity": false
     }
   },
-  "_id": "MVgehSwV6v6jKZj1",
+  "folder": null,
+  "img": "icons/consumables/potions/potion-bottle-corked-fancy-orange.webp",
+  "name": "Potion of Heroism",
+  "ownership": {
+    "BDWtlDQYkOI4gQqd": 3,
+    "default": 0
+  },
   "system": {
-    "description": {
-      "value": "<p><em>This blue potion bubbles and steams as if boiling.</em></p>\n<p>For 1 hour after drinking it, you gain 10 temporary hit points that last for 1 hour. For the same duration, you are under the effect of the @Compendium[dnd5e.spells.8dzaICjGy6mTUaUr]{Bless} spell (no concentration required)  </p>\n<p><em>Foundry note: the Other Formula button can be used to roll the bonus 1d4 received from Bless.</em></p>",
-      "chat": "",
-      "unidentified": ""
-    },
-    "source": "DMG pg. 188",
-    "quantity": 1,
-    "weight": 0.1,
-    "price": 180,
-    "attunement": 0,
-    "equipped": false,
-    "rarity": "rare",
-    "identified": true,
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": 1,
-      "units": "hour"
-    },
-    "target": {
-      "value": null,
-      "width": null,
-      "units": "",
-      "type": "self"
-    },
-    "range": {
-      "value": null,
-      "long": null,
-      "units": "touch"
-    },
-    "uses": {
-      "value": 1,
-      "max": "1",
-      "per": "charges",
-      "recovery": "",
-      "autoDestroy": true,
-      "autoUse": true
-    },
-    "consume": {
-      "type": "",
-      "target": "",
-      "amount": null
-    },
     "ability": "",
     "actionType": "heal",
+    "activation": {
+      "condition": "",
+      "cost": 1,
+      "type": "action"
+    },
     "attackBonus": 0,
+    "attributes": {
+      "spelldc": 10
+    },
+    "attunement": 0,
     "chatFlavor": "",
+    "consumableType": "potion",
+    "consume": {
+      "amount": null,
+      "target": "",
+      "type": ""
+    },
     "critical": {
-      "threshold": null,
-      "damage": ""
+      "damage": "",
+      "threshold": null
     },
     "damage": {
       "parts": [
@@ -149,28 +121,47 @@
       ],
       "versatile": ""
     },
+    "description": {
+      "chat": "",
+      "unidentified": "",
+      "value": "<p><em>This blue potion bubbles and steams as if boiling.</em></p>\n<p>For 1 hour after drinking it, you gain 10 temporary hit points that last for 1 hour. For the same duration, you are under the effect of the @Compendium[dnd5e.spells.8dzaICjGy6mTUaUr]{Bless} spell (no concentration required)  </p>\n<p><em>Foundry note: the Other Formula button can be used to roll the bonus 1d4 received from Bless.</em></p>"
+    },
+    "duration": {
+      "units": "hour",
+      "value": 1
+    },
+    "equipped": false,
     "formula": "1d4",
+    "identified": true,
+    "price": 180,
+    "quantity": 1,
+    "range": {
+      "long": null,
+      "units": "touch",
+      "value": null
+    },
+    "rarity": "rare",
     "save": {
       "ability": "",
       "dc": null,
       "scaling": "spell"
     },
-    "consumableType": "potion",
-    "attributes": {
-      "spelldc": 10
-    }
+    "source": "DMG pg. 188",
+    "target": {
+      "type": "self",
+      "units": "",
+      "value": null,
+      "width": null
+    },
+    "uses": {
+      "autoDestroy": true,
+      "autoUse": true,
+      "max": "1",
+      "per": "charges",
+      "recovery": "",
+      "value": 1
+    },
+    "weight": 0.1
   },
-  "ownership": {
-    "default": 0,
-    "BDWtlDQYkOI4gQqd": 3
-  },
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.0.3",
-    "coreVersion": "10.291",
-    "createdTime": null,
-    "modifiedTime": 1672073340612,
-    "lastModifiedBy": "BDWtlDQYkOI4gQqd"
-  },
-  "_key": "!items!MVgehSwV6v6jKZj1"
+  "type": "consumable"
 }

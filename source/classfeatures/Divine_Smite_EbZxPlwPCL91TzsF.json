@@ -1,156 +1,147 @@
 {
-  "name": "Divine Smite",
-  "type": "feat",
-  "img": "icons/skills/melee/weapons-crossed-swords-yellow-teal.webp",
+  "_id": "EbZxPlwPCL91TzsF",
+  "_key": "!items!EbZxPlwPCL91TzsF",
   "effects": [
     {
       "_id": "4y05zgd5g3felt7d",
+      "_key": "!items.effects!EbZxPlwPCL91TzsF.4y05zgd5g3felt7d",
       "changes": [
         {
           "key": "system.bonuses.mwak.damage",
           "mode": 2,
-          "value": "+((@config.spellLevel+1)d8)[radiant]",
-          "priority": 20
+          "priority": 20,
+          "value": "+((@config.spellLevel+1)d8)[radiant]"
         },
         {
           "key": "system.bonuses.mwak.damage",
           "mode": 2,
-          "value": "+((@target.type.undead+@target.type.fiend)d8)[radiant]",
-          "priority": 20
+          "priority": 20,
+          "value": "+((@target.type.undead+@target.type.fiend)d8)[radiant]"
         }
       ],
       "disabled": false,
       "duration": {
-        "startTime": null,
-        "seconds": null,
         "combat": null,
         "rounds": null,
-        "turns": null,
+        "seconds": null,
         "startRound": null,
-        "startTurn": null
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
       },
-      "icon": "icons/skills/melee/weapons-crossed-swords-yellow-teal.webp",
-      "label": "Divine Smite",
-      "origin": "Actor.9z8mm9ZzK1lsUOub.Item.f6sy589u28inh9u2",
-      "transfer": false,
       "flags": {
         "wire": {
-          "applyOnSaveOrMiss": false,
           "applicationType": "immediate",
+          "applyOnSaveOrMiss": false,
+          "blocksAreaConditions": false,
           "conditions": [
             {
               "condition": "target-hits.mwak",
               "update": "end"
             }
           ],
-          "independentDuration": false,
-          "blocksAreaConditions": false
+          "independentDuration": false
         }
       },
+      "icon": "icons/skills/melee/weapons-crossed-swords-yellow-teal.webp",
+      "label": "Divine Smite",
+      "origin": "Actor.9z8mm9ZzK1lsUOub.Item.f6sy589u28inh9u2",
       "tint": null,
-      "_key": "!items.effects!EbZxPlwPCL91TzsF.4y05zgd5g3felt7d"
+      "transfer": false
     }
   ],
-  "folder": null,
-  "sort": 0,
   "flags": {
     "dnd5e": {
-      "sourceId": "Compendium.dnd5e.classfeatures.ySMPQ6zNSlvkrl2f",
-      "advancementOrigin": "is86kr9rdya0aupp.xy3wlxtiwbplsms7"
+      "advancementOrigin": "is86kr9rdya0aupp.xy3wlxtiwbplsms7",
+      "sourceId": "Compendium.dnd5e.classfeatures.ySMPQ6zNSlvkrl2f"
     },
     "wire": {
       "checkedAbility": "",
+      "compendiumSource": "wire-srd.classfeatures",
+      "compendiumVersion": "0.11.0",
       "override": {
         "target": {
           "value": ""
         }
       },
-      "compendiumVersion": "0.11.0",
-      "compendiumSource": "wire-srd.classfeatures",
       "saveImmunity": false,
       "script": "this.skipConfigurationDialog();\nthis.requestCustomConfiguration(async (item, requirements) => {\n    const actor = item.actor;\n    const maxSpellSlot = 4;\n\n    function getSpellSlots(level) {\n        return actor.system.spells[`spell${level}`];\n    }\n\n    console.log(\"About to smite\");\n\n    const { consumeSlot, spellLevel } = await new Promise(async (resolve, reject) => {\n        // Get options for available slots\n        let optionsText = \"\";\n        for (let i = 1; i <= maxSpellSlot; i++) {\n            const slots = getSpellSlots(i);\n            if (slots.value > 0) {\n                const level = CONFIG.DND5E.spellLevels[i];\n                const label = game.i18n.format('DND5E.SpellLevelSlot', { level: level, n: slots.value });\n                optionsText += `<option value=\"${i}\">${label}</option>`;\n            }\n        }\n        await new Dialog({\n            title: \"Divine Smite: Usage Configuration\",\n            content: `\n                <form id=\"smite-use-form\">\n                    <p>` + game.i18n.format(\"DND5E.AbilityUseHint\", { name: \"Divine Smite\", type: \"feature\" }) + `</p>\n                    <div class=\"form-group\">\n                        <label>Spell Slot Level</label>\n                        <div class=\"form-fields\">\n                            <select name=\"slot-level\">` + optionsText + `</select>\n                        </div>\n                    </div>\n                    <div class=\"form-group\">\n                        <label class=\"checkbox\">\n                        <input type=\"checkbox\" name=\"consumeCheckbox\" checked/>` + game.i18n.localize(\"DND5E.SpellCastConsume\") + `</label>\n                    </div>\n                </form>\n                `,\n            buttons: {\n                smite: {\n                    icon: '<i class=\"fas fa-bolt\"></i>',\n                    label: \"Smite\",\n                    callback: (html) => {\n                        const spellLevel = parseInt(html.find('[name=slot-level]')[0].value);\n                        const consumeSlot = html.find('[name=consumeCheckbox]')[0].checked;\n\n                        resolve({ consumeSlot, spellLevel });\n                    }\n                }\n            },\n            default: \"smite\"\n        }).render(true);\n    });\n\n    if (consumeSlot) {\n        requirements.doConsumeSpellSlot = true;\n        requirements.consumedSpellLevel = spellLevel;\n    }\n\n    return { spellLevel };\n});\n\nreturn this.applyDefaultTargetsAsEffective(\n    this.applyEffects()\n);"
     }
   },
-  "_id": "EbZxPlwPCL91TzsF",
+  "folder": null,
+  "img": "icons/skills/melee/weapons-crossed-swords-yellow-teal.webp",
+  "name": "Divine Smite",
+  "ownership": {
+    "default": 0,
+    "m7gKrZnSC3XR8ToV": 3
+  },
   "system": {
-    "description": {
-      "value": "<p>Starting at 2nd level, when you hit a creature with a melee weapon attack, you can expend one spell slot to deal radiant damage to the target, in addition to the weapon's damage.</p><p>The extra damage is 2d8 for a 1st-level spell slot, plus 1d8 for each spell level higher than 1st, to a maximum of 5d8. The damage increases by 1d8 if the target is an undead or a fiend.</p>",
-      "chat": "",
-      "unidentified": ""
-    },
-    "source": "PHB pg. 85",
+    "ability": "",
+    "actionType": "other",
     "activation": {
-      "type": "special",
+      "condition": "",
       "cost": null,
-      "condition": ""
+      "type": "special"
     },
-    "duration": {
-      "value": 1,
-      "units": "day"
+    "attackBonus": 0,
+    "chatFlavor": "",
+    "consume": {
+      "amount": null,
+      "target": "",
+      "type": ""
     },
     "cover": null,
     "crewed": false,
-    "target": {
-      "value": null,
-      "width": null,
-      "units": "",
-      "type": "self"
-    },
-    "range": {
-      "value": null,
-      "long": null,
-      "units": ""
-    },
-    "uses": {
-      "value": null,
-      "max": "",
-      "per": "",
-      "recovery": ""
-    },
-    "consume": {
-      "type": "",
-      "target": "",
-      "amount": null
-    },
-    "ability": "",
-    "actionType": "other",
-    "attackBonus": 0,
-    "chatFlavor": "",
     "critical": {
-      "threshold": null,
-      "damage": ""
+      "damage": "",
+      "threshold": null
     },
     "damage": {
       "parts": [],
       "versatile": "1d8"
     },
+    "description": {
+      "chat": "",
+      "unidentified": "",
+      "value": "<p>Starting at 2nd level, when you hit a creature with a melee weapon attack, you can expend one spell slot to deal radiant damage to the target, in addition to the weapon's damage.</p><p>The extra damage is 2d8 for a 1st-level spell slot, plus 1d8 for each spell level higher than 1st, to a maximum of 5d8. The damage increases by 1d8 if the target is an undead or a fiend.</p>"
+    },
+    "duration": {
+      "units": "day",
+      "value": 1
+    },
     "formula": "",
+    "range": {
+      "long": null,
+      "units": "",
+      "value": null
+    },
+    "recharge": {
+      "charged": false,
+      "value": null
+    },
+    "requirements": "Paladin 2",
     "save": {
       "ability": "",
       "dc": null,
       "scaling": "spell"
     },
-    "type": {
-      "value": "class",
-      "subtype": ""
-    },
-    "requirements": "Paladin 2",
-    "recharge": {
+    "source": "PHB pg. 85",
+    "target": {
+      "type": "self",
+      "units": "",
       "value": null,
-      "charged": false
+      "width": null
+    },
+    "type": {
+      "subtype": "",
+      "value": "class"
+    },
+    "uses": {
+      "max": "",
+      "per": "",
+      "recovery": "",
+      "value": null
     }
   },
-  "ownership": {
-    "default": 0,
-    "m7gKrZnSC3XR8ToV": 3
-  },
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.2.2",
-    "coreVersion": "11.306",
-    "createdTime": null,
-    "modifiedTime": 1694935039816,
-    "lastModifiedBy": "dBglmdrMUDMEh6ZW"
-  },
-  "_key": "!items!EbZxPlwPCL91TzsF"
+  "type": "feat"
 }

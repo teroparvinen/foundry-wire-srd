@@ -1,53 +1,194 @@
 {
   "_id": "ra43AyfNZ8UedOhG",
-  "name": "Heat Metal",
-  "type": "spell",
+  "_key": "!items!ra43AyfNZ8UedOhG",
+  "effects": [
+    {
+      "_id": "37an2xo0cm3wsmei",
+      "_key": "!items.effects!ra43AyfNZ8UedOhG.37an2xo0cm3wsmei",
+      "changes": [
+        {
+          "key": "placeholder",
+          "mode": 0,
+          "priority": 20,
+          "value": "0"
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "combat": null,
+        "rounds": null,
+        "seconds": null,
+        "startRound": null,
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
+      },
+      "flags": {
+        "wire": {
+          "applicationType": "immediate",
+          "applyOnSaveOrMiss": false,
+          "auraTargets": "",
+          "blocksAreaConditions": false,
+          "independentDuration": false
+        }
+      },
+      "icon": "icons/magic/light/explosion-star-large-orange.webp",
+      "label": "Heat Metal",
+      "origin": "Actor.isYKP74w0SIExUvl.Item.7916cnLSgkrFTKrQ",
+      "tint": null,
+      "transfer": false
+    },
+    {
+      "_id": "b36dmkmqgu7d58mx",
+      "_key": "!items.effects!ra43AyfNZ8UedOhG.b36dmkmqgu7d58mx",
+      "changes": [
+        {
+          "key": "flags.wire.disadvantage.attack.all",
+          "mode": 2,
+          "priority": 20,
+          "value": "0"
+        },
+        {
+          "key": "flags.wire.disadvantage.ability.check.all",
+          "mode": 2,
+          "priority": 20,
+          "value": "0"
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "combat": null,
+        "rounds": 1,
+        "seconds": null,
+        "startRound": null,
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
+      },
+      "flags": {
+        "wire": {
+          "applicationType": "overtime",
+          "applyOnSaveOrMiss": true,
+          "auraTargets": "",
+          "blocksAreaConditions": false,
+          "independentDuration": true
+        }
+      },
+      "icon": "icons/magic/light/explosion-star-large-orange.webp",
+      "label": "Heat Metal Disadvantages",
+      "origin": "Actor.isYKP74w0SIExUvl.Item.7916cnLSgkrFTKrQ",
+      "tint": null,
+      "transfer": false
+    },
+    {
+      "_id": "i7f9zg1m4vpe9rqg",
+      "_key": "!items.effects!ra43AyfNZ8UedOhG.i7f9zg1m4vpe9rqg",
+      "changes": [
+        {
+          "key": "flags.wire.disadvantage.attack.all",
+          "mode": 2,
+          "priority": 20,
+          "value": "0"
+        },
+        {
+          "key": "flags.wire.disadvantage.ability.check.all",
+          "mode": 2,
+          "priority": 20,
+          "value": "0"
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "combat": null,
+        "rounds": 1,
+        "seconds": null,
+        "startRound": null,
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
+      },
+      "flags": {
+        "wire": {
+          "applicationType": "immediate",
+          "applyOnSaveOrMiss": false,
+          "auraTargets": "",
+          "blocksAreaConditions": false,
+          "independentDuration": true
+        }
+      },
+      "icon": "icons/magic/light/explosion-star-large-orange.webp",
+      "label": "Heat Metal Disadvantages",
+      "origin": "Actor.isYKP74w0SIExUvl.Item.7916cnLSgkrFTKrQ",
+      "tint": null,
+      "transfer": false
+    }
+  ],
+  "flags": {
+    "wire": {
+      "checkedAbility": "",
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.10",
+      "conditions": [
+        {
+          "condition": "take-an-action",
+          "update": "apply-overtime"
+        }
+      ],
+      "damageParts": [
+        {
+          "application": "immediate",
+          "halving": "none"
+        },
+        {
+          "application": "overtime",
+          "halving": "full"
+        }
+      ],
+      "override": {
+        "target": {
+          "value": "1"
+        }
+      },
+      "saveImmunity": false,
+      "upcastInterval": null
+    }
+  },
+  "folder": null,
   "img": "icons/magic/light/explosion-star-large-orange.webp",
+  "name": "Heat Metal",
+  "ownership": {
+    "default": 0,
+    "m7gKrZnSC3XR8ToV": 3
+  },
   "system": {
-    "description": {
-      "value": "<p>Choose a manufactured metal object, such as a metal weapon or a suit of heavy or medium metal armor, that you can see within range. You cause the object to glow red-hot. Any creature in physical contact with the object takes 2d8 fire damage when you cast the spell. Until the spell ends, you can use a bonus action on each of your subsequent turns to cause this damage again.</p><p>If a creature is holding or wearing the object and takes the damage from it, the creature must succeed on a Constitution saving throw or drop the object if it can. If it doesn't drop the object, it has disadvantage on attack rolls and ability checks until the start of your next turn.</p><p><strong>Higher Levels.</strong> When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d8 for each slot level above 2nd.</p>",
-      "chat": "",
-      "unidentified": ""
-    },
-    "source": "PHB pg. 250",
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": 1,
-      "units": "minute"
-    },
-    "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature"
-    },
-    "range": {
-      "value": 60,
-      "long": 0,
-      "units": "ft"
-    },
-    "uses": {
-      "value": 0,
-      "max": "0",
-      "per": "",
-      "recovery": ""
-    },
-    "consume": {
-      "type": "",
-      "target": "",
-      "amount": null
-    },
     "ability": "",
     "actionType": "save",
+    "activation": {
+      "condition": "",
+      "cost": 1,
+      "type": "action"
+    },
     "attackBonus": 0,
+    "attunement": null,
     "chatFlavor": "",
+    "components": {
+      "concentration": true,
+      "material": true,
+      "ritual": false,
+      "somatic": true,
+      "value": "",
+      "vocal": true
+    },
+    "consume": {
+      "amount": null,
+      "target": "",
+      "type": ""
+    },
+    "cover": null,
+    "crewed": false,
     "critical": {
-      "threshold": null,
-      "damage": ""
+      "damage": "",
+      "threshold": null
     },
     "damage": {
       "parts": [
@@ -62,203 +203,55 @@
       ],
       "versatile": ""
     },
+    "description": {
+      "chat": "",
+      "unidentified": "",
+      "value": "<p>Choose a manufactured metal object, such as a metal weapon or a suit of heavy or medium metal armor, that you can see within range. You cause the object to glow red-hot. Any creature in physical contact with the object takes 2d8 fire damage when you cast the spell. Until the spell ends, you can use a bonus action on each of your subsequent turns to cause this damage again.</p><p>If a creature is holding or wearing the object and takes the damage from it, the creature must succeed on a Constitution saving throw or drop the object if it can. If it doesn't drop the object, it has disadvantage on attack rolls and ability checks until the start of your next turn.</p><p><strong>Higher Levels.</strong> When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d8 for each slot level above 2nd.</p>"
+    },
+    "duration": {
+      "units": "minute",
+      "value": 1
+    },
     "formula": "",
-    "save": {
-      "ability": "con",
-      "dc": null,
-      "scaling": "spell"
-    },
     "level": 2,
-    "school": "trs",
-    "components": {
-      "value": "",
-      "vocal": true,
-      "somatic": true,
-      "material": true,
-      "ritual": false,
-      "concentration": true
-    },
     "materials": {
-      "value": "A piece of iron and a flame.",
       "consumed": false,
       "cost": 0,
-      "supply": 0
+      "supply": 0,
+      "value": "A piece of iron and a flame."
     },
     "preparation": {
       "mode": "prepared",
       "prepared": false
     },
+    "range": {
+      "long": 0,
+      "units": "ft",
+      "value": 60
+    },
+    "save": {
+      "ability": "con",
+      "dc": null,
+      "scaling": "spell"
+    },
     "scaling": {
-      "mode": "level",
-      "formula": "1d8"
+      "formula": "1d8",
+      "mode": "level"
     },
-    "attunement": null
-  },
-  "effects": [
-    {
-      "_id": "37an2xo0cm3wsmei",
-      "changes": [
-        {
-          "key": "placeholder",
-          "mode": 0,
-          "value": "0",
-          "priority": 20
-        }
-      ],
-      "disabled": false,
-      "duration": {
-        "startTime": null,
-        "seconds": null,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "icon": "icons/magic/light/explosion-star-large-orange.webp",
-      "label": "Heat Metal",
-      "origin": "Actor.isYKP74w0SIExUvl.Item.7916cnLSgkrFTKrQ",
-      "transfer": false,
-      "flags": {
-        "wire": {
-          "applyOnSaveOrMiss": false,
-          "applicationType": "immediate",
-          "blocksAreaConditions": false,
-          "independentDuration": false,
-          "auraTargets": ""
-        }
-      },
-      "tint": null,
-      "_key": "!items.effects!ra43AyfNZ8UedOhG.37an2xo0cm3wsmei"
+    "school": "trs",
+    "source": "PHB pg. 250",
+    "target": {
+      "type": "creature",
+      "units": "",
+      "value": 1,
+      "width": null
     },
-    {
-      "_id": "b36dmkmqgu7d58mx",
-      "changes": [
-        {
-          "key": "flags.wire.disadvantage.attack.all",
-          "mode": 2,
-          "value": "0",
-          "priority": 20
-        },
-        {
-          "key": "flags.wire.disadvantage.ability.check.all",
-          "mode": 2,
-          "value": "0",
-          "priority": 20
-        }
-      ],
-      "disabled": false,
-      "duration": {
-        "startTime": null,
-        "rounds": 1,
-        "seconds": null,
-        "combat": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "icon": "icons/magic/light/explosion-star-large-orange.webp",
-      "label": "Heat Metal Disadvantages",
-      "origin": "Actor.isYKP74w0SIExUvl.Item.7916cnLSgkrFTKrQ",
-      "transfer": false,
-      "flags": {
-        "wire": {
-          "applyOnSaveOrMiss": true,
-          "applicationType": "overtime",
-          "independentDuration": true,
-          "blocksAreaConditions": false,
-          "auraTargets": ""
-        }
-      },
-      "tint": null,
-      "_key": "!items.effects!ra43AyfNZ8UedOhG.b36dmkmqgu7d58mx"
-    },
-    {
-      "_id": "i7f9zg1m4vpe9rqg",
-      "changes": [
-        {
-          "key": "flags.wire.disadvantage.attack.all",
-          "mode": 2,
-          "value": "0",
-          "priority": 20
-        },
-        {
-          "key": "flags.wire.disadvantage.ability.check.all",
-          "mode": 2,
-          "value": "0",
-          "priority": 20
-        }
-      ],
-      "disabled": false,
-      "duration": {
-        "startTime": null,
-        "rounds": 1,
-        "seconds": null,
-        "combat": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "icon": "icons/magic/light/explosion-star-large-orange.webp",
-      "label": "Heat Metal Disadvantages",
-      "origin": "Actor.isYKP74w0SIExUvl.Item.7916cnLSgkrFTKrQ",
-      "transfer": false,
-      "flags": {
-        "wire": {
-          "applyOnSaveOrMiss": false,
-          "applicationType": "immediate",
-          "independentDuration": true,
-          "blocksAreaConditions": false,
-          "auraTargets": ""
-        }
-      },
-      "tint": null,
-      "_key": "!items.effects!ra43AyfNZ8UedOhG.i7f9zg1m4vpe9rqg"
-    }
-  ],
-  "folder": null,
-  "sort": 0,
-  "flags": {
-    "wire": {
-      "conditions": [
-        {
-          "condition": "take-an-action",
-          "update": "apply-overtime"
-        }
-      ],
-      "damageParts": [
-        {
-          "halving": "none",
-          "application": "immediate"
-        },
-        {
-          "halving": "full",
-          "application": "overtime"
-        }
-      ],
-      "checkedAbility": "",
-      "override": {
-        "target": {
-          "value": "1"
-        }
-      },
-      "compendiumSource": "wire-srd.spells",
-      "compendiumVersion": "0.10",
-      "saveImmunity": false,
-      "upcastInterval": null
+    "uses": {
+      "max": "0",
+      "per": "",
+      "recovery": "",
+      "value": 0
     }
   },
-  "ownership": {
-    "default": 0,
-    "m7gKrZnSC3XR8ToV": 3
-  },
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.0.3",
-    "coreVersion": "10.291",
-    "createdTime": null,
-    "modifiedTime": 1672219832245,
-    "lastModifiedBy": "m7gKrZnSC3XR8ToV"
-  },
-  "_key": "!items!ra43AyfNZ8UedOhG"
+  "type": "spell"
 }

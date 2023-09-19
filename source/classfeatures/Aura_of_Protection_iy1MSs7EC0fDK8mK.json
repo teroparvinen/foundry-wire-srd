@@ -1,149 +1,140 @@
 {
   "_id": "iy1MSs7EC0fDK8mK",
-  "name": "Aura of Protection",
-  "type": "feat",
-  "img": "icons/magic/air/wind-tornado-wall-blue.webp",
+  "_key": "!items!iy1MSs7EC0fDK8mK",
   "effects": [
     {
       "_id": "2i731w4rw7j241mi",
+      "_key": "!items.effects!iy1MSs7EC0fDK8mK.2i731w4rw7j241mi",
       "changes": [
         {
           "key": "system.bonuses.abilities.save",
           "mode": 2,
-          "value": "+@abilities.cha.mod",
-          "priority": 20
+          "priority": 20,
+          "value": "+@abilities.cha.mod"
         },
         {
           "key": "wire.custom.tokenFX",
           "mode": 2,
-          "value": "auraOfProtection",
-          "priority": 20
+          "priority": 20,
+          "value": "auraOfProtection"
         }
       ],
       "disabled": false,
       "duration": {
-        "startTime": null,
-        "seconds": null,
         "combat": null,
         "rounds": null,
-        "turns": null,
+        "seconds": null,
         "startRound": null,
-        "startTurn": null
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
+      },
+      "flags": {
+        "wire": {
+          "applicationType": "immediate",
+          "applyOnSaveOrMiss": false,
+          "auraTargets": "ally",
+          "blocksAreaConditions": false,
+          "independentDuration": false
+        }
       },
       "icon": "icons/magic/air/wind-tornado-wall-blue.webp",
       "label": "Aura of Protection",
       "origin": "Actor.9z8mm9ZzK1lsUOub.Item.9imkhj8ukk53x9mj",
-      "transfer": true,
-      "flags": {
-        "wire": {
-          "applyOnSaveOrMiss": false,
-          "blocksAreaConditions": false,
-          "applicationType": "immediate",
-          "independentDuration": false,
-          "auraTargets": "ally"
-        }
-      },
       "tint": null,
-      "_key": "!items.effects!iy1MSs7EC0fDK8mK.2i731w4rw7j241mi"
+      "transfer": true
     }
   ],
-  "folder": null,
-  "sort": 0,
   "flags": {
     "dnd5e": {
-      "sourceId": "Compendium.dnd5e.classfeatures.carGDhkIdoduTC0I",
-      "advancementOrigin": "is86kr9rdya0aupp.w3n62vbfeo3c7a90"
+      "advancementOrigin": "is86kr9rdya0aupp.w3n62vbfeo3c7a90",
+      "sourceId": "Compendium.dnd5e.classfeatures.carGDhkIdoduTC0I"
     },
     "wire": {
       "checkedAbility": "",
+      "compendiumSource": "wire-srd.classfeatures",
+      "compendiumVersion": "0.10",
       "override": {
         "target": {
           "value": 10
         }
-      },
-      "compendiumVersion": "0.10",
-      "compendiumSource": "wire-srd.classfeatures"
+      }
     }
   },
+  "folder": null,
+  "img": "icons/magic/air/wind-tornado-wall-blue.webp",
+  "name": "Aura of Protection",
+  "ownership": {
+    "default": 0,
+    "m7gKrZnSC3XR8ToV": 3
+  },
   "system": {
-    "description": {
-      "value": "<p>Starting at 6th level, whenever you or a friendly creature within 10 feet of you must make a saving throw, the creature gains a bonus to the saving throw equal to your Charisma modifier (with a minimum bonus of +1). You must be conscious to grant this bonus.</p><p> At 18th level, the range of this aura increases to 30 feet.</p>",
-      "chat": "",
-      "unidentified": ""
-    },
-    "source": "PHB pg. 85",
+    "ability": "",
+    "actionType": "",
     "activation": {
-      "type": "",
+      "condition": "",
       "cost": 0,
-      "condition": ""
+      "type": ""
     },
-    "duration": {
-      "value": null,
-      "units": ""
+    "attackBonus": 0,
+    "chatFlavor": "",
+    "consume": {
+      "amount": null,
+      "target": "",
+      "type": ""
     },
     "cover": null,
     "crewed": false,
-    "target": {
-      "value": 10,
-      "width": null,
-      "units": "ft",
-      "type": "radius"
-    },
-    "range": {
-      "value": null,
-      "long": null,
-      "units": "self"
-    },
-    "uses": {
-      "value": null,
-      "max": "",
-      "per": "",
-      "recovery": ""
-    },
-    "consume": {
-      "type": "",
-      "target": "",
-      "amount": null
-    },
-    "ability": "",
-    "actionType": "",
-    "attackBonus": 0,
-    "chatFlavor": "",
     "critical": {
-      "threshold": null,
-      "damage": ""
+      "damage": "",
+      "threshold": null
     },
     "damage": {
       "parts": [],
       "versatile": ""
     },
+    "description": {
+      "chat": "",
+      "unidentified": "",
+      "value": "<p>Starting at 6th level, whenever you or a friendly creature within 10 feet of you must make a saving throw, the creature gains a bonus to the saving throw equal to your Charisma modifier (with a minimum bonus of +1). You must be conscious to grant this bonus.</p><p> At 18th level, the range of this aura increases to 30 feet.</p>"
+    },
+    "duration": {
+      "units": "",
+      "value": null
+    },
     "formula": "",
+    "range": {
+      "long": null,
+      "units": "self",
+      "value": null
+    },
+    "recharge": {
+      "charged": false,
+      "value": null
+    },
+    "requirements": "Paladin 6",
     "save": {
       "ability": "",
       "dc": null,
       "scaling": "spell"
     },
-    "type": {
-      "value": "class",
-      "subtype": ""
+    "source": "PHB pg. 85",
+    "target": {
+      "type": "radius",
+      "units": "ft",
+      "value": 10,
+      "width": null
     },
-    "requirements": "Paladin 6",
-    "recharge": {
-      "value": null,
-      "charged": false
+    "type": {
+      "subtype": "",
+      "value": "class"
+    },
+    "uses": {
+      "max": "",
+      "per": "",
+      "recovery": "",
+      "value": null
     }
   },
-  "ownership": {
-    "default": 0,
-    "m7gKrZnSC3XR8ToV": 3
-  },
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.2.2",
-    "coreVersion": "11.306",
-    "createdTime": null,
-    "modifiedTime": 1694935025216,
-    "lastModifiedBy": "dBglmdrMUDMEh6ZW"
-  },
-  "_key": "!items!iy1MSs7EC0fDK8mK"
+  "type": "feat"
 }

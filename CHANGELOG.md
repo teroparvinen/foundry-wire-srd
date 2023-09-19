@@ -4,6 +4,12 @@
 
 Migrated to the V11 compendium format
 
+Updated spells
+
+- Guidance
+- Resistance
+- Hunter's Mark
+
 ### 0.10.3
 
 Added spells

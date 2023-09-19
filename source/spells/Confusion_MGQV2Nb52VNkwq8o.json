@@ -1,157 +1,148 @@
 {
-  "name": "Confusion",
-  "type": "spell",
-  "img": "icons/magic/air/wind-tornado-cyclone-purple-pink.webp",
-  "system": {
-    "description": {
-      "value": "<p>This spell assaults and twists creatures' minds, spawning delusions and provoking uncontrolled action. Each creature in a 10-foot-radius sphere centered on a point you choose within range must succeed on a Wisdom saving throw when you cast this spell or be affected by it.</p>\n<p>An affected target can't take reactions and must roll from the @Compendium[dnd5e.tables.LHEts1oDaDwcehuj]{Confusion} table at the start of each of its turns to determine its behavior for that turn.</p>\n<p><em><strong>At Higher Levels.</strong></em> When you cast this spell using a spell slot of 5th level or higher, the radius of the sphere increases by 5 feet for each slot level above 4th.</p>",
-      "chat": "",
-      "unidentified": ""
-    },
-    "source": "PHB pg. 224",
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": 1,
-      "units": "minute"
-    },
-    "cover": null,
-    "crewed": false,
-    "target": {
-      "value": 10,
-      "width": null,
-      "units": "ft",
-      "type": "sphere"
-    },
-    "range": {
-      "value": 90,
-      "long": 0,
-      "units": "ft"
-    },
-    "uses": {
-      "value": 0,
-      "max": "0",
-      "per": "",
-      "recovery": ""
-    },
-    "consume": {
-      "type": "",
-      "target": "",
-      "amount": null
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": 0,
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": "",
-      "value": ""
-    },
-    "formula": "1d10",
-    "save": {
-      "ability": "wis",
-      "dc": 0,
-      "scaling": "spell"
-    },
-    "level": 4,
-    "school": "enc",
-    "components": {
-      "vocal": true,
-      "somatic": true,
-      "material": true,
-      "ritual": false,
-      "concentration": true,
-      "value": ""
-    },
-    "materials": {
-      "value": "Three walnut shells.",
-      "consumed": false,
-      "cost": 0,
-      "supply": 0
-    },
-    "preparation": {
-      "mode": "prepared",
-      "prepared": false
-    },
-    "scaling": {
-      "mode": "level",
-      "formula": ""
-    }
-  },
+  "_id": "MGQV2Nb52VNkwq8o",
+  "_key": "!items!MGQV2Nb52VNkwq8o",
   "effects": [
     {
-      "label": "Confusion",
-      "icon": "icons/magic/air/wind-tornado-cyclone-purple-pink.webp",
-      "origin": "Actor.m4mjuiVrcZHbrj00.Item.VI8Nwl3WbKmSoJzY",
+      "_id": "ifD4q7vA0LMyvVeL",
+      "_key": "!items.effects!MGQV2Nb52VNkwq8o.ifD4q7vA0LMyvVeL",
+      "changes": [],
+      "disabled": false,
       "duration": {
-        "startTime": null,
-        "seconds": null,
         "combat": null,
         "rounds": null,
-        "turns": null,
+        "seconds": null,
         "startRound": null,
-        "startTurn": null
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
       },
-      "disabled": false,
-      "_id": "ifD4q7vA0LMyvVeL",
-      "changes": [],
-      "tint": null,
-      "transfer": false,
       "flags": {
         "wire": {
+          "applicationType": "immediate",
+          "applyOnSaveOrMiss": false,
+          "auraTargets": "",
+          "blocksAreaConditions": false,
           "conditions": [
             {
               "condition": "start-of-turn-target",
               "update": "apply-delayed"
             }
           ],
-          "applyOnSaveOrMiss": false,
-          "blocksAreaConditions": false,
-          "auraTargets": "",
-          "applicationType": "immediate",
           "independentDuration": false
         }
       },
-      "_key": "!items.effects!MGQV2Nb52VNkwq8o.ifD4q7vA0LMyvVeL"
+      "icon": "icons/magic/air/wind-tornado-cyclone-purple-pink.webp",
+      "label": "Confusion",
+      "origin": "Actor.m4mjuiVrcZHbrj00.Item.VI8Nwl3WbKmSoJzY",
+      "tint": null,
+      "transfer": false
     }
   ],
-  "ownership": {
-    "default": 0,
-    "m7gKrZnSC3XR8ToV": 3
-  },
   "flags": {
     "wire": {
+      "checkedAbility": "",
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.11.0",
       "override": {
         "target": {
           "value": "10"
         }
       },
-      "checkedAbility": "",
-      "upcastInterval": null,
-      "compendiumSource": "wire-srd.spells",
-      "compendiumVersion": "0.11.0",
       "saveImmunity": false,
-      "script": "this.registerFlowStep(\"rollEffect\", true, async (activation) => {\n    const table = await fromUuid(\"Compendium.dnd5e.tables.LHEts1oDaDwcehuj\");\n    const { roll, results } = await table.draw({ displayChat: false });\n    await game.dice3d?.showForRoll(roll, game.user, !game.user.isGM);\n    const resultText = results[0].text;\n    activation.assignCustomHtml(resultText);\n});\n\nthis.registerFlowStep(\"removeTemplate\", true, async (activation) => {\n    await this.activation.template?.delete();\n});\n\nreturn this.pick(\n    this.isDelayedApplication(\n        this.performCustomStep(\"rollEffect\")\n    ),\n    this.applyConcentration(\n        this.confirmTargets(\n            this.performSavingThrow(\n                this.applyEffects(\n                    this.performCustomStep(\"removeTemplate\")\n                )\n            )\n        )\n    )\n);"
+      "script": "this.registerFlowStep(\"rollEffect\", true, async (activation) => {\n    const table = await fromUuid(\"Compendium.dnd5e.tables.LHEts1oDaDwcehuj\");\n    const { roll, results } = await table.draw({ displayChat: false });\n    await game.dice3d?.showForRoll(roll, game.user, !game.user.isGM);\n    const resultText = results[0].text;\n    activation.assignCustomHtml(resultText);\n});\n\nthis.registerFlowStep(\"removeTemplate\", true, async (activation) => {\n    await this.activation.template?.delete();\n});\n\nreturn this.pick(\n    this.isDelayedApplication(\n        this.performCustomStep(\"rollEffect\")\n    ),\n    this.applyConcentration(\n        this.confirmTargets(\n            this.performSavingThrow(\n                this.applyEffects(\n                    this.performCustomStep(\"removeTemplate\")\n                )\n            )\n        )\n    )\n);",
+      "upcastInterval": null
     }
   },
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.2.2",
-    "coreVersion": "11.306",
-    "createdTime": 1661787234085,
-    "modifiedTime": 1694774675108,
-    "lastModifiedBy": "dBglmdrMUDMEh6ZW"
-  },
   "folder": null,
-  "sort": 0,
-  "_id": "MGQV2Nb52VNkwq8o",
-  "_key": "!items!MGQV2Nb52VNkwq8o"
+  "img": "icons/magic/air/wind-tornado-cyclone-purple-pink.webp",
+  "name": "Confusion",
+  "ownership": {
+    "default": 0,
+    "m7gKrZnSC3XR8ToV": 3
+  },
+  "system": {
+    "ability": "",
+    "actionType": "save",
+    "activation": {
+      "condition": "",
+      "cost": 1,
+      "type": "action"
+    },
+    "attackBonus": 0,
+    "chatFlavor": "",
+    "components": {
+      "concentration": true,
+      "material": true,
+      "ritual": false,
+      "somatic": true,
+      "value": "",
+      "vocal": true
+    },
+    "consume": {
+      "amount": null,
+      "target": "",
+      "type": ""
+    },
+    "cover": null,
+    "crewed": false,
+    "critical": {
+      "damage": "",
+      "threshold": null
+    },
+    "damage": {
+      "parts": [],
+      "value": "",
+      "versatile": ""
+    },
+    "description": {
+      "chat": "",
+      "unidentified": "",
+      "value": "<p>This spell assaults and twists creatures' minds, spawning delusions and provoking uncontrolled action. Each creature in a 10-foot-radius sphere centered on a point you choose within range must succeed on a Wisdom saving throw when you cast this spell or be affected by it.</p>\n<p>An affected target can't take reactions and must roll from the @Compendium[dnd5e.tables.LHEts1oDaDwcehuj]{Confusion} table at the start of each of its turns to determine its behavior for that turn.</p>\n<p><em><strong>At Higher Levels.</strong></em> When you cast this spell using a spell slot of 5th level or higher, the radius of the sphere increases by 5 feet for each slot level above 4th.</p>"
+    },
+    "duration": {
+      "units": "minute",
+      "value": 1
+    },
+    "formula": "1d10",
+    "level": 4,
+    "materials": {
+      "consumed": false,
+      "cost": 0,
+      "supply": 0,
+      "value": "Three walnut shells."
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "range": {
+      "long": 0,
+      "units": "ft",
+      "value": 90
+    },
+    "save": {
+      "ability": "wis",
+      "dc": 0,
+      "scaling": "spell"
+    },
+    "scaling": {
+      "formula": "",
+      "mode": "level"
+    },
+    "school": "enc",
+    "source": "PHB pg. 224",
+    "target": {
+      "type": "sphere",
+      "units": "ft",
+      "value": 10,
+      "width": null
+    },
+    "uses": {
+      "max": "0",
+      "per": "",
+      "recovery": "",
+      "value": 0
+    }
+  },
+  "type": "spell"
 }

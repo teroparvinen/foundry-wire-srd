@@ -1,167 +1,160 @@
 {
-  "name": "Beacon of Hope",
-  "type": "spell",
+  "_id": "TcsqI7XXRHoM0vjf",
+  "_key": "!items!TcsqI7XXRHoM0vjf",
+  "effects": [
+    {
+      "_id": "vc8198plog0q1vc3",
+      "_key": "!items.effects!TcsqI7XXRHoM0vjf.vc8198plog0q1vc3",
+      "changes": [
+        {
+          "key": "flags.wire.advantage.ability.save.wis",
+          "mode": 2,
+          "priority": 20,
+          "value": "1"
+        },
+        {
+          "key": "flags.wire.advantage.deathSave",
+          "mode": 2,
+          "priority": 20,
+          "value": "1"
+        },
+        {
+          "key": "flags.wire.receive.max.damage.healing",
+          "mode": 2,
+          "priority": 20,
+          "value": "1"
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "combat": null,
+        "rounds": null,
+        "seconds": null,
+        "startRound": null,
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
+      },
+      "flags": {
+        "wire": {
+          "applicationType": "immediate",
+          "applyOnSaveOrMiss": false,
+          "auraTargets": "",
+          "blocksAreaConditions": false,
+          "independentDuration": false
+        }
+      },
+      "icon": "icons/magic/light/explosion-star-large-blue-yellow.webp",
+      "label": "Beacon of Hope",
+      "origin": "Actor.ehjWDV2Z4ZZPaa1H.Item.DNnw4skjzruiKjOV",
+      "tint": null,
+      "transfer": false
+    }
+  ],
+  "flags": {
+    "wire": {
+      "checkedAbility": "",
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.10",
+      "override": {
+        "target": {
+          "value": null
+        }
+      }
+    }
+  },
+  "folder": null,
   "img": "icons/magic/light/explosion-star-large-blue-yellow.webp",
+  "name": "Beacon of Hope",
+  "ownership": {
+    "BDWtlDQYkOI4gQqd": 3,
+    "default": 0
+  },
   "system": {
-    "description": {
-      "value": "<p>This spell bestows hope and vitality. Choose any number of creatures within range. For the duration, each target has advantage on Wisdom saving throws and death saving throws, and regains the maximum number of hit points possible from any healing.</p>",
-      "chat": "",
-      "unidentified": ""
-    },
-    "source": "PHB pg. 217",
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": 1,
-      "units": "minute"
-    },
-    "target": {
-      "value": null,
-      "width": null,
-      "units": "any",
-      "type": "creature"
-    },
-    "range": {
-      "value": 30,
-      "long": 0,
-      "units": "ft"
-    },
-    "uses": {
-      "value": 0,
-      "max": "0",
-      "per": "",
-      "recovery": ""
-    },
-    "consume": {
-      "type": "",
-      "target": "",
-      "amount": null
-    },
     "ability": "",
     "actionType": "util",
+    "activation": {
+      "condition": "",
+      "cost": 1,
+      "type": "action"
+    },
     "attackBonus": 0,
+    "attunement": null,
     "chatFlavor": "",
+    "components": {
+      "concentration": true,
+      "material": false,
+      "ritual": false,
+      "somatic": true,
+      "value": "",
+      "vocal": true
+    },
+    "consume": {
+      "amount": null,
+      "target": "",
+      "type": ""
+    },
+    "cover": null,
+    "crewed": false,
     "critical": {
-      "threshold": null,
-      "damage": ""
+      "damage": "",
+      "threshold": null
     },
     "damage": {
       "parts": [],
-      "versatile": "",
-      "value": ""
+      "value": "",
+      "versatile": ""
+    },
+    "description": {
+      "chat": "",
+      "unidentified": "",
+      "value": "<p>This spell bestows hope and vitality. Choose any number of creatures within range. For the duration, each target has advantage on Wisdom saving throws and death saving throws, and regains the maximum number of hit points possible from any healing.</p>"
+    },
+    "duration": {
+      "units": "minute",
+      "value": 1
     },
     "formula": "",
+    "level": 3,
+    "materials": {
+      "consumed": false,
+      "cost": 0,
+      "supply": 0,
+      "value": ""
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "range": {
+      "long": 0,
+      "units": "ft",
+      "value": 30
+    },
     "save": {
       "ability": "",
       "dc": null,
       "scaling": "spell",
       "value": ""
     },
-    "level": 3,
-    "school": "abj",
-    "components": {
-      "value": "",
-      "vocal": true,
-      "somatic": true,
-      "material": false,
-      "ritual": false,
-      "concentration": true
-    },
-    "materials": {
-      "value": "",
-      "consumed": false,
-      "cost": 0,
-      "supply": 0
-    },
-    "preparation": {
-      "mode": "prepared",
-      "prepared": false
-    },
     "scaling": {
-      "mode": "none",
-      "formula": ""
+      "formula": "",
+      "mode": "none"
     },
-    "attunement": null
-  },
-  "effects": [
-    {
-      "_id": "vc8198plog0q1vc3",
-      "changes": [
-        {
-          "key": "flags.wire.advantage.ability.save.wis",
-          "mode": 2,
-          "value": "1",
-          "priority": 20
-        },
-        {
-          "key": "flags.wire.advantage.deathSave",
-          "mode": 2,
-          "value": "1",
-          "priority": 20
-        },
-        {
-          "key": "flags.wire.receive.max.damage.healing",
-          "mode": 2,
-          "value": "1",
-          "priority": 20
-        }
-      ],
-      "disabled": false,
-      "duration": {
-        "startTime": null,
-        "seconds": null,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "icon": "icons/magic/light/explosion-star-large-blue-yellow.webp",
-      "label": "Beacon of Hope",
-      "origin": "Actor.ehjWDV2Z4ZZPaa1H.Item.DNnw4skjzruiKjOV",
-      "transfer": false,
-      "flags": {
-        "wire": {
-          "applyOnSaveOrMiss": false,
-          "applicationType": "immediate",
-          "independentDuration": false,
-          "blocksAreaConditions": false,
-          "auraTargets": ""
-        }
-      },
-      "tint": null,
-      "_key": "!items.effects!TcsqI7XXRHoM0vjf.vc8198plog0q1vc3"
-    }
-  ],
-  "folder": null,
-  "sort": 0,
-  "flags": {
-    "wire": {
-      "override": {
-        "target": {
-          "value": null
-        }
-      },
-      "checkedAbility": "",
-      "compendiumSource": "wire-srd.spells",
-      "compendiumVersion": "0.10"
+    "school": "abj",
+    "source": "PHB pg. 217",
+    "target": {
+      "type": "creature",
+      "units": "any",
+      "value": null,
+      "width": null
+    },
+    "uses": {
+      "max": "0",
+      "per": "",
+      "recovery": "",
+      "value": 0
     }
   },
-  "_id": "TcsqI7XXRHoM0vjf",
-  "ownership": {
-    "default": 0,
-    "BDWtlDQYkOI4gQqd": 3
-  },
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.0.3",
-    "coreVersion": "10.291",
-    "createdTime": null,
-    "modifiedTime": 1670105565841,
-    "lastModifiedBy": "m7gKrZnSC3XR8ToV"
-  },
-  "_key": "!items!TcsqI7XXRHoM0vjf"
+  "type": "spell"
 }

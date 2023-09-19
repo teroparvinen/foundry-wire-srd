@@ -1,55 +1,64 @@
 {
   "_id": "ErFzb20p8TzSUNfa",
-  "name": "Magic Missile",
-  "type": "spell",
+  "_key": "!items!ErFzb20p8TzSUNfa",
+  "effects": [],
+  "flags": {
+    "wire": {
+      "checkedAbility": "",
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.11.0",
+      "damageParts": [
+        {
+          "application": "immediate",
+          "halving": "full"
+        }
+      ],
+      "override": {
+        "target": {
+          "value": 1
+        }
+      },
+      "script": "this.registerFlowStep(\"update\", true, async (activation) => {\n    const config = activation.config;\n    const missilesCast = (config?.missilesCast || 0);\n    const missilesAvailable = (config?.spellLevel || 1) + 2;\n\n    await activation.assignCustomHtml(`Missile ${missilesCast+1} / ${missilesAvailable}`);\n});\n\nthis.registerFlowStep(\"repeat\", true, async (activation) => {\n    const config = duplicate(activation.config);\n    const missilesCast = (config?.missilesCast || 0) + 1;\n    const missilesAvailable = (config?.spellLevel || 1) + 2;\n\n    config.missilesCast = missilesCast;\n\n    if (missilesCast < missilesAvailable) {\n        await activation.spawnActivation(\"immediate\", config);\n    }\n});\n\nreturn this.performCustomStep(\"update\",\n    this.confirmTargets(\n        this.applyDefaultTargetsAsEffective(\n            this.performSaveDamageRoll(\n                this.applyDamage(\n                    this.performCustomStep(\"repeat\")\n                )\n            )\n        )\n    )\n);",
+      "upcastInterval": null
+    }
+  },
+  "folder": null,
   "img": "icons/magic/fire/projectile-meteor-salvo-light-pink.webp",
+  "name": "Magic Missile",
+  "ownership": {
+    "BDWtlDQYkOI4gQqd": 3,
+    "default": 0,
+    "m7gKrZnSC3XR8ToV": 3
+  },
   "system": {
-    "description": {
-      "value": "<p>You create three glowing darts of magical force. Each dart hits a creature of your choice that you can see within range. A dart deals 1d4 + 1 force damage to its target. The darts all strike simultaneously, and you can direct them to hit one creature or several.</p><p><strong>Higher Levels. </strong>When you cast this spell using a spell slot of 2nd level or higher, the spell creates one more dart for each slot level above 1st.</p>",
-      "chat": "",
-      "unidentified": ""
-    },
-    "source": "PHB pg. 257",
+    "ability": "",
+    "actionType": "other",
     "activation": {
-      "type": "action",
+      "condition": "",
       "cost": 1,
-      "condition": ""
+      "type": "action"
     },
-    "duration": {
-      "value": null,
-      "units": "inst"
+    "attackBonus": 0,
+    "attunement": 0,
+    "chatFlavor": "",
+    "components": {
+      "concentration": false,
+      "material": false,
+      "ritual": false,
+      "somatic": true,
+      "value": "",
+      "vocal": true
+    },
+    "consume": {
+      "amount": null,
+      "target": "",
+      "type": ""
     },
     "cover": null,
     "crewed": false,
-    "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature"
-    },
-    "range": {
-      "value": 120,
-      "long": 0,
-      "units": "ft"
-    },
-    "uses": {
-      "value": 0,
-      "max": "0",
-      "per": "",
-      "recovery": ""
-    },
-    "consume": {
-      "type": "",
-      "target": "",
-      "amount": null
-    },
-    "ability": "",
-    "actionType": "other",
-    "attackBonus": 0,
-    "chatFlavor": "",
     "critical": {
-      "threshold": null,
-      "damage": ""
+      "damage": "",
+      "threshold": null
     },
     "damage": {
       "parts": [
@@ -60,74 +69,56 @@
       ],
       "versatile": ""
     },
+    "description": {
+      "chat": "",
+      "unidentified": "",
+      "value": "<p>You create three glowing darts of magical force. Each dart hits a creature of your choice that you can see within range. A dart deals 1d4 + 1 force damage to its target. The darts all strike simultaneously, and you can direct them to hit one creature or several.</p><p><strong>Higher Levels. </strong>When you cast this spell using a spell slot of 2nd level or higher, the spell creates one more dart for each slot level above 1st.</p>"
+    },
+    "duration": {
+      "units": "inst",
+      "value": null
+    },
     "formula": "",
+    "level": 1,
+    "materials": {
+      "consumed": false,
+      "cost": 0,
+      "supply": 0,
+      "value": ""
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "range": {
+      "long": 0,
+      "units": "ft",
+      "value": 120
+    },
     "save": {
       "ability": "",
       "dc": null,
       "scaling": "spell",
       "value": ""
     },
-    "level": 1,
-    "school": "evo",
-    "components": {
-      "vocal": true,
-      "somatic": true,
-      "material": false,
-      "ritual": false,
-      "concentration": false,
-      "value": ""
-    },
-    "materials": {
-      "value": "",
-      "consumed": false,
-      "cost": 0,
-      "supply": 0
-    },
-    "preparation": {
-      "mode": "prepared",
-      "prepared": false
-    },
     "scaling": {
-      "mode": "level",
-      "formula": ""
+      "formula": "",
+      "mode": "level"
     },
-    "attunement": 0
-  },
-  "effects": [],
-  "folder": null,
-  "sort": 0,
-  "flags": {
-    "wire": {
-      "checkedAbility": "",
-      "damageParts": [
-        {
-          "halving": "full",
-          "application": "immediate"
-        }
-      ],
-      "compendiumSource": "wire-srd.spells",
-      "compendiumVersion": "0.11.0",
-      "override": {
-        "target": {
-          "value": 1
-        }
-      },
-      "upcastInterval": null,
-      "script": "this.registerFlowStep(\"update\", true, async (activation) => {\n    const config = activation.config;\n    const missilesCast = (config?.missilesCast || 0);\n    const missilesAvailable = (config?.spellLevel || 1) + 2;\n\n    await activation.assignCustomHtml(`Missile ${missilesCast+1} / ${missilesAvailable}`);\n});\n\nthis.registerFlowStep(\"repeat\", true, async (activation) => {\n    const config = duplicate(activation.config);\n    const missilesCast = (config?.missilesCast || 0) + 1;\n    const missilesAvailable = (config?.spellLevel || 1) + 2;\n\n    config.missilesCast = missilesCast;\n\n    if (missilesCast < missilesAvailable) {\n        await activation.spawnActivation(\"immediate\", config);\n    }\n});\n\nreturn this.performCustomStep(\"update\",\n    this.confirmTargets(\n        this.applyDefaultTargetsAsEffective(\n            this.performSaveDamageRoll(\n                this.applyDamage(\n                    this.performCustomStep(\"repeat\")\n                )\n            )\n        )\n    )\n);"
+    "school": "evo",
+    "source": "PHB pg. 257",
+    "target": {
+      "type": "creature",
+      "units": "",
+      "value": 1,
+      "width": null
+    },
+    "uses": {
+      "max": "0",
+      "per": "",
+      "recovery": "",
+      "value": 0
     }
   },
-  "ownership": {
-    "default": 0,
-    "m7gKrZnSC3XR8ToV": 3,
-    "BDWtlDQYkOI4gQqd": 3
-  },
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.2.2",
-    "coreVersion": "11.306",
-    "createdTime": null,
-    "modifiedTime": 1694774675026,
-    "lastModifiedBy": "dBglmdrMUDMEh6ZW"
-  },
-  "_key": "!items!ErFzb20p8TzSUNfa"
+  "type": "spell"
 }

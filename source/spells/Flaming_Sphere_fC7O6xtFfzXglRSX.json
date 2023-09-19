@@ -1,54 +1,77 @@
 {
-  "name": "Flaming Sphere",
-  "type": "spell",
+  "_id": "fC7O6xtFfzXglRSX",
+  "_key": "!items!fC7O6xtFfzXglRSX",
+  "effects": [],
+  "flags": {
+    "wire": {
+      "checkedAbility": "",
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.11.0",
+      "conditions": [
+        {
+          "condition": "creature-ends-turn-inside-area",
+          "update": "apply-immediate"
+        },
+        {
+          "condition": "take-an-action",
+          "update": "apply-overtime"
+        }
+      ],
+      "damageParts": [
+        {
+          "application": "immediate",
+          "halving": "half"
+        },
+        {
+          "application": "overtime",
+          "halving": "half"
+        }
+      ],
+      "override": {
+        "target": {
+          "value": 7.5
+        }
+      },
+      "script": "return this.pick(\n    this.isOverTimeApplication(\n        this.confirmTargets(\n            this.defaultFlow()\n        )\n    ),\n    this.defaultFlow()\n)",
+      "upcastInterval": null
+    }
+  },
+  "folder": null,
   "img": "icons/magic/light/explosion-star-large-orange.webp",
+  "name": "Flaming Sphere",
+  "ownership": {
+    "default": 0,
+    "m7gKrZnSC3XR8ToV": 3
+  },
   "system": {
-    "description": {
-      "value": "<p>A 5-foot-diameter Sphere of fire appears in an unoccupied space of your choice within range and lasts for the Duration. Any creature that ends its turn within 5 feet of the sphere must make a Dexterity saving throw. The creature takes 2d6 fire damage on a failed save, or half as much damage on a successful one.</p><p>As a Bonus Action, you can move the Sphere up to 30 feet. If you ram the sphere into a creature, that creature must make the saving throw against the sphere's damage, and the sphere stops moving this turn.</p><p>When you move the Sphere, you can direct it over barriers up to 5 feet tall and jump it across pits up to 10 feet wide. The sphere ignites flammable Objects not being worn or carried, and it sheds bright light in a 20-foot radius and dim light for an additional 20 feet.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d6 for each slot level above 2nd.</p>",
-      "chat": "",
-      "unidentified": ""
-    },
-    "source": "PHB pg. 242",
+    "ability": "",
+    "actionType": "save",
     "activation": {
-      "type": "action",
+      "condition": "",
       "cost": 1,
-      "condition": ""
+      "type": "action"
     },
-    "duration": {
-      "value": 1,
-      "units": "minute"
+    "attackBonus": 0,
+    "attunement": null,
+    "chatFlavor": "",
+    "components": {
+      "concentration": true,
+      "material": true,
+      "ritual": false,
+      "somatic": true,
+      "value": "",
+      "vocal": true
+    },
+    "consume": {
+      "amount": null,
+      "target": "",
+      "type": ""
     },
     "cover": null,
     "crewed": false,
-    "target": {
-      "value": 7.5,
-      "width": null,
-      "units": "ft",
-      "type": "sphere"
-    },
-    "range": {
-      "value": 60,
-      "long": 0,
-      "units": "ft"
-    },
-    "uses": {
-      "value": 0,
-      "max": "0",
-      "per": "",
-      "recovery": ""
-    },
-    "consume": {
-      "type": "",
-      "target": "",
-      "amount": null
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": 0,
-    "chatFlavor": "",
     "critical": {
-      "threshold": null,
-      "damage": ""
+      "damage": "",
+      "threshold": null
     },
     "damage": {
       "parts": [
@@ -63,87 +86,55 @@
       ],
       "versatile": ""
     },
+    "description": {
+      "chat": "",
+      "unidentified": "",
+      "value": "<p>A 5-foot-diameter Sphere of fire appears in an unoccupied space of your choice within range and lasts for the Duration. Any creature that ends its turn within 5 feet of the sphere must make a Dexterity saving throw. The creature takes 2d6 fire damage on a failed save, or half as much damage on a successful one.</p><p>As a Bonus Action, you can move the Sphere up to 30 feet. If you ram the sphere into a creature, that creature must make the saving throw against the sphere's damage, and the sphere stops moving this turn.</p><p>When you move the Sphere, you can direct it over barriers up to 5 feet tall and jump it across pits up to 10 feet wide. The sphere ignites flammable Objects not being worn or carried, and it sheds bright light in a 20-foot radius and dim light for an additional 20 feet.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d6 for each slot level above 2nd.</p>"
+    },
+    "duration": {
+      "units": "minute",
+      "value": 1
+    },
     "formula": "",
-    "save": {
-      "ability": "dex",
-      "dc": null,
-      "scaling": "spell"
-    },
     "level": 2,
-    "school": "con",
-    "components": {
-      "vocal": true,
-      "somatic": true,
-      "material": true,
-      "ritual": false,
-      "concentration": true,
-      "value": ""
-    },
     "materials": {
-      "value": "A bit of tallow, a pinch of brimstone, and a dusting of powdered iron",
       "consumed": false,
       "cost": 0,
-      "supply": 0
+      "supply": 0,
+      "value": "A bit of tallow, a pinch of brimstone, and a dusting of powdered iron"
     },
     "preparation": {
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "level",
-      "formula": "1d6"
+    "range": {
+      "long": 0,
+      "units": "ft",
+      "value": 60
     },
-    "attunement": null
-  },
-  "effects": [],
-  "folder": null,
-  "sort": 0,
-  "flags": {
-    "wire": {
-      "checkedAbility": "",
-      "upcastInterval": null,
-      "damageParts": [
-        {
-          "halving": "half",
-          "application": "immediate"
-        },
-        {
-          "halving": "half",
-          "application": "overtime"
-        }
-      ],
-      "conditions": [
-        {
-          "condition": "creature-ends-turn-inside-area",
-          "update": "apply-immediate"
-        },
-        {
-          "condition": "take-an-action",
-          "update": "apply-overtime"
-        }
-      ],
-      "override": {
-        "target": {
-          "value": 7.5
-        }
-      },
-      "compendiumSource": "wire-srd.spells",
-      "compendiumVersion": "0.11.0",
-      "script": "return this.pick(\n    this.isOverTimeApplication(\n        this.confirmTargets(\n            this.defaultFlow()\n        )\n    ),\n    this.defaultFlow()\n)"
+    "save": {
+      "ability": "dex",
+      "dc": null,
+      "scaling": "spell"
+    },
+    "scaling": {
+      "formula": "1d6",
+      "mode": "level"
+    },
+    "school": "con",
+    "source": "PHB pg. 242",
+    "target": {
+      "type": "sphere",
+      "units": "ft",
+      "value": 7.5,
+      "width": null
+    },
+    "uses": {
+      "max": "0",
+      "per": "",
+      "recovery": "",
+      "value": 0
     }
   },
-  "_id": "fC7O6xtFfzXglRSX",
-  "ownership": {
-    "default": 0,
-    "m7gKrZnSC3XR8ToV": 3
-  },
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.2.2",
-    "coreVersion": "11.306",
-    "createdTime": null,
-    "modifiedTime": 1694774675292,
-    "lastModifiedBy": "dBglmdrMUDMEh6ZW"
-  },
-  "_key": "!items!fC7O6xtFfzXglRSX"
+  "type": "spell"
 }

@@ -1,165 +1,78 @@
 {
   "_id": "WGLvV2d2NHypPvjC",
-  "name": "Divine Favor",
-  "type": "spell",
-  "img": "icons/magic/fire/dagger-rune-enchant-flame-blue-yellow.webp",
-  "system": {
-    "description": {
-      "value": "<p>Your prayer empowers you with divine radiance. Until the spell ends, your weapon attacks deal an extra 1d4 radiant damage on a hit. </p>",
-      "chat": "",
-      "unidentified": ""
-    },
-    "source": "PHB pg. 234",
-    "activation": {
-      "type": "bonus",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": 1,
-      "units": "minute"
-    },
-    "target": {
-      "value": null,
-      "width": null,
-      "units": "",
-      "type": "self"
-    },
-    "range": {
-      "value": null,
-      "long": null,
-      "units": "self"
-    },
-    "uses": {
-      "value": 0,
-      "max": "0",
-      "per": "",
-      "recovery": ""
-    },
-    "consume": {
-      "type": "",
-      "target": "",
-      "amount": null
-    },
-    "ability": "",
-    "actionType": "other",
-    "attackBonus": 0,
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": null
-    },
-    "damage": {
-      "parts": [],
-      "versatile": "",
-      "value": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell",
-      "value": ""
-    },
-    "level": 1,
-    "school": "evo",
-    "components": {
-      "value": "",
-      "vocal": true,
-      "somatic": true,
-      "material": false,
-      "ritual": false,
-      "concentration": true
-    },
-    "materials": {
-      "value": "",
-      "consumed": false,
-      "cost": 0,
-      "supply": 0
-    },
-    "preparation": {
-      "mode": "prepared",
-      "prepared": false
-    },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "attunement": null
-  },
+  "_key": "!items!WGLvV2d2NHypPvjC",
   "effects": [
     {
       "_id": "aVCdeH1iRyP3xIwE",
-      "flags": {
-        "wire": {
-          "applyOnSaveOrMiss": false,
-          "applicationType": "immediate",
-          "independentDuration": false
-        }
-      },
+      "_key": "!items.effects!WGLvV2d2NHypPvjC.aVCdeH1iRyP3xIwE",
       "changes": [
         {
           "key": "system.bonuses.mwak.damage",
           "mode": 2,
-          "value": "+1d4[radiant]",
-          "priority": 20
+          "priority": 20,
+          "value": "+1d4[radiant]"
         },
         {
           "key": "system.bonuses.rwak.damage",
           "mode": 2,
-          "value": "+1d4[radiant]",
-          "priority": 20
+          "priority": 20,
+          "value": "+1d4[radiant]"
         }
       ],
       "disabled": false,
       "duration": {
-        "startTime": null,
-        "seconds": null,
         "combat": null,
         "rounds": null,
-        "turns": null,
+        "seconds": null,
         "startRound": null,
-        "startTurn": null
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
+      },
+      "flags": {
+        "wire": {
+          "applicationType": "immediate",
+          "applyOnSaveOrMiss": false,
+          "independentDuration": false
+        }
       },
       "icon": "icons/magic/fire/dagger-rune-enchant-flame-blue-yellow.webp",
       "label": "Divine Favor",
-      "tint": null,
-      "transfer": false,
       "origin": null,
-      "_key": "!items.effects!WGLvV2d2NHypPvjC.aVCdeH1iRyP3xIwE"
+      "tint": null,
+      "transfer": false
     }
   ],
-  "folder": null,
-  "sort": 0,
   "flags": {
     "dynamiceffects": {
-      "equipActive": true,
       "alwaysActive": false,
       "effects": [
         {
-          "modSpecKey": "data.bonuses.mwak.damage",
-          "value": "1d4",
-          "mode": "+",
-          "targetSpecific": false,
+          "_targets": [],
+          "active": true,
           "id": 1,
           "itemId": "pIAJpIhy3y7gkq8N",
-          "active": true,
-          "_targets": [],
-          "label": "Bonuses Melee Weapon Damage"
-        },
-        {
-          "modSpecKey": "data.bonuses.rwak.damage",
-          "value": "1d4",
+          "label": "Bonuses Melee Weapon Damage",
+          "modSpecKey": "data.bonuses.mwak.damage",
           "mode": "+",
           "targetSpecific": false,
+          "value": "1d4"
+        },
+        {
+          "_targets": [],
+          "active": true,
           "id": 2,
           "itemId": "ylWHtKMfk5WUheki",
-          "active": true,
-          "_targets": []
+          "modSpecKey": "data.bonuses.rwak.damage",
+          "mode": "+",
+          "targetSpecific": false,
+          "value": "1d4"
         }
-      ]
+      ],
+      "equipActive": true
     },
     "wire": {
+      "checkedAbility": "",
       "compendiumSource": "wire-srd.spells",
       "compendiumVersion": "0.10",
       "override": {
@@ -167,22 +80,102 @@
           "value": ""
         }
       },
-      "checkedAbility": "",
       "saveImmunity": false
     }
   },
+  "folder": null,
+  "img": "icons/magic/fire/dagger-rune-enchant-flame-blue-yellow.webp",
+  "name": "Divine Favor",
   "ownership": {
+    "BDWtlDQYkOI4gQqd": 3,
     "default": 0,
-    "gSvPH9u5wzkE1oU1": 3,
-    "BDWtlDQYkOI4gQqd": 3
+    "gSvPH9u5wzkE1oU1": 3
   },
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.0.3",
-    "coreVersion": "10.291",
-    "createdTime": null,
-    "modifiedTime": 1672219703277,
-    "lastModifiedBy": "m7gKrZnSC3XR8ToV"
+  "system": {
+    "ability": "",
+    "actionType": "other",
+    "activation": {
+      "condition": "",
+      "cost": 1,
+      "type": "bonus"
+    },
+    "attackBonus": 0,
+    "attunement": null,
+    "chatFlavor": "",
+    "components": {
+      "concentration": true,
+      "material": false,
+      "ritual": false,
+      "somatic": true,
+      "value": "",
+      "vocal": true
+    },
+    "consume": {
+      "amount": null,
+      "target": "",
+      "type": ""
+    },
+    "cover": null,
+    "crewed": false,
+    "critical": {
+      "damage": null,
+      "threshold": null
+    },
+    "damage": {
+      "parts": [],
+      "value": "",
+      "versatile": ""
+    },
+    "description": {
+      "chat": "",
+      "unidentified": "",
+      "value": "<p>Your prayer empowers you with divine radiance. Until the spell ends, your weapon attacks deal an extra 1d4 radiant damage on a hit. </p>"
+    },
+    "duration": {
+      "units": "minute",
+      "value": 1
+    },
+    "formula": "",
+    "level": 1,
+    "materials": {
+      "consumed": false,
+      "cost": 0,
+      "supply": 0,
+      "value": ""
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "range": {
+      "long": null,
+      "units": "self",
+      "value": null
+    },
+    "save": {
+      "ability": "",
+      "dc": null,
+      "scaling": "spell",
+      "value": ""
+    },
+    "scaling": {
+      "formula": "",
+      "mode": "none"
+    },
+    "school": "evo",
+    "source": "PHB pg. 234",
+    "target": {
+      "type": "self",
+      "units": "",
+      "value": null,
+      "width": null
+    },
+    "uses": {
+      "max": "0",
+      "per": "",
+      "recovery": "",
+      "value": 0
+    }
   },
-  "_key": "!items!WGLvV2d2NHypPvjC"
+  "type": "spell"
 }

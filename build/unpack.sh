@@ -8,7 +8,7 @@ function unpack {
     local packDir="${HOME_DIR}/source/$1"
     fvtt --id "${MODULE_NAME}" --type "Module" package unpack $1 --in packs --out $packDir
     for file in $packDir/*.json; do
-        jq 'del(.effects[].flags.dae) | del(.flags.itemacro) | del(.flags.favtab) | del(.effects[].flags.core) | del(.flags.core)' "$file" > "$file.tmp"
+        jq -S 'del(.effects[].flags.dae) | del(.flags.itemacro) | del(.flags.favtab) | del(.effects[].flags.core) | del(.flags.core) | del(.sort) | del(._stats)' "$file" > "$file.tmp"
         mv "$file.tmp" "$file"
     done
 }

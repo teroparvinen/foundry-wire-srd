@@ -1,155 +1,148 @@
 {
+  "_id": "uVmtbfyeapZYPK2v",
+  "_key": "!items!uVmtbfyeapZYPK2v",
+  "effects": [
+    {
+      "_id": "UlyyLUWfmp9JYLBg",
+      "_key": "!items.effects!uVmtbfyeapZYPK2v.UlyyLUWfmp9JYLBg",
+      "changes": [
+        {
+          "key": "wire.custom.statusEffect",
+          "mode": 2,
+          "priority": 20,
+          "value": "Invisible"
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "combat": null,
+        "rounds": null,
+        "seconds": null,
+        "startRound": null,
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
+      },
+      "flags": {
+        "wire": {
+          "applicationType": "immediate",
+          "applyOnSaveOrMiss": false,
+          "auraTargets": "",
+          "blocksAreaConditions": false,
+          "independentDuration": false
+        }
+      },
+      "icon": "icons/magic/air/fog-gas-smoke-swirling-gray.webp",
+      "label": "Greater Invisibility",
+      "origin": "Actor.m4mjuiVrcZHbrj00.Item.ldh7kpamfIUjV5tF",
+      "tint": null,
+      "transfer": false
+    }
+  ],
+  "flags": {
+    "wire": {
+      "checkedAbility": "",
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.10.1",
+      "override": {
+        "target": {
+          "value": "1"
+        }
+      },
+      "saveImmunity": false
+    }
+  },
+  "folder": null,
+  "img": "icons/magic/air/fog-gas-smoke-swirling-gray.webp",
   "name": "Greater Invisibility",
   "ownership": {
     "default": 0,
     "m7gKrZnSC3XR8ToV": 3
   },
-  "type": "spell",
   "system": {
-    "description": {
-      "value": "<p>You or a creature you touch becomes Invisible until the spell ends. Anything the target is wearing or carrying is Invisible as long as it is on the target's person.</p>",
-      "chat": "",
-      "unidentified": ""
-    },
-    "source": "PHB pg. 246",
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": 1,
-      "units": "minute"
-    },
-    "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature"
-    },
-    "range": {
-      "value": null,
-      "long": null,
-      "units": "touch"
-    },
-    "uses": {
-      "value": 0,
-      "max": "0",
-      "per": "",
-      "recovery": ""
-    },
-    "consume": {
-      "type": "",
-      "target": "",
-      "amount": null
-    },
     "ability": "",
     "actionType": "util",
+    "activation": {
+      "condition": "",
+      "cost": 1,
+      "type": "action"
+    },
     "attackBonus": 0,
     "chatFlavor": "",
+    "components": {
+      "concentration": true,
+      "material": false,
+      "ritual": false,
+      "somatic": true,
+      "value": "",
+      "vocal": true
+    },
+    "consume": {
+      "amount": null,
+      "target": "",
+      "type": ""
+    },
+    "cover": null,
+    "crewed": false,
     "critical": {
-      "threshold": null,
-      "damage": ""
+      "damage": "",
+      "threshold": null
     },
     "damage": {
       "parts": [],
-      "versatile": "",
-      "value": ""
+      "value": "",
+      "versatile": ""
+    },
+    "description": {
+      "chat": "",
+      "unidentified": "",
+      "value": "<p>You or a creature you touch becomes Invisible until the spell ends. Anything the target is wearing or carrying is Invisible as long as it is on the target's person.</p>"
+    },
+    "duration": {
+      "units": "minute",
+      "value": 1
     },
     "formula": "",
+    "level": 4,
+    "materials": {
+      "consumed": false,
+      "cost": 0,
+      "supply": 0,
+      "value": ""
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "range": {
+      "long": null,
+      "units": "touch",
+      "value": null
+    },
     "save": {
       "ability": "",
       "dc": null,
       "scaling": "spell",
       "value": ""
     },
-    "level": 4,
-    "school": "ill",
-    "components": {
-      "value": "",
-      "vocal": true,
-      "somatic": true,
-      "material": false,
-      "ritual": false,
-      "concentration": true
-    },
-    "materials": {
-      "value": "",
-      "consumed": false,
-      "cost": 0,
-      "supply": 0
-    },
-    "preparation": {
-      "mode": "prepared",
-      "prepared": false
-    },
     "scaling": {
-      "mode": "none",
-      "formula": ""
+      "formula": "",
+      "mode": "none"
+    },
+    "school": "ill",
+    "source": "PHB pg. 246",
+    "target": {
+      "type": "creature",
+      "units": "",
+      "value": 1,
+      "width": null
+    },
+    "uses": {
+      "max": "0",
+      "per": "",
+      "recovery": "",
+      "value": 0
     }
   },
-  "flags": {
-    "wire": {
-      "override": {
-        "target": {
-          "value": "1"
-        }
-      },
-      "checkedAbility": "",
-      "saveImmunity": false,
-      "compendiumSource": "wire-srd.spells",
-      "compendiumVersion": "0.10.1"
-    }
-  },
-  "img": "icons/magic/air/fog-gas-smoke-swirling-gray.webp",
-  "effects": [
-    {
-      "label": "Greater Invisibility",
-      "icon": "icons/magic/air/fog-gas-smoke-swirling-gray.webp",
-      "origin": "Actor.m4mjuiVrcZHbrj00.Item.ldh7kpamfIUjV5tF",
-      "duration": {
-        "startTime": null,
-        "seconds": null,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "disabled": false,
-      "_id": "UlyyLUWfmp9JYLBg",
-      "changes": [
-        {
-          "key": "wire.custom.statusEffect",
-          "mode": 2,
-          "value": "Invisible",
-          "priority": 20
-        }
-      ],
-      "tint": null,
-      "transfer": false,
-      "flags": {
-        "wire": {
-          "applyOnSaveOrMiss": false,
-          "blocksAreaConditions": false,
-          "auraTargets": "",
-          "applicationType": "immediate",
-          "independentDuration": false
-        }
-      },
-      "_key": "!items.effects!uVmtbfyeapZYPK2v.UlyyLUWfmp9JYLBg"
-    }
-  ],
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.0.3",
-    "coreVersion": "10.291",
-    "createdTime": 1661787234234,
-    "modifiedTime": 1671889546235,
-    "lastModifiedBy": "m7gKrZnSC3XR8ToV"
-  },
-  "folder": null,
-  "sort": 0,
-  "_id": "uVmtbfyeapZYPK2v",
-  "_key": "!items!uVmtbfyeapZYPK2v"
+  "type": "spell"
 }

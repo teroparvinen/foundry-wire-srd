@@ -1,176 +1,169 @@
 {
+  "_id": "NKuruoDDdxpEer5t",
+  "_key": "!items!NKuruoDDdxpEer5t",
+  "effects": [
+    {
+      "_id": "cSVCA9h5OEo5lfBE",
+      "_key": "!items.effects!NKuruoDDdxpEer5t.cSVCA9h5OEo5lfBE",
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "priority": 20,
+          "value": "bludgeoning"
+        },
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "priority": 20,
+          "value": "piercing"
+        },
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "priority": 20,
+          "value": "slashing"
+        },
+        {
+          "key": "system.traits.dr.bypasses",
+          "mode": 0,
+          "priority": 20,
+          "value": "mgc"
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "combat": null,
+        "rounds": null,
+        "seconds": null,
+        "startRound": null,
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
+      },
+      "flags": {
+        "wire": {
+          "applicationType": "immediate",
+          "applyOnSaveOrMiss": false,
+          "auraTargets": "",
+          "blocksAreaConditions": false,
+          "conditions": [],
+          "independentDuration": false,
+          "rollEffects": false,
+          "stackEffects": false
+        }
+      },
+      "icon": "icons/magic/defensive/shield-barrier-flaming-diamond-orange.webp",
+      "label": "Stoneskin",
+      "origin": "Compendium.dnd5e.spells.ReMbjfeOKoSj3O79",
+      "tint": null,
+      "transfer": false
+    }
+  ],
+  "flags": {
+    "wire": {
+      "checkedAbility": "",
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.10.2",
+      "override": {
+        "target": {
+          "value": "1"
+        }
+      },
+      "saveImmunity": false
+    }
+  },
+  "folder": null,
+  "img": "icons/magic/defensive/shield-barrier-flaming-diamond-orange.webp",
   "name": "Stoneskin",
   "ownership": {
     "default": 0,
     "m7gKrZnSC3XR8ToV": 3
   },
-  "type": "spell",
   "system": {
-    "description": {
-      "value": "<p>This spell turns the flesh of a willing creature you touch as hard as stone. Until the spell ends, the target has resistance to nonmagical bludgeoning, piercing, and slashing damage.</p>",
-      "chat": "",
-      "unidentified": ""
-    },
-    "source": "PHB pg. 278",
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": 1,
-      "units": "hour"
-    },
-    "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature"
-    },
-    "range": {
-      "value": null,
-      "long": null,
-      "units": "touch"
-    },
-    "uses": {
-      "value": 0,
-      "max": "0",
-      "per": "",
-      "recovery": ""
-    },
-    "consume": {
-      "type": "",
-      "target": "",
-      "amount": null
-    },
     "ability": "",
     "actionType": "util",
+    "activation": {
+      "condition": "",
+      "cost": 1,
+      "type": "action"
+    },
     "attackBonus": 0,
     "chatFlavor": "",
+    "components": {
+      "concentration": true,
+      "material": true,
+      "ritual": false,
+      "somatic": true,
+      "value": "",
+      "vocal": true
+    },
+    "consume": {
+      "amount": null,
+      "target": "",
+      "type": ""
+    },
+    "cover": null,
+    "crewed": false,
     "critical": {
-      "threshold": null,
-      "damage": ""
+      "damage": "",
+      "threshold": null
     },
     "damage": {
       "parts": [],
-      "versatile": "",
-      "value": ""
+      "value": "",
+      "versatile": ""
+    },
+    "description": {
+      "chat": "",
+      "unidentified": "",
+      "value": "<p>This spell turns the flesh of a willing creature you touch as hard as stone. Until the spell ends, the target has resistance to nonmagical bludgeoning, piercing, and slashing damage.</p>"
+    },
+    "duration": {
+      "units": "hour",
+      "value": 1
     },
     "formula": "",
+    "level": 4,
+    "materials": {
+      "consumed": true,
+      "cost": 100,
+      "supply": 0,
+      "value": "Diamond dust worth 100 gp, which the spell consumes"
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "range": {
+      "long": null,
+      "units": "touch",
+      "value": null
+    },
     "save": {
       "ability": "",
       "dc": null,
       "scaling": "spell",
       "value": ""
     },
-    "level": 4,
-    "school": "abj",
-    "components": {
-      "value": "",
-      "vocal": true,
-      "somatic": true,
-      "material": true,
-      "ritual": false,
-      "concentration": true
-    },
-    "materials": {
-      "value": "Diamond dust worth 100 gp, which the spell consumes",
-      "consumed": true,
-      "cost": 100,
-      "supply": 0
-    },
-    "preparation": {
-      "mode": "prepared",
-      "prepared": false
-    },
     "scaling": {
-      "mode": "none",
-      "formula": ""
+      "formula": "",
+      "mode": "none"
+    },
+    "school": "abj",
+    "source": "PHB pg. 278",
+    "target": {
+      "type": "creature",
+      "units": "",
+      "value": 1,
+      "width": null
+    },
+    "uses": {
+      "max": "0",
+      "per": "",
+      "recovery": "",
+      "value": 0
     }
   },
-  "flags": {
-    "wire": {
-      "override": {
-        "target": {
-          "value": "1"
-        }
-      },
-      "checkedAbility": "",
-      "saveImmunity": false,
-      "compendiumSource": "wire-srd.spells",
-      "compendiumVersion": "0.10.2"
-    }
-  },
-  "img": "icons/magic/defensive/shield-barrier-flaming-diamond-orange.webp",
-  "effects": [
-    {
-      "label": "Stoneskin",
-      "icon": "icons/magic/defensive/shield-barrier-flaming-diamond-orange.webp",
-      "origin": "Compendium.dnd5e.spells.ReMbjfeOKoSj3O79",
-      "duration": {
-        "startTime": null,
-        "seconds": null,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "disabled": false,
-      "_id": "cSVCA9h5OEo5lfBE",
-      "changes": [
-        {
-          "key": "system.traits.dr.value",
-          "mode": 2,
-          "value": "bludgeoning",
-          "priority": 20
-        },
-        {
-          "key": "system.traits.dr.value",
-          "mode": 2,
-          "value": "piercing",
-          "priority": 20
-        },
-        {
-          "key": "system.traits.dr.value",
-          "mode": 2,
-          "value": "slashing",
-          "priority": 20
-        },
-        {
-          "key": "system.traits.dr.bypasses",
-          "mode": 0,
-          "value": "mgc",
-          "priority": 20
-        }
-      ],
-      "tint": null,
-      "transfer": false,
-      "flags": {
-        "wire": {
-          "applyOnSaveOrMiss": false,
-          "applicationType": "immediate",
-          "blocksAreaConditions": false,
-          "auraTargets": "",
-          "stackEffects": false,
-          "rollEffects": false,
-          "independentDuration": false,
-          "conditions": []
-        }
-      },
-      "_key": "!items.effects!NKuruoDDdxpEer5t.cSVCA9h5OEo5lfBE"
-    }
-  ],
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.0.3",
-    "coreVersion": "10.291",
-    "createdTime": 1661787234137,
-    "modifiedTime": 1672319790461,
-    "lastModifiedBy": "m7gKrZnSC3XR8ToV"
-  },
-  "folder": null,
-  "sort": 0,
-  "_id": "NKuruoDDdxpEer5t",
-  "_key": "!items!NKuruoDDdxpEer5t"
+  "type": "spell"
 }

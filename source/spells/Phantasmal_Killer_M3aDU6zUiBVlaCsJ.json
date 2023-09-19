@@ -1,57 +1,108 @@
 {
+  "_id": "M3aDU6zUiBVlaCsJ",
+  "_key": "!items!M3aDU6zUiBVlaCsJ",
+  "effects": [
+    {
+      "_id": "U9AwTQ1J1qEIyWhj",
+      "_key": "!items.effects!M3aDU6zUiBVlaCsJ.U9AwTQ1J1qEIyWhj",
+      "changes": [
+        {
+          "key": "wire.custom.statusEffect",
+          "mode": 2,
+          "priority": 20,
+          "value": "Frightened"
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "combat": null,
+        "rounds": null,
+        "seconds": null,
+        "startRound": null,
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
+      },
+      "flags": {
+        "wire": {
+          "applicationType": "immediate",
+          "applyOnSaveOrMiss": false,
+          "auraTargets": "",
+          "blocksAreaConditions": false,
+          "conditions": [
+            {
+              "condition": "end-of-turn-target",
+              "update": "apply-overtime"
+            }
+          ],
+          "independentDuration": false,
+          "rollEffects": false,
+          "stackEffects": false
+        }
+      },
+      "icon": "icons/magic/control/fear-fright-monster-grin-purple-blue.webp",
+      "label": "Phantasmal Killer",
+      "origin": "Actor.m4mjuiVrcZHbrj00.Item.O1abrMhgkdxcZWq5",
+      "tint": null,
+      "transfer": false
+    }
+  ],
+  "flags": {
+    "wire": {
+      "checkedAbility": "",
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.11.0",
+      "damageParts": [
+        {
+          "application": "overtime",
+          "halving": "none"
+        }
+      ],
+      "override": {
+        "target": {
+          "value": "1"
+        }
+      },
+      "saveImmunity": false,
+      "script": "this.registerFlowStep(\"checkEnd\", true, async (activation) => {\n    if (!activation.effectiveTargets.length) {\n        await activation.sourceEffect.delete();\n    }\n});\n\nreturn this.defaultFlow(\n    this.isOverTimeApplication(\n        this.performCustomStep(\"checkEnd\")\n    )\n)",
+      "upcastInterval": null
+    }
+  },
+  "folder": null,
+  "img": "icons/magic/control/fear-fright-monster-grin-purple-blue.webp",
   "name": "Phantasmal Killer",
   "ownership": {
     "default": 0,
     "m7gKrZnSC3XR8ToV": 3
   },
-  "type": "spell",
   "system": {
-    "description": {
-      "value": "<p>You tap into the nightmares of a creature you can see within range and create an illusory manifestation of its deepest fears, visible only to that creature. The target must make a Wisdom saving throw. On a failed save, the target becomes Frightened for the Duration. At the end of each of the target's turns before the spell ends, the target must succeed on a Wisdom saving throw or take 4d10 psychic damage. On a successful save, the spell ends.</p><p><strong>At Higher Levels</strong>. When you cast this spell using a spell slot of 5th level or higher, the damage increases by 1d10 for each slot level above 4th.</p>",
-      "chat": "",
-      "unidentified": ""
-    },
-    "source": "PHB pg. 265",
+    "ability": "",
+    "actionType": "save",
     "activation": {
-      "type": "action",
+      "condition": "",
       "cost": 1,
-      "condition": ""
+      "type": "action"
     },
-    "duration": {
-      "value": 1,
-      "units": "minute"
+    "attackBonus": 0,
+    "chatFlavor": "",
+    "components": {
+      "concentration": true,
+      "material": false,
+      "ritual": false,
+      "somatic": true,
+      "value": "",
+      "vocal": true
+    },
+    "consume": {
+      "amount": null,
+      "target": "",
+      "type": ""
     },
     "cover": null,
     "crewed": false,
-    "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature"
-    },
-    "range": {
-      "value": 120,
-      "long": 0,
-      "units": "ft"
-    },
-    "uses": {
-      "value": 0,
-      "max": "0",
-      "per": "",
-      "recovery": ""
-    },
-    "consume": {
-      "type": "",
-      "target": "",
-      "amount": null
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": 0,
-    "chatFlavor": "",
     "critical": {
-      "threshold": null,
-      "damage": ""
+      "damage": "",
+      "threshold": null
     },
     "damage": {
       "parts": [
@@ -62,115 +113,55 @@
       ],
       "versatile": ""
     },
+    "description": {
+      "chat": "",
+      "unidentified": "",
+      "value": "<p>You tap into the nightmares of a creature you can see within range and create an illusory manifestation of its deepest fears, visible only to that creature. The target must make a Wisdom saving throw. On a failed save, the target becomes Frightened for the Duration. At the end of each of the target's turns before the spell ends, the target must succeed on a Wisdom saving throw or take 4d10 psychic damage. On a successful save, the spell ends.</p><p><strong>At Higher Levels</strong>. When you cast this spell using a spell slot of 5th level or higher, the damage increases by 1d10 for each slot level above 4th.</p>"
+    },
+    "duration": {
+      "units": "minute",
+      "value": 1
+    },
     "formula": "",
-    "save": {
-      "ability": "wis",
-      "dc": 0,
-      "scaling": "spell"
-    },
     "level": 4,
-    "school": "ill",
-    "components": {
-      "vocal": true,
-      "somatic": true,
-      "material": false,
-      "ritual": false,
-      "concentration": true,
-      "value": ""
-    },
     "materials": {
-      "value": "",
       "consumed": false,
       "cost": 0,
-      "supply": 0
+      "supply": 0,
+      "value": ""
     },
     "preparation": {
       "mode": "prepared",
       "prepared": false
     },
+    "range": {
+      "long": 0,
+      "units": "ft",
+      "value": 120
+    },
+    "save": {
+      "ability": "wis",
+      "dc": 0,
+      "scaling": "spell"
+    },
     "scaling": {
-      "mode": "level",
-      "formula": "1d10"
+      "formula": "1d10",
+      "mode": "level"
+    },
+    "school": "ill",
+    "source": "PHB pg. 265",
+    "target": {
+      "type": "creature",
+      "units": "",
+      "value": 1,
+      "width": null
+    },
+    "uses": {
+      "max": "0",
+      "per": "",
+      "recovery": "",
+      "value": 0
     }
   },
-  "flags": {
-    "wire": {
-      "override": {
-        "target": {
-          "value": "1"
-        }
-      },
-      "checkedAbility": "",
-      "saveImmunity": false,
-      "upcastInterval": null,
-      "damageParts": [
-        {
-          "halving": "none",
-          "application": "overtime"
-        }
-      ],
-      "compendiumSource": "wire-srd.spells",
-      "compendiumVersion": "0.11.0",
-      "script": "this.registerFlowStep(\"checkEnd\", true, async (activation) => {\n    if (!activation.effectiveTargets.length) {\n        await activation.sourceEffect.delete();\n    }\n});\n\nreturn this.defaultFlow(\n    this.isOverTimeApplication(\n        this.performCustomStep(\"checkEnd\")\n    )\n)"
-    }
-  },
-  "img": "icons/magic/control/fear-fright-monster-grin-purple-blue.webp",
-  "effects": [
-    {
-      "label": "Phantasmal Killer",
-      "icon": "icons/magic/control/fear-fright-monster-grin-purple-blue.webp",
-      "origin": "Actor.m4mjuiVrcZHbrj00.Item.O1abrMhgkdxcZWq5",
-      "duration": {
-        "startTime": null,
-        "seconds": null,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "disabled": false,
-      "_id": "U9AwTQ1J1qEIyWhj",
-      "changes": [
-        {
-          "key": "wire.custom.statusEffect",
-          "mode": 2,
-          "value": "Frightened",
-          "priority": 20
-        }
-      ],
-      "tint": null,
-      "transfer": false,
-      "flags": {
-        "wire": {
-          "applyOnSaveOrMiss": false,
-          "applicationType": "immediate",
-          "blocksAreaConditions": false,
-          "auraTargets": "",
-          "stackEffects": false,
-          "rollEffects": false,
-          "independentDuration": false,
-          "conditions": [
-            {
-              "condition": "end-of-turn-target",
-              "update": "apply-overtime"
-            }
-          ]
-        }
-      },
-      "_key": "!items.effects!M3aDU6zUiBVlaCsJ.U9AwTQ1J1qEIyWhj"
-    }
-  ],
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.2.2",
-    "coreVersion": "11.306",
-    "createdTime": 1661787234093,
-    "modifiedTime": 1694774675100,
-    "lastModifiedBy": "dBglmdrMUDMEh6ZW"
-  },
-  "folder": null,
-  "sort": 0,
-  "_id": "M3aDU6zUiBVlaCsJ",
-  "_key": "!items!M3aDU6zUiBVlaCsJ"
+  "type": "spell"
 }

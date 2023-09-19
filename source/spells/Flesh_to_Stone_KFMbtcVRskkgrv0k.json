@@ -1,204 +1,195 @@
 {
-  "name": "Flesh to Stone",
-  "ownership": {
-    "default": 0,
-    "m7gKrZnSC3XR8ToV": 3
-  },
-  "type": "spell",
-  "system": {
-    "description": {
-      "value": "<p>You attempt to turn one creature that you can see within range into stone. If the target's body is made of flesh, the creature must make a Constitution saving throw. On a failed save, it is Restrained as its flesh begins to harden. On a successful save, the creature isn't affected.</p><p>A creature Restrained by this spell must make another Constitution saving throw at the end of each of its turns. If it successfully saves against this spell three times, the spell ends. If it fails its saves three times, it is turned to stone and subjected to the Petrified condition for the Duration. The successes and failures don't need to be consecutive; keep track of both until the target collects three of a kind.</p><p>If the creature is physically broken while Petrified, it suffers from similar deformities if it reverts to its original state.</p><p>If you maintain your Concentration on this spell for the entire possible Duration, the creature is turned to stone until the effect is removed.</p>",
-      "chat": "",
-      "unidentified": ""
-    },
-    "source": "PHB pg. 243",
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": 1,
-      "units": "minute"
-    },
-    "cover": null,
-    "crewed": false,
-    "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature"
-    },
-    "range": {
-      "value": 60,
-      "long": 0,
-      "units": "ft"
-    },
-    "uses": {
-      "value": 0,
-      "max": "0",
-      "per": "",
-      "recovery": ""
-    },
-    "consume": {
-      "type": "",
-      "target": "",
-      "amount": null
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": 0,
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": "",
-      "value": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "con",
-      "dc": null,
-      "scaling": "spell"
-    },
-    "level": 6,
-    "school": "trs",
-    "components": {
-      "vocal": true,
-      "somatic": true,
-      "material": true,
-      "ritual": false,
-      "concentration": true,
-      "value": ""
-    },
-    "materials": {
-      "value": "A pinch of lime, water, and earth",
-      "consumed": false,
-      "cost": 0,
-      "supply": 0
-    },
-    "preparation": {
-      "mode": "prepared",
-      "prepared": false
-    },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    }
-  },
-  "flags": {
-    "wire": {
-      "override": {
-        "target": {
-          "value": "1"
-        }
-      },
-      "checkedAbility": "",
-      "saveImmunity": false,
-      "compendiumSource": "wire-srd.spells",
-      "compendiumVersion": "0.11.0",
-      "script": "this.registerFlowStep(\"checkPetrification\", true, async activation => {\n    const counters = activation.config.counters || { success: 0, failure: 0};\n    if (activation.effectiveTargets.length) {\n        counters.failure++;\n    } else {\n        counters.success++;\n    }\n    await activation.updateConfig({ counters });\n\n    await activation.assignCustomHtml(`\n        <div style=\"text-align: center\">\n            <p>Successes <b>${counters.success}</b></p>\n            <p>Failures <b>${counters.failure}</b></p>\n        </div>\n    `);\n\n    if (counters.success >= 3 || counters.failure >= 3) {\n        game.wire.runInQueue(async () => {\n            await activation.sourceEffect.delete();\n        });\n    } else if (counters.failure < 3) {\n        return false;\n    }\n});\n\nreturn this.pick(\n    this.isDelayedApplication(\n        this.performSavingThrow(\n            this.performCustomStep(\"checkPetrification\",\n                this.applyEffects()\n            )\n        )\n    )\n)"
-    }
-  },
-  "img": "icons/commodities/treasure/statue-bust-stone-grey.webp",
+  "_id": "KFMbtcVRskkgrv0k",
+  "_key": "!items!KFMbtcVRskkgrv0k",
   "effects": [
     {
-      "label": "Flesh to Stone",
-      "icon": "icons/commodities/treasure/statue-bust-stone-grey.webp",
-      "origin": "Actor.m4mjuiVrcZHbrj00.Item.o9WCZkz5GSJjrqJb",
-      "duration": {
-        "startTime": null,
-        "seconds": null,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "disabled": false,
       "_id": "uMENPLlEgHwEeYmk",
+      "_key": "!items.effects!KFMbtcVRskkgrv0k.uMENPLlEgHwEeYmk",
       "changes": [
         {
           "key": "wire.custom.statusEffect",
           "mode": 2,
-          "value": "Restrained",
-          "priority": 20
+          "priority": 20,
+          "value": "Restrained"
         }
       ],
-      "tint": null,
-      "transfer": false,
+      "disabled": false,
+      "duration": {
+        "combat": null,
+        "rounds": null,
+        "seconds": null,
+        "startRound": null,
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
+      },
       "flags": {
         "wire": {
-          "applyOnSaveOrMiss": false,
           "applicationType": "immediate",
-          "blocksAreaConditions": false,
+          "applyOnSaveOrMiss": false,
           "auraTargets": "",
-          "stackEffects": false,
-          "rollEffects": false,
-          "independentDuration": false,
+          "blocksAreaConditions": false,
           "conditions": [
             {
               "condition": "end-of-turn-target",
               "update": "apply-delayed"
             }
-          ]
+          ],
+          "independentDuration": false,
+          "rollEffects": false,
+          "stackEffects": false
         }
       },
-      "_key": "!items.effects!KFMbtcVRskkgrv0k.uMENPLlEgHwEeYmk"
+      "icon": "icons/commodities/treasure/statue-bust-stone-grey.webp",
+      "label": "Flesh to Stone",
+      "origin": "Actor.m4mjuiVrcZHbrj00.Item.o9WCZkz5GSJjrqJb",
+      "tint": null,
+      "transfer": false
     },
     {
-      "label": "Turned to Stone",
-      "icon": "icons/commodities/treasure/statue-bust-stone-grey.webp",
-      "origin": "Actor.m4mjuiVrcZHbrj00.Item.o9WCZkz5GSJjrqJb",
-      "duration": {
-        "startTime": null,
-        "seconds": null,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "disabled": false,
       "_id": "69S1mWGXpz1dy0IL",
+      "_key": "!items.effects!KFMbtcVRskkgrv0k.69S1mWGXpz1dy0IL",
       "changes": [
         {
           "key": "wire.custom.persistentStatusEffect",
           "mode": 2,
-          "value": "Petrified",
-          "priority": 20
+          "priority": 20,
+          "value": "Petrified"
         }
       ],
-      "tint": null,
-      "transfer": false,
+      "disabled": false,
+      "duration": {
+        "combat": null,
+        "rounds": null,
+        "seconds": null,
+        "startRound": null,
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
+      },
       "flags": {
         "wire": {
-          "applyOnSaveOrMiss": false,
           "applicationType": "delayed",
-          "blocksAreaConditions": false,
+          "applyOnSaveOrMiss": false,
           "auraTargets": "",
-          "stackEffects": false,
-          "rollEffects": false,
+          "blocksAreaConditions": false,
+          "conditions": [],
           "independentDuration": false,
-          "conditions": []
+          "rollEffects": false,
+          "stackEffects": false
         }
       },
-      "_key": "!items.effects!KFMbtcVRskkgrv0k.69S1mWGXpz1dy0IL"
+      "icon": "icons/commodities/treasure/statue-bust-stone-grey.webp",
+      "label": "Turned to Stone",
+      "origin": "Actor.m4mjuiVrcZHbrj00.Item.o9WCZkz5GSJjrqJb",
+      "tint": null,
+      "transfer": false
     }
   ],
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.2.2",
-    "coreVersion": "11.306",
-    "createdTime": 1661787234215,
-    "modifiedTime": 1694774675068,
-    "lastModifiedBy": "dBglmdrMUDMEh6ZW"
+  "flags": {
+    "wire": {
+      "checkedAbility": "",
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.11.0",
+      "override": {
+        "target": {
+          "value": "1"
+        }
+      },
+      "saveImmunity": false,
+      "script": "this.registerFlowStep(\"checkPetrification\", true, async activation => {\n    const counters = activation.config.counters || { success: 0, failure: 0};\n    if (activation.effectiveTargets.length) {\n        counters.failure++;\n    } else {\n        counters.success++;\n    }\n    await activation.updateConfig({ counters });\n\n    await activation.assignCustomHtml(`\n        <div style=\"text-align: center\">\n            <p>Successes <b>${counters.success}</b></p>\n            <p>Failures <b>${counters.failure}</b></p>\n        </div>\n    `);\n\n    if (counters.success >= 3 || counters.failure >= 3) {\n        game.wire.runInQueue(async () => {\n            await activation.sourceEffect.delete();\n        });\n    } else if (counters.failure < 3) {\n        return false;\n    }\n});\n\nreturn this.pick(\n    this.isDelayedApplication(\n        this.performSavingThrow(\n            this.performCustomStep(\"checkPetrification\",\n                this.applyEffects()\n            )\n        )\n    )\n)"
+    }
   },
   "folder": null,
-  "sort": 0,
-  "_id": "KFMbtcVRskkgrv0k",
-  "_key": "!items!KFMbtcVRskkgrv0k"
+  "img": "icons/commodities/treasure/statue-bust-stone-grey.webp",
+  "name": "Flesh to Stone",
+  "ownership": {
+    "default": 0,
+    "m7gKrZnSC3XR8ToV": 3
+  },
+  "system": {
+    "ability": "",
+    "actionType": "save",
+    "activation": {
+      "condition": "",
+      "cost": 1,
+      "type": "action"
+    },
+    "attackBonus": 0,
+    "chatFlavor": "",
+    "components": {
+      "concentration": true,
+      "material": true,
+      "ritual": false,
+      "somatic": true,
+      "value": "",
+      "vocal": true
+    },
+    "consume": {
+      "amount": null,
+      "target": "",
+      "type": ""
+    },
+    "cover": null,
+    "crewed": false,
+    "critical": {
+      "damage": "",
+      "threshold": null
+    },
+    "damage": {
+      "parts": [],
+      "value": "",
+      "versatile": ""
+    },
+    "description": {
+      "chat": "",
+      "unidentified": "",
+      "value": "<p>You attempt to turn one creature that you can see within range into stone. If the target's body is made of flesh, the creature must make a Constitution saving throw. On a failed save, it is Restrained as its flesh begins to harden. On a successful save, the creature isn't affected.</p><p>A creature Restrained by this spell must make another Constitution saving throw at the end of each of its turns. If it successfully saves against this spell three times, the spell ends. If it fails its saves three times, it is turned to stone and subjected to the Petrified condition for the Duration. The successes and failures don't need to be consecutive; keep track of both until the target collects three of a kind.</p><p>If the creature is physically broken while Petrified, it suffers from similar deformities if it reverts to its original state.</p><p>If you maintain your Concentration on this spell for the entire possible Duration, the creature is turned to stone until the effect is removed.</p>"
+    },
+    "duration": {
+      "units": "minute",
+      "value": 1
+    },
+    "formula": "",
+    "level": 6,
+    "materials": {
+      "consumed": false,
+      "cost": 0,
+      "supply": 0,
+      "value": "A pinch of lime, water, and earth"
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "range": {
+      "long": 0,
+      "units": "ft",
+      "value": 60
+    },
+    "save": {
+      "ability": "con",
+      "dc": null,
+      "scaling": "spell"
+    },
+    "scaling": {
+      "formula": "",
+      "mode": "none"
+    },
+    "school": "trs",
+    "source": "PHB pg. 243",
+    "target": {
+      "type": "creature",
+      "units": "",
+      "value": 1,
+      "width": null
+    },
+    "uses": {
+      "max": "0",
+      "per": "",
+      "recovery": "",
+      "value": 0
+    }
+  },
+  "type": "spell"
 }

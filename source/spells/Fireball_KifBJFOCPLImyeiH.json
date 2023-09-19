@@ -1,55 +1,62 @@
 {
+  "_id": "KifBJFOCPLImyeiH",
+  "_key": "!items!KifBJFOCPLImyeiH",
+  "effects": [],
+  "flags": {
+    "wire": {
+      "checkedAbility": "",
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.10.1",
+      "damageParts": [
+        {
+          "application": "immediate",
+          "halving": "half"
+        }
+      ],
+      "override": {
+        "target": {
+          "value": "20"
+        }
+      },
+      "saveImmunity": false,
+      "upcastInterval": null
+    }
+  },
+  "folder": null,
+  "img": "icons/magic/fire/projectile-fireball-smoke-large-orange.webp",
   "name": "Fireball",
   "ownership": {
     "default": 0,
     "m7gKrZnSC3XR8ToV": 3
   },
-  "type": "spell",
   "system": {
-    "description": {
-      "value": "<p>A bright streak flashes from your pointing finger to a point you choose within range and then blossoms with a low roar into an explosion of flame. Each creature in a 20-foot-radius sphere centered on that point must make a Dexterity saving throw. A target takes 8d6 fire damage on a failed save, or half as much damage on a successful one.</p><p>The fire spreads around corners. It ignites flammable objects in the area that aren't being worn or carried.</p><p><strong>Higher Levels.</strong> When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d6 for each slot level above 3rd.</p>",
-      "chat": "",
-      "unidentified": ""
-    },
-    "source": "PHB pg. 241",
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": null,
-      "units": "inst"
-    },
-    "target": {
-      "value": 20,
-      "width": null,
-      "units": "ft",
-      "type": "sphere"
-    },
-    "range": {
-      "value": 150,
-      "long": 0,
-      "units": "ft"
-    },
-    "uses": {
-      "value": 0,
-      "max": "0",
-      "per": "",
-      "recovery": ""
-    },
-    "consume": {
-      "type": "",
-      "target": "",
-      "amount": null
-    },
     "ability": "",
     "actionType": "save",
+    "activation": {
+      "condition": "",
+      "cost": 1,
+      "type": "action"
+    },
     "attackBonus": 0,
     "chatFlavor": "",
+    "components": {
+      "concentration": false,
+      "material": true,
+      "ritual": false,
+      "somatic": true,
+      "value": "",
+      "vocal": true
+    },
+    "consume": {
+      "amount": null,
+      "target": "",
+      "type": ""
+    },
+    "cover": null,
+    "crewed": false,
     "critical": {
-      "threshold": null,
-      "damage": ""
+      "damage": "",
+      "threshold": null
     },
     "damage": {
       "parts": [
@@ -60,69 +67,55 @@
       ],
       "versatile": ""
     },
+    "description": {
+      "chat": "",
+      "unidentified": "",
+      "value": "<p>A bright streak flashes from your pointing finger to a point you choose within range and then blossoms with a low roar into an explosion of flame. Each creature in a 20-foot-radius sphere centered on that point must make a Dexterity saving throw. A target takes 8d6 fire damage on a failed save, or half as much damage on a successful one.</p><p>The fire spreads around corners. It ignites flammable objects in the area that aren't being worn or carried.</p><p><strong>Higher Levels.</strong> When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d6 for each slot level above 3rd.</p>"
+    },
+    "duration": {
+      "units": "inst",
+      "value": null
+    },
     "formula": "",
-    "save": {
-      "ability": "dex",
-      "dc": 0,
-      "scaling": "spell"
-    },
     "level": 3,
-    "school": "evo",
-    "components": {
-      "value": "",
-      "vocal": true,
-      "somatic": true,
-      "material": true,
-      "ritual": false,
-      "concentration": false
-    },
     "materials": {
-      "value": "A tiny ball of bat guano and sulfur",
       "consumed": false,
       "cost": 0,
-      "supply": 0
+      "supply": 0,
+      "value": "A tiny ball of bat guano and sulfur"
     },
     "preparation": {
       "mode": "prepared",
       "prepared": false
     },
+    "range": {
+      "long": 0,
+      "units": "ft",
+      "value": 150
+    },
+    "save": {
+      "ability": "dex",
+      "dc": 0,
+      "scaling": "spell"
+    },
     "scaling": {
-      "mode": "level",
-      "formula": "1d6"
+      "formula": "1d6",
+      "mode": "level"
+    },
+    "school": "evo",
+    "source": "PHB pg. 241",
+    "target": {
+      "type": "sphere",
+      "units": "ft",
+      "value": 20,
+      "width": null
+    },
+    "uses": {
+      "max": "0",
+      "per": "",
+      "recovery": "",
+      "value": 0
     }
   },
-  "flags": {
-    "wire": {
-      "override": {
-        "target": {
-          "value": "20"
-        }
-      },
-      "checkedAbility": "",
-      "upcastInterval": null,
-      "damageParts": [
-        {
-          "halving": "half",
-          "application": "immediate"
-        }
-      ],
-      "compendiumSource": "wire-srd.spells",
-      "compendiumVersion": "0.10.1",
-      "saveImmunity": false
-    }
-  },
-  "img": "icons/magic/fire/projectile-fireball-smoke-large-orange.webp",
-  "effects": [],
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.0.3",
-    "coreVersion": "10.291",
-    "createdTime": 1661787234246,
-    "modifiedTime": 1671785720062,
-    "lastModifiedBy": "m7gKrZnSC3XR8ToV"
-  },
-  "folder": null,
-  "sort": 0,
-  "_id": "KifBJFOCPLImyeiH",
-  "_key": "!items!KifBJFOCPLImyeiH"
+  "type": "spell"
 }

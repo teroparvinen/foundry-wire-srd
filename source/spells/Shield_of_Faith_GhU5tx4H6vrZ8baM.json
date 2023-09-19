@@ -1,124 +1,36 @@
 {
   "_id": "GhU5tx4H6vrZ8baM",
-  "name": "Shield of Faith",
-  "type": "spell",
-  "img": "icons/magic/defensive/shield-barrier-flaming-diamond-blue-yellow.webp",
-  "system": {
-    "description": {
-      "value": "<p>A shimmering field appears and surrounds a creature of your choice within range, granting it a +2 bonus to AC for the duration.</p>",
-      "chat": "",
-      "unidentified": ""
-    },
-    "source": "PHB pg. 275",
-    "activation": {
-      "type": "bonus",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": 10,
-      "units": "minute"
-    },
-    "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature"
-    },
-    "range": {
-      "value": 60,
-      "long": 0,
-      "units": "ft"
-    },
-    "uses": {
-      "value": 0,
-      "max": "0",
-      "per": "",
-      "recovery": ""
-    },
-    "consume": {
-      "type": "",
-      "target": "",
-      "amount": null
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": 0,
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": "",
-      "value": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell",
-      "value": ""
-    },
-    "level": 1,
-    "school": "abj",
-    "components": {
-      "value": "",
-      "vocal": true,
-      "somatic": true,
-      "material": true,
-      "ritual": false,
-      "concentration": true
-    },
-    "materials": {
-      "value": "A small parchment with a bit of holy text written on it.",
-      "consumed": false,
-      "cost": 0,
-      "supply": 0
-    },
-    "preparation": {
-      "mode": "prepared",
-      "prepared": false
-    },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "attunement": null
-  },
+  "_key": "!items!GhU5tx4H6vrZ8baM",
   "effects": [
     {
       "_id": "6tikd0r2o47siqfw",
+      "_key": "!items.effects!GhU5tx4H6vrZ8baM.6tikd0r2o47siqfw",
       "changes": [
         {
           "key": "system.attributes.ac.bonus",
           "mode": 2,
-          "value": "2",
-          "priority": 0
+          "priority": 0,
+          "value": "2"
         }
       ],
       "disabled": false,
       "duration": {
-        "startTime": null,
-        "seconds": null,
         "combat": null,
         "rounds": null,
-        "turns": null,
+        "seconds": null,
         "startRound": null,
-        "startTurn": null
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
       },
+      "flags": {},
       "icon": "icons/magic/defensive/shield-barrier-flaming-diamond-blue-yellow.webp",
       "label": "Shield of Faith",
       "origin": "Actor.isYKP74w0SIExUvl.Item.EvpcORym4CgiMJHd",
-      "transfer": false,
-      "flags": {},
       "tint": null,
-      "_key": "!items.effects!GhU5tx4H6vrZ8baM.6tikd0r2o47siqfw"
+      "transfer": false
     }
   ],
-  "folder": null,
-  "sort": 0,
   "flags": {
     "wire": {
       "checkedAbility": "",
@@ -126,17 +38,98 @@
       "compendiumVersion": "0.10"
     }
   },
+  "folder": null,
+  "img": "icons/magic/defensive/shield-barrier-flaming-diamond-blue-yellow.webp",
+  "name": "Shield of Faith",
   "ownership": {
     "default": 0,
     "m7gKrZnSC3XR8ToV": 3
   },
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.0.3",
-    "coreVersion": "10.290",
-    "createdTime": null,
-    "modifiedTime": 1670076084343,
-    "lastModifiedBy": "m7gKrZnSC3XR8ToV"
+  "system": {
+    "ability": "",
+    "actionType": "util",
+    "activation": {
+      "condition": "",
+      "cost": 1,
+      "type": "bonus"
+    },
+    "attackBonus": 0,
+    "attunement": null,
+    "chatFlavor": "",
+    "components": {
+      "concentration": true,
+      "material": true,
+      "ritual": false,
+      "somatic": true,
+      "value": "",
+      "vocal": true
+    },
+    "consume": {
+      "amount": null,
+      "target": "",
+      "type": ""
+    },
+    "cover": null,
+    "crewed": false,
+    "critical": {
+      "damage": "",
+      "threshold": null
+    },
+    "damage": {
+      "parts": [],
+      "value": "",
+      "versatile": ""
+    },
+    "description": {
+      "chat": "",
+      "unidentified": "",
+      "value": "<p>A shimmering field appears and surrounds a creature of your choice within range, granting it a +2 bonus to AC for the duration.</p>"
+    },
+    "duration": {
+      "units": "minute",
+      "value": 10
+    },
+    "formula": "",
+    "level": 1,
+    "materials": {
+      "consumed": false,
+      "cost": 0,
+      "supply": 0,
+      "value": "A small parchment with a bit of holy text written on it."
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "range": {
+      "long": 0,
+      "units": "ft",
+      "value": 60
+    },
+    "save": {
+      "ability": "",
+      "dc": null,
+      "scaling": "spell",
+      "value": ""
+    },
+    "scaling": {
+      "formula": "",
+      "mode": "none"
+    },
+    "school": "abj",
+    "source": "PHB pg. 275",
+    "target": {
+      "type": "creature",
+      "units": "",
+      "value": 1,
+      "width": null
+    },
+    "uses": {
+      "max": "0",
+      "per": "",
+      "recovery": "",
+      "value": 0
+    }
   },
-  "_key": "!items!GhU5tx4H6vrZ8baM"
+  "type": "spell"
 }

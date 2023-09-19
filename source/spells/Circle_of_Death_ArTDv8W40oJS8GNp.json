@@ -1,55 +1,62 @@
 {
+  "_id": "ArTDv8W40oJS8GNp",
+  "_key": "!items!ArTDv8W40oJS8GNp",
+  "effects": [],
+  "flags": {
+    "wire": {
+      "checkedAbility": "",
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.10.1",
+      "damageParts": [
+        {
+          "application": "immediate",
+          "halving": "half"
+        }
+      ],
+      "override": {
+        "target": {
+          "value": "60"
+        }
+      },
+      "saveImmunity": false,
+      "upcastInterval": null
+    }
+  },
+  "folder": null,
+  "img": "icons/magic/air/air-burst-spiral-large-teal-green.webp",
   "name": "Circle of Death",
   "ownership": {
     "default": 0,
     "m7gKrZnSC3XR8ToV": 3
   },
-  "type": "spell",
   "system": {
-    "description": {
-      "value": "<p>A sphere of negative energy ripples out in a 60-foot radius from a point within range. Each creature in that area must make a Constitution saving throw. A target takes 8d6 necrotic damage on a failed save, or half as much damage on a successful one.</p><p><strong>Higher Levels.</strong> When you cast this spell using a spell slot of 7th level or higher, the damage increases by 2d6 for each slot level above 6th.</p>",
-      "chat": "",
-      "unidentified": ""
-    },
-    "source": "PHB pg. 221",
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": null,
-      "units": "inst"
-    },
-    "target": {
-      "value": 60,
-      "width": null,
-      "units": "ft",
-      "type": "sphere"
-    },
-    "range": {
-      "value": 150,
-      "long": 0,
-      "units": "ft"
-    },
-    "uses": {
-      "value": 0,
-      "max": "0",
-      "per": "",
-      "recovery": ""
-    },
-    "consume": {
-      "type": "",
-      "target": "",
-      "amount": null
-    },
     "ability": "",
     "actionType": "save",
+    "activation": {
+      "condition": "",
+      "cost": 1,
+      "type": "action"
+    },
     "attackBonus": 0,
     "chatFlavor": "",
+    "components": {
+      "concentration": false,
+      "material": true,
+      "ritual": false,
+      "somatic": true,
+      "value": "",
+      "vocal": true
+    },
+    "consume": {
+      "amount": null,
+      "target": "",
+      "type": ""
+    },
+    "cover": null,
+    "crewed": false,
     "critical": {
-      "threshold": null,
-      "damage": ""
+      "damage": "",
+      "threshold": null
     },
     "damage": {
       "parts": [
@@ -60,69 +67,55 @@
       ],
       "versatile": ""
     },
+    "description": {
+      "chat": "",
+      "unidentified": "",
+      "value": "<p>A sphere of negative energy ripples out in a 60-foot radius from a point within range. Each creature in that area must make a Constitution saving throw. A target takes 8d6 necrotic damage on a failed save, or half as much damage on a successful one.</p><p><strong>Higher Levels.</strong> When you cast this spell using a spell slot of 7th level or higher, the damage increases by 2d6 for each slot level above 6th.</p>"
+    },
+    "duration": {
+      "units": "inst",
+      "value": null
+    },
     "formula": "",
-    "save": {
-      "ability": "con",
-      "dc": 0,
-      "scaling": "spell"
-    },
     "level": 6,
-    "school": "nec",
-    "components": {
-      "value": "",
-      "vocal": true,
-      "somatic": true,
-      "material": true,
-      "ritual": false,
-      "concentration": false
-    },
     "materials": {
-      "value": "The powder of a crushed black pearl worth at least 500 gp.",
       "consumed": false,
       "cost": 500,
-      "supply": 0
+      "supply": 0,
+      "value": "The powder of a crushed black pearl worth at least 500 gp."
     },
     "preparation": {
       "mode": "prepared",
       "prepared": false
     },
+    "range": {
+      "long": 0,
+      "units": "ft",
+      "value": 150
+    },
+    "save": {
+      "ability": "con",
+      "dc": 0,
+      "scaling": "spell"
+    },
     "scaling": {
-      "mode": "level",
-      "formula": "2d6"
+      "formula": "2d6",
+      "mode": "level"
+    },
+    "school": "nec",
+    "source": "PHB pg. 221",
+    "target": {
+      "type": "sphere",
+      "units": "ft",
+      "value": 60,
+      "width": null
+    },
+    "uses": {
+      "max": "0",
+      "per": "",
+      "recovery": "",
+      "value": 0
     }
   },
-  "flags": {
-    "wire": {
-      "override": {
-        "target": {
-          "value": "60"
-        }
-      },
-      "checkedAbility": "",
-      "saveImmunity": false,
-      "upcastInterval": null,
-      "damageParts": [
-        {
-          "halving": "half",
-          "application": "immediate"
-        }
-      ],
-      "compendiumSource": "wire-srd.spells",
-      "compendiumVersion": "0.10.1"
-    }
-  },
-  "img": "icons/magic/air/air-burst-spiral-large-teal-green.webp",
-  "effects": [],
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.0.3",
-    "coreVersion": "10.291",
-    "createdTime": 1661787234116,
-    "modifiedTime": 1671880074856,
-    "lastModifiedBy": "m7gKrZnSC3XR8ToV"
-  },
-  "folder": null,
-  "sort": 0,
-  "_id": "ArTDv8W40oJS8GNp",
-  "_key": "!items!ArTDv8W40oJS8GNp"
+  "type": "spell"
 }

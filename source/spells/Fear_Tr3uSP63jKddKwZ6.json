@@ -1,162 +1,155 @@
 {
-  "name": "Fear",
-  "ownership": {
-    "default": 0,
-    "m7gKrZnSC3XR8ToV": 3
-  },
-  "type": "spell",
-  "system": {
-    "description": {
-      "value": "<p>You project a phantasmal image of a creature's worst fears. Each creature in a 30-foot cone must succeed on a Wisdom saving throw or drop whatever it is holding and become Frightened for the duration.</p><p>While Frightened by this spell, a creature must take the Dash action and move away from you by the safest available route on each of its turns, unless there is nowhere to move. If the creature ends its turn in a location where it doesn't have line of sight to you, the creature can make a Wisdom saving throw. On a successful save, the spell ends for that creature.</p><hr /><p>WIRE note: Use the \"Take an action\" condition whenever the target ends its round where it doesn't have line of sight to the caster.</p>",
-      "chat": "",
-      "unidentified": ""
-    },
-    "source": "PHB pg. 239",
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": 1,
-      "units": "minute"
-    },
-    "target": {
-      "value": 30,
-      "width": null,
-      "units": "ft",
-      "type": "cone"
-    },
-    "range": {
-      "value": null,
-      "long": null,
-      "units": "self"
-    },
-    "uses": {
-      "value": 0,
-      "max": "0",
-      "per": "",
-      "recovery": ""
-    },
-    "consume": {
-      "type": "",
-      "target": "",
-      "amount": null
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": 0,
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": "",
-      "value": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "wis",
-      "dc": 0,
-      "scaling": "spell"
-    },
-    "level": 3,
-    "school": "ill",
-    "components": {
-      "value": "",
-      "vocal": true,
-      "somatic": true,
-      "material": true,
-      "ritual": false,
-      "concentration": true
-    },
-    "materials": {
-      "value": "A white feather or the heart of a hen.",
-      "consumed": false,
-      "cost": 0,
-      "supply": 0
-    },
-    "preparation": {
-      "mode": "prepared",
-      "prepared": false
-    },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    }
-  },
-  "flags": {
-    "wire": {
-      "override": {
-        "target": {
-          "value": "30"
-        }
-      },
-      "checkedAbility": "",
-      "saveImmunity": false,
-      "compendiumSource": "wire-srd.spells",
-      "compendiumVersion": "0.10.3"
-    }
-  },
-  "img": "icons/magic/control/fear-fright-monster-purple-blue.webp",
+  "_id": "Tr3uSP63jKddKwZ6",
+  "_key": "!items!Tr3uSP63jKddKwZ6",
   "effects": [
     {
-      "label": "Fear",
-      "icon": "icons/magic/control/fear-fright-monster-purple-blue.webp",
-      "origin": "Actor.m4mjuiVrcZHbrj00.Item.hPVNwTZ105KP9LbK",
-      "duration": {
-        "startTime": null,
-        "seconds": null,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "disabled": false,
       "_id": "shFM6SciQQnlv9Qs",
+      "_key": "!items.effects!Tr3uSP63jKddKwZ6.shFM6SciQQnlv9Qs",
       "changes": [
         {
           "key": "wire.custom.statusEffect",
           "mode": 2,
-          "value": "Frightened",
-          "priority": 20
+          "priority": 20,
+          "value": "Frightened"
         }
       ],
-      "tint": null,
-      "transfer": false,
+      "disabled": false,
+      "duration": {
+        "combat": null,
+        "rounds": null,
+        "seconds": null,
+        "startRound": null,
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
+      },
       "flags": {
         "wire": {
-          "applyOnSaveOrMiss": false,
           "applicationType": "immediate",
-          "blocksAreaConditions": false,
+          "applyOnSaveOrMiss": false,
           "auraTargets": "",
-          "stackEffects": false,
-          "rollEffects": false,
-          "independentDuration": false,
+          "blocksAreaConditions": false,
           "conditions": [
             {
               "condition": "take-an-action",
               "update": "end-on-save"
             }
-          ]
+          ],
+          "independentDuration": false,
+          "rollEffects": false,
+          "stackEffects": false
         }
       },
-      "_key": "!items.effects!Tr3uSP63jKddKwZ6.shFM6SciQQnlv9Qs"
+      "icon": "icons/magic/control/fear-fright-monster-purple-blue.webp",
+      "label": "Fear",
+      "origin": "Actor.m4mjuiVrcZHbrj00.Item.hPVNwTZ105KP9LbK",
+      "tint": null,
+      "transfer": false
     }
   ],
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.0.3",
-    "coreVersion": "10.291",
-    "createdTime": 1661787234157,
-    "modifiedTime": 1673731045352,
-    "lastModifiedBy": "m7gKrZnSC3XR8ToV"
+  "flags": {
+    "wire": {
+      "checkedAbility": "",
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.10.3",
+      "override": {
+        "target": {
+          "value": "30"
+        }
+      },
+      "saveImmunity": false
+    }
   },
   "folder": null,
-  "sort": 0,
-  "_id": "Tr3uSP63jKddKwZ6",
-  "_key": "!items!Tr3uSP63jKddKwZ6"
+  "img": "icons/magic/control/fear-fright-monster-purple-blue.webp",
+  "name": "Fear",
+  "ownership": {
+    "default": 0,
+    "m7gKrZnSC3XR8ToV": 3
+  },
+  "system": {
+    "ability": "",
+    "actionType": "save",
+    "activation": {
+      "condition": "",
+      "cost": 1,
+      "type": "action"
+    },
+    "attackBonus": 0,
+    "chatFlavor": "",
+    "components": {
+      "concentration": true,
+      "material": true,
+      "ritual": false,
+      "somatic": true,
+      "value": "",
+      "vocal": true
+    },
+    "consume": {
+      "amount": null,
+      "target": "",
+      "type": ""
+    },
+    "cover": null,
+    "crewed": false,
+    "critical": {
+      "damage": "",
+      "threshold": null
+    },
+    "damage": {
+      "parts": [],
+      "value": "",
+      "versatile": ""
+    },
+    "description": {
+      "chat": "",
+      "unidentified": "",
+      "value": "<p>You project a phantasmal image of a creature's worst fears. Each creature in a 30-foot cone must succeed on a Wisdom saving throw or drop whatever it is holding and become Frightened for the duration.</p><p>While Frightened by this spell, a creature must take the Dash action and move away from you by the safest available route on each of its turns, unless there is nowhere to move. If the creature ends its turn in a location where it doesn't have line of sight to you, the creature can make a Wisdom saving throw. On a successful save, the spell ends for that creature.</p><hr /><p>WIRE note: Use the \"Take an action\" condition whenever the target ends its round where it doesn't have line of sight to the caster.</p>"
+    },
+    "duration": {
+      "units": "minute",
+      "value": 1
+    },
+    "formula": "",
+    "level": 3,
+    "materials": {
+      "consumed": false,
+      "cost": 0,
+      "supply": 0,
+      "value": "A white feather or the heart of a hen."
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "range": {
+      "long": null,
+      "units": "self",
+      "value": null
+    },
+    "save": {
+      "ability": "wis",
+      "dc": 0,
+      "scaling": "spell"
+    },
+    "scaling": {
+      "formula": "",
+      "mode": "none"
+    },
+    "school": "ill",
+    "source": "PHB pg. 239",
+    "target": {
+      "type": "cone",
+      "units": "ft",
+      "value": 30,
+      "width": null
+    },
+    "uses": {
+      "max": "0",
+      "per": "",
+      "recovery": "",
+      "value": 0
+    }
+  },
+  "type": "spell"
 }

@@ -1,55 +1,115 @@
 {
+  "_id": "eg2PKGkksJidkXKA",
+  "_key": "!items!eg2PKGkksJidkXKA",
+  "effects": [
+    {
+      "_id": "setvO1iisycYIVBr",
+      "_key": "!items.effects!eg2PKGkksJidkXKA.setvO1iisycYIVBr",
+      "changes": [
+        {
+          "key": "system.traits.ci.value",
+          "mode": 2,
+          "priority": 20,
+          "value": "blinded"
+        },
+        {
+          "key": "system.traits.ci.value",
+          "mode": 2,
+          "priority": 20,
+          "value": "deafened"
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "combat": null,
+        "rounds": null,
+        "seconds": null,
+        "startRound": null,
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
+      },
+      "flags": {
+        "wire": {
+          "applicationType": "immediate",
+          "applyOnSaveOrMiss": false,
+          "auraTargets": "",
+          "blocksAreaConditions": false,
+          "independentDuration": false
+        }
+      },
+      "icon": "icons/magic/life/heart-cross-strong-flame-green.webp",
+      "label": "Heal",
+      "origin": "Actor.isYKP74w0SIExUvl.Item.FNqFAANoM1O8Oe4O",
+      "tint": null,
+      "transfer": false
+    }
+  ],
+  "flags": {
+    "wire": {
+      "checkedAbility": "",
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.10.1",
+      "damageParts": [
+        {
+          "application": "immediate",
+          "halving": "none"
+        }
+      ],
+      "immunities": [
+        {
+          "type": "creatureType",
+          "value": "construct"
+        },
+        {
+          "type": "creatureType",
+          "value": "undead"
+        }
+      ],
+      "override": {
+        "target": {
+          "value": "1"
+        }
+      },
+      "saveImmunity": false,
+      "upcastInterval": null
+    }
+  },
+  "folder": null,
+  "img": "icons/magic/life/heart-cross-strong-flame-green.webp",
   "name": "Heal",
   "ownership": {
     "default": 0,
     "m7gKrZnSC3XR8ToV": 3
   },
-  "type": "spell",
   "system": {
-    "description": {
-      "value": "<p>Choose a creature that you can see within range. A surge of positive energy washes through the creature, causing it to regain 70 Hit Points. This spell also ends blindness, deafness, and any Diseases affecting the target. This spell has no effect on constructs or Undead.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 7th level or higher, the amount of Healing increases by 10 for each slot level above 6th.</p>",
-      "chat": "",
-      "unidentified": ""
-    },
-    "source": "PHB pg. 250",
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": null,
-      "units": "inst"
-    },
-    "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature"
-    },
-    "range": {
-      "value": 60,
-      "long": 0,
-      "units": "ft"
-    },
-    "uses": {
-      "value": 0,
-      "max": "0",
-      "per": "",
-      "recovery": ""
-    },
-    "consume": {
-      "type": "",
-      "target": "",
-      "amount": null
-    },
     "ability": "",
     "actionType": "heal",
+    "activation": {
+      "condition": "",
+      "cost": 1,
+      "type": "action"
+    },
     "attackBonus": 0,
     "chatFlavor": "",
+    "components": {
+      "concentration": false,
+      "material": false,
+      "ritual": false,
+      "somatic": true,
+      "value": "",
+      "vocal": true
+    },
+    "consume": {
+      "amount": null,
+      "target": "",
+      "type": ""
+    },
+    "cover": null,
+    "crewed": false,
     "critical": {
-      "threshold": null,
-      "damage": ""
+      "damage": "",
+      "threshold": null
     },
     "damage": {
       "parts": [
@@ -60,123 +120,56 @@
       ],
       "versatile": ""
     },
+    "description": {
+      "chat": "",
+      "unidentified": "",
+      "value": "<p>Choose a creature that you can see within range. A surge of positive energy washes through the creature, causing it to regain 70 Hit Points. This spell also ends blindness, deafness, and any Diseases affecting the target. This spell has no effect on constructs or Undead.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 7th level or higher, the amount of Healing increases by 10 for each slot level above 6th.</p>"
+    },
+    "duration": {
+      "units": "inst",
+      "value": null
+    },
     "formula": "",
+    "level": 6,
+    "materials": {
+      "consumed": false,
+      "cost": 0,
+      "supply": 0,
+      "value": ""
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "range": {
+      "long": 0,
+      "units": "ft",
+      "value": 60
+    },
     "save": {
       "ability": "",
       "dc": null,
       "scaling": "spell",
       "value": ""
     },
-    "level": 6,
-    "school": "evo",
-    "components": {
-      "value": "",
-      "vocal": true,
-      "somatic": true,
-      "material": false,
-      "ritual": false,
-      "concentration": false
-    },
-    "materials": {
-      "value": "",
-      "consumed": false,
-      "cost": 0,
-      "supply": 0
-    },
-    "preparation": {
-      "mode": "prepared",
-      "prepared": false
-    },
     "scaling": {
-      "mode": "level",
-      "formula": "10"
+      "formula": "10",
+      "mode": "level"
+    },
+    "school": "evo",
+    "source": "PHB pg. 250",
+    "target": {
+      "type": "creature",
+      "units": "",
+      "value": 1,
+      "width": null
+    },
+    "uses": {
+      "max": "0",
+      "per": "",
+      "recovery": "",
+      "value": 0
     }
   },
-  "flags": {
-    "wire": {
-      "override": {
-        "target": {
-          "value": "1"
-        }
-      },
-      "checkedAbility": "",
-      "saveImmunity": false,
-      "upcastInterval": null,
-      "damageParts": [
-        {
-          "halving": "none",
-          "application": "immediate"
-        }
-      ],
-      "compendiumSource": "wire-srd.spells",
-      "compendiumVersion": "0.10.1",
-      "immunities": [
-        {
-          "type": "creatureType",
-          "value": "construct"
-        },
-        {
-          "type": "creatureType",
-          "value": "undead"
-        }
-      ]
-    }
-  },
-  "img": "icons/magic/life/heart-cross-strong-flame-green.webp",
-  "effects": [
-    {
-      "label": "Heal",
-      "icon": "icons/magic/life/heart-cross-strong-flame-green.webp",
-      "origin": "Actor.isYKP74w0SIExUvl.Item.FNqFAANoM1O8Oe4O",
-      "duration": {
-        "startTime": null,
-        "seconds": null,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "disabled": false,
-      "_id": "setvO1iisycYIVBr",
-      "changes": [
-        {
-          "key": "system.traits.ci.value",
-          "mode": 2,
-          "value": "blinded",
-          "priority": 20
-        },
-        {
-          "key": "system.traits.ci.value",
-          "mode": 2,
-          "value": "deafened",
-          "priority": 20
-        }
-      ],
-      "tint": null,
-      "transfer": false,
-      "flags": {
-        "wire": {
-          "applyOnSaveOrMiss": false,
-          "blocksAreaConditions": false,
-          "auraTargets": "",
-          "applicationType": "immediate",
-          "independentDuration": false
-        }
-      },
-      "_key": "!items.effects!eg2PKGkksJidkXKA.setvO1iisycYIVBr"
-    }
-  ],
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.0.3",
-    "coreVersion": "10.291",
-    "createdTime": 1661787234231,
-    "modifiedTime": 1672219810398,
-    "lastModifiedBy": "m7gKrZnSC3XR8ToV"
-  },
-  "folder": null,
-  "sort": 0,
-  "_id": "eg2PKGkksJidkXKA",
-  "_key": "!items!eg2PKGkksJidkXKA"
+  "type": "spell"
 }

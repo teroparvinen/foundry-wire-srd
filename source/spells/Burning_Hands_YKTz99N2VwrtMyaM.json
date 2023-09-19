@@ -1,53 +1,63 @@
 {
   "_id": "YKTz99N2VwrtMyaM",
-  "name": "Burning Hands",
-  "type": "spell",
+  "_key": "!items!YKTz99N2VwrtMyaM",
+  "effects": [],
+  "flags": {
+    "wire": {
+      "checkedAbility": "",
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.10",
+      "damageParts": [
+        {
+          "application": "immediate",
+          "halving": "half"
+        }
+      ],
+      "override": {
+        "target": {
+          "value": "15"
+        }
+      },
+      "saveImmunity": false,
+      "upcastInterval": null
+    }
+  },
+  "folder": null,
   "img": "icons/magic/air/fog-gas-smoke-dense-orange.webp",
+  "name": "Burning Hands",
+  "ownership": {
+    "default": 0,
+    "m7gKrZnSC3XR8ToV": 3
+  },
   "system": {
-    "description": {
-      "value": "<p>As you hold your hands with thumbs touching and fingers spread, a thin sheet of flames shoots forth from your outstretched fingertips. Each creature in a 15-foot cone must make a Dexterity saving throw. A creature takes 3d6 fire damage on a failed save, or half as much damage on a successful one.</p><p>The fire ignites any flammable objects in the area that aren't being worn or carried.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st.</p>",
-      "chat": "",
-      "unidentified": ""
-    },
-    "source": "PHB pg. 220",
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": null,
-      "units": "inst"
-    },
-    "target": {
-      "value": 15,
-      "width": null,
-      "units": "ft",
-      "type": "cone"
-    },
-    "range": {
-      "value": null,
-      "long": null,
-      "units": "self"
-    },
-    "uses": {
-      "value": 0,
-      "max": "0",
-      "per": "",
-      "recovery": ""
-    },
-    "consume": {
-      "type": "",
-      "target": "",
-      "amount": null
-    },
     "ability": "",
     "actionType": "save",
+    "activation": {
+      "condition": "",
+      "cost": 1,
+      "type": "action"
+    },
     "attackBonus": 0,
+    "attunement": null,
     "chatFlavor": "",
+    "components": {
+      "concentration": false,
+      "material": false,
+      "ritual": false,
+      "somatic": true,
+      "value": "",
+      "vocal": true
+    },
+    "consume": {
+      "amount": null,
+      "target": "",
+      "type": ""
+    },
+    "cover": null,
+    "crewed": false,
     "critical": {
-      "threshold": null,
-      "damage": ""
+      "damage": "",
+      "threshold": null
     },
     "damage": {
       "parts": [
@@ -58,72 +68,55 @@
       ],
       "versatile": ""
     },
+    "description": {
+      "chat": "",
+      "unidentified": "",
+      "value": "<p>As you hold your hands with thumbs touching and fingers spread, a thin sheet of flames shoots forth from your outstretched fingertips. Each creature in a 15-foot cone must make a Dexterity saving throw. A creature takes 3d6 fire damage on a failed save, or half as much damage on a successful one.</p><p>The fire ignites any flammable objects in the area that aren't being worn or carried.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st.</p>"
+    },
+    "duration": {
+      "units": "inst",
+      "value": null
+    },
     "formula": "",
-    "save": {
-      "ability": "dex",
-      "dc": 0,
-      "scaling": "spell"
-    },
     "level": 1,
-    "school": "evo",
-    "components": {
-      "value": "",
-      "vocal": true,
-      "somatic": true,
-      "material": false,
-      "ritual": false,
-      "concentration": false
-    },
     "materials": {
-      "value": "",
       "consumed": false,
       "cost": 0,
-      "supply": 0
+      "supply": 0,
+      "value": ""
     },
     "preparation": {
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "level",
-      "formula": "1d6"
+    "range": {
+      "long": null,
+      "units": "self",
+      "value": null
     },
-    "attunement": null
-  },
-  "effects": [],
-  "folder": null,
-  "sort": 0,
-  "flags": {
-    "wire": {
-      "damageParts": [
-        {
-          "halving": "half",
-          "application": "immediate"
-        }
-      ],
-      "compendiumSource": "wire-srd.spells",
-      "compendiumVersion": "0.10",
-      "override": {
-        "target": {
-          "value": "15"
-        }
-      },
-      "checkedAbility": "",
-      "upcastInterval": null,
-      "saveImmunity": false
+    "save": {
+      "ability": "dex",
+      "dc": 0,
+      "scaling": "spell"
+    },
+    "scaling": {
+      "formula": "1d6",
+      "mode": "level"
+    },
+    "school": "evo",
+    "source": "PHB pg. 220",
+    "target": {
+      "type": "cone",
+      "units": "ft",
+      "value": 15,
+      "width": null
+    },
+    "uses": {
+      "max": "0",
+      "per": "",
+      "recovery": "",
+      "value": 0
     }
   },
-  "ownership": {
-    "default": 0,
-    "m7gKrZnSC3XR8ToV": 3
-  },
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.0.3",
-    "coreVersion": "10.291",
-    "createdTime": null,
-    "modifiedTime": 1672219468340,
-    "lastModifiedBy": "m7gKrZnSC3XR8ToV"
-  },
-  "_key": "!items!YKTz99N2VwrtMyaM"
+  "type": "spell"
 }

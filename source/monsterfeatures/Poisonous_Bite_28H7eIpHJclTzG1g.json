@@ -1,88 +1,65 @@
 {
-  "name": "Poisonous Bite",
-  "type": "weapon",
-  "img": "icons/creatures/abilities/mouth-teeth-long-red.webp",
+  "_id": "28H7eIpHJclTzG1g",
+  "_key": "!items!28H7eIpHJclTzG1g",
   "effects": [],
   "flags": {
     "wire": {
-      "damageParts": [
-        {
-          "halving": "none",
-          "application": "immediate"
-        },
-        {
-          "halving": "half",
-          "application": "delayed"
-        }
-      ],
+      "checkedAbility": "",
+      "compendiumSource": "wire-srd.monsterfeatures",
+      "compendiumVersion": "0.10.1",
       "conditions": [
         {
           "condition": "this-attack-hits",
           "update": "apply-delayed"
         }
       ],
+      "damageParts": [
+        {
+          "application": "immediate",
+          "halving": "none"
+        },
+        {
+          "application": "delayed",
+          "halving": "half"
+        }
+      ],
       "override": {
         "target": {
           "value": null
         }
-      },
-      "checkedAbility": "",
-      "compendiumSource": "wire-srd.monsterfeatures",
-      "compendiumVersion": "0.10.1"
+      }
     }
   },
+  "folder": null,
+  "img": "icons/creatures/abilities/mouth-teeth-long-red.webp",
+  "name": "Poisonous Bite",
+  "ownership": {
+    "BDWtlDQYkOI4gQqd": 3,
+    "default": 0
+  },
   "system": {
-    "description": {
-      "value": "<div class=\"rd__b  rd__b--3\"><p><i>Melee Weapon Attack:</i> [[/r 1d20+5]] (+5) to hit, reach 5 ft., one creature. <i>Hit:</i> 7 ([[/r 1d8 + 3]]) piercing damage, and the target must make a DC <span class=\"rd__dc\">11</span> Constitution saving throw, taking 9 ([[/r 2d8]]) poison damage on a failed save, or half as much damage on a successful one. If the poison damage reduces the target to 0 hit points, the target is stable but @condition[poisoned] for 1 hour, even after regaining hit points, and is @condition[paralyzed] while @condition[poisoned] in this way.</p><div class=\"rd__spc-inline-post\"></div></div>",
-      "chat": "",
-      "unidentified": ""
-    },
-    "source": "MM",
-    "quantity": 1,
-    "weight": 0,
-    "price": 0,
-    "attunement": 0,
-    "equipped": true,
-    "rarity": "",
-    "identified": true,
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": null,
-      "units": ""
-    },
-    "target": {
-      "value": null,
-      "width": null,
-      "units": "",
-      "type": ""
-    },
-    "range": {
-      "value": 5,
-      "long": 0,
-      "units": "ft"
-    },
-    "uses": {
-      "value": null,
-      "max": "",
-      "per": "",
-      "recovery": ""
-    },
-    "consume": {
-      "type": "",
-      "target": "",
-      "amount": null
-    },
     "ability": "dex",
     "actionType": "mwak",
+    "activation": {
+      "condition": "",
+      "cost": 1,
+      "type": "action"
+    },
+    "armor": {
+      "value": 10
+    },
     "attackBonus": "0",
+    "attunement": 0,
+    "baseItem": "",
     "chatFlavor": "",
+    "consume": {
+      "amount": null,
+      "target": "",
+      "type": ""
+    },
     "critical": {
-      "threshold": null,
-      "damage": ""
+      "damage": "",
+      "threshold": null
     },
     "damage": {
       "parts": [
@@ -97,23 +74,26 @@
       ],
       "versatile": ""
     },
+    "description": {
+      "chat": "",
+      "unidentified": "",
+      "value": "<div class=\"rd__b  rd__b--3\"><p><i>Melee Weapon Attack:</i> [[/r 1d20+5]] (+5) to hit, reach 5 ft., one creature. <i>Hit:</i> 7 ([[/r 1d8 + 3]]) piercing damage, and the target must make a DC <span class=\"rd__dc\">11</span> Constitution saving throw, taking 9 ([[/r 2d8]]) poison damage on a failed save, or half as much damage on a successful one. If the poison damage reduces the target to 0 hit points, the target is stable but @condition[poisoned] for 1 hour, even after regaining hit points, and is @condition[paralyzed] while @condition[poisoned] in this way.</p><div class=\"rd__spc-inline-post\"></div></div>"
+    },
+    "duration": {
+      "units": "",
+      "value": null
+    },
+    "equipped": true,
     "formula": "",
-    "save": {
-      "ability": "con",
-      "dc": 11,
-      "scaling": "con"
-    },
-    "armor": {
-      "value": 10
-    },
     "hp": {
-      "value": 0,
-      "max": 0,
+      "conditions": "",
       "dt": null,
-      "conditions": ""
+      "max": 0,
+      "value": 0
     },
-    "weaponType": "natural",
-    "baseItem": "",
+    "identified": true,
+    "price": 0,
+    "proficient": true,
     "properties": {
       "ada": false,
       "amm": false,
@@ -133,22 +113,33 @@
       "two": false,
       "ver": false
     },
-    "proficient": true
+    "quantity": 1,
+    "range": {
+      "long": 0,
+      "units": "ft",
+      "value": 5
+    },
+    "rarity": "",
+    "save": {
+      "ability": "con",
+      "dc": 11,
+      "scaling": "con"
+    },
+    "source": "MM",
+    "target": {
+      "type": "",
+      "units": "",
+      "value": null,
+      "width": null
+    },
+    "uses": {
+      "max": "",
+      "per": "",
+      "recovery": "",
+      "value": null
+    },
+    "weaponType": "natural",
+    "weight": 0
   },
-  "ownership": {
-    "default": 0,
-    "BDWtlDQYkOI4gQqd": 3
-  },
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.0.3",
-    "coreVersion": "10.291",
-    "createdTime": 1671188475903,
-    "modifiedTime": 1671188525675,
-    "lastModifiedBy": "BDWtlDQYkOI4gQqd"
-  },
-  "folder": null,
-  "sort": 0,
-  "_id": "28H7eIpHJclTzG1g",
-  "_key": "!items!28H7eIpHJclTzG1g"
+  "type": "weapon"
 }

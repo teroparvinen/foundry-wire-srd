@@ -1,215 +1,208 @@
 {
+  "_id": "e3Vy37wdeKkdkY6d",
+  "_key": "!items!e3Vy37wdeKkdkY6d",
+  "effects": [
+    {
+      "_id": "4FmfmEsxx48ogHw5",
+      "_key": "!items.effects!e3Vy37wdeKkdkY6d.4FmfmEsxx48ogHw5",
+      "changes": [
+        {
+          "key": "system.attributes.movement.all",
+          "mode": 0,
+          "priority": 20,
+          "value": "*2"
+        },
+        {
+          "key": "system.attributes.ac.bonus",
+          "mode": 2,
+          "priority": 20,
+          "value": "+2"
+        },
+        {
+          "key": "flags.wire.advantage.ability.save.dex",
+          "mode": 2,
+          "priority": 20,
+          "value": "1"
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "combat": null,
+        "rounds": null,
+        "seconds": null,
+        "startRound": null,
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
+      },
+      "flags": {
+        "wire": {
+          "applicationType": "immediate",
+          "applyOnSaveOrMiss": false,
+          "auraTargets": "",
+          "blocksAreaConditions": false,
+          "conditions": [
+            {
+              "condition": "effect-ends",
+              "update": "apply-effects-delayed"
+            }
+          ],
+          "independentDuration": false
+        }
+      },
+      "icon": "icons/magic/control/buff-flight-wings-runes-purple.webp",
+      "label": "Haste",
+      "origin": "Actor.m4mjuiVrcZHbrj00.Item.i3pO9Son8sUPy5Wi",
+      "tint": null,
+      "transfer": false
+    },
+    {
+      "_id": "zCMhE58QS5fS7j4f",
+      "_key": "!items.effects!e3Vy37wdeKkdkY6d.zCMhE58QS5fS7j4f",
+      "changes": [
+        {
+          "key": "system.attributes.movement.all",
+          "mode": 0,
+          "priority": 20,
+          "value": "0"
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "combat": null,
+        "rounds": 1,
+        "seconds": null,
+        "startRound": null,
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
+      },
+      "flags": {
+        "wire": {
+          "applicationType": "delayed",
+          "applyOnSaveOrMiss": false,
+          "auraTargets": "",
+          "blocksAreaConditions": false,
+          "conditions": [
+            {
+              "condition": "end-of-turn-target",
+              "update": "end"
+            }
+          ],
+          "independentDuration": true
+        }
+      },
+      "icon": "icons/magic/control/buff-flight-wings-runes-red-yellow.webp",
+      "label": "Haste Lethargy",
+      "origin": "Actor.m4mjuiVrcZHbrj00.Item.i3pO9Son8sUPy5Wi",
+      "tint": null,
+      "transfer": false
+    }
+  ],
+  "flags": {
+    "wire": {
+      "checkedAbility": "",
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.10.1",
+      "override": {
+        "target": {
+          "value": "1"
+        }
+      },
+      "saveImmunity": false
+    }
+  },
+  "folder": null,
+  "img": "icons/magic/control/buff-flight-wings-runes-purple.webp",
   "name": "Haste",
   "ownership": {
     "default": 0,
     "m7gKrZnSC3XR8ToV": 3
   },
-  "type": "spell",
   "system": {
-    "description": {
-      "value": "<p>Choose a willing creature that you can see within range. Until the spell ends, the target's speed is doubled, it gains a +2 bonus to AC, it has advantage on Dexterity Saving Throws, and it gains an additional action on each of its turns. That action can be used only to take the Attack (one weapon attack only), Dash, Disengage, Hide, or Use an Object action.</p><p>When the spell ends, the target can't move or take Actions until after its next turn, as a wave of lethargy sweeps over it.</p>",
-      "chat": "",
-      "unidentified": ""
-    },
-    "source": "PHB pg. 250",
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": 1,
-      "units": "minute"
-    },
-    "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature"
-    },
-    "range": {
-      "value": 30,
-      "long": 0,
-      "units": "ft"
-    },
-    "uses": {
-      "value": 0,
-      "max": "0",
-      "per": "",
-      "recovery": ""
-    },
-    "consume": {
-      "type": "",
-      "target": "",
-      "amount": null
-    },
     "ability": "",
     "actionType": "util",
+    "activation": {
+      "condition": "",
+      "cost": 1,
+      "type": "action"
+    },
     "attackBonus": 0,
     "chatFlavor": "",
+    "components": {
+      "concentration": true,
+      "material": true,
+      "ritual": false,
+      "somatic": true,
+      "value": "",
+      "vocal": true
+    },
+    "consume": {
+      "amount": null,
+      "target": "",
+      "type": ""
+    },
+    "cover": null,
+    "crewed": false,
     "critical": {
-      "threshold": null,
-      "damage": ""
+      "damage": "",
+      "threshold": null
     },
     "damage": {
       "parts": [],
-      "versatile": "",
-      "value": ""
+      "value": "",
+      "versatile": ""
+    },
+    "description": {
+      "chat": "",
+      "unidentified": "",
+      "value": "<p>Choose a willing creature that you can see within range. Until the spell ends, the target's speed is doubled, it gains a +2 bonus to AC, it has advantage on Dexterity Saving Throws, and it gains an additional action on each of its turns. That action can be used only to take the Attack (one weapon attack only), Dash, Disengage, Hide, or Use an Object action.</p><p>When the spell ends, the target can't move or take Actions until after its next turn, as a wave of lethargy sweeps over it.</p>"
+    },
+    "duration": {
+      "units": "minute",
+      "value": 1
     },
     "formula": "",
+    "level": 3,
+    "materials": {
+      "consumed": false,
+      "cost": 0,
+      "supply": 0,
+      "value": "A shaving of licorice root"
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "range": {
+      "long": 0,
+      "units": "ft",
+      "value": 30
+    },
     "save": {
       "ability": "",
       "dc": null,
       "scaling": "spell",
       "value": ""
     },
-    "level": 3,
-    "school": "trs",
-    "components": {
-      "value": "",
-      "vocal": true,
-      "somatic": true,
-      "material": true,
-      "ritual": false,
-      "concentration": true
-    },
-    "materials": {
-      "value": "A shaving of licorice root",
-      "consumed": false,
-      "cost": 0,
-      "supply": 0
-    },
-    "preparation": {
-      "mode": "prepared",
-      "prepared": false
-    },
     "scaling": {
-      "mode": "none",
-      "formula": ""
-    }
-  },
-  "flags": {
-    "wire": {
-      "override": {
-        "target": {
-          "value": "1"
-        }
-      },
-      "checkedAbility": "",
-      "saveImmunity": false,
-      "compendiumSource": "wire-srd.spells",
-      "compendiumVersion": "0.10.1"
-    }
-  },
-  "img": "icons/magic/control/buff-flight-wings-runes-purple.webp",
-  "effects": [
-    {
-      "label": "Haste",
-      "icon": "icons/magic/control/buff-flight-wings-runes-purple.webp",
-      "origin": "Actor.m4mjuiVrcZHbrj00.Item.i3pO9Son8sUPy5Wi",
-      "duration": {
-        "startTime": null,
-        "seconds": null,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "disabled": false,
-      "_id": "4FmfmEsxx48ogHw5",
-      "changes": [
-        {
-          "key": "system.attributes.movement.all",
-          "mode": 0,
-          "value": "*2",
-          "priority": 20
-        },
-        {
-          "key": "system.attributes.ac.bonus",
-          "mode": 2,
-          "value": "+2",
-          "priority": 20
-        },
-        {
-          "key": "flags.wire.advantage.ability.save.dex",
-          "mode": 2,
-          "value": "1",
-          "priority": 20
-        }
-      ],
-      "tint": null,
-      "transfer": false,
-      "flags": {
-        "wire": {
-          "applyOnSaveOrMiss": false,
-          "blocksAreaConditions": false,
-          "auraTargets": "",
-          "applicationType": "immediate",
-          "independentDuration": false,
-          "conditions": [
-            {
-              "condition": "effect-ends",
-              "update": "apply-effects-delayed"
-            }
-          ]
-        }
-      },
-      "_key": "!items.effects!e3Vy37wdeKkdkY6d.4FmfmEsxx48ogHw5"
+      "formula": "",
+      "mode": "none"
     },
-    {
-      "label": "Haste Lethargy",
-      "icon": "icons/magic/control/buff-flight-wings-runes-red-yellow.webp",
-      "origin": "Actor.m4mjuiVrcZHbrj00.Item.i3pO9Son8sUPy5Wi",
-      "duration": {
-        "startTime": null,
-        "seconds": null,
-        "combat": null,
-        "rounds": 1,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "disabled": false,
-      "_id": "zCMhE58QS5fS7j4f",
-      "changes": [
-        {
-          "key": "system.attributes.movement.all",
-          "mode": 0,
-          "value": "0",
-          "priority": 20
-        }
-      ],
-      "tint": null,
-      "transfer": false,
-      "flags": {
-        "wire": {
-          "applyOnSaveOrMiss": false,
-          "blocksAreaConditions": false,
-          "auraTargets": "",
-          "applicationType": "delayed",
-          "independentDuration": true,
-          "conditions": [
-            {
-              "condition": "end-of-turn-target",
-              "update": "end"
-            }
-          ]
-        }
-      },
-      "_key": "!items.effects!e3Vy37wdeKkdkY6d.zCMhE58QS5fS7j4f"
+    "school": "trs",
+    "source": "PHB pg. 250",
+    "target": {
+      "type": "creature",
+      "units": "",
+      "value": 1,
+      "width": null
+    },
+    "uses": {
+      "max": "0",
+      "per": "",
+      "recovery": "",
+      "value": 0
     }
-  ],
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.0.3",
-    "coreVersion": "10.291",
-    "createdTime": 1661787234143,
-    "modifiedTime": 1672053626514,
-    "lastModifiedBy": "m7gKrZnSC3XR8ToV"
   },
-  "folder": null,
-  "sort": 0,
-  "_id": "e3Vy37wdeKkdkY6d",
-  "_key": "!items!e3Vy37wdeKkdkY6d"
+  "type": "spell"
 }

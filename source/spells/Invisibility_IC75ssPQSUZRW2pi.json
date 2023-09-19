@@ -1,141 +1,34 @@
 {
-  "name": "Invisibility",
-  "ownership": {
-    "default": 0,
-    "m7gKrZnSC3XR8ToV": 3
-  },
-  "type": "spell",
-  "system": {
-    "description": {
-      "value": "<p>A creature you touch becomes invisible until the spell ends. Anything the target is wearing or carrying is invisible as long as it is on the target's person. The spell ends for a target that attacks or casts a spell.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd.</p>",
-      "chat": "",
-      "unidentified": ""
-    },
-    "source": "PHB pg. 254",
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": 1,
-      "units": "hour"
-    },
-    "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature"
-    },
-    "range": {
-      "value": null,
-      "long": null,
-      "units": "touch"
-    },
-    "uses": {
-      "value": 0,
-      "max": "0",
-      "per": "",
-      "recovery": ""
-    },
-    "consume": {
-      "type": "",
-      "target": "",
-      "amount": null
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": 0,
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": "",
-      "value": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell",
-      "value": ""
-    },
-    "level": 2,
-    "school": "ill",
-    "components": {
-      "value": "",
-      "vocal": true,
-      "somatic": true,
-      "material": true,
-      "ritual": false,
-      "concentration": true
-    },
-    "materials": {
-      "value": "An eyelash encased in gum arabic",
-      "consumed": false,
-      "cost": 0,
-      "supply": 0
-    },
-    "preparation": {
-      "mode": "prepared",
-      "prepared": false
-    },
-    "scaling": {
-      "mode": "level",
-      "formula": ""
-    }
-  },
-  "flags": {
-    "wire": {
-      "override": {
-        "target": {
-          "value": "1"
-        }
-      },
-      "checkedAbility": "",
-      "saveImmunity": false,
-      "upcastInterval": null,
-      "compendiumSource": "wire-srd.spells",
-      "compendiumVersion": "0.10.1"
-    }
-  },
-  "img": "icons/magic/air/fog-gas-smoke-dense-gray.webp",
+  "_id": "IC75ssPQSUZRW2pi",
+  "_key": "!items!IC75ssPQSUZRW2pi",
   "effects": [
     {
-      "label": "Invisibility",
-      "icon": "icons/magic/air/fog-gas-smoke-dense-gray.webp",
-      "origin": "Actor.m4mjuiVrcZHbrj00.Item.7wgZUluu5TzqIpEA",
-      "duration": {
-        "startTime": null,
-        "seconds": null,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "disabled": false,
       "_id": "nEpOekJJVP0wPFz0",
+      "_key": "!items.effects!IC75ssPQSUZRW2pi.nEpOekJJVP0wPFz0",
       "changes": [
         {
           "key": "wire.custom.statusEffect",
           "mode": 2,
-          "value": "Invisible",
-          "priority": 20
+          "priority": 20,
+          "value": "Invisible"
         }
       ],
-      "tint": null,
-      "transfer": false,
+      "disabled": false,
+      "duration": {
+        "combat": null,
+        "rounds": null,
+        "seconds": null,
+        "startRound": null,
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
+      },
       "flags": {
         "wire": {
-          "applyOnSaveOrMiss": false,
-          "blocksAreaConditions": false,
-          "auraTargets": "",
           "applicationType": "immediate",
-          "independentDuration": false,
+          "applyOnSaveOrMiss": false,
+          "auraTargets": "",
+          "blocksAreaConditions": false,
           "conditions": [
             {
               "condition": "target-attacks.all",
@@ -145,22 +38,122 @@
               "condition": "target-casts-spell",
               "update": "end"
             }
-          ]
+          ],
+          "independentDuration": false
         }
       },
-      "_key": "!items.effects!IC75ssPQSUZRW2pi.nEpOekJJVP0wPFz0"
+      "icon": "icons/magic/air/fog-gas-smoke-dense-gray.webp",
+      "label": "Invisibility",
+      "origin": "Actor.m4mjuiVrcZHbrj00.Item.7wgZUluu5TzqIpEA",
+      "tint": null,
+      "transfer": false
     }
   ],
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.0.3",
-    "coreVersion": "10.291",
-    "createdTime": 1661787234056,
-    "modifiedTime": 1671889422737,
-    "lastModifiedBy": "m7gKrZnSC3XR8ToV"
+  "flags": {
+    "wire": {
+      "checkedAbility": "",
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.10.1",
+      "override": {
+        "target": {
+          "value": "1"
+        }
+      },
+      "saveImmunity": false,
+      "upcastInterval": null
+    }
   },
   "folder": null,
-  "sort": 0,
-  "_id": "IC75ssPQSUZRW2pi",
-  "_key": "!items!IC75ssPQSUZRW2pi"
+  "img": "icons/magic/air/fog-gas-smoke-dense-gray.webp",
+  "name": "Invisibility",
+  "ownership": {
+    "default": 0,
+    "m7gKrZnSC3XR8ToV": 3
+  },
+  "system": {
+    "ability": "",
+    "actionType": "util",
+    "activation": {
+      "condition": "",
+      "cost": 1,
+      "type": "action"
+    },
+    "attackBonus": 0,
+    "chatFlavor": "",
+    "components": {
+      "concentration": true,
+      "material": true,
+      "ritual": false,
+      "somatic": true,
+      "value": "",
+      "vocal": true
+    },
+    "consume": {
+      "amount": null,
+      "target": "",
+      "type": ""
+    },
+    "cover": null,
+    "crewed": false,
+    "critical": {
+      "damage": "",
+      "threshold": null
+    },
+    "damage": {
+      "parts": [],
+      "value": "",
+      "versatile": ""
+    },
+    "description": {
+      "chat": "",
+      "unidentified": "",
+      "value": "<p>A creature you touch becomes invisible until the spell ends. Anything the target is wearing or carrying is invisible as long as it is on the target's person. The spell ends for a target that attacks or casts a spell.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd.</p>"
+    },
+    "duration": {
+      "units": "hour",
+      "value": 1
+    },
+    "formula": "",
+    "level": 2,
+    "materials": {
+      "consumed": false,
+      "cost": 0,
+      "supply": 0,
+      "value": "An eyelash encased in gum arabic"
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "range": {
+      "long": null,
+      "units": "touch",
+      "value": null
+    },
+    "save": {
+      "ability": "",
+      "dc": null,
+      "scaling": "spell",
+      "value": ""
+    },
+    "scaling": {
+      "formula": "",
+      "mode": "level"
+    },
+    "school": "ill",
+    "source": "PHB pg. 254",
+    "target": {
+      "type": "creature",
+      "units": "",
+      "value": 1,
+      "width": null
+    },
+    "uses": {
+      "max": "0",
+      "per": "",
+      "recovery": "",
+      "value": 0
+    }
+  },
+  "type": "spell"
 }

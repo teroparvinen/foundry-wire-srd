@@ -1,111 +1,16 @@
 {
-  "name": "Power Word Kill",
-  "ownership": {
-    "default": 0,
-    "m7gKrZnSC3XR8ToV": 3
-  },
-  "type": "spell",
-  "system": {
-    "description": {
-      "value": "<p>You utter a word of power that can compel one creature you can see within range to die instantly. If the creature you choose has 100 hit points or fewer, it dies. Otherwise, the spell has no effect.</p>",
-      "chat": "",
-      "unidentified": ""
-    },
-    "source": "PHB pg. 266",
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": null,
-      "units": "inst"
-    },
-    "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature"
-    },
-    "range": {
-      "value": 60,
-      "long": 0,
-      "units": "ft"
-    },
-    "uses": {
-      "value": 0,
-      "max": "0",
-      "per": "",
-      "recovery": ""
-    },
-    "consume": {
-      "type": "",
-      "target": "",
-      "amount": null
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": 0,
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "100",
-          ""
-        ]
-      ],
-      "versatile": "",
-      "value": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell",
-      "value": ""
-    },
-    "level": 9,
-    "school": "enc",
-    "components": {
-      "value": "",
-      "vocal": true,
-      "somatic": false,
-      "material": false,
-      "ritual": false,
-      "concentration": false
-    },
-    "materials": {
-      "value": "",
-      "consumed": false,
-      "cost": 0,
-      "supply": 0
-    },
-    "preparation": {
-      "mode": "prepared",
-      "prepared": false
-    },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    }
-  },
+  "_id": "n6waXERrCVGjMzA4",
+  "_key": "!items!n6waXERrCVGjMzA4",
+  "effects": [],
   "flags": {
     "wire": {
-      "override": {
-        "target": {
-          "value": "1"
-        }
-      },
       "checkedAbility": "",
-      "saveImmunity": false,
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.10.2",
       "damageParts": [
         {
-          "halving": "full",
-          "application": "immediate"
+          "application": "immediate",
+          "halving": "full"
         }
       ],
       "immunities": [
@@ -114,22 +19,110 @@
           "value": "gt(@target.attributes.hp.value, 100)"
         }
       ],
-      "compendiumSource": "wire-srd.spells",
-      "compendiumVersion": "0.10.2"
+      "override": {
+        "target": {
+          "value": "1"
+        }
+      },
+      "saveImmunity": false
     }
   },
-  "img": "icons/magic/unholy/strike-beam-blood-large-red-teal.webp",
-  "effects": [],
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.0.3",
-    "coreVersion": "10.291",
-    "createdTime": 1661787234182,
-    "modifiedTime": 1672347622714,
-    "lastModifiedBy": "m7gKrZnSC3XR8ToV"
-  },
   "folder": null,
-  "sort": 0,
-  "_id": "n6waXERrCVGjMzA4",
-  "_key": "!items!n6waXERrCVGjMzA4"
+  "img": "icons/magic/unholy/strike-beam-blood-large-red-teal.webp",
+  "name": "Power Word Kill",
+  "ownership": {
+    "default": 0,
+    "m7gKrZnSC3XR8ToV": 3
+  },
+  "system": {
+    "ability": "",
+    "actionType": "save",
+    "activation": {
+      "condition": "",
+      "cost": 1,
+      "type": "action"
+    },
+    "attackBonus": 0,
+    "chatFlavor": "",
+    "components": {
+      "concentration": false,
+      "material": false,
+      "ritual": false,
+      "somatic": false,
+      "value": "",
+      "vocal": true
+    },
+    "consume": {
+      "amount": null,
+      "target": "",
+      "type": ""
+    },
+    "cover": null,
+    "crewed": false,
+    "critical": {
+      "damage": "",
+      "threshold": null
+    },
+    "damage": {
+      "parts": [
+        [
+          "100",
+          ""
+        ]
+      ],
+      "value": "",
+      "versatile": ""
+    },
+    "description": {
+      "chat": "",
+      "unidentified": "",
+      "value": "<p>You utter a word of power that can compel one creature you can see within range to die instantly. If the creature you choose has 100 hit points or fewer, it dies. Otherwise, the spell has no effect.</p>"
+    },
+    "duration": {
+      "units": "inst",
+      "value": null
+    },
+    "formula": "",
+    "level": 9,
+    "materials": {
+      "consumed": false,
+      "cost": 0,
+      "supply": 0,
+      "value": ""
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "range": {
+      "long": 0,
+      "units": "ft",
+      "value": 60
+    },
+    "save": {
+      "ability": "",
+      "dc": null,
+      "scaling": "spell",
+      "value": ""
+    },
+    "scaling": {
+      "formula": "",
+      "mode": "none"
+    },
+    "school": "enc",
+    "source": "PHB pg. 266",
+    "target": {
+      "type": "creature",
+      "units": "",
+      "value": 1,
+      "width": null
+    },
+    "uses": {
+      "max": "0",
+      "per": "",
+      "recovery": "",
+      "value": 0
+    }
+  },
+  "type": "spell"
 }

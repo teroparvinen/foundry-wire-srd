@@ -1,265 +1,181 @@
 {
-  "name": "Protection from Energy",
-  "type": "spell",
-  "img": "icons/magic/defensive/shield-barrier-flaming-diamond-teal.webp",
-  "system": {
-    "description": {
-      "value": "<p>For the duration, the willing creature you touch has resistance to one damage type of your choice: acid, cold, fire, lightning, or thunder.</p>",
-      "chat": "",
-      "unidentified": ""
-    },
-    "source": "PHB pg. 270",
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": 1,
-      "units": "hour"
-    },
-    "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature"
-    },
-    "range": {
-      "value": null,
-      "long": null,
-      "units": "touch"
-    },
-    "uses": {
-      "value": 0,
-      "max": "0",
-      "per": "",
-      "recovery": ""
-    },
-    "consume": {
-      "type": "",
-      "target": "",
-      "amount": null
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": 0,
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": "",
-      "value": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell",
-      "value": ""
-    },
-    "level": 3,
-    "school": "abj",
-    "components": {
-      "value": "",
-      "vocal": true,
-      "somatic": true,
-      "material": false,
-      "ritual": false,
-      "concentration": true
-    },
-    "materials": {
-      "value": "",
-      "consumed": false,
-      "cost": 0,
-      "supply": 0
-    },
-    "preparation": {
-      "mode": "prepared",
-      "prepared": false
-    },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "attunement": 0
-  },
+  "_id": "cuKz2b6WZlwC6jQL",
+  "_key": "!items!cuKz2b6WZlwC6jQL",
   "effects": [
     {
       "_id": "tgqg2tq9ssvyrmr9",
+      "_key": "!items.effects!cuKz2b6WZlwC6jQL.tgqg2tq9ssvyrmr9",
       "changes": [
         {
           "key": "system.traits.dr.value",
           "mode": 2,
-          "value": "acid",
-          "priority": 0
+          "priority": 0,
+          "value": "acid"
         }
       ],
       "disabled": false,
       "duration": {
-        "startTime": null,
-        "seconds": null,
         "combat": null,
         "rounds": null,
-        "turns": null,
+        "seconds": null,
         "startRound": null,
-        "startTurn": null
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
+      },
+      "flags": {
+        "wire": {
+          "applicationType": "immediate",
+          "applyOnSaveOrMiss": false,
+          "independentDuration": false
+        }
       },
       "icon": "icons/magic/defensive/shield-barrier-flaming-diamond-teal.webp",
       "label": "Protection from Acid",
       "origin": "Actor.DYtIju3AiBnowE65.Item.btpICVVeAQap30pd",
-      "transfer": false,
-      "flags": {
-        "wire": {
-          "applyOnSaveOrMiss": false,
-          "applicationType": "immediate",
-          "independentDuration": false
-        }
-      },
       "tint": null,
-      "_key": "!items.effects!cuKz2b6WZlwC6jQL.tgqg2tq9ssvyrmr9"
+      "transfer": false
     },
     {
       "_id": "4yu0mbsugbf0530z",
+      "_key": "!items.effects!cuKz2b6WZlwC6jQL.4yu0mbsugbf0530z",
       "changes": [
         {
           "key": "system.traits.dr.value",
           "mode": 2,
-          "value": "cold",
-          "priority": 0
+          "priority": 0,
+          "value": "cold"
         }
       ],
       "disabled": false,
       "duration": {
-        "startTime": null,
-        "seconds": null,
         "combat": null,
         "rounds": null,
-        "turns": null,
+        "seconds": null,
         "startRound": null,
-        "startTurn": null
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
+      },
+      "flags": {
+        "wire": {
+          "applicationType": "immediate",
+          "applyOnSaveOrMiss": false,
+          "independentDuration": false
+        }
       },
       "icon": "icons/magic/defensive/shield-barrier-flaming-diamond-teal.webp",
       "label": "Protection from Cold",
       "origin": "Actor.DYtIju3AiBnowE65.Item.btpICVVeAQap30pd",
-      "transfer": false,
-      "flags": {
-        "wire": {
-          "applyOnSaveOrMiss": false,
-          "applicationType": "immediate",
-          "independentDuration": false
-        }
-      },
       "tint": null,
-      "_key": "!items.effects!cuKz2b6WZlwC6jQL.4yu0mbsugbf0530z"
+      "transfer": false
     },
     {
       "_id": "myqys7cinvdo7rta",
+      "_key": "!items.effects!cuKz2b6WZlwC6jQL.myqys7cinvdo7rta",
       "changes": [
         {
           "key": "system.traits.dr.value",
           "mode": 2,
-          "value": "fire",
-          "priority": 0
+          "priority": 0,
+          "value": "fire"
         }
       ],
       "disabled": false,
       "duration": {
-        "startTime": null,
-        "seconds": null,
         "combat": null,
         "rounds": null,
-        "turns": null,
+        "seconds": null,
         "startRound": null,
-        "startTurn": null
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
+      },
+      "flags": {
+        "wire": {
+          "applicationType": "immediate",
+          "applyOnSaveOrMiss": false,
+          "independentDuration": false
+        }
       },
       "icon": "icons/magic/defensive/shield-barrier-flaming-diamond-teal.webp",
       "label": "Protection from Fire",
       "origin": "Actor.DYtIju3AiBnowE65.Item.btpICVVeAQap30pd",
-      "transfer": false,
-      "flags": {
-        "wire": {
-          "applyOnSaveOrMiss": false,
-          "applicationType": "immediate",
-          "independentDuration": false
-        }
-      },
       "tint": null,
-      "_key": "!items.effects!cuKz2b6WZlwC6jQL.myqys7cinvdo7rta"
+      "transfer": false
     },
     {
       "_id": "f4n8cblkkhdh6o4h",
+      "_key": "!items.effects!cuKz2b6WZlwC6jQL.f4n8cblkkhdh6o4h",
       "changes": [
         {
           "key": "system.traits.dr.value",
           "mode": 2,
-          "value": "lightning",
-          "priority": 0
+          "priority": 0,
+          "value": "lightning"
         }
       ],
       "disabled": false,
       "duration": {
-        "startTime": null,
-        "seconds": null,
         "combat": null,
         "rounds": null,
-        "turns": null,
+        "seconds": null,
         "startRound": null,
-        "startTurn": null
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
+      },
+      "flags": {
+        "wire": {
+          "applicationType": "immediate",
+          "applyOnSaveOrMiss": false,
+          "independentDuration": false
+        }
       },
       "icon": "icons/magic/defensive/shield-barrier-flaming-diamond-teal.webp",
       "label": "Protection from Lightning",
       "origin": "Actor.DYtIju3AiBnowE65.Item.btpICVVeAQap30pd",
-      "transfer": false,
-      "flags": {
-        "wire": {
-          "applyOnSaveOrMiss": false,
-          "applicationType": "immediate",
-          "independentDuration": false
-        }
-      },
       "tint": null,
-      "_key": "!items.effects!cuKz2b6WZlwC6jQL.f4n8cblkkhdh6o4h"
+      "transfer": false
     },
     {
       "_id": "re8yzrtee5fm3exi",
+      "_key": "!items.effects!cuKz2b6WZlwC6jQL.re8yzrtee5fm3exi",
       "changes": [
         {
           "key": "system.traits.dr.value",
           "mode": 2,
-          "value": "thunder",
-          "priority": 0
+          "priority": 0,
+          "value": "thunder"
         }
       ],
       "disabled": false,
       "duration": {
-        "startTime": null,
-        "seconds": null,
         "combat": null,
         "rounds": null,
-        "turns": null,
+        "seconds": null,
         "startRound": null,
-        "startTurn": null
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
+      },
+      "flags": {
+        "wire": {
+          "applicationType": "immediate",
+          "applyOnSaveOrMiss": false,
+          "independentDuration": false
+        }
       },
       "icon": "icons/magic/defensive/shield-barrier-flaming-diamond-teal.webp",
       "label": "Protection from Thunder",
       "origin": "Actor.DYtIju3AiBnowE65.Item.btpICVVeAQap30pd",
-      "transfer": false,
-      "flags": {
-        "wire": {
-          "applyOnSaveOrMiss": false,
-          "applicationType": "immediate",
-          "independentDuration": false
-        }
-      },
       "tint": null,
-      "_key": "!items.effects!cuKz2b6WZlwC6jQL.re8yzrtee5fm3exi"
+      "transfer": false
     }
   ],
   "flags": {
     "wire": {
+      "checkedAbility": "",
       "compendiumSource": "wire-srd.spells",
       "compendiumVersion": "0.10.1",
       "override": {
@@ -267,32 +183,109 @@
           "value": "1"
         }
       },
-      "checkedAbility": "",
+      "saveImmunity": false,
       "variants": [
         "Acid",
         "Cold",
         "Fire",
         "Lightning",
         "Thunder"
-      ],
-      "saveImmunity": false
+      ]
     }
   },
+  "folder": null,
+  "img": "icons/magic/defensive/shield-barrier-flaming-diamond-teal.webp",
+  "name": "Protection from Energy",
   "ownership": {
-    "default": 0,
     "BDWtlDQYkOI4gQqd": 3,
+    "default": 0,
     "m7gKrZnSC3XR8ToV": 3
   },
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.0.3",
-    "coreVersion": "10.291",
-    "createdTime": 1671042062274,
-    "modifiedTime": 1672219967066,
-    "lastModifiedBy": "m7gKrZnSC3XR8ToV"
+  "system": {
+    "ability": "",
+    "actionType": "util",
+    "activation": {
+      "condition": "",
+      "cost": 1,
+      "type": "action"
+    },
+    "attackBonus": 0,
+    "attunement": 0,
+    "chatFlavor": "",
+    "components": {
+      "concentration": true,
+      "material": false,
+      "ritual": false,
+      "somatic": true,
+      "value": "",
+      "vocal": true
+    },
+    "consume": {
+      "amount": null,
+      "target": "",
+      "type": ""
+    },
+    "cover": null,
+    "crewed": false,
+    "critical": {
+      "damage": "",
+      "threshold": null
+    },
+    "damage": {
+      "parts": [],
+      "value": "",
+      "versatile": ""
+    },
+    "description": {
+      "chat": "",
+      "unidentified": "",
+      "value": "<p>For the duration, the willing creature you touch has resistance to one damage type of your choice: acid, cold, fire, lightning, or thunder.</p>"
+    },
+    "duration": {
+      "units": "hour",
+      "value": 1
+    },
+    "formula": "",
+    "level": 3,
+    "materials": {
+      "consumed": false,
+      "cost": 0,
+      "supply": 0,
+      "value": ""
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "range": {
+      "long": null,
+      "units": "touch",
+      "value": null
+    },
+    "save": {
+      "ability": "",
+      "dc": null,
+      "scaling": "spell",
+      "value": ""
+    },
+    "scaling": {
+      "formula": "",
+      "mode": "none"
+    },
+    "school": "abj",
+    "source": "PHB pg. 270",
+    "target": {
+      "type": "creature",
+      "units": "",
+      "value": 1,
+      "width": null
+    },
+    "uses": {
+      "max": "0",
+      "per": "",
+      "recovery": "",
+      "value": 0
+    }
   },
-  "folder": null,
-  "sort": 0,
-  "_id": "cuKz2b6WZlwC6jQL",
-  "_key": "!items!cuKz2b6WZlwC6jQL"
+  "type": "spell"
 }

@@ -1,119 +1,96 @@
 {
-  "name": "Strength Drain",
-  "type": "weapon",
-  "img": "icons/magic/unholy/strike-hand-glow-pink.webp",
+  "_id": "jmJMjWeoW9S2l0nW",
+  "_key": "!items!jmJMjWeoW9S2l0nW",
   "effects": [
     {
-      "label": "Strength Drain",
-      "icon": "icons/magic/unholy/strike-hand-glow-pink.webp",
-      "origin": "Scene.Xy2Un3kaNxzH3jmZ.Token.3I9AHl3eC9hop2ZV.Item.2OUOBIN4TJDoL0sJ",
-      "duration": {
-        "startTime": null,
-        "seconds": null,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "disabled": false,
       "_id": "rbwLzbpwQ8pvqxMs",
+      "_key": "!items.effects!jmJMjWeoW9S2l0nW.rbwLzbpwQ8pvqxMs",
       "changes": [
         {
           "key": "system.abilities.str.value",
           "mode": 2,
-          "value": "-1d4",
-          "priority": 20
+          "priority": 20,
+          "value": "-1d4"
         }
       ],
-      "tint": null,
-      "transfer": false,
+      "disabled": false,
+      "duration": {
+        "combat": null,
+        "rounds": null,
+        "seconds": null,
+        "startRound": null,
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
+      },
       "flags": {
         "wire": {
-          "applyOnSaveOrMiss": false,
-          "blocksAreaConditions": false,
-          "auraTargets": "",
           "applicationType": "immediate",
-          "independentDuration": true,
+          "applyOnSaveOrMiss": false,
+          "auraTargets": "",
+          "blocksAreaConditions": false,
           "conditions": [],
-          "stackEffects": true,
-          "rollEffects": true
+          "independentDuration": true,
+          "rollEffects": true,
+          "stackEffects": true
         }
       },
-      "_key": "!items.effects!jmJMjWeoW9S2l0nW.rbwLzbpwQ8pvqxMs"
+      "icon": "icons/magic/unholy/strike-hand-glow-pink.webp",
+      "label": "Strength Drain",
+      "origin": "Scene.Xy2Un3kaNxzH3jmZ.Token.3I9AHl3eC9hop2ZV.Item.2OUOBIN4TJDoL0sJ",
+      "tint": null,
+      "transfer": false
     }
   ],
   "flags": {
     "wire": {
+      "checkedAbility": "",
+      "compendiumSource": "wire-srd.monsterfeatures",
+      "compendiumVersion": "0.10.1",
+      "damageParts": [
+        {
+          "application": "immediate",
+          "halving": "none"
+        }
+      ],
       "override": {
         "target": {
           "value": ""
         }
       },
-      "checkedAbility": "",
-      "saveImmunity": false,
-      "damageParts": [
-        {
-          "halving": "none",
-          "application": "immediate"
-        }
-      ],
-      "compendiumSource": "wire-srd.monsterfeatures",
-      "compendiumVersion": "0.10.1"
+      "saveImmunity": false
     }
   },
+  "folder": null,
+  "img": "icons/magic/unholy/strike-hand-glow-pink.webp",
+  "name": "Strength Drain",
+  "ownership": {
+    "default": 0,
+    "m7gKrZnSC3XR8ToV": 3
+  },
   "system": {
-    "description": {
-      "value": "<section class=\"secret\"><p><em>Melee Weapon Attack:</em><strong>+4 to hit,</strong>, <strong>5 ft.,</strong> one creature. Hit: <strong>9 (2d6 + 2) <em>necrotic damage</em></strong>.</p><p>The target's Strength score is reduced by 1d4. The target dies if this reduces its Strength to 0. Otherwise, the reduction lasts until the target finishes a short or long rest.If a non-evil humanoid dies from this attack, a new shadow rises from the corpse 1d4 hours later.</p></section><p>The Shadow attacks with its Strength Drain.</p>",
-      "chat": "",
-      "unidentified": ""
-    },
-    "source": "",
-    "quantity": 1,
-    "weight": 0,
-    "price": 0,
-    "attunement": 0,
-    "equipped": true,
-    "rarity": "",
-    "identified": true,
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": null,
-      "units": ""
-    },
-    "target": {
-      "value": null,
-      "width": null,
-      "units": "",
-      "type": ""
-    },
-    "range": {
-      "value": 5,
-      "long": null,
-      "units": "ft"
-    },
-    "uses": {
-      "value": 0,
-      "max": "0",
-      "per": "",
-      "recovery": ""
-    },
-    "consume": {
-      "type": "",
-      "target": "",
-      "amount": null
-    },
     "ability": "dex",
     "actionType": "mwak",
+    "activation": {
+      "condition": "",
+      "cost": 1,
+      "type": "action"
+    },
+    "armor": {
+      "value": 10
+    },
     "attackBonus": "0",
+    "attunement": 0,
+    "baseItem": "",
     "chatFlavor": "",
+    "consume": {
+      "amount": null,
+      "target": "",
+      "type": ""
+    },
     "critical": {
-      "threshold": null,
-      "damage": ""
+      "damage": "",
+      "threshold": null
     },
     "damage": {
       "parts": [
@@ -124,24 +101,28 @@
       ],
       "versatile": ""
     },
+    "description": {
+      "chat": "",
+      "unidentified": "",
+      "value": "<section class=\"secret\"><p><em>Melee Weapon Attack:</em><strong>+4 to hit,</strong>, <strong>5 ft.,</strong> one creature. Hit: <strong>9 (2d6 + 2) <em>necrotic damage</em></strong>.</p><p>The target's Strength score is reduced by 1d4. The target dies if this reduces its Strength to 0. Otherwise, the reduction lasts until the target finishes a short or long rest.If a non-evil humanoid dies from this attack, a new shadow rises from the corpse 1d4 hours later.</p></section><p>The Shadow attacks with its Strength Drain.</p>"
+    },
+    "duration": {
+      "units": "",
+      "value": null
+    },
+    "equipped": true,
     "formula": "",
-    "save": {
-      "ability": "",
-      "dc": 10,
-      "scaling": "spell"
-    },
-    "armor": {
-      "value": 10
-    },
     "hp": {
-      "value": 0,
-      "max": 0,
+      "conditions": "",
       "dt": null,
-      "conditions": ""
+      "max": 0,
+      "value": 0
     },
-    "weaponType": "natural",
-    "baseItem": "",
+    "identified": true,
+    "price": 0,
+    "proficient": true,
     "properties": {
+      "ada": false,
       "amm": false,
       "fin": false,
       "fir": false,
@@ -149,33 +130,43 @@
       "hvy": false,
       "lgt": false,
       "lod": false,
+      "mgc": false,
       "rch": false,
       "rel": false,
       "ret": false,
+      "sil": false,
       "spc": false,
       "thr": false,
       "two": false,
-      "ver": false,
-      "ada": false,
-      "mgc": false,
-      "sil": false
+      "ver": false
     },
-    "proficient": true
+    "quantity": 1,
+    "range": {
+      "long": null,
+      "units": "ft",
+      "value": 5
+    },
+    "rarity": "",
+    "save": {
+      "ability": "",
+      "dc": 10,
+      "scaling": "spell"
+    },
+    "source": "",
+    "target": {
+      "type": "",
+      "units": "",
+      "value": null,
+      "width": null
+    },
+    "uses": {
+      "max": "0",
+      "per": "",
+      "recovery": "",
+      "value": 0
+    },
+    "weaponType": "natural",
+    "weight": 0
   },
-  "ownership": {
-    "default": 0,
-    "m7gKrZnSC3XR8ToV": 3
-  },
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.0.3",
-    "coreVersion": "10.291",
-    "createdTime": 1672146638342,
-    "modifiedTime": 1672146638374,
-    "lastModifiedBy": "m7gKrZnSC3XR8ToV"
-  },
-  "folder": null,
-  "sort": 0,
-  "_id": "jmJMjWeoW9S2l0nW",
-  "_key": "!items!jmJMjWeoW9S2l0nW"
+  "type": "weapon"
 }

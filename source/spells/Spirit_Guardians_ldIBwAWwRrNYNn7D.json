@@ -1,134 +1,46 @@
 {
   "_id": "ldIBwAWwRrNYNn7D",
-  "name": "Spirit Guardians",
-  "type": "spell",
-  "img": "icons/magic/light/projectile-bolts-salvo-white.webp",
-  "system": {
-    "description": {
-      "value": "<p>You call forth spirits to protect you. They flit around you to a distance of 15 feet for the duration. If you are good or neutral, their spectral form appears angelic or fey (your choice). If you are evil, they appear fiendish.</p><p>When you cast this spell, you can designate any number of creatures you can see to be unaffected by it. An affected creature's speed is halved in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Wisdom saving throw. On a failed save, the creature takes 3d8 radiant damage (if you are good or neutral) or 3d8 necrotic damage (if you are evil). On a successful save, the creature takes half as much damage.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d8 for each slot level above 3rd.</p>",
-      "chat": "",
-      "unidentified": ""
-    },
-    "source": "PHB pg. 278",
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": 10,
-      "units": "minute"
-    },
-    "target": {
-      "value": 15,
-      "width": null,
-      "units": "ft",
-      "type": "radius"
-    },
-    "range": {
-      "value": null,
-      "long": null,
-      "units": "self"
-    },
-    "uses": {
-      "value": 0,
-      "max": "0",
-      "per": "",
-      "recovery": ""
-    },
-    "consume": {
-      "type": "",
-      "target": "",
-      "amount": null
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": 0,
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "3d8",
-          "radiant"
-        ]
-      ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "wis",
-      "dc": 0,
-      "scaling": "spell"
-    },
-    "level": 3,
-    "school": "con",
-    "components": {
-      "value": "",
-      "vocal": true,
-      "somatic": true,
-      "material": true,
-      "ritual": false,
-      "concentration": true
-    },
-    "materials": {
-      "value": "A holy symbol",
-      "consumed": false,
-      "cost": 0,
-      "supply": 0
-    },
-    "preparation": {
-      "mode": "prepared",
-      "prepared": false
-    },
-    "scaling": {
-      "mode": "level",
-      "formula": "1d8"
-    },
-    "attunement": null
-  },
+  "_key": "!items!ldIBwAWwRrNYNn7D",
   "effects": [
     {
       "_id": "sem6nx5pmq4hatgj",
+      "_key": "!items.effects!ldIBwAWwRrNYNn7D.sem6nx5pmq4hatgj",
       "changes": [
         {
           "key": "system.attributes.movement.all",
           "mode": 0,
-          "value": "*0.5",
-          "priority": 10
+          "priority": 10,
+          "value": "*0.5"
         }
       ],
       "disabled": false,
       "duration": {
-        "startTime": null,
-        "seconds": null,
         "combat": null,
         "rounds": null,
-        "turns": null,
+        "seconds": null,
         "startRound": null,
-        "startTurn": null
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
+      },
+      "flags": {
+        "wire": {
+          "applicationType": "delayed",
+          "applyOnSaveOrMiss": false
+        }
       },
       "icon": "icons/magic/light/projectile-bolts-salvo-white.webp",
       "label": "Spirit Guardians",
       "origin": "Actor.isYKP74w0SIExUvl.Item.vCpyuNCvwoPy2owk",
-      "transfer": false,
-      "flags": {
-        "wire": {
-          "applyOnSaveOrMiss": false,
-          "applicationType": "delayed"
-        }
-      },
       "tint": null,
-      "_key": "!items.effects!ldIBwAWwRrNYNn7D.sem6nx5pmq4hatgj"
+      "transfer": false
     }
   ],
-  "folder": null,
-  "sort": 0,
   "flags": {
     "wire": {
+      "checkedAbility": "",
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.10",
       "conditions": [
         {
           "condition": "enemy-enters-area",
@@ -149,8 +61,8 @@
       ],
       "damageParts": [
         {
-          "halving": "half",
-          "application": "overtime"
+          "application": "overtime",
+          "halving": "half"
         }
       ],
       "override": {
@@ -158,24 +70,105 @@
           "value": "15"
         }
       },
-      "checkedAbility": "",
-      "compendiumSource": "wire-srd.spells",
-      "compendiumVersion": "0.10",
-      "upcastInterval": null,
-      "saveImmunity": false
+      "saveImmunity": false,
+      "upcastInterval": null
     }
   },
+  "folder": null,
+  "img": "icons/magic/light/projectile-bolts-salvo-white.webp",
+  "name": "Spirit Guardians",
   "ownership": {
     "default": 0,
     "m7gKrZnSC3XR8ToV": 3
   },
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.0.3",
-    "coreVersion": "10.291",
-    "createdTime": null,
-    "modifiedTime": 1672220059376,
-    "lastModifiedBy": "m7gKrZnSC3XR8ToV"
+  "system": {
+    "ability": "",
+    "actionType": "save",
+    "activation": {
+      "condition": "",
+      "cost": 1,
+      "type": "action"
+    },
+    "attackBonus": 0,
+    "attunement": null,
+    "chatFlavor": "",
+    "components": {
+      "concentration": true,
+      "material": true,
+      "ritual": false,
+      "somatic": true,
+      "value": "",
+      "vocal": true
+    },
+    "consume": {
+      "amount": null,
+      "target": "",
+      "type": ""
+    },
+    "cover": null,
+    "crewed": false,
+    "critical": {
+      "damage": "",
+      "threshold": null
+    },
+    "damage": {
+      "parts": [
+        [
+          "3d8",
+          "radiant"
+        ]
+      ],
+      "versatile": ""
+    },
+    "description": {
+      "chat": "",
+      "unidentified": "",
+      "value": "<p>You call forth spirits to protect you. They flit around you to a distance of 15 feet for the duration. If you are good or neutral, their spectral form appears angelic or fey (your choice). If you are evil, they appear fiendish.</p><p>When you cast this spell, you can designate any number of creatures you can see to be unaffected by it. An affected creature's speed is halved in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Wisdom saving throw. On a failed save, the creature takes 3d8 radiant damage (if you are good or neutral) or 3d8 necrotic damage (if you are evil). On a successful save, the creature takes half as much damage.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d8 for each slot level above 3rd.</p>"
+    },
+    "duration": {
+      "units": "minute",
+      "value": 10
+    },
+    "formula": "",
+    "level": 3,
+    "materials": {
+      "consumed": false,
+      "cost": 0,
+      "supply": 0,
+      "value": "A holy symbol"
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "range": {
+      "long": null,
+      "units": "self",
+      "value": null
+    },
+    "save": {
+      "ability": "wis",
+      "dc": 0,
+      "scaling": "spell"
+    },
+    "scaling": {
+      "formula": "1d8",
+      "mode": "level"
+    },
+    "school": "con",
+    "source": "PHB pg. 278",
+    "target": {
+      "type": "radius",
+      "units": "ft",
+      "value": 15,
+      "width": null
+    },
+    "uses": {
+      "max": "0",
+      "per": "",
+      "recovery": "",
+      "value": 0
+    }
   },
-  "_key": "!items!ldIBwAWwRrNYNn7D"
+  "type": "spell"
 }

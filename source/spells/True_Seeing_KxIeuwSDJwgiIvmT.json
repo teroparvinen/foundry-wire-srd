@@ -1,158 +1,151 @@
 {
+  "_id": "KxIeuwSDJwgiIvmT",
+  "_key": "!items!KxIeuwSDJwgiIvmT",
+  "effects": [
+    {
+      "_id": "NEd14jChDrbesQn4",
+      "_key": "!items.effects!KxIeuwSDJwgiIvmT.NEd14jChDrbesQn4",
+      "changes": [
+        {
+          "key": "system.attributes.senses.truesight",
+          "mode": 4,
+          "priority": 20,
+          "value": "120"
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "combat": null,
+        "rounds": null,
+        "seconds": null,
+        "startRound": null,
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
+      },
+      "flags": {
+        "wire": {
+          "applicationType": "immediate",
+          "applyOnSaveOrMiss": false,
+          "auraTargets": "",
+          "blocksAreaConditions": false,
+          "conditions": [],
+          "independentDuration": false,
+          "rollEffects": false,
+          "stackEffects": false
+        }
+      },
+      "icon": "icons/magic/perception/eye-ringed-glow-angry-large-teal.webp",
+      "label": "True Seeing",
+      "origin": "Actor.m4mjuiVrcZHbrj00.Item.2uHMXHC8iEc3wc2C",
+      "tint": null,
+      "transfer": false
+    }
+  ],
+  "flags": {
+    "wire": {
+      "checkedAbility": "",
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.10.2",
+      "override": {
+        "target": {
+          "value": "1"
+        }
+      },
+      "saveImmunity": false
+    }
+  },
+  "folder": null,
+  "img": "icons/magic/perception/eye-ringed-glow-angry-large-teal.webp",
   "name": "True Seeing",
   "ownership": {
     "default": 0,
     "m7gKrZnSC3XR8ToV": 3
   },
-  "type": "spell",
   "system": {
-    "description": {
-      "value": "<p>This spell gives the willing creature you touch the ability to see things as they actually are. For the duration, the creature has truesight, notices secret doors hidden by magic, and can see into the Ethereal Plane, all out to a range of 120 feet.</p>",
-      "chat": "",
-      "unidentified": ""
-    },
-    "source": "PHB pg. 284",
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": 1,
-      "units": "hour"
-    },
-    "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature"
-    },
-    "range": {
-      "value": null,
-      "long": null,
-      "units": "touch"
-    },
-    "uses": {
-      "value": 0,
-      "max": "0",
-      "per": "",
-      "recovery": ""
-    },
-    "consume": {
-      "type": "",
-      "target": "",
-      "amount": null
-    },
     "ability": "",
     "actionType": "util",
+    "activation": {
+      "condition": "",
+      "cost": 1,
+      "type": "action"
+    },
     "attackBonus": 0,
     "chatFlavor": "",
+    "components": {
+      "concentration": false,
+      "material": true,
+      "ritual": false,
+      "somatic": true,
+      "value": "",
+      "vocal": true
+    },
+    "consume": {
+      "amount": null,
+      "target": "",
+      "type": ""
+    },
+    "cover": null,
+    "crewed": false,
     "critical": {
-      "threshold": null,
-      "damage": ""
+      "damage": "",
+      "threshold": null
     },
     "damage": {
       "parts": [],
-      "versatile": "",
-      "value": ""
+      "value": "",
+      "versatile": ""
+    },
+    "description": {
+      "chat": "",
+      "unidentified": "",
+      "value": "<p>This spell gives the willing creature you touch the ability to see things as they actually are. For the duration, the creature has truesight, notices secret doors hidden by magic, and can see into the Ethereal Plane, all out to a range of 120 feet.</p>"
+    },
+    "duration": {
+      "units": "hour",
+      "value": 1
     },
     "formula": "",
+    "level": 6,
+    "materials": {
+      "consumed": true,
+      "cost": 25,
+      "supply": 0,
+      "value": "An ointment for the eyes that costs 25gp; is made from mushroom powder, saffron, and fat; and is consumed by the spell"
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "range": {
+      "long": null,
+      "units": "touch",
+      "value": null
+    },
     "save": {
       "ability": "",
       "dc": null,
       "scaling": "spell",
       "value": ""
     },
-    "level": 6,
-    "school": "div",
-    "components": {
-      "value": "",
-      "vocal": true,
-      "somatic": true,
-      "material": true,
-      "ritual": false,
-      "concentration": false
-    },
-    "materials": {
-      "value": "An ointment for the eyes that costs 25gp; is made from mushroom powder, saffron, and fat; and is consumed by the spell",
-      "consumed": true,
-      "cost": 25,
-      "supply": 0
-    },
-    "preparation": {
-      "mode": "prepared",
-      "prepared": false
-    },
     "scaling": {
-      "mode": "none",
-      "formula": ""
+      "formula": "",
+      "mode": "none"
+    },
+    "school": "div",
+    "source": "PHB pg. 284",
+    "target": {
+      "type": "creature",
+      "units": "",
+      "value": 1,
+      "width": null
+    },
+    "uses": {
+      "max": "0",
+      "per": "",
+      "recovery": "",
+      "value": 0
     }
   },
-  "flags": {
-    "wire": {
-      "override": {
-        "target": {
-          "value": "1"
-        }
-      },
-      "checkedAbility": "",
-      "saveImmunity": false,
-      "compendiumSource": "wire-srd.spells",
-      "compendiumVersion": "0.10.2"
-    }
-  },
-  "img": "icons/magic/perception/eye-ringed-glow-angry-large-teal.webp",
-  "effects": [
-    {
-      "label": "True Seeing",
-      "icon": "icons/magic/perception/eye-ringed-glow-angry-large-teal.webp",
-      "origin": "Actor.m4mjuiVrcZHbrj00.Item.2uHMXHC8iEc3wc2C",
-      "duration": {
-        "startTime": null,
-        "seconds": null,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "disabled": false,
-      "_id": "NEd14jChDrbesQn4",
-      "changes": [
-        {
-          "key": "system.attributes.senses.truesight",
-          "mode": 4,
-          "value": "120",
-          "priority": 20
-        }
-      ],
-      "tint": null,
-      "transfer": false,
-      "flags": {
-        "wire": {
-          "applyOnSaveOrMiss": false,
-          "applicationType": "immediate",
-          "blocksAreaConditions": false,
-          "auraTargets": "",
-          "stackEffects": false,
-          "rollEffects": false,
-          "independentDuration": false,
-          "conditions": []
-        }
-      },
-      "_key": "!items.effects!KxIeuwSDJwgiIvmT.NEd14jChDrbesQn4"
-    }
-  ],
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.0.3",
-    "coreVersion": "10.291",
-    "createdTime": 1661787234160,
-    "modifiedTime": 1672323122278,
-    "lastModifiedBy": "m7gKrZnSC3XR8ToV"
-  },
-  "folder": null,
-  "sort": 0,
-  "_id": "KxIeuwSDJwgiIvmT",
-  "_key": "!items!KxIeuwSDJwgiIvmT"
+  "type": "spell"
 }

@@ -1,78 +1,45 @@
 {
-  "name": "Fighting Style: Two-Weapon Fighting",
-  "ownership": {
-    "default": 0,
-    "m7gKrZnSC3XR8ToV": 3
-  },
-  "type": "feat",
-  "system": {
-    "description": {
-      "value": "<p>When you engage in two-weapon fighting, you can add your ability modifier to the damage of the second attack.</p>",
-      "chat": "",
-      "unidentified": ""
-    },
-    "source": "PHB pg. 72; 73; 91",
-    "activation": {
-      "type": "",
-      "cost": 0,
-      "condition": ""
-    },
-    "duration": {
-      "value": "",
-      "units": ""
-    },
-    "cover": null,
-    "crewed": false,
-    "target": {
-      "value": "",
-      "width": null,
-      "units": "",
-      "type": ""
-    },
-    "range": {
-      "value": "",
-      "long": null,
-      "units": ""
-    },
-    "uses": {
-      "value": null,
-      "max": "",
-      "per": null,
-      "recovery": ""
-    },
-    "consume": {
-      "type": "",
-      "target": "",
-      "amount": null
-    },
-    "ability": "",
-    "actionType": "",
-    "attackBonus": 0,
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
-    },
-    "type": {
-      "value": "class",
-      "subtype": "fightingStyle"
-    },
-    "requirements": "Fighter 1, Champion 10, Ranger 2",
-    "recharge": {
-      "value": null,
-      "charged": false
+  "_id": "U71O324CSEWKWPBG",
+  "_key": "!items!U71O324CSEWKWPBG",
+  "effects": [
+    {
+      "_id": "AXXtn6tR3EUByrh8",
+      "_key": "!items.effects!U71O324CSEWKWPBG.AXXtn6tR3EUByrh8",
+      "changes": [
+        {
+          "key": "flags.wire.twoWeaponFighting",
+          "mode": 2,
+          "priority": null,
+          "value": "1"
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "combat": null,
+        "rounds": null,
+        "seconds": null,
+        "startRound": null,
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
+      },
+      "flags": {
+        "times-up": {},
+        "wire": {
+          "applicationType": "immediate",
+          "applyOnSaveOrMiss": false,
+          "auraTargets": "",
+          "blocksAreaConditions": false,
+          "independentDuration": false
+        }
+      },
+      "icon": "icons/skills/melee/weapons-crossed-swords-white-blue.webp",
+      "label": "Two-Weapon Fighting",
+      "origin": "Item.KqT0Xk2hY7FMFYRO",
+      "tint": null,
+      "transfer": true
     }
-  },
+  ],
   "flags": {
     "wire": {
       "compendiumSource": "wire-srd.classfeatures",
@@ -84,56 +51,80 @@
       }
     }
   },
-  "img": "icons/skills/melee/weapons-crossed-swords-white-blue.webp",
-  "effects": [
-    {
-      "label": "Two-Weapon Fighting",
-      "icon": "icons/skills/melee/weapons-crossed-swords-white-blue.webp",
-      "origin": "Item.KqT0Xk2hY7FMFYRO",
-      "duration": {
-        "startTime": null,
-        "seconds": null,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "disabled": false,
-      "_id": "AXXtn6tR3EUByrh8",
-      "changes": [
-        {
-          "key": "flags.wire.twoWeaponFighting",
-          "mode": 2,
-          "value": "1",
-          "priority": null
-        }
-      ],
-      "tint": null,
-      "transfer": true,
-      "flags": {
-        "times-up": {},
-        "wire": {
-          "applyOnSaveOrMiss": false,
-          "blocksAreaConditions": false,
-          "auraTargets": "",
-          "applicationType": "immediate",
-          "independentDuration": false
-        }
-      },
-      "_key": "!items.effects!U71O324CSEWKWPBG.AXXtn6tR3EUByrh8"
-    }
-  ],
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.2.2",
-    "coreVersion": "11.306",
-    "createdTime": 1661787234419,
-    "modifiedTime": 1694935058471,
-    "lastModifiedBy": "dBglmdrMUDMEh6ZW"
-  },
   "folder": null,
-  "sort": 0,
-  "_id": "U71O324CSEWKWPBG",
-  "_key": "!items!U71O324CSEWKWPBG"
+  "img": "icons/skills/melee/weapons-crossed-swords-white-blue.webp",
+  "name": "Fighting Style: Two-Weapon Fighting",
+  "ownership": {
+    "default": 0,
+    "m7gKrZnSC3XR8ToV": 3
+  },
+  "system": {
+    "ability": "",
+    "actionType": "",
+    "activation": {
+      "condition": "",
+      "cost": 0,
+      "type": ""
+    },
+    "attackBonus": 0,
+    "chatFlavor": "",
+    "consume": {
+      "amount": null,
+      "target": "",
+      "type": ""
+    },
+    "cover": null,
+    "crewed": false,
+    "critical": {
+      "damage": "",
+      "threshold": null
+    },
+    "damage": {
+      "parts": [],
+      "versatile": ""
+    },
+    "description": {
+      "chat": "",
+      "unidentified": "",
+      "value": "<p>When you engage in two-weapon fighting, you can add your ability modifier to the damage of the second attack.</p>"
+    },
+    "duration": {
+      "units": "",
+      "value": ""
+    },
+    "formula": "",
+    "range": {
+      "long": null,
+      "units": "",
+      "value": ""
+    },
+    "recharge": {
+      "charged": false,
+      "value": null
+    },
+    "requirements": "Fighter 1, Champion 10, Ranger 2",
+    "save": {
+      "ability": "",
+      "dc": null,
+      "scaling": "spell"
+    },
+    "source": "PHB pg. 72; 73; 91",
+    "target": {
+      "type": "",
+      "units": "",
+      "value": "",
+      "width": null
+    },
+    "type": {
+      "subtype": "fightingStyle",
+      "value": "class"
+    },
+    "uses": {
+      "max": "",
+      "per": null,
+      "recovery": "",
+      "value": null
+    }
+  },
+  "type": "feat"
 }

@@ -1,55 +1,61 @@
 {
+  "_id": "rhQ0bTGQLdVpsxRH",
+  "_key": "!items!rhQ0bTGQLdVpsxRH",
+  "effects": [],
+  "flags": {
+    "wire": {
+      "checkedAbility": "",
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.10.1",
+      "damageParts": [
+        {
+          "application": "immediate",
+          "halving": "half"
+        }
+      ],
+      "override": {
+        "target": {
+          "value": "1"
+        }
+      },
+      "saveImmunity": false
+    }
+  },
+  "folder": null,
+  "img": "icons/magic/unholy/strike-beam-blood-large-red-purple.webp",
   "name": "Finger of Death",
   "ownership": {
     "default": 0,
     "m7gKrZnSC3XR8ToV": 3
   },
-  "type": "spell",
   "system": {
-    "description": {
-      "value": "<p>You send negative energy coursing through a creature that you can see within range, causing it searing pain. The target must make a Constitution saving throw. It takes 7d8 + 30 necrotic damage on a failed save, or half as much damage on a successful one.</p><p>A humanoid killed by this spell rises at the start of your next turn as a Zombie that is permanently under your command, following your verbal orders to the best of its ability.</p>",
-      "chat": "",
-      "unidentified": ""
-    },
-    "source": "PHB pg. 241",
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": null,
-      "units": "inst"
-    },
-    "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature"
-    },
-    "range": {
-      "value": 60,
-      "long": 0,
-      "units": "ft"
-    },
-    "uses": {
-      "value": 0,
-      "max": "0",
-      "per": "",
-      "recovery": ""
-    },
-    "consume": {
-      "type": "",
-      "target": "",
-      "amount": null
-    },
     "ability": "",
     "actionType": "save",
+    "activation": {
+      "condition": "",
+      "cost": 1,
+      "type": "action"
+    },
     "attackBonus": 0,
     "chatFlavor": "",
+    "components": {
+      "concentration": false,
+      "material": false,
+      "ritual": false,
+      "somatic": true,
+      "value": "",
+      "vocal": true
+    },
+    "consume": {
+      "amount": null,
+      "target": "",
+      "type": ""
+    },
+    "cover": null,
+    "crewed": false,
     "critical": {
-      "threshold": null,
-      "damage": ""
+      "damage": "",
+      "threshold": null
     },
     "damage": {
       "parts": [
@@ -60,68 +66,55 @@
       ],
       "versatile": ""
     },
+    "description": {
+      "chat": "",
+      "unidentified": "",
+      "value": "<p>You send negative energy coursing through a creature that you can see within range, causing it searing pain. The target must make a Constitution saving throw. It takes 7d8 + 30 necrotic damage on a failed save, or half as much damage on a successful one.</p><p>A humanoid killed by this spell rises at the start of your next turn as a Zombie that is permanently under your command, following your verbal orders to the best of its ability.</p>"
+    },
+    "duration": {
+      "units": "inst",
+      "value": null
+    },
     "formula": "",
-    "save": {
-      "ability": "con",
-      "dc": null,
-      "scaling": "spell"
-    },
     "level": 7,
-    "school": "nec",
-    "components": {
-      "value": "",
-      "vocal": true,
-      "somatic": true,
-      "material": false,
-      "ritual": false,
-      "concentration": false
-    },
     "materials": {
-      "value": "",
       "consumed": false,
       "cost": 0,
-      "supply": 0
+      "supply": 0,
+      "value": ""
     },
     "preparation": {
       "mode": "prepared",
       "prepared": false
     },
+    "range": {
+      "long": 0,
+      "units": "ft",
+      "value": 60
+    },
+    "save": {
+      "ability": "con",
+      "dc": null,
+      "scaling": "spell"
+    },
     "scaling": {
-      "mode": "none",
-      "formula": ""
+      "formula": "",
+      "mode": "none"
+    },
+    "school": "nec",
+    "source": "PHB pg. 241",
+    "target": {
+      "type": "creature",
+      "units": "",
+      "value": 1,
+      "width": null
+    },
+    "uses": {
+      "max": "0",
+      "per": "",
+      "recovery": "",
+      "value": 0
     }
   },
-  "flags": {
-    "wire": {
-      "override": {
-        "target": {
-          "value": "1"
-        }
-      },
-      "checkedAbility": "",
-      "saveImmunity": false,
-      "damageParts": [
-        {
-          "halving": "half",
-          "application": "immediate"
-        }
-      ],
-      "compendiumSource": "wire-srd.spells",
-      "compendiumVersion": "0.10.1"
-    }
-  },
-  "img": "icons/magic/unholy/strike-beam-blood-large-red-purple.webp",
-  "effects": [],
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.0.3",
-    "coreVersion": "10.291",
-    "createdTime": 1661787234107,
-    "modifiedTime": 1671817882841,
-    "lastModifiedBy": "m7gKrZnSC3XR8ToV"
-  },
-  "folder": null,
-  "sort": 0,
-  "_id": "rhQ0bTGQLdVpsxRH",
-  "_key": "!items!rhQ0bTGQLdVpsxRH"
+  "type": "spell"
 }

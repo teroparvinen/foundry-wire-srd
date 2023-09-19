@@ -1,54 +1,106 @@
 {
-  "name": "Color Spray",
-  "type": "spell",
+  "_id": "xjpkUMGl4ggt9a75",
+  "_key": "!items!xjpkUMGl4ggt9a75",
+  "effects": [
+    {
+      "_id": "OUumjxAiSe7dySOP",
+      "_key": "!items.effects!xjpkUMGl4ggt9a75.OUumjxAiSe7dySOP",
+      "changes": [
+        {
+          "key": "wire.custom.statusEffect",
+          "mode": 2,
+          "priority": 20,
+          "value": "Blinded"
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "combat": null,
+        "rounds": null,
+        "seconds": null,
+        "startRound": null,
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
+      },
+      "flags": {
+        "wire": {
+          "applicationType": "immediate",
+          "applyOnSaveOrMiss": false,
+          "auraTargets": "",
+          "blocksAreaConditions": false,
+          "independentDuration": false
+        }
+      },
+      "icon": "icons/magic/air/fog-gas-smoke-dense-pink.webp",
+      "label": "Color Spray",
+      "origin": "Actor.m4mjuiVrcZHbrj00.Item.pMYWF5z9UMIEcdHr",
+      "tint": null,
+      "transfer": false
+    }
+  ],
+  "flags": {
+    "wire": {
+      "checkedAbility": "",
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.11.0",
+      "damageParts": [
+        {
+          "application": "immediate",
+          "halving": "full"
+        }
+      ],
+      "immunities": [
+        {
+          "type": "conditionImmunity",
+          "value": "blinded"
+        }
+      ],
+      "override": {
+        "target": {
+          "value": "15"
+        }
+      },
+      "saveImmunity": false,
+      "script": "this.registerFlowStep(\"applyColorSpray\", true, async activation => {\n    const points = activation.damageParts.result[0].roll.total;\n    const actorsSorted = activation.allTargets.map(t => { return { actor: t.actor, hp: t.actor.system.attributes.hp.value }; }).sort((a, b) => a.hp - b.hp);\n\n    let used = 0;\n    let effective = actorsSorted.reduce((prev, cur) => {\n        if (cur.hp <= points - used) {\n            used += cur.hp;\n            return [...prev, cur.actor];\n        } else {\n            return prev;\n        }\n    }, []);\n\n    await activation.applyEffectiveTargets(effective);\n});\n\nreturn this.confirmTargets(\n    this.performSaveDamageRoll(\n        this.performCustomStep(\"applyColorSpray\",\n            this.removeTemplate(\n                this.applyEffects()\n            )\n        )\n    )\n);",
+      "upcastInterval": null
+    }
+  },
+  "folder": null,
   "img": "icons/magic/air/fog-gas-smoke-dense-pink.webp",
+  "name": "Color Spray",
+  "ownership": {
+    "default": 0,
+    "m7gKrZnSC3XR8ToV": 3
+  },
   "system": {
-    "description": {
-      "value": "<p>A dazzling array of flashing, colored light springs from your hand. Roll 6d10; the total is how many hit points of creatures this spell can effect. Creatures in a 15-foot cone originating from you are affected in ascending order of their current hit points (ignoring unconscious creatures and creatures that can't see).</p><p>Starting with the creature that has the lowest current hit points, each creature affected by this spell is blinded until the spell ends. Subtract each creature's hit points from the total before moving on to the creature with the next lowest hit points. A creature's hit points must be equal to or less than the remaining total for that creature to be affected.</p><p><strong>Higher Levels. </strong>When you cast this spell using a spell slot of 2nd level or higher, roll an additional 2d10 for each slot level above 1st.</p>",
-      "chat": "",
-      "unidentified": ""
-    },
-    "source": "PHB pg. 222",
+    "ability": "",
+    "actionType": "other",
     "activation": {
-      "type": "action",
+      "condition": "",
       "cost": 1,
-      "condition": ""
+      "type": "action"
     },
-    "duration": {
-      "value": 1,
-      "units": "round"
+    "attackBonus": 0,
+    "chatFlavor": "",
+    "components": {
+      "concentration": false,
+      "material": true,
+      "ritual": false,
+      "somatic": true,
+      "value": "",
+      "vocal": true
+    },
+    "consume": {
+      "amount": null,
+      "target": "",
+      "type": ""
     },
     "cover": null,
     "crewed": false,
-    "target": {
-      "value": 15,
-      "width": null,
-      "units": "ft",
-      "type": "cone"
-    },
-    "range": {
-      "value": null,
-      "long": null,
-      "units": "self"
-    },
-    "uses": {
-      "value": 0,
-      "max": "0",
-      "per": "",
-      "recovery": ""
-    },
-    "consume": {
-      "type": "",
-      "target": "",
-      "amount": null
-    },
-    "ability": "",
-    "actionType": "other",
-    "attackBonus": 0,
-    "chatFlavor": "",
     "critical": {
-      "threshold": null,
-      "damage": ""
+      "damage": "",
+      "threshold": null
     },
     "damage": {
       "parts": [
@@ -59,117 +111,56 @@
       ],
       "versatile": ""
     },
+    "description": {
+      "chat": "",
+      "unidentified": "",
+      "value": "<p>A dazzling array of flashing, colored light springs from your hand. Roll 6d10; the total is how many hit points of creatures this spell can effect. Creatures in a 15-foot cone originating from you are affected in ascending order of their current hit points (ignoring unconscious creatures and creatures that can't see).</p><p>Starting with the creature that has the lowest current hit points, each creature affected by this spell is blinded until the spell ends. Subtract each creature's hit points from the total before moving on to the creature with the next lowest hit points. A creature's hit points must be equal to or less than the remaining total for that creature to be affected.</p><p><strong>Higher Levels. </strong>When you cast this spell using a spell slot of 2nd level or higher, roll an additional 2d10 for each slot level above 1st.</p>"
+    },
+    "duration": {
+      "units": "round",
+      "value": 1
+    },
     "formula": "",
+    "level": 1,
+    "materials": {
+      "consumed": false,
+      "cost": 0,
+      "supply": 0,
+      "value": "A pinch of powder or sand that is colored red, yellow, and blue."
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "range": {
+      "long": null,
+      "units": "self",
+      "value": null
+    },
     "save": {
       "ability": "",
       "dc": null,
       "scaling": "spell",
       "value": ""
     },
-    "level": 1,
-    "school": "ill",
-    "components": {
-      "vocal": true,
-      "somatic": true,
-      "material": true,
-      "ritual": false,
-      "concentration": false,
-      "value": ""
-    },
-    "materials": {
-      "value": "A pinch of powder or sand that is colored red, yellow, and blue.",
-      "consumed": false,
-      "cost": 0,
-      "supply": 0
-    },
-    "preparation": {
-      "mode": "prepared",
-      "prepared": false
-    },
     "scaling": {
-      "mode": "level",
-      "formula": "2d10"
+      "formula": "2d10",
+      "mode": "level"
+    },
+    "school": "ill",
+    "source": "PHB pg. 222",
+    "target": {
+      "type": "cone",
+      "units": "ft",
+      "value": 15,
+      "width": null
+    },
+    "uses": {
+      "max": "0",
+      "per": "",
+      "recovery": "",
+      "value": 0
     }
   },
-  "effects": [
-    {
-      "label": "Color Spray",
-      "icon": "icons/magic/air/fog-gas-smoke-dense-pink.webp",
-      "origin": "Actor.m4mjuiVrcZHbrj00.Item.pMYWF5z9UMIEcdHr",
-      "duration": {
-        "startTime": null,
-        "seconds": null,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "disabled": false,
-      "_id": "OUumjxAiSe7dySOP",
-      "changes": [
-        {
-          "key": "wire.custom.statusEffect",
-          "mode": 2,
-          "value": "Blinded",
-          "priority": 20
-        }
-      ],
-      "tint": null,
-      "transfer": false,
-      "flags": {
-        "wire": {
-          "applyOnSaveOrMiss": false,
-          "blocksAreaConditions": false,
-          "auraTargets": "",
-          "applicationType": "immediate",
-          "independentDuration": false
-        }
-      },
-      "_key": "!items.effects!xjpkUMGl4ggt9a75.OUumjxAiSe7dySOP"
-    }
-  ],
-  "ownership": {
-    "default": 0,
-    "m7gKrZnSC3XR8ToV": 3
-  },
-  "flags": {
-    "wire": {
-      "override": {
-        "target": {
-          "value": "15"
-        }
-      },
-      "checkedAbility": "",
-      "upcastInterval": null,
-      "damageParts": [
-        {
-          "halving": "full",
-          "application": "immediate"
-        }
-      ],
-      "compendiumSource": "wire-srd.spells",
-      "compendiumVersion": "0.11.0",
-      "immunities": [
-        {
-          "type": "conditionImmunity",
-          "value": "blinded"
-        }
-      ],
-      "saveImmunity": false,
-      "script": "this.registerFlowStep(\"applyColorSpray\", true, async activation => {\n    const points = activation.damageParts.result[0].roll.total;\n    const actorsSorted = activation.allTargets.map(t => { return { actor: t.actor, hp: t.actor.system.attributes.hp.value }; }).sort((a, b) => a.hp - b.hp);\n\n    let used = 0;\n    let effective = actorsSorted.reduce((prev, cur) => {\n        if (cur.hp <= points - used) {\n            used += cur.hp;\n            return [...prev, cur.actor];\n        } else {\n            return prev;\n        }\n    }, []);\n\n    await activation.applyEffectiveTargets(effective);\n});\n\nreturn this.confirmTargets(\n    this.performSaveDamageRoll(\n        this.performCustomStep(\"applyColorSpray\",\n            this.removeTemplate(\n                this.applyEffects()\n            )\n        )\n    )\n);"
-    }
-  },
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.2.2",
-    "coreVersion": "11.306",
-    "createdTime": 1661787234121,
-    "modifiedTime": 1694774675435,
-    "lastModifiedBy": "dBglmdrMUDMEh6ZW"
-  },
-  "folder": null,
-  "sort": 0,
-  "_id": "xjpkUMGl4ggt9a75",
-  "_key": "!items!xjpkUMGl4ggt9a75"
+  "type": "spell"
 }

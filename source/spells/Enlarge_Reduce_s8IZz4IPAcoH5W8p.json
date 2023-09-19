@@ -1,239 +1,230 @@
 {
-  "name": "Enlarge/Reduce",
-  "ownership": {
-    "default": 0,
-    "m7gKrZnSC3XR8ToV": 3
-  },
-  "type": "spell",
-  "system": {
-    "description": {
-      "value": "<p>You cause a creature or an object you can see within range to grow larger or smaller for the Duration. Choose either a creature or an object that is neither worn nor carried. If the target is unwilling, it can make a Constitution saving throw. On a success, the spell has no effect.</p><p>If the target is a creature, everything it is wearing and carrying changes size with it. Any item dropped by an affected creature returns to normal size at once.</p><p><strong>Enlarge</strong>. The target's size doubles in all dimensions, and its weight is multiplied by eight. This growth increases its size by one category—from Medium to Large, for example. If there isn't enough room for the target to double its size, the creature or object attains the maximum possible size in the space available. Until the spell ends, the target also has advantage on Strength Checks and Strength Saving Throws. The target's Weapons also grow to match its new size. While these Weapons are enlarged, the target's attacks with them deal 1d4 extra damage.</p><p><strong>Reduce</strong>. The target's size is halved in all dimensions, and its weight is reduced to one-eighth of normal. This reduction decreases its size by one category—from Medium to Small, for example. Until the spell ends, the target also has disadvantage on Strength Checks and Strength Saving Throws. The target's Weapons also shrink to match its new size. While these Weapons are reduced, the target's attacks with them deal 1d4 less damage (this can't reduce the damage below 1).</p>",
-      "chat": "",
-      "unidentified": ""
+  "_id": "s8IZz4IPAcoH5W8p",
+  "_key": "!items!s8IZz4IPAcoH5W8p",
+  "effects": [
+    {
+      "_id": "1IitqBJjRnNnDE0F",
+      "_key": "!items.effects!s8IZz4IPAcoH5W8p.1IitqBJjRnNnDE0F",
+      "changes": [
+        {
+          "key": "flags.wire.advantage.ability.check.str",
+          "mode": 2,
+          "priority": 20,
+          "value": "1"
+        },
+        {
+          "key": "flags.wire.advantage.ability.save.str",
+          "mode": 2,
+          "priority": 20,
+          "value": "1"
+        },
+        {
+          "key": "system.bonuses.All-Damage",
+          "mode": 2,
+          "priority": 20,
+          "value": "+1d4"
+        },
+        {
+          "key": "flags.wire.size.adjustment",
+          "mode": 2,
+          "priority": 50,
+          "value": "+1"
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "combat": null,
+        "rounds": null,
+        "seconds": null,
+        "startRound": null,
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
+      },
+      "flags": {
+        "wire": {
+          "applicationType": "immediate",
+          "applyOnSaveOrMiss": false,
+          "auraTargets": "",
+          "blocksAreaConditions": false,
+          "conditions": [],
+          "independentDuration": false,
+          "rollEffects": false,
+          "stackEffects": false
+        }
+      },
+      "icon": "icons/magic/control/energy-stream-link-large-blue.webp",
+      "label": "Enlarge",
+      "origin": "Actor.m4mjuiVrcZHbrj00.Item.0e8ilP8YjWbb0Q2Z",
+      "tint": null,
+      "transfer": false
     },
-    "source": "PHB pg. 237",
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": 1,
-      "units": "minute"
-    },
-    "cover": null,
-    "crewed": false,
-    "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature"
-    },
-    "range": {
-      "value": 30,
-      "long": 0,
-      "units": "ft"
-    },
-    "uses": {
-      "value": 0,
-      "max": "0",
-      "per": "",
-      "recovery": ""
-    },
-    "consume": {
-      "type": "",
-      "target": "",
-      "amount": null
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": 0,
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": "",
-      "value": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "con",
-      "dc": null,
-      "scaling": "spell"
-    },
-    "level": 2,
-    "school": "trs",
-    "components": {
-      "vocal": true,
-      "somatic": true,
-      "material": true,
-      "ritual": false,
-      "concentration": true,
-      "value": ""
-    },
-    "materials": {
-      "value": "A pinch of powdered iron",
-      "consumed": false,
-      "cost": 0,
-      "supply": 0
-    },
-    "preparation": {
-      "mode": "prepared",
-      "prepared": false
-    },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
+    {
+      "_id": "djFFAnJ2637EiDtG",
+      "_key": "!items.effects!s8IZz4IPAcoH5W8p.djFFAnJ2637EiDtG",
+      "changes": [
+        {
+          "key": "flags.wire.disadvantage.ability.check.str",
+          "mode": 2,
+          "priority": 20,
+          "value": "1"
+        },
+        {
+          "key": "flags.wire.disadvantage.ability.save.str",
+          "mode": 2,
+          "priority": 20,
+          "value": "1"
+        },
+        {
+          "key": "system.bonuses.All-Damage",
+          "mode": 2,
+          "priority": 20,
+          "value": "-1d4"
+        },
+        {
+          "key": "flags.wire.size.adjustment",
+          "mode": 2,
+          "priority": 50,
+          "value": "-1"
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "combat": null,
+        "rounds": null,
+        "seconds": null,
+        "startRound": null,
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
+      },
+      "flags": {
+        "wire": {
+          "applicationType": "immediate",
+          "applyOnSaveOrMiss": false,
+          "auraTargets": "",
+          "blocksAreaConditions": false,
+          "conditions": [],
+          "independentDuration": false,
+          "rollEffects": false,
+          "stackEffects": false
+        }
+      },
+      "icon": "icons/magic/control/energy-stream-link-large-orange.webp",
+      "label": "Reduce",
+      "origin": "Actor.m4mjuiVrcZHbrj00.Item.0e8ilP8YjWbb0Q2Z",
+      "tint": null,
+      "transfer": false
     }
-  },
+  ],
   "flags": {
     "wire": {
-      "variants": [
-        "Enlarge",
-        "Reduce"
-      ],
+      "checkedAbility": "",
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.11.0",
       "override": {
         "target": {
           "value": "1"
         }
       },
-      "checkedAbility": "",
       "saveImmunity": false,
-      "compendiumSource": "wire-srd.spells",
-      "compendiumVersion": "0.11.0",
-      "script": "return this.applyConcentration(\n    this.applySelectedTargetsAlliesAsEffective(\n        this.performSavingThrow(\n            this.applyEffects()\n        )\n    )\n)"
+      "script": "return this.applyConcentration(\n    this.applySelectedTargetsAlliesAsEffective(\n        this.performSavingThrow(\n            this.applyEffects()\n        )\n    )\n)",
+      "variants": [
+        "Enlarge",
+        "Reduce"
+      ]
     }
-  },
-  "img": "icons/magic/control/energy-stream-link-large-blue.webp",
-  "effects": [
-    {
-      "label": "Enlarge",
-      "icon": "icons/magic/control/energy-stream-link-large-blue.webp",
-      "origin": "Actor.m4mjuiVrcZHbrj00.Item.0e8ilP8YjWbb0Q2Z",
-      "duration": {
-        "startTime": null,
-        "seconds": null,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "disabled": false,
-      "_id": "1IitqBJjRnNnDE0F",
-      "changes": [
-        {
-          "key": "flags.wire.advantage.ability.check.str",
-          "mode": 2,
-          "value": "1",
-          "priority": 20
-        },
-        {
-          "key": "flags.wire.advantage.ability.save.str",
-          "mode": 2,
-          "value": "1",
-          "priority": 20
-        },
-        {
-          "key": "system.bonuses.All-Damage",
-          "mode": 2,
-          "value": "+1d4",
-          "priority": 20
-        },
-        {
-          "key": "flags.wire.size.adjustment",
-          "mode": 2,
-          "value": "+1",
-          "priority": 50
-        }
-      ],
-      "tint": null,
-      "transfer": false,
-      "flags": {
-        "wire": {
-          "applyOnSaveOrMiss": false,
-          "applicationType": "immediate",
-          "blocksAreaConditions": false,
-          "auraTargets": "",
-          "stackEffects": false,
-          "rollEffects": false,
-          "independentDuration": false,
-          "conditions": []
-        }
-      },
-      "_key": "!items.effects!s8IZz4IPAcoH5W8p.1IitqBJjRnNnDE0F"
-    },
-    {
-      "label": "Reduce",
-      "icon": "icons/magic/control/energy-stream-link-large-orange.webp",
-      "origin": "Actor.m4mjuiVrcZHbrj00.Item.0e8ilP8YjWbb0Q2Z",
-      "duration": {
-        "startTime": null,
-        "seconds": null,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "disabled": false,
-      "_id": "djFFAnJ2637EiDtG",
-      "changes": [
-        {
-          "key": "flags.wire.disadvantage.ability.check.str",
-          "mode": 2,
-          "value": "1",
-          "priority": 20
-        },
-        {
-          "key": "flags.wire.disadvantage.ability.save.str",
-          "mode": 2,
-          "value": "1",
-          "priority": 20
-        },
-        {
-          "key": "system.bonuses.All-Damage",
-          "mode": 2,
-          "value": "-1d4",
-          "priority": 20
-        },
-        {
-          "key": "flags.wire.size.adjustment",
-          "mode": 2,
-          "value": "-1",
-          "priority": 50
-        }
-      ],
-      "tint": null,
-      "transfer": false,
-      "flags": {
-        "wire": {
-          "applyOnSaveOrMiss": false,
-          "applicationType": "immediate",
-          "blocksAreaConditions": false,
-          "auraTargets": "",
-          "stackEffects": false,
-          "rollEffects": false,
-          "independentDuration": false,
-          "conditions": []
-        }
-      },
-      "_key": "!items.effects!s8IZz4IPAcoH5W8p.djFFAnJ2637EiDtG"
-    }
-  ],
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.2.2",
-    "coreVersion": "11.306",
-    "createdTime": 1661787234153,
-    "modifiedTime": 1694774675378,
-    "lastModifiedBy": "dBglmdrMUDMEh6ZW"
   },
   "folder": null,
-  "sort": 0,
-  "_id": "s8IZz4IPAcoH5W8p",
-  "_key": "!items!s8IZz4IPAcoH5W8p"
+  "img": "icons/magic/control/energy-stream-link-large-blue.webp",
+  "name": "Enlarge/Reduce",
+  "ownership": {
+    "default": 0,
+    "m7gKrZnSC3XR8ToV": 3
+  },
+  "system": {
+    "ability": "",
+    "actionType": "save",
+    "activation": {
+      "condition": "",
+      "cost": 1,
+      "type": "action"
+    },
+    "attackBonus": 0,
+    "chatFlavor": "",
+    "components": {
+      "concentration": true,
+      "material": true,
+      "ritual": false,
+      "somatic": true,
+      "value": "",
+      "vocal": true
+    },
+    "consume": {
+      "amount": null,
+      "target": "",
+      "type": ""
+    },
+    "cover": null,
+    "crewed": false,
+    "critical": {
+      "damage": "",
+      "threshold": null
+    },
+    "damage": {
+      "parts": [],
+      "value": "",
+      "versatile": ""
+    },
+    "description": {
+      "chat": "",
+      "unidentified": "",
+      "value": "<p>You cause a creature or an object you can see within range to grow larger or smaller for the Duration. Choose either a creature or an object that is neither worn nor carried. If the target is unwilling, it can make a Constitution saving throw. On a success, the spell has no effect.</p><p>If the target is a creature, everything it is wearing and carrying changes size with it. Any item dropped by an affected creature returns to normal size at once.</p><p><strong>Enlarge</strong>. The target's size doubles in all dimensions, and its weight is multiplied by eight. This growth increases its size by one category—from Medium to Large, for example. If there isn't enough room for the target to double its size, the creature or object attains the maximum possible size in the space available. Until the spell ends, the target also has advantage on Strength Checks and Strength Saving Throws. The target's Weapons also grow to match its new size. While these Weapons are enlarged, the target's attacks with them deal 1d4 extra damage.</p><p><strong>Reduce</strong>. The target's size is halved in all dimensions, and its weight is reduced to one-eighth of normal. This reduction decreases its size by one category—from Medium to Small, for example. Until the spell ends, the target also has disadvantage on Strength Checks and Strength Saving Throws. The target's Weapons also shrink to match its new size. While these Weapons are reduced, the target's attacks with them deal 1d4 less damage (this can't reduce the damage below 1).</p>"
+    },
+    "duration": {
+      "units": "minute",
+      "value": 1
+    },
+    "formula": "",
+    "level": 2,
+    "materials": {
+      "consumed": false,
+      "cost": 0,
+      "supply": 0,
+      "value": "A pinch of powdered iron"
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "range": {
+      "long": 0,
+      "units": "ft",
+      "value": 30
+    },
+    "save": {
+      "ability": "con",
+      "dc": null,
+      "scaling": "spell"
+    },
+    "scaling": {
+      "formula": "",
+      "mode": "none"
+    },
+    "school": "trs",
+    "source": "PHB pg. 237",
+    "target": {
+      "type": "creature",
+      "units": "",
+      "value": 1,
+      "width": null
+    },
+    "uses": {
+      "max": "0",
+      "per": "",
+      "recovery": "",
+      "value": 0
+    }
+  },
+  "type": "spell"
 }

@@ -1,155 +1,146 @@
 {
-  "name": "Fighting Style: Protection",
-  "type": "feat",
-  "img": "icons/magic/defensive/shield-barrier-deflect-gold.webp",
+  "_id": "K2p4hpDUJHMO27Om",
+  "_key": "!items!K2p4hpDUJHMO27Om",
   "effects": [
     {
-      "label": "Target Protected",
-      "icon": "icons/magic/defensive/shield-barrier-deflect-gold.webp",
-      "origin": "Actor.fRkIgd5cHxEEE8tk.Item.gziczMbobAFmF57t",
-      "duration": {
-        "startTime": null,
-        "seconds": null,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "disabled": false,
       "_id": "zGaVhhIoD5HH1OS6",
+      "_key": "!items.effects!K2p4hpDUJHMO27Om.zGaVhhIoD5HH1OS6",
       "changes": [
         {
           "key": "flags.wire.disadvantage.attack.all",
           "mode": 2,
-          "value": "1",
-          "priority": 20
+          "priority": 20,
+          "value": "1"
         }
       ],
-      "tint": null,
-      "transfer": false,
+      "disabled": false,
+      "duration": {
+        "combat": null,
+        "rounds": null,
+        "seconds": null,
+        "startRound": null,
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
+      },
       "flags": {
         "wire": {
-          "applyOnSaveOrMiss": false,
           "applicationType": "immediate",
-          "blocksAreaConditions": false,
+          "applyOnSaveOrMiss": false,
           "auraTargets": "",
-          "stackEffects": false,
-          "rollEffects": false,
-          "independentDuration": false,
+          "blocksAreaConditions": false,
           "conditions": [
             {
               "condition": "target-attacks.all",
               "update": "end"
             }
-          ]
+          ],
+          "independentDuration": false,
+          "rollEffects": false,
+          "stackEffects": false
         }
       },
-      "_key": "!items.effects!K2p4hpDUJHMO27Om.zGaVhhIoD5HH1OS6"
+      "icon": "icons/magic/defensive/shield-barrier-deflect-gold.webp",
+      "label": "Target Protected",
+      "origin": "Actor.fRkIgd5cHxEEE8tk.Item.gziczMbobAFmF57t",
+      "tint": null,
+      "transfer": false
     }
   ],
   "flags": {
     "srd5e": {
+      "hash": "protection_phb",
       "page": "optionalfeatures.html",
-      "source": "PHB",
-      "hash": "protection_phb"
+      "source": "PHB"
     },
     "wire": {
+      "compendiumSource": "wire-srd.classfeatures",
+      "compendiumVersion": "0.10.2",
       "override": {
         "target": {
           "value": "1"
         }
-      },
-      "compendiumSource": "wire-srd.classfeatures",
-      "compendiumVersion": "0.10.2"
+      }
     }
   },
+  "folder": null,
+  "img": "icons/magic/defensive/shield-barrier-deflect-gold.webp",
+  "name": "Fighting Style: Protection",
+  "ownership": {
+    "BDWtlDQYkOI4gQqd": 3,
+    "JNEafaiyE429jyEn": 3,
+    "default": 0
+  },
   "system": {
-    "description": {
-      "value": "<div>\n\t\t\t\t\n\t\t\t\t<div class=\"rd__b  rd__b--3\"><p>When a creature you can see attacks a target other than you that is within 5 feet of you, you can use your reaction to impose disadvantage on the attack roll. You must be wielding a shield.</p><div class=\"rd__spc-inline-post\"></div></div>\n\t\t\t</div>",
-      "chat": "",
-      "unidentified": ""
-    },
-    "source": "PHB",
+    "ability": "",
+    "actionType": "",
     "activation": {
-      "type": "reaction",
+      "condition": "",
       "cost": 0,
-      "condition": ""
+      "type": "reaction"
     },
-    "duration": {
-      "value": 1,
-      "units": "turn"
+    "attackBonus": 0,
+    "chatFlavor": "",
+    "consume": {
+      "amount": null,
+      "target": "",
+      "type": ""
     },
     "cover": null,
     "crewed": false,
-    "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature"
-    },
-    "range": {
-      "value": 5,
-      "long": null,
-      "units": "ft"
-    },
-    "uses": {
-      "value": 0,
-      "max": "0",
-      "per": "",
-      "recovery": "",
-      "type": ""
-    },
-    "consume": {
-      "type": "",
-      "target": "",
-      "amount": null
-    },
-    "ability": "",
-    "actionType": "",
-    "attackBonus": 0,
-    "chatFlavor": "",
     "critical": {
-      "threshold": null,
-      "damage": ""
+      "damage": "",
+      "threshold": null
     },
     "damage": {
       "parts": [],
-      "versatile": "",
-      "value": ""
+      "value": "",
+      "versatile": ""
+    },
+    "description": {
+      "chat": "",
+      "unidentified": "",
+      "value": "<div>\n\t\t\t\t\n\t\t\t\t<div class=\"rd__b  rd__b--3\"><p>When a creature you can see attacks a target other than you that is within 5 feet of you, you can use your reaction to impose disadvantage on the attack roll. You must be wielding a shield.</p><div class=\"rd__spc-inline-post\"></div></div>\n\t\t\t</div>"
+    },
+    "duration": {
+      "units": "turn",
+      "value": 1
     },
     "formula": "",
+    "range": {
+      "long": null,
+      "units": "ft",
+      "value": 5
+    },
+    "recharge": {
+      "charged": false,
+      "value": null
+    },
+    "requirements": "Paladin 2",
     "save": {
       "ability": "",
       "dc": null,
       "scaling": "spell",
       "value": ""
     },
-    "type": {
-      "value": "class",
-      "subtype": "fightingStyle"
+    "source": "PHB",
+    "target": {
+      "type": "creature",
+      "units": "",
+      "value": 1,
+      "width": null
     },
-    "requirements": "Paladin 2",
-    "recharge": {
-      "value": null,
-      "charged": false
+    "type": {
+      "subtype": "fightingStyle",
+      "value": "class"
+    },
+    "uses": {
+      "max": "0",
+      "per": "",
+      "recovery": "",
+      "type": "",
+      "value": 0
     }
   },
-  "ownership": {
-    "default": 0,
-    "JNEafaiyE429jyEn": 3,
-    "BDWtlDQYkOI4gQqd": 3
-  },
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.2.2",
-    "coreVersion": "11.306",
-    "createdTime": 1673107822966,
-    "modifiedTime": 1694935047724,
-    "lastModifiedBy": "dBglmdrMUDMEh6ZW"
-  },
-  "folder": null,
-  "sort": 0,
-  "_id": "K2p4hpDUJHMO27Om",
-  "_key": "!items!K2p4hpDUJHMO27Om"
+  "type": "feat"
 }

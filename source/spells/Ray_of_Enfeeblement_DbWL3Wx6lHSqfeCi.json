@@ -1,136 +1,50 @@
 {
-  "name": "Ray of Enfeeblement",
-  "type": "spell",
-  "img": "icons/magic/light/beam-rays-teal.webp",
-  "system": {
-    "description": {
-      "value": "<p>A black beam of enervating energy springs from your finger toward a creature within range. Make a ranged spell attack against the target. On a hit, the target deals only half damage with weapon attacks that use Strength until the spell ends.</p><p>At the end of each of the target's turns, it can make a Constitution saving throw against the spell. On a success, the spell ends.</p>",
-      "chat": "",
-      "unidentified": ""
-    },
-    "source": "PHB pg. 271",
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": 1,
-      "units": "minute"
-    },
-    "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature"
-    },
-    "range": {
-      "value": 60,
-      "long": 0,
-      "units": "ft"
-    },
-    "uses": {
-      "value": 0,
-      "max": "0",
-      "per": "",
-      "recovery": ""
-    },
-    "consume": {
-      "type": "",
-      "target": "",
-      "amount": null
-    },
-    "ability": "",
-    "actionType": "rsak",
-    "attackBonus": "0",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": "",
-      "value": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "con",
-      "dc": null,
-      "scaling": "spell"
-    },
-    "level": 2,
-    "school": "nec",
-    "components": {
-      "value": "",
-      "vocal": true,
-      "somatic": true,
-      "material": false,
-      "ritual": false,
-      "concentration": true
-    },
-    "materials": {
-      "value": "",
-      "consumed": false,
-      "cost": 0,
-      "supply": 0
-    },
-    "preparation": {
-      "mode": "prepared",
-      "prepared": false
-    },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "attunement": null
-  },
+  "_id": "DbWL3Wx6lHSqfeCi",
+  "_key": "!items!DbWL3Wx6lHSqfeCi",
   "effects": [
     {
       "_id": "jv4yumeek5bjvbbp",
+      "_key": "!items.effects!DbWL3Wx6lHSqfeCi.jv4yumeek5bjvbbp",
       "changes": [
         {
           "key": "flags.wire.damage.multiplier.ability.str",
           "mode": 1,
-          "value": "0.5",
-          "priority": 0
+          "priority": 0,
+          "value": "0.5"
         }
       ],
       "disabled": false,
       "duration": {
-        "startTime": null,
-        "seconds": null,
         "combat": null,
         "rounds": null,
-        "turns": null,
+        "seconds": null,
         "startRound": null,
-        "startTurn": null
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
       },
-      "icon": "icons/magic/light/beam-rays-teal.webp",
-      "label": "Ray of Enfeeblement",
-      "origin": "Actor.m4mjuiVrcZHbrj00.Item.9cPRsoziacCIyAH7",
-      "transfer": false,
       "flags": {
         "wire": {
-          "applyOnSaveOrMiss": false,
-          "blocksAreaConditions": false,
-          "auraTargets": "",
           "applicationType": "immediate",
-          "independentDuration": false,
+          "applyOnSaveOrMiss": false,
+          "auraTargets": "",
+          "blocksAreaConditions": false,
           "conditions": [
             {
               "condition": "end-of-turn-target",
               "update": "end-on-save"
             }
-          ]
+          ],
+          "independentDuration": false
         }
       },
+      "icon": "icons/magic/light/beam-rays-teal.webp",
+      "label": "Ray of Enfeeblement",
+      "origin": "Actor.m4mjuiVrcZHbrj00.Item.9cPRsoziacCIyAH7",
       "tint": null,
-      "_key": "!items.effects!DbWL3Wx6lHSqfeCi.jv4yumeek5bjvbbp"
+      "transfer": false
     }
   ],
-  "folder": null,
-  "sort": 0,
   "flags": {
     "wire": {
       "checkedAbility": "",
@@ -144,18 +58,97 @@
       "saveImmunity": false
     }
   },
-  "_id": "DbWL3Wx6lHSqfeCi",
+  "folder": null,
+  "img": "icons/magic/light/beam-rays-teal.webp",
+  "name": "Ray of Enfeeblement",
   "ownership": {
     "default": 0,
     "m7gKrZnSC3XR8ToV": 3
   },
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.0.3",
-    "coreVersion": "10.291",
-    "createdTime": null,
-    "modifiedTime": 1671886946648,
-    "lastModifiedBy": "m7gKrZnSC3XR8ToV"
+  "system": {
+    "ability": "",
+    "actionType": "rsak",
+    "activation": {
+      "condition": "",
+      "cost": 1,
+      "type": "action"
+    },
+    "attackBonus": "0",
+    "attunement": null,
+    "chatFlavor": "",
+    "components": {
+      "concentration": true,
+      "material": false,
+      "ritual": false,
+      "somatic": true,
+      "value": "",
+      "vocal": true
+    },
+    "consume": {
+      "amount": null,
+      "target": "",
+      "type": ""
+    },
+    "cover": null,
+    "crewed": false,
+    "critical": {
+      "damage": "",
+      "threshold": null
+    },
+    "damage": {
+      "parts": [],
+      "value": "",
+      "versatile": ""
+    },
+    "description": {
+      "chat": "",
+      "unidentified": "",
+      "value": "<p>A black beam of enervating energy springs from your finger toward a creature within range. Make a ranged spell attack against the target. On a hit, the target deals only half damage with weapon attacks that use Strength until the spell ends.</p><p>At the end of each of the target's turns, it can make a Constitution saving throw against the spell. On a success, the spell ends.</p>"
+    },
+    "duration": {
+      "units": "minute",
+      "value": 1
+    },
+    "formula": "",
+    "level": 2,
+    "materials": {
+      "consumed": false,
+      "cost": 0,
+      "supply": 0,
+      "value": ""
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "range": {
+      "long": 0,
+      "units": "ft",
+      "value": 60
+    },
+    "save": {
+      "ability": "con",
+      "dc": null,
+      "scaling": "spell"
+    },
+    "scaling": {
+      "formula": "",
+      "mode": "none"
+    },
+    "school": "nec",
+    "source": "PHB pg. 271",
+    "target": {
+      "type": "creature",
+      "units": "",
+      "value": 1,
+      "width": null
+    },
+    "uses": {
+      "max": "0",
+      "per": "",
+      "recovery": "",
+      "value": 0
+    }
   },
-  "_key": "!items!DbWL3Wx6lHSqfeCi"
+  "type": "spell"
 }

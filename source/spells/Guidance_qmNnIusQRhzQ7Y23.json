@@ -1,18 +1,19 @@
 {
-  "_id": "m1BalqNA8ab9oyRa",
-  "_key": "!items!m1BalqNA8ab9oyRa",
+  "_id": "qmNnIusQRhzQ7Y23",
+  "_key": "!items!qmNnIusQRhzQ7Y23",
   "effects": [
     {
-      "_id": "2lD2xGufRuQ4twFo",
-      "_key": "!items.effects!m1BalqNA8ab9oyRa.2lD2xGufRuQ4twFo",
+      "_id": "yu1xcqsa8dbyqyd4",
+      "_key": "!items.effects!qmNnIusQRhzQ7Y23.yu1xcqsa8dbyqyd4",
       "changes": [
         {
-          "key": "flags.wire.grants.advantage.attack.all",
-          "mode": 2,
-          "priority": 20,
-          "value": "@originator.isAttacker"
+          "key": "placeholder",
+          "mode": 0,
+          "priority": null,
+          "value": "0"
         }
       ],
+      "description": "",
       "disabled": false,
       "duration": {
         "combat": null,
@@ -31,8 +32,20 @@
           "blocksAreaConditions": false,
           "conditions": [
             {
-              "condition": "target-is-attacked.all",
-              "update": "Check expiry"
+              "condition": "prepare-skill-check",
+              "update": "Apply Guidance bonus"
+            },
+            {
+              "condition": "prepare-ability-check",
+              "update": "Apply Guidance bonus"
+            },
+            {
+              "condition": "complete-skill-check",
+              "update": "Expire Guidance bonus"
+            },
+            {
+              "condition": "complete-ability-check",
+              "update": "Expire Guidance bonus"
             }
           ],
           "independentDuration": false,
@@ -40,9 +53,10 @@
           "stackEffects": false
         }
       },
-      "icon": "icons/magic/fire/dagger-rune-enchant-blue-gray.webp",
-      "label": "True Strike",
-      "origin": "Actor.m4mjuiVrcZHbrj00.Item.2dGSl9An0aCC6KtE",
+      "icon": "icons/magic/control/buff-flight-wings-purple.webp",
+      "name": "Guidance",
+      "origin": "Actor.isYKP74w0SIExUvl.Item.zk42Kh6Z1hPX3RbT",
+      "statuses": [],
       "tint": null,
       "transfer": false
     }
@@ -58,13 +72,14 @@
         }
       },
       "saveImmunity": false,
-      "script": "this.registerUpdater(\"Check expiry\", true, (condition, item, effect, details) => {\n    if (details.attackerUuid === item.actor.uuid) {\n        effect.delete();\n    }    \n});"
+      "script": "this.registerUpdater(\"Apply Guidance bonus\", false, async (condition, item, effect, details) => {\n    const doApply = await Dialog.confirm({ title: \"Apply Guidance?\", content: \"<h1>+1d4</h1>\" });\n    if (doApply) {\n        return \"1d4\";\n    }\n});\n\nthis.registerUpdater(\"Expire Guidance bonus\", false, async (condition, item, effect, details) => {\n    if (details) game.wire.getMasterEffect(effect)?.delete();\n});"
     }
   },
   "folder": null,
-  "img": "icons/magic/fire/dagger-rune-enchant-blue-gray.webp",
-  "name": "True Strike",
+  "img": "icons/magic/control/buff-flight-wings-blue.webp",
+  "name": "Guidance",
   "ownership": {
+    "dBglmdrMUDMEh6ZW": 3,
     "default": 0,
     "m7gKrZnSC3XR8ToV": 3
   },
@@ -76,15 +91,14 @@
       "cost": 1,
       "type": "action"
     },
-    "attackBonus": 0,
+    "attackBonus": "",
     "chatFlavor": "",
     "components": {
       "concentration": true,
       "material": false,
       "ritual": false,
       "somatic": true,
-      "value": "",
-      "vocal": false
+      "vocal": true
     },
     "consume": {
       "amount": null,
@@ -99,19 +113,18 @@
     },
     "damage": {
       "parts": [],
-      "value": "",
       "versatile": ""
     },
     "description": {
       "chat": "",
       "unidentified": "",
-      "value": "<p>You extend your hand and point a finger at a target in range. Your magic grants you a brief insight into the target's defenses. On your next turn, you gain advantage on your first attack roll against the target, provided that this spell hasn't ended.</p>"
+      "value": "<p>You touch one willing creature. Once before the spell ends, the target can roll a d4 and add the number rolled to one ability check of its choice. It can roll the die before or after making the ability check. The spell then ends.</p>"
     },
     "duration": {
-      "units": "turn",
-      "value": 2
+      "units": "minute",
+      "value": "1"
     },
-    "formula": "",
+    "formula": "1d4",
     "level": 0,
     "materials": {
       "consumed": false,
@@ -124,22 +137,21 @@
       "prepared": false
     },
     "range": {
-      "long": 0,
-      "units": "ft",
-      "value": 30
+      "long": null,
+      "units": "touch",
+      "value": null
     },
     "save": {
       "ability": "",
       "dc": null,
-      "scaling": "spell",
-      "value": ""
+      "scaling": "spell"
     },
     "scaling": {
       "formula": "",
       "mode": "none"
     },
     "school": "div",
-    "source": "PHB pg. 284",
+    "source": "PHB pg. 248",
     "target": {
       "type": "creature",
       "units": "",
@@ -147,10 +159,10 @@
       "width": null
     },
     "uses": {
-      "max": "0",
-      "per": "",
+      "max": "",
+      "per": null,
       "recovery": "",
-      "value": 0
+      "value": null
     }
   },
   "type": "spell"

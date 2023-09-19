@@ -1,59 +1,102 @@
 {
-  "name": "Life Drain",
-  "type": "weapon",
+  "_id": "KV8LVPNcGLnnOYFI",
+  "_key": "!items!KV8LVPNcGLnnOYFI",
+  "effects": [
+    {
+      "_id": "T12ixlu6XO8wUqpu",
+      "_key": "!items.effects!KV8LVPNcGLnnOYFI.T12ixlu6XO8wUqpu",
+      "changes": [
+        {
+          "key": "system.attributes.hp.tempmax",
+          "mode": 2,
+          "priority": 20,
+          "value": "-@condition.details.damage.total"
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "combat": null,
+        "rounds": null,
+        "seconds": null,
+        "startRound": null,
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
+      },
+      "flags": {
+        "wire": {
+          "applicationType": "delayed",
+          "applyOnSaveOrMiss": false,
+          "auraTargets": "",
+          "blocksAreaConditions": false,
+          "conditions": [],
+          "independentDuration": false,
+          "rollEffects": true,
+          "stackEffects": true
+        }
+      },
+      "icon": "icons/magic/unholy/strike-hand-glow-pink.webp",
+      "label": "Life Drain",
+      "origin": "Scene.Xy2Un3kaNxzH3jmZ.Token.mgCCexEb8Kz3h1Hi.Item.pxm7rAqI5ackW8Oy",
+      "tint": null,
+      "transfer": false
+    }
+  ],
+  "flags": {
+    "wire": {
+      "checkedAbility": "",
+      "compendiumSource": "wire-srd.monsterfeatures",
+      "compendiumVersion": "0.10.3",
+      "conditions": [
+        {
+          "condition": "this-attack-hits",
+          "update": "apply-delayed"
+        }
+      ],
+      "damageParts": [
+        {
+          "application": "immediate",
+          "halving": "none"
+        }
+      ],
+      "override": {
+        "target": {
+          "value": ""
+        }
+      },
+      "saveImmunity": false
+    }
+  },
+  "folder": null,
   "img": "icons/magic/unholy/strike-hand-glow-pink.webp",
+  "name": "Life Drain",
+  "ownership": {
+    "default": 0,
+    "m7gKrZnSC3XR8ToV": 3
+  },
   "system": {
-    "description": {
-      "value": "<section class=\"secret\"><p><em>Melee Spell Attack:</em><strong>+4 to hit,</strong>, <strong>5 ft.,</strong> one creature. Hit: <strong>10 (3d6) <em>necrotic damage</em></strong>. </p><p>The target must succeed on a  <strong>DC 10 Constitution</strong> saving throw or its hit point maximum is reduced by an amount equal to the damage taken. This reduction lasts until the creature finishes a long rest. The target dies if this effect reduces its hit point maximum to 0.</p></section><p>The Specter attacks with its Life Drain.The target must make a <strong>Constitution</strong> saving throw. </p>",
-      "chat": "",
-      "unidentified": ""
-    },
-    "source": "",
-    "quantity": 1,
-    "weight": 0,
-    "price": 0,
-    "attunement": 0,
-    "equipped": true,
-    "rarity": "",
-    "identified": true,
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": null,
-      "units": ""
-    },
-    "target": {
-      "value": null,
-      "width": null,
-      "units": "",
-      "type": ""
-    },
-    "range": {
-      "value": null,
-      "long": null,
-      "units": ""
-    },
-    "uses": {
-      "value": 0,
-      "max": "0",
-      "per": "",
-      "recovery": ""
-    },
-    "consume": {
-      "type": "",
-      "target": "",
-      "amount": null
-    },
     "ability": "dex",
     "actionType": "msak",
+    "activation": {
+      "condition": "",
+      "cost": 1,
+      "type": "action"
+    },
+    "armor": {
+      "value": 10
+    },
     "attackBonus": "0",
+    "attunement": 0,
+    "baseItem": "",
     "chatFlavor": "",
+    "consume": {
+      "amount": null,
+      "target": "",
+      "type": ""
+    },
     "critical": {
-      "threshold": null,
-      "damage": ""
+      "damage": "",
+      "threshold": null
     },
     "damage": {
       "parts": [
@@ -64,24 +107,28 @@
       ],
       "versatile": ""
     },
+    "description": {
+      "chat": "",
+      "unidentified": "",
+      "value": "<section class=\"secret\"><p><em>Melee Spell Attack:</em><strong>+4 to hit,</strong>, <strong>5 ft.,</strong> one creature. Hit: <strong>10 (3d6) <em>necrotic damage</em></strong>. </p><p>The target must succeed on a  <strong>DC 10 Constitution</strong> saving throw or its hit point maximum is reduced by an amount equal to the damage taken. This reduction lasts until the creature finishes a long rest. The target dies if this effect reduces its hit point maximum to 0.</p></section><p>The Specter attacks with its Life Drain.The target must make a <strong>Constitution</strong> saving throw. </p>"
+    },
+    "duration": {
+      "units": "",
+      "value": null
+    },
+    "equipped": true,
     "formula": "",
-    "save": {
-      "ability": "con",
-      "dc": 10,
-      "scaling": "spell"
-    },
-    "armor": {
-      "value": 10
-    },
     "hp": {
-      "value": 0,
-      "max": 0,
+      "conditions": "",
       "dt": null,
-      "conditions": ""
+      "max": 0,
+      "value": 0
     },
-    "weaponType": "natural",
-    "baseItem": "",
+    "identified": true,
+    "price": 0,
+    "proficient": true,
     "properties": {
+      "ada": false,
       "amm": false,
       "fin": false,
       "fir": false,
@@ -89,99 +136,43 @@
       "hvy": false,
       "lgt": false,
       "lod": false,
+      "mgc": false,
       "rch": false,
       "rel": false,
       "ret": false,
+      "sil": false,
       "spc": false,
       "thr": false,
       "two": false,
-      "ver": false,
-      "ada": false,
-      "mgc": false,
-      "sil": false
+      "ver": false
     },
-    "proficient": true
+    "quantity": 1,
+    "range": {
+      "long": null,
+      "units": "",
+      "value": null
+    },
+    "rarity": "",
+    "save": {
+      "ability": "con",
+      "dc": 10,
+      "scaling": "spell"
+    },
+    "source": "",
+    "target": {
+      "type": "",
+      "units": "",
+      "value": null,
+      "width": null
+    },
+    "uses": {
+      "max": "0",
+      "per": "",
+      "recovery": "",
+      "value": 0
+    },
+    "weaponType": "natural",
+    "weight": 0
   },
-  "effects": [
-    {
-      "label": "Life Drain",
-      "icon": "icons/magic/unholy/strike-hand-glow-pink.webp",
-      "origin": "Scene.Xy2Un3kaNxzH3jmZ.Token.mgCCexEb8Kz3h1Hi.Item.pxm7rAqI5ackW8Oy",
-      "duration": {
-        "startTime": null,
-        "seconds": null,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "disabled": false,
-      "_id": "T12ixlu6XO8wUqpu",
-      "changes": [
-        {
-          "key": "system.attributes.hp.tempmax",
-          "mode": 2,
-          "value": "-@condition.details.damage.total",
-          "priority": 20
-        }
-      ],
-      "tint": null,
-      "transfer": false,
-      "flags": {
-        "wire": {
-          "applyOnSaveOrMiss": false,
-          "applicationType": "delayed",
-          "blocksAreaConditions": false,
-          "auraTargets": "",
-          "stackEffects": true,
-          "rollEffects": true,
-          "independentDuration": false,
-          "conditions": []
-        }
-      },
-      "_key": "!items.effects!KV8LVPNcGLnnOYFI.T12ixlu6XO8wUqpu"
-    }
-  ],
-  "ownership": {
-    "default": 0,
-    "m7gKrZnSC3XR8ToV": 3
-  },
-  "flags": {
-    "wire": {
-      "conditions": [
-        {
-          "condition": "this-attack-hits",
-          "update": "apply-delayed"
-        }
-      ],
-      "override": {
-        "target": {
-          "value": ""
-        }
-      },
-      "checkedAbility": "",
-      "saveImmunity": false,
-      "damageParts": [
-        {
-          "halving": "none",
-          "application": "immediate"
-        }
-      ],
-      "compendiumSource": "wire-srd.monsterfeatures",
-      "compendiumVersion": "0.10.3"
-    }
-  },
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.0.3",
-    "coreVersion": "10.291",
-    "createdTime": 1673175406545,
-    "modifiedTime": 1673175406594,
-    "lastModifiedBy": "m7gKrZnSC3XR8ToV"
-  },
-  "folder": null,
-  "sort": 0,
-  "_id": "KV8LVPNcGLnnOYFI",
-  "_key": "!items!KV8LVPNcGLnnOYFI"
+  "type": "weapon"
 }

@@ -1,161 +1,154 @@
 {
-  "name": "Compulsion",
-  "ownership": {
-    "default": 0,
-    "m7gKrZnSC3XR8ToV": 3
-  },
-  "type": "spell",
-  "system": {
-    "description": {
-      "value": "<p>Creatures of your choice that you can see within range and that can hear you must make a Wisdom saving throw. A target automatically succeeds on this saving throw if it can't be charmed. On a failed save, a target is affected by this spell. Until the spell ends, you can use a bonus action on each of your turns to designate a direction that is horizontal to you. Each affected target must use as much of its movement as possible to move in that direction on its next turn. It can take any action before it moves. After moving in this way, it can make another Wisdom save to try to end the effect.</p><p>A target isn't compelled to move into an obviously deadly hazard, such as a fire or a pit, but it will provoke opportunity attacks to move in the designated direction.</p>",
-      "chat": "",
-      "unidentified": ""
-    },
-    "source": "PHB pg. 224",
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": 1,
-      "units": "minute"
-    },
-    "target": {
-      "value": null,
-      "width": null,
-      "units": "any",
-      "type": "creature"
-    },
-    "range": {
-      "value": 30,
-      "long": 0,
-      "units": "ft"
-    },
-    "uses": {
-      "value": 0,
-      "max": "0",
-      "per": "",
-      "recovery": ""
-    },
-    "consume": {
-      "type": "",
-      "target": "",
-      "amount": null
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": 0,
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": "",
-      "value": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "wis",
-      "dc": null,
-      "scaling": "spell"
-    },
-    "level": 4,
-    "school": "enc",
-    "components": {
-      "value": "",
-      "vocal": true,
-      "somatic": true,
-      "material": false,
-      "ritual": false,
-      "concentration": true
-    },
-    "materials": {
-      "value": "",
-      "consumed": false,
-      "cost": 0,
-      "supply": 0
-    },
-    "preparation": {
-      "mode": "prepared",
-      "prepared": false
-    },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    }
-  },
-  "flags": {
-    "wire": {
-      "override": {
-        "target": {
-          "value": ""
-        }
-      },
-      "checkedAbility": "",
-      "saveImmunity": false,
-      "immunities": [
-        {
-          "type": "conditionImmunity",
-          "value": "charmed"
-        }
-      ],
-      "compendiumSource": "wire-srd.spells",
-      "compendiumVersion": "0.10.2"
-    }
-  },
-  "img": "icons/magic/fire/explosion-fireball-large-purple-pink.webp",
+  "_id": "gd72waZd7fgMHMiH",
+  "_key": "!items!gd72waZd7fgMHMiH",
   "effects": [
     {
-      "label": "Compulsion",
-      "icon": "icons/magic/fire/explosion-fireball-large-purple-pink.webp",
-      "origin": "Actor.m4mjuiVrcZHbrj00.Item.S7oEuHnGUc7tJiUx",
+      "_id": "HchfTejiuB22cewx",
+      "_key": "!items.effects!gd72waZd7fgMHMiH.HchfTejiuB22cewx",
+      "changes": [],
+      "disabled": false,
       "duration": {
-        "startTime": null,
-        "seconds": null,
         "combat": null,
         "rounds": null,
-        "turns": null,
+        "seconds": null,
         "startRound": null,
-        "startTurn": null
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
       },
-      "disabled": false,
-      "_id": "HchfTejiuB22cewx",
-      "changes": [],
-      "tint": null,
-      "transfer": false,
       "flags": {
         "wire": {
-          "applyOnSaveOrMiss": false,
           "applicationType": "immediate",
-          "blocksAreaConditions": false,
+          "applyOnSaveOrMiss": false,
           "auraTargets": "",
-          "stackEffects": false,
-          "rollEffects": false,
+          "blocksAreaConditions": false,
           "conditions": [
             {
               "condition": "end-of-turn-target",
               "update": "end-on-save"
             }
           ],
-          "independentDuration": false
+          "independentDuration": false,
+          "rollEffects": false,
+          "stackEffects": false
         }
       },
-      "_key": "!items.effects!gd72waZd7fgMHMiH.HchfTejiuB22cewx"
+      "icon": "icons/magic/fire/explosion-fireball-large-purple-pink.webp",
+      "label": "Compulsion",
+      "origin": "Actor.m4mjuiVrcZHbrj00.Item.S7oEuHnGUc7tJiUx",
+      "tint": null,
+      "transfer": false
     }
   ],
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.0.3",
-    "coreVersion": "10.291",
-    "createdTime": 1661787234132,
-    "modifiedTime": 1672575317722,
-    "lastModifiedBy": "m7gKrZnSC3XR8ToV"
+  "flags": {
+    "wire": {
+      "checkedAbility": "",
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.10.2",
+      "immunities": [
+        {
+          "type": "conditionImmunity",
+          "value": "charmed"
+        }
+      ],
+      "override": {
+        "target": {
+          "value": ""
+        }
+      },
+      "saveImmunity": false
+    }
   },
   "folder": null,
-  "sort": 0,
-  "_id": "gd72waZd7fgMHMiH",
-  "_key": "!items!gd72waZd7fgMHMiH"
+  "img": "icons/magic/fire/explosion-fireball-large-purple-pink.webp",
+  "name": "Compulsion",
+  "ownership": {
+    "default": 0,
+    "m7gKrZnSC3XR8ToV": 3
+  },
+  "system": {
+    "ability": "",
+    "actionType": "save",
+    "activation": {
+      "condition": "",
+      "cost": 1,
+      "type": "action"
+    },
+    "attackBonus": 0,
+    "chatFlavor": "",
+    "components": {
+      "concentration": true,
+      "material": false,
+      "ritual": false,
+      "somatic": true,
+      "value": "",
+      "vocal": true
+    },
+    "consume": {
+      "amount": null,
+      "target": "",
+      "type": ""
+    },
+    "cover": null,
+    "crewed": false,
+    "critical": {
+      "damage": "",
+      "threshold": null
+    },
+    "damage": {
+      "parts": [],
+      "value": "",
+      "versatile": ""
+    },
+    "description": {
+      "chat": "",
+      "unidentified": "",
+      "value": "<p>Creatures of your choice that you can see within range and that can hear you must make a Wisdom saving throw. A target automatically succeeds on this saving throw if it can't be charmed. On a failed save, a target is affected by this spell. Until the spell ends, you can use a bonus action on each of your turns to designate a direction that is horizontal to you. Each affected target must use as much of its movement as possible to move in that direction on its next turn. It can take any action before it moves. After moving in this way, it can make another Wisdom save to try to end the effect.</p><p>A target isn't compelled to move into an obviously deadly hazard, such as a fire or a pit, but it will provoke opportunity attacks to move in the designated direction.</p>"
+    },
+    "duration": {
+      "units": "minute",
+      "value": 1
+    },
+    "formula": "",
+    "level": 4,
+    "materials": {
+      "consumed": false,
+      "cost": 0,
+      "supply": 0,
+      "value": ""
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "range": {
+      "long": 0,
+      "units": "ft",
+      "value": 30
+    },
+    "save": {
+      "ability": "wis",
+      "dc": null,
+      "scaling": "spell"
+    },
+    "scaling": {
+      "formula": "",
+      "mode": "none"
+    },
+    "school": "enc",
+    "source": "PHB pg. 224",
+    "target": {
+      "type": "creature",
+      "units": "any",
+      "value": null,
+      "width": null
+    },
+    "uses": {
+      "max": "0",
+      "per": "",
+      "recovery": "",
+      "value": 0
+    }
+  },
+  "type": "spell"
 }

@@ -1,508 +1,499 @@
 {
-  "name": "Contagion",
-  "ownership": {
-    "default": 0,
-    "m7gKrZnSC3XR8ToV": 3
-  },
-  "type": "spell",
-  "system": {
-    "description": {
-      "value": "<p>Your touch inflicts disease. Make a melee spell attack against a creature within your reach. On a hit, the target is poisoned.</p><p>At the end of each of the poisoned target’s turns, the target must make a Constitution saving throw. If the target succeeds on three of these saves, it is no longer poisoned, and the spell ends. If the target fails three of these saves, the target is no longer poisoned, but choose one of the diseases below. The target is subjected to the chosen disease for the spell’s duration.</p><p>Since this spell induces a natural disease in its target, any effect that removes a disease or otherwise ameliorates a disease’s effects apply to it.</p><p><strong>Blinding Sickness.</strong> Pain grips the creature’s mind, and its eyes turn milky white. The creature has disadvantage on Wisdom checks and Wisdom saving throws and is blinded.</p><p><strong>Filth Fever.</strong> A raging fever sweeps through the creature’s body. The creature has disadvantage on Strength checks, Strength saving throws, and attack rolls that use Strength.</p><p><strong>Flesh Rot.</strong> The creature’s flesh decays. The creature has disadvantage on Charisma checks and vulnerability to all damage.</p><p><strong>Mindfire.</strong> The creature’s mind becomes feverish. The creature has disadvantage on Intelligence checks and Intelligence saving throws, and the creature behaves as if under the effects of the confusion spell during combat.</p><p><strong>Seizure.</strong> The creature is overcome with shaking. The creature has disadvantage on Dexterity checks, Dexterity saving throws, and attack rolls that use Dexterity.</p><p><strong>Slimy Doom.</strong> The creature begins to bleed uncontrollably. The creature has disadvantage on Constitution checks and Constitution saving throws. In addition, whenever the creature takes damage, it is stunned until the end of its next turn.</p>",
-      "chat": "",
-      "unidentified": ""
-    },
-    "source": "PHB pg. 227",
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": 7,
-      "units": "day"
-    },
-    "cover": null,
-    "crewed": false,
-    "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature"
-    },
-    "range": {
-      "value": null,
-      "long": null,
-      "units": "touch"
-    },
-    "uses": {
-      "value": 0,
-      "max": "0",
-      "per": "",
-      "recovery": ""
-    },
-    "consume": {
-      "type": "",
-      "target": "",
-      "amount": null
-    },
-    "ability": "",
-    "actionType": "msak",
-    "attackBonus": "0",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": "",
-      "value": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "con",
-      "dc": null,
-      "scaling": "spell"
-    },
-    "level": 5,
-    "school": "nec",
-    "components": {
-      "vocal": true,
-      "somatic": true,
-      "material": false,
-      "ritual": false,
-      "concentration": false,
-      "value": ""
-    },
-    "materials": {
-      "value": "",
-      "consumed": false,
-      "cost": 0,
-      "supply": 0
-    },
-    "preparation": {
-      "mode": "prepared",
-      "prepared": false
-    },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    }
-  },
-  "flags": {
-    "wire": {
-      "override": {
-        "target": {
-          "value": "1"
-        }
-      },
-      "checkedAbility": "",
-      "saveImmunity": false,
-      "variants": [],
-      "compendiumSource": "wire-srd.spells",
-      "compendiumVersion": "0.11.0",
-      "script": "this.skipVariantSelection();\nthis.selectVariant(\"Blinding Sickness\", \"Filth Fever\", \"Flesh Rot\", \"Mindfire\", \"Seizure\", \"Slimy Doom\");\n\nthis.registerFlowStep(\"checkRecovery\", true, async activation => {\n    const counters = activation.config.counters || { success: 0, failure: 0};\n    if (activation.effectiveTargets.length) {\n        counters.failure++;\n    } else {\n        counters.success++;\n    }\n    await activation.updateConfig({ counters });\n\n    await activation.assignCustomHtml(`\n        <div style=\"text-align: center\">\n            <p>Successes <b>${counters.success}</b></p>\n            <p>Failures <b>${counters.failure}</b></p>\n        </div>\n    `);\n\n    if (counters.success >= 3 || counters.failure >= 3) {\n        game.wire.runInQueue(async () => {\n            await activation.sourceEffect.delete();\n        });\n    }\n    if (counters.failure < 3) {\n        return false;\n    }\n});\n\nthis.registerFlowStep(\"rollConfusionEffect\", true, async (activation) => {\n    const table = await fromUuid(\"Compendium.dnd5e.tables.LHEts1oDaDwcehuj\");\n    const { roll, results } = await table.draw({ displayChat: false });\n    await game.dice3d?.showForRoll(roll, game.user, !game.user.isGM);\n    const resultText = results[0].text;\n    activation.assignCustomHtml(resultText);\n});\n\nreturn this.pick(\n    this.isOverTimeApplication(\n        this.performCustomStep(\"rollConfusionEffect\")\n    ),\n    this.isDelayedApplication(\n        this.performSavingThrow(\n            this.performCustomStep(\"checkRecovery\",\n                this.promptVariant(\n                    this.applyEffects()\n                )\n            )\n        )\n    ),\n    this.defaultFlow()\n)"
-    }
-  },
-  "img": "icons/magic/unholy/strike-beam-blood-large-red-purple.webp",
+  "_id": "lLcyW4PvABjwgIzt",
+  "_key": "!items!lLcyW4PvABjwgIzt",
   "effects": [
     {
-      "label": "Blinding Sickness",
-      "icon": "icons/magic/unholy/strike-beam-blood-large-red-purple.webp",
-      "origin": "Actor.isYKP74w0SIExUvl.Item.chFAwtVzmVeF7zuN",
-      "duration": {
-        "startTime": null,
-        "seconds": null,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "disabled": false,
       "_id": "N6E0I6f8CXO4foC6",
+      "_key": "!items.effects!lLcyW4PvABjwgIzt.N6E0I6f8CXO4foC6",
       "changes": [
         {
           "key": "flags.wire.disadvantage.ability.save.wis",
           "mode": 2,
-          "value": "1",
-          "priority": 20
+          "priority": 20,
+          "value": "1"
         },
         {
           "key": "flags.wire.disadvantage.ability.check.wis",
           "mode": 2,
-          "value": "1",
-          "priority": 20
+          "priority": 20,
+          "value": "1"
         },
         {
           "key": "wire.custom.statusEffect",
           "mode": 2,
-          "value": "Blinded",
-          "priority": 20
+          "priority": 20,
+          "value": "Blinded"
         }
       ],
-      "tint": null,
-      "transfer": false,
-      "flags": {
-        "wire": {
-          "applyOnSaveOrMiss": false,
-          "applicationType": "delayed",
-          "blocksAreaConditions": false,
-          "auraTargets": "",
-          "stackEffects": false,
-          "rollEffects": false,
-          "independentDuration": false,
-          "conditions": []
-        }
-      },
-      "_key": "!items.effects!lLcyW4PvABjwgIzt.N6E0I6f8CXO4foC6"
-    },
-    {
-      "label": "Filth Fever",
-      "icon": "icons/magic/unholy/strike-beam-blood-large-red-purple.webp",
-      "origin": "Actor.isYKP74w0SIExUvl.Item.chFAwtVzmVeF7zuN",
+      "disabled": false,
       "duration": {
-        "startTime": null,
-        "seconds": null,
         "combat": null,
         "rounds": null,
-        "turns": null,
+        "seconds": null,
         "startRound": null,
-        "startTurn": null
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
       },
-      "disabled": false,
+      "flags": {
+        "wire": {
+          "applicationType": "delayed",
+          "applyOnSaveOrMiss": false,
+          "auraTargets": "",
+          "blocksAreaConditions": false,
+          "conditions": [],
+          "independentDuration": false,
+          "rollEffects": false,
+          "stackEffects": false
+        }
+      },
+      "icon": "icons/magic/unholy/strike-beam-blood-large-red-purple.webp",
+      "label": "Blinding Sickness",
+      "origin": "Actor.isYKP74w0SIExUvl.Item.chFAwtVzmVeF7zuN",
+      "tint": null,
+      "transfer": false
+    },
+    {
       "_id": "bfdsWBPNm6dewcCq",
+      "_key": "!items.effects!lLcyW4PvABjwgIzt.bfdsWBPNm6dewcCq",
       "changes": [
         {
           "key": "flags.wire.disadvantage.ability.save.str",
           "mode": 2,
-          "value": "1",
-          "priority": 20
+          "priority": 20,
+          "value": "1"
         },
         {
           "key": "flags.wire.disadvantage.ability.check.str",
           "mode": 2,
-          "value": "1",
-          "priority": 20
+          "priority": 20,
+          "value": "1"
         },
         {
           "key": "flags.wire.disadvantage.attack.str",
           "mode": 2,
-          "value": "1",
-          "priority": 20
+          "priority": 20,
+          "value": "1"
         }
       ],
-      "tint": null,
-      "transfer": false,
-      "flags": {
-        "wire": {
-          "applyOnSaveOrMiss": false,
-          "applicationType": "delayed",
-          "blocksAreaConditions": false,
-          "auraTargets": "",
-          "stackEffects": false,
-          "rollEffects": false,
-          "independentDuration": false,
-          "conditions": []
-        }
-      },
-      "_key": "!items.effects!lLcyW4PvABjwgIzt.bfdsWBPNm6dewcCq"
-    },
-    {
-      "label": "Flesh Rot",
-      "icon": "icons/magic/unholy/strike-beam-blood-large-red-purple.webp",
-      "origin": "Actor.isYKP74w0SIExUvl.Item.chFAwtVzmVeF7zuN",
+      "disabled": false,
       "duration": {
-        "startTime": null,
-        "seconds": null,
         "combat": null,
         "rounds": null,
-        "turns": null,
+        "seconds": null,
         "startRound": null,
-        "startTurn": null
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
       },
-      "disabled": false,
+      "flags": {
+        "wire": {
+          "applicationType": "delayed",
+          "applyOnSaveOrMiss": false,
+          "auraTargets": "",
+          "blocksAreaConditions": false,
+          "conditions": [],
+          "independentDuration": false,
+          "rollEffects": false,
+          "stackEffects": false
+        }
+      },
+      "icon": "icons/magic/unholy/strike-beam-blood-large-red-purple.webp",
+      "label": "Filth Fever",
+      "origin": "Actor.isYKP74w0SIExUvl.Item.chFAwtVzmVeF7zuN",
+      "tint": null,
+      "transfer": false
+    },
+    {
       "_id": "LspoSTGFpUUfADLA",
+      "_key": "!items.effects!lLcyW4PvABjwgIzt.LspoSTGFpUUfADLA",
       "changes": [
         {
           "key": "flags.wire.disadvantage.ability.check.cha",
           "mode": 2,
-          "value": "1",
-          "priority": 20
+          "priority": 20,
+          "value": "1"
         },
         {
           "key": "system.traits.dv.all",
           "mode": 0,
-          "value": "",
-          "priority": 20
+          "priority": 20,
+          "value": ""
         }
       ],
-      "tint": null,
-      "transfer": false,
-      "flags": {
-        "wire": {
-          "applyOnSaveOrMiss": false,
-          "applicationType": "delayed",
-          "blocksAreaConditions": false,
-          "auraTargets": "",
-          "stackEffects": false,
-          "rollEffects": false,
-          "independentDuration": false,
-          "conditions": []
-        }
-      },
-      "_key": "!items.effects!lLcyW4PvABjwgIzt.LspoSTGFpUUfADLA"
-    },
-    {
-      "label": "Mindfire",
-      "icon": "icons/magic/unholy/strike-beam-blood-large-red-purple.webp",
-      "origin": "Actor.isYKP74w0SIExUvl.Item.chFAwtVzmVeF7zuN",
+      "disabled": false,
       "duration": {
-        "startTime": null,
-        "seconds": null,
         "combat": null,
         "rounds": null,
-        "turns": null,
+        "seconds": null,
         "startRound": null,
-        "startTurn": null
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
       },
-      "disabled": false,
+      "flags": {
+        "wire": {
+          "applicationType": "delayed",
+          "applyOnSaveOrMiss": false,
+          "auraTargets": "",
+          "blocksAreaConditions": false,
+          "conditions": [],
+          "independentDuration": false,
+          "rollEffects": false,
+          "stackEffects": false
+        }
+      },
+      "icon": "icons/magic/unholy/strike-beam-blood-large-red-purple.webp",
+      "label": "Flesh Rot",
+      "origin": "Actor.isYKP74w0SIExUvl.Item.chFAwtVzmVeF7zuN",
+      "tint": null,
+      "transfer": false
+    },
+    {
       "_id": "wI097L4yj6qocNIr",
+      "_key": "!items.effects!lLcyW4PvABjwgIzt.wI097L4yj6qocNIr",
       "changes": [
         {
           "key": "flags.wire.disadvantage.ability.check.int",
           "mode": 2,
-          "value": "1",
-          "priority": 20
+          "priority": 20,
+          "value": "1"
         },
         {
           "key": "flags.wire.disadvantage.ability.save.int",
           "mode": 2,
-          "value": "1",
-          "priority": 20
+          "priority": 20,
+          "value": "1"
         }
       ],
-      "tint": null,
-      "transfer": false,
+      "disabled": false,
+      "duration": {
+        "combat": null,
+        "rounds": null,
+        "seconds": null,
+        "startRound": null,
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
+      },
       "flags": {
         "wire": {
-          "applyOnSaveOrMiss": false,
           "applicationType": "delayed",
-          "blocksAreaConditions": false,
+          "applyOnSaveOrMiss": false,
           "auraTargets": "",
-          "stackEffects": false,
-          "rollEffects": false,
-          "independentDuration": false,
+          "blocksAreaConditions": false,
           "conditions": [
             {
               "condition": "start-of-turn-target",
               "update": "apply-overtime"
             }
-          ]
+          ],
+          "independentDuration": false,
+          "rollEffects": false,
+          "stackEffects": false
         }
       },
-      "_key": "!items.effects!lLcyW4PvABjwgIzt.wI097L4yj6qocNIr"
+      "icon": "icons/magic/unholy/strike-beam-blood-large-red-purple.webp",
+      "label": "Mindfire",
+      "origin": "Actor.isYKP74w0SIExUvl.Item.chFAwtVzmVeF7zuN",
+      "tint": null,
+      "transfer": false
     },
     {
-      "label": "Seizure",
-      "icon": "icons/magic/unholy/strike-beam-blood-large-red-purple.webp",
-      "origin": "Actor.isYKP74w0SIExUvl.Item.chFAwtVzmVeF7zuN",
-      "duration": {
-        "startTime": null,
-        "seconds": null,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "disabled": false,
       "_id": "oj2igoq9KIk2z2x1",
+      "_key": "!items.effects!lLcyW4PvABjwgIzt.oj2igoq9KIk2z2x1",
       "changes": [
         {
           "key": "flags.wire.disadvantage.ability.check.dex",
           "mode": 2,
-          "value": "1",
-          "priority": 20
+          "priority": 20,
+          "value": "1"
         },
         {
           "key": "flags.wire.disadvantage.ability.save.dex",
           "mode": 2,
-          "value": "1",
-          "priority": 20
+          "priority": 20,
+          "value": "1"
         },
         {
           "key": "flags.wire.disadvantage.attack.dex",
           "mode": 2,
-          "value": "1",
-          "priority": 20
+          "priority": 20,
+          "value": "1"
         }
       ],
-      "tint": null,
-      "transfer": false,
-      "flags": {
-        "wire": {
-          "applyOnSaveOrMiss": false,
-          "applicationType": "delayed",
-          "blocksAreaConditions": false,
-          "auraTargets": "",
-          "stackEffects": false,
-          "rollEffects": false,
-          "independentDuration": false,
-          "conditions": []
-        }
-      },
-      "_key": "!items.effects!lLcyW4PvABjwgIzt.oj2igoq9KIk2z2x1"
-    },
-    {
-      "label": "Slimy Doom",
-      "icon": "icons/magic/unholy/strike-beam-blood-large-red-purple.webp",
-      "origin": "Actor.isYKP74w0SIExUvl.Item.chFAwtVzmVeF7zuN",
+      "disabled": false,
       "duration": {
-        "startTime": null,
-        "seconds": null,
         "combat": null,
         "rounds": null,
-        "turns": null,
+        "seconds": null,
         "startRound": null,
-        "startTurn": null
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
       },
-      "disabled": false,
+      "flags": {
+        "wire": {
+          "applicationType": "delayed",
+          "applyOnSaveOrMiss": false,
+          "auraTargets": "",
+          "blocksAreaConditions": false,
+          "conditions": [],
+          "independentDuration": false,
+          "rollEffects": false,
+          "stackEffects": false
+        }
+      },
+      "icon": "icons/magic/unholy/strike-beam-blood-large-red-purple.webp",
+      "label": "Seizure",
+      "origin": "Actor.isYKP74w0SIExUvl.Item.chFAwtVzmVeF7zuN",
+      "tint": null,
+      "transfer": false
+    },
+    {
       "_id": "lJIw2OMU3EXXDWXI",
+      "_key": "!items.effects!lLcyW4PvABjwgIzt.lJIw2OMU3EXXDWXI",
       "changes": [
         {
           "key": "flags.wire.disadvantage.ability.check.con",
           "mode": 2,
-          "value": "1",
-          "priority": 20
+          "priority": 20,
+          "value": "1"
         },
         {
           "key": "flags.wire.disadvantage.ability.save.con",
           "mode": 2,
-          "value": "1",
-          "priority": 20
+          "priority": 20,
+          "value": "1"
         }
       ],
-      "tint": null,
-      "transfer": false,
+      "disabled": false,
+      "duration": {
+        "combat": null,
+        "rounds": null,
+        "seconds": null,
+        "startRound": null,
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
+      },
       "flags": {
         "wire": {
-          "applyOnSaveOrMiss": false,
           "applicationType": "delayed",
-          "blocksAreaConditions": false,
+          "applyOnSaveOrMiss": false,
           "auraTargets": "",
-          "stackEffects": false,
-          "rollEffects": false,
-          "independentDuration": false,
+          "blocksAreaConditions": false,
           "conditions": [
             {
               "condition": "takes-damage",
               "update": "apply-effects-overtime"
             }
-          ]
+          ],
+          "independentDuration": false,
+          "rollEffects": false,
+          "stackEffects": false
         }
       },
-      "_key": "!items.effects!lLcyW4PvABjwgIzt.lJIw2OMU3EXXDWXI"
+      "icon": "icons/magic/unholy/strike-beam-blood-large-red-purple.webp",
+      "label": "Slimy Doom",
+      "origin": "Actor.isYKP74w0SIExUvl.Item.chFAwtVzmVeF7zuN",
+      "tint": null,
+      "transfer": false
     },
     {
-      "label": "Slimy Doom Stun",
-      "icon": "icons/magic/control/voodoo-doll-pain-damage-red.webp",
-      "origin": "Actor.isYKP74w0SIExUvl.Item.chFAwtVzmVeF7zuN",
-      "duration": {
-        "startTime": null,
-        "seconds": null,
-        "combat": null,
-        "rounds": 1,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "disabled": false,
       "_id": "nwTLLJikvTGuWGMp",
+      "_key": "!items.effects!lLcyW4PvABjwgIzt.nwTLLJikvTGuWGMp",
       "changes": [
         {
           "key": "wire.custom.statusEffect",
           "mode": 2,
-          "value": "Stunned",
-          "priority": 20
+          "priority": 20,
+          "value": "Stunned"
         }
       ],
-      "tint": null,
-      "transfer": false,
+      "disabled": false,
+      "duration": {
+        "combat": null,
+        "rounds": 1,
+        "seconds": null,
+        "startRound": null,
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
+      },
       "flags": {
         "wire": {
-          "applyOnSaveOrMiss": false,
           "applicationType": "overtime",
-          "blocksAreaConditions": false,
+          "applyOnSaveOrMiss": false,
           "auraTargets": "",
-          "stackEffects": false,
-          "rollEffects": false,
-          "independentDuration": true,
+          "blocksAreaConditions": false,
           "conditions": [
             {
               "condition": "end-of-turn-target",
               "update": "end"
             }
-          ]
+          ],
+          "independentDuration": true,
+          "rollEffects": false,
+          "stackEffects": false
         }
       },
-      "_key": "!items.effects!lLcyW4PvABjwgIzt.nwTLLJikvTGuWGMp"
+      "icon": "icons/magic/control/voodoo-doll-pain-damage-red.webp",
+      "label": "Slimy Doom Stun",
+      "origin": "Actor.isYKP74w0SIExUvl.Item.chFAwtVzmVeF7zuN",
+      "tint": null,
+      "transfer": false
     },
     {
-      "label": "Contagion",
-      "icon": "icons/magic/unholy/strike-beam-blood-large-red-purple.webp",
-      "origin": "Actor.isYKP74w0SIExUvl.Item.chFAwtVzmVeF7zuN",
-      "duration": {
-        "startTime": null,
-        "seconds": null,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "disabled": false,
       "_id": "oIQpdMt1XESNr1N2",
+      "_key": "!items.effects!lLcyW4PvABjwgIzt.oIQpdMt1XESNr1N2",
       "changes": [
         {
           "key": "wire.custom.statusEffect",
           "mode": 2,
-          "value": "Poisoned",
-          "priority": 20
+          "priority": 20,
+          "value": "Poisoned"
         }
       ],
-      "tint": null,
-      "transfer": false,
+      "disabled": false,
+      "duration": {
+        "combat": null,
+        "rounds": null,
+        "seconds": null,
+        "startRound": null,
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
+      },
       "flags": {
         "wire": {
-          "applyOnSaveOrMiss": false,
           "applicationType": "immediate",
-          "blocksAreaConditions": false,
+          "applyOnSaveOrMiss": false,
           "auraTargets": "",
-          "stackEffects": false,
-          "rollEffects": false,
+          "blocksAreaConditions": false,
           "conditions": [
             {
               "condition": "end-of-turn-target",
               "update": "apply-delayed"
             }
           ],
-          "independentDuration": false
+          "independentDuration": false,
+          "rollEffects": false,
+          "stackEffects": false
         }
       },
-      "_key": "!items.effects!lLcyW4PvABjwgIzt.oIQpdMt1XESNr1N2"
+      "icon": "icons/magic/unholy/strike-beam-blood-large-red-purple.webp",
+      "label": "Contagion",
+      "origin": "Actor.isYKP74w0SIExUvl.Item.chFAwtVzmVeF7zuN",
+      "tint": null,
+      "transfer": false
     }
   ],
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.2.2",
-    "coreVersion": "11.306",
-    "createdTime": 1661787234097,
-    "modifiedTime": 1694774675300,
-    "lastModifiedBy": "dBglmdrMUDMEh6ZW"
+  "flags": {
+    "wire": {
+      "checkedAbility": "",
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.11.0",
+      "override": {
+        "target": {
+          "value": "1"
+        }
+      },
+      "saveImmunity": false,
+      "script": "this.skipVariantSelection();\nthis.selectVariant(\"Blinding Sickness\", \"Filth Fever\", \"Flesh Rot\", \"Mindfire\", \"Seizure\", \"Slimy Doom\");\n\nthis.registerFlowStep(\"checkRecovery\", true, async activation => {\n    const counters = activation.config.counters || { success: 0, failure: 0};\n    if (activation.effectiveTargets.length) {\n        counters.failure++;\n    } else {\n        counters.success++;\n    }\n    await activation.updateConfig({ counters });\n\n    await activation.assignCustomHtml(`\n        <div style=\"text-align: center\">\n            <p>Successes <b>${counters.success}</b></p>\n            <p>Failures <b>${counters.failure}</b></p>\n        </div>\n    `);\n\n    if (counters.success >= 3 || counters.failure >= 3) {\n        game.wire.runInQueue(async () => {\n            await activation.sourceEffect.delete();\n        });\n    }\n    if (counters.failure < 3) {\n        return false;\n    }\n});\n\nthis.registerFlowStep(\"rollConfusionEffect\", true, async (activation) => {\n    const table = await fromUuid(\"Compendium.dnd5e.tables.LHEts1oDaDwcehuj\");\n    const { roll, results } = await table.draw({ displayChat: false });\n    await game.dice3d?.showForRoll(roll, game.user, !game.user.isGM);\n    const resultText = results[0].text;\n    activation.assignCustomHtml(resultText);\n});\n\nreturn this.pick(\n    this.isOverTimeApplication(\n        this.performCustomStep(\"rollConfusionEffect\")\n    ),\n    this.isDelayedApplication(\n        this.performSavingThrow(\n            this.performCustomStep(\"checkRecovery\",\n                this.promptVariant(\n                    this.applyEffects()\n                )\n            )\n        )\n    ),\n    this.defaultFlow()\n)",
+      "variants": []
+    }
   },
   "folder": null,
-  "sort": 0,
-  "_id": "lLcyW4PvABjwgIzt",
-  "_key": "!items!lLcyW4PvABjwgIzt"
+  "img": "icons/magic/unholy/strike-beam-blood-large-red-purple.webp",
+  "name": "Contagion",
+  "ownership": {
+    "default": 0,
+    "m7gKrZnSC3XR8ToV": 3
+  },
+  "system": {
+    "ability": "",
+    "actionType": "msak",
+    "activation": {
+      "condition": "",
+      "cost": 1,
+      "type": "action"
+    },
+    "attackBonus": "0",
+    "chatFlavor": "",
+    "components": {
+      "concentration": false,
+      "material": false,
+      "ritual": false,
+      "somatic": true,
+      "value": "",
+      "vocal": true
+    },
+    "consume": {
+      "amount": null,
+      "target": "",
+      "type": ""
+    },
+    "cover": null,
+    "crewed": false,
+    "critical": {
+      "damage": "",
+      "threshold": null
+    },
+    "damage": {
+      "parts": [],
+      "value": "",
+      "versatile": ""
+    },
+    "description": {
+      "chat": "",
+      "unidentified": "",
+      "value": "<p>Your touch inflicts disease. Make a melee spell attack against a creature within your reach. On a hit, the target is poisoned.</p><p>At the end of each of the poisoned target’s turns, the target must make a Constitution saving throw. If the target succeeds on three of these saves, it is no longer poisoned, and the spell ends. If the target fails three of these saves, the target is no longer poisoned, but choose one of the diseases below. The target is subjected to the chosen disease for the spell’s duration.</p><p>Since this spell induces a natural disease in its target, any effect that removes a disease or otherwise ameliorates a disease’s effects apply to it.</p><p><strong>Blinding Sickness.</strong> Pain grips the creature’s mind, and its eyes turn milky white. The creature has disadvantage on Wisdom checks and Wisdom saving throws and is blinded.</p><p><strong>Filth Fever.</strong> A raging fever sweeps through the creature’s body. The creature has disadvantage on Strength checks, Strength saving throws, and attack rolls that use Strength.</p><p><strong>Flesh Rot.</strong> The creature’s flesh decays. The creature has disadvantage on Charisma checks and vulnerability to all damage.</p><p><strong>Mindfire.</strong> The creature’s mind becomes feverish. The creature has disadvantage on Intelligence checks and Intelligence saving throws, and the creature behaves as if under the effects of the confusion spell during combat.</p><p><strong>Seizure.</strong> The creature is overcome with shaking. The creature has disadvantage on Dexterity checks, Dexterity saving throws, and attack rolls that use Dexterity.</p><p><strong>Slimy Doom.</strong> The creature begins to bleed uncontrollably. The creature has disadvantage on Constitution checks and Constitution saving throws. In addition, whenever the creature takes damage, it is stunned until the end of its next turn.</p>"
+    },
+    "duration": {
+      "units": "day",
+      "value": 7
+    },
+    "formula": "",
+    "level": 5,
+    "materials": {
+      "consumed": false,
+      "cost": 0,
+      "supply": 0,
+      "value": ""
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "range": {
+      "long": null,
+      "units": "touch",
+      "value": null
+    },
+    "save": {
+      "ability": "con",
+      "dc": null,
+      "scaling": "spell"
+    },
+    "scaling": {
+      "formula": "",
+      "mode": "none"
+    },
+    "school": "nec",
+    "source": "PHB pg. 227",
+    "target": {
+      "type": "creature",
+      "units": "",
+      "value": 1,
+      "width": null
+    },
+    "uses": {
+      "max": "0",
+      "per": "",
+      "recovery": "",
+      "value": 0
+    }
+  },
+  "type": "spell"
 }

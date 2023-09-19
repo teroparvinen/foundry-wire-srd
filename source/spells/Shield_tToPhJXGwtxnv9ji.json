@@ -1,137 +1,50 @@
 {
-  "name": "Shield",
-  "type": "spell",
-  "img": "icons/magic/defensive/shield-barrier-glowing-triangle-magenta.webp",
-  "system": {
-    "description": {
-      "value": "<p>An invisible barrier of magical force appears and protects you. Until the start of your next turn, you have a +5 bonus to AC, including against the triggering attack, and you take no damage from magic missile.</p>",
-      "chat": "",
-      "unidentified": ""
-    },
-    "source": "PHB pg. 275",
-    "activation": {
-      "type": "reaction",
-      "cost": 1,
-      "condition": "Which you take when you are hit by an attack or targeted by the magic missile spell"
-    },
-    "duration": {
-      "value": 1,
-      "units": "round"
-    },
-    "target": {
-      "value": null,
-      "width": null,
-      "units": "",
-      "type": "self"
-    },
-    "range": {
-      "value": null,
-      "long": null,
-      "units": "self"
-    },
-    "uses": {
-      "value": 0,
-      "max": "0",
-      "per": "",
-      "recovery": ""
-    },
-    "consume": {
-      "type": "",
-      "target": "",
-      "amount": null
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": 0,
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": "",
-      "value": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell",
-      "value": ""
-    },
-    "level": 1,
-    "school": "abj",
-    "components": {
-      "value": "",
-      "vocal": true,
-      "somatic": true,
-      "material": false,
-      "ritual": false,
-      "concentration": false
-    },
-    "materials": {
-      "value": "",
-      "consumed": false,
-      "cost": 0,
-      "supply": 0
-    },
-    "preparation": {
-      "mode": "prepared",
-      "prepared": false
-    },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "attunement": null
-  },
+  "_id": "tToPhJXGwtxnv9ji",
+  "_key": "!items!tToPhJXGwtxnv9ji",
   "effects": [
     {
       "_id": "6pbotGIvqQkraPva",
+      "_key": "!items.effects!tToPhJXGwtxnv9ji.6pbotGIvqQkraPva",
+      "changes": [
+        {
+          "key": "system.attributes.ac.bonus",
+          "mode": 2,
+          "priority": 20,
+          "value": "5"
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "combat": null,
+        "rounds": null,
+        "seconds": null,
+        "startRound": null,
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
+      },
       "flags": {
         "wire": {
+          "applicationType": "immediate",
+          "applyOnSaveOrMiss": false,
+          "auraTargets": "",
+          "blocksAreaConditions": false,
           "conditions": [
             {
               "condition": "start-of-turn-target",
               "update": "end"
             }
           ],
-          "applyOnSaveOrMiss": false,
-          "blocksAreaConditions": false,
-          "auraTargets": "",
-          "applicationType": "immediate",
           "independentDuration": false
         }
-      },
-      "changes": [
-        {
-          "key": "system.attributes.ac.bonus",
-          "mode": 2,
-          "value": "5",
-          "priority": 20
-        }
-      ],
-      "disabled": false,
-      "duration": {
-        "startTime": null,
-        "seconds": null,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
       },
       "icon": "icons/magic/defensive/shield-barrier-glowing-triangle-magenta.webp",
       "label": "Shield",
       "origin": "Item.FlLKKv7bQBlIAs11",
       "tint": null,
-      "transfer": false,
-      "_key": "!items.effects!tToPhJXGwtxnv9ji.6pbotGIvqQkraPva"
+      "transfer": false
     }
   ],
-  "folder": null,
-  "sort": 0,
   "flags": {
     "wire": {
       "checkedAbility": "",
@@ -145,18 +58,98 @@
       "saveImmunity": false
     }
   },
-  "_id": "tToPhJXGwtxnv9ji",
+  "folder": null,
+  "img": "icons/magic/defensive/shield-barrier-glowing-triangle-magenta.webp",
+  "name": "Shield",
   "ownership": {
     "default": 0,
     "m7gKrZnSC3XR8ToV": 3
   },
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.0.3",
-    "coreVersion": "10.291",
-    "createdTime": null,
-    "modifiedTime": 1673358873241,
-    "lastModifiedBy": "m7gKrZnSC3XR8ToV"
+  "system": {
+    "ability": "",
+    "actionType": "util",
+    "activation": {
+      "condition": "Which you take when you are hit by an attack or targeted by the magic missile spell",
+      "cost": 1,
+      "type": "reaction"
+    },
+    "attackBonus": 0,
+    "attunement": null,
+    "chatFlavor": "",
+    "components": {
+      "concentration": false,
+      "material": false,
+      "ritual": false,
+      "somatic": true,
+      "value": "",
+      "vocal": true
+    },
+    "consume": {
+      "amount": null,
+      "target": "",
+      "type": ""
+    },
+    "cover": null,
+    "crewed": false,
+    "critical": {
+      "damage": "",
+      "threshold": null
+    },
+    "damage": {
+      "parts": [],
+      "value": "",
+      "versatile": ""
+    },
+    "description": {
+      "chat": "",
+      "unidentified": "",
+      "value": "<p>An invisible barrier of magical force appears and protects you. Until the start of your next turn, you have a +5 bonus to AC, including against the triggering attack, and you take no damage from magic missile.</p>"
+    },
+    "duration": {
+      "units": "round",
+      "value": 1
+    },
+    "formula": "",
+    "level": 1,
+    "materials": {
+      "consumed": false,
+      "cost": 0,
+      "supply": 0,
+      "value": ""
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "range": {
+      "long": null,
+      "units": "self",
+      "value": null
+    },
+    "save": {
+      "ability": "",
+      "dc": null,
+      "scaling": "spell",
+      "value": ""
+    },
+    "scaling": {
+      "formula": "",
+      "mode": "none"
+    },
+    "school": "abj",
+    "source": "PHB pg. 275",
+    "target": {
+      "type": "self",
+      "units": "",
+      "value": null,
+      "width": null
+    },
+    "uses": {
+      "max": "0",
+      "per": "",
+      "recovery": "",
+      "value": 0
+    }
   },
-  "_key": "!items!tToPhJXGwtxnv9ji"
+  "type": "spell"
 }

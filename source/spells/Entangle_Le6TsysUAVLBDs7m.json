@@ -1,177 +1,170 @@
 {
   "_id": "Le6TsysUAVLBDs7m",
-  "name": "Entangle",
-  "type": "spell",
-  "img": "icons/magic/nature/vines-thorned-curled-glow-green.webp",
-  "system": {
-    "description": {
-      "value": "<p>Grasping weeds and vines sprout from the ground in a 20-foot square starting from a point within range. For the Duration, these Plants turn the ground in the area into difficult terrain.</p>\n<p>A creature in the area when you cast the spell must succeed on a Strength saving throw or be Restrained by the entangling Plants until the spell ends. A creature restra⁠ined by the plant⁠s can use its action to make a Stren⁠gth check against your spell save DC. On a success, it frees itself.</p>\n<p>When the spell ends, the conjured Plants wilt away.</p>",
-      "chat": "",
-      "unidentified": ""
-    },
-    "source": "PHB pg. 238",
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": 1,
-      "units": "minute"
-    },
-    "target": {
-      "value": 20,
-      "width": null,
-      "units": "ft",
-      "type": "square"
-    },
-    "range": {
-      "value": 90,
-      "long": 0,
-      "units": "ft"
-    },
-    "uses": {
-      "value": 0,
-      "max": "0",
-      "per": "",
-      "recovery": ""
-    },
-    "consume": {
-      "type": "",
-      "target": "",
-      "amount": null
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": 0,
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": null
-    },
-    "damage": {
-      "parts": [],
-      "versatile": "",
-      "value": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "str",
-      "dc": null,
-      "scaling": "spell"
-    },
-    "level": 1,
-    "school": "con",
-    "components": {
-      "value": "",
-      "vocal": true,
-      "somatic": true,
-      "material": false,
-      "ritual": false,
-      "concentration": true
-    },
-    "materials": {
-      "value": "",
-      "consumed": false,
-      "cost": 0,
-      "supply": 0
-    },
-    "preparation": {
-      "mode": "prepared",
-      "prepared": false
-    },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "attunement": null
-  },
+  "_key": "!items!Le6TsysUAVLBDs7m",
   "effects": [
     {
       "_id": "fL50SYZFFjEbIbgI",
+      "_key": "!items.effects!Le6TsysUAVLBDs7m.fL50SYZFFjEbIbgI",
       "changes": [
         {
           "key": "wire.custom.statusEffect",
           "mode": 0,
-          "value": "Restrained",
-          "priority": 20
+          "priority": 20,
+          "value": "Restrained"
         }
       ],
       "disabled": false,
       "duration": {
-        "startTime": null,
-        "seconds": null,
         "combat": null,
         "rounds": null,
-        "turns": null,
+        "seconds": null,
         "startRound": null,
-        "startTurn": null
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
       },
-      "icon": "icons/magic/nature/vines-thorned-curled-glow-green.webp",
-      "label": "Entangle",
-      "transfer": false,
       "flags": {
         "wire": {
-          "applyOnSaveOrMiss": false,
           "applicationType": "immediate",
-          "independentDuration": false,
+          "applyOnSaveOrMiss": false,
+          "auraTargets": "",
+          "blocksAreaConditions": false,
           "conditions": [
             {
               "condition": "take-an-action",
               "update": "end-on-check"
             }
           ],
-          "blocksAreaConditions": false,
-          "auraTargets": ""
+          "independentDuration": false
         }
       },
-      "tint": null,
+      "icon": "icons/magic/nature/vines-thorned-curled-glow-green.webp",
+      "label": "Entangle",
       "origin": null,
-      "_key": "!items.effects!Le6TsysUAVLBDs7m.fL50SYZFFjEbIbgI"
+      "tint": null,
+      "transfer": false
     }
   ],
-  "folder": null,
-  "sort": 0,
   "flags": {
     "dynamiceffects": {
-      "equipActive": false,
       "alwaysActive": false,
       "effects": [
         {
-          "modSpecKey": "flags.dnd5e.conditions",
-          "value": "Restrained",
-          "mode": "+",
-          "targetSpecific": false,
+          "_targets": [],
+          "active": true,
           "id": 1,
           "itemId": "SC2lBI48lFJMM3B3",
-          "active": true,
-          "_targets": []
+          "modSpecKey": "flags.dnd5e.conditions",
+          "mode": "+",
+          "targetSpecific": false,
+          "value": "Restrained"
         }
-      ]
+      ],
+      "equipActive": false
     },
     "wire": {
+      "checkedAbility": "",
       "compendiumSource": "wire-srd.spells",
       "compendiumVersion": "0.10",
       "override": {
         "target": {
           "value": 20
         }
-      },
-      "checkedAbility": ""
+      }
     }
   },
+  "folder": null,
+  "img": "icons/magic/nature/vines-thorned-curled-glow-green.webp",
+  "name": "Entangle",
   "ownership": {
+    "BDWtlDQYkOI4gQqd": 3,
     "default": 0,
-    "gSvPH9u5wzkE1oU1": 3,
-    "BDWtlDQYkOI4gQqd": 3
+    "gSvPH9u5wzkE1oU1": 3
   },
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.0.3",
-    "coreVersion": "10.291",
-    "createdTime": null,
-    "modifiedTime": 1670149611541,
-    "lastModifiedBy": "m7gKrZnSC3XR8ToV"
+  "system": {
+    "ability": "",
+    "actionType": "save",
+    "activation": {
+      "condition": "",
+      "cost": 1,
+      "type": "action"
+    },
+    "attackBonus": 0,
+    "attunement": null,
+    "chatFlavor": "",
+    "components": {
+      "concentration": true,
+      "material": false,
+      "ritual": false,
+      "somatic": true,
+      "value": "",
+      "vocal": true
+    },
+    "consume": {
+      "amount": null,
+      "target": "",
+      "type": ""
+    },
+    "cover": null,
+    "crewed": false,
+    "critical": {
+      "damage": null,
+      "threshold": null
+    },
+    "damage": {
+      "parts": [],
+      "value": "",
+      "versatile": ""
+    },
+    "description": {
+      "chat": "",
+      "unidentified": "",
+      "value": "<p>Grasping weeds and vines sprout from the ground in a 20-foot square starting from a point within range. For the Duration, these Plants turn the ground in the area into difficult terrain.</p>\n<p>A creature in the area when you cast the spell must succeed on a Strength saving throw or be Restrained by the entangling Plants until the spell ends. A creature restra⁠ined by the plant⁠s can use its action to make a Stren⁠gth check against your spell save DC. On a success, it frees itself.</p>\n<p>When the spell ends, the conjured Plants wilt away.</p>"
+    },
+    "duration": {
+      "units": "minute",
+      "value": 1
+    },
+    "formula": "",
+    "level": 1,
+    "materials": {
+      "consumed": false,
+      "cost": 0,
+      "supply": 0,
+      "value": ""
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "range": {
+      "long": 0,
+      "units": "ft",
+      "value": 90
+    },
+    "save": {
+      "ability": "str",
+      "dc": null,
+      "scaling": "spell"
+    },
+    "scaling": {
+      "formula": "",
+      "mode": "none"
+    },
+    "school": "con",
+    "source": "PHB pg. 238",
+    "target": {
+      "type": "square",
+      "units": "ft",
+      "value": 20,
+      "width": null
+    },
+    "uses": {
+      "max": "0",
+      "per": "",
+      "recovery": "",
+      "value": 0
+    }
   },
-  "_key": "!items!Le6TsysUAVLBDs7m"
+  "type": "spell"
 }

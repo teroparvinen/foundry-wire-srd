@@ -1,110 +1,62 @@
 {
-  "name": "Blight",
-  "ownership": {
-    "default": 0,
-    "m7gKrZnSC3XR8ToV": 3
-  },
-  "type": "spell",
-  "system": {
-    "description": {
-      "value": "<p>Necromantic energy washes over a creature of your choice that you can see within range, draining moisture and vitality from it. The target must make a Constitution saving throw. The target takes 8d8 necrotic damage on a failed save, or half as much damage on a successful one. This spell has no effect on undead or constructs.</p><p>If you target a plant creature or a magical plant, it makes the saving throw with disadvantage, and the spell deals maximum damage to it.</p><p>If you target a nonmagical plant that isn't a creature, such as a tree or shrub, it doesn't make a saving throw, it simply withers and dies.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 5th level or higher, the damage increases by 1d8 for each slot level above 4th.</p>",
-      "chat": "",
-      "unidentified": ""
-    },
-    "source": "PHB pg. 219",
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": null,
-      "units": "inst"
-    },
-    "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature"
-    },
-    "range": {
-      "value": 30,
-      "long": 0,
-      "units": "ft"
-    },
-    "uses": {
-      "value": 0,
-      "max": "0",
-      "per": "",
-      "recovery": ""
-    },
-    "consume": {
-      "type": "",
-      "target": "",
-      "amount": null
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": 0,
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "8d8",
-          "necrotic"
-        ]
+  "_id": "xkwOFJkjW7CTE1M2",
+  "_key": "!items!xkwOFJkjW7CTE1M2",
+  "effects": [
+    {
+      "_id": "DKhaBunurmE6UQsj",
+      "_key": "!items.effects!xkwOFJkjW7CTE1M2.DKhaBunurmE6UQsj",
+      "changes": [
+        {
+          "key": "flags.wire.disadvantage.ability.save.all",
+          "mode": 2,
+          "priority": 20,
+          "value": "and(@isFromItem, eq(@actor.details.type.value, \"plant\"))"
+        },
+        {
+          "key": "flags.wire.receive.max.damage.all",
+          "mode": 2,
+          "priority": 20,
+          "value": "and(@originator.isAttacker, eq(@defender.details.type.value, \"plant\"))"
+        }
       ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "con",
-      "dc": 0,
-      "scaling": "spell"
-    },
-    "level": 4,
-    "school": "nec",
-    "components": {
-      "value": "",
-      "vocal": true,
-      "somatic": true,
-      "material": false,
-      "ritual": false,
-      "concentration": false
-    },
-    "materials": {
-      "value": "",
-      "consumed": false,
-      "cost": 0,
-      "supply": 0
-    },
-    "preparation": {
-      "mode": "prepared",
-      "prepared": false
-    },
-    "scaling": {
-      "mode": "level",
-      "formula": "1d8"
-    }
-  },
-  "flags": {
-    "wire": {
-      "override": {
-        "target": {
-          "value": "1"
+      "disabled": false,
+      "duration": {
+        "combat": null,
+        "rounds": null,
+        "seconds": null,
+        "startRound": null,
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
+      },
+      "flags": {
+        "wire": {
+          "applicationType": "resolving",
+          "applyOnSaveOrMiss": false,
+          "auraTargets": "",
+          "blocksAreaConditions": false,
+          "conditions": [],
+          "independentDuration": false,
+          "rollEffects": false,
+          "stackEffects": false
         }
       },
+      "icon": "icons/magic/unholy/strike-beam-blood-large-red-green.webp",
+      "label": "Blight Saves",
+      "origin": "Actor.m4mjuiVrcZHbrj00.Item.OIVAk0DeVsTNzDLs",
+      "tint": null,
+      "transfer": false
+    }
+  ],
+  "flags": {
+    "wire": {
       "checkedAbility": "",
-      "saveImmunity": false,
-      "upcastInterval": null,
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.10.2",
       "damageParts": [
         {
-          "halving": "half",
-          "application": "immediate"
+          "application": "immediate",
+          "halving": "half"
         }
       ],
       "immunities": [
@@ -117,68 +69,109 @@
           "value": "construct"
         }
       ],
-      "compendiumSource": "wire-srd.spells",
-      "compendiumVersion": "0.10.2"
-    }
-  },
-  "img": "icons/magic/unholy/strike-beam-blood-large-red-green.webp",
-  "effects": [
-    {
-      "label": "Blight Saves",
-      "icon": "icons/magic/unholy/strike-beam-blood-large-red-green.webp",
-      "origin": "Actor.m4mjuiVrcZHbrj00.Item.OIVAk0DeVsTNzDLs",
-      "duration": {
-        "startTime": null,
-        "seconds": null,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "disabled": false,
-      "_id": "DKhaBunurmE6UQsj",
-      "changes": [
-        {
-          "key": "flags.wire.disadvantage.ability.save.all",
-          "mode": 2,
-          "value": "and(@isFromItem, eq(@actor.details.type.value, \"plant\"))",
-          "priority": 20
-        },
-        {
-          "key": "flags.wire.receive.max.damage.all",
-          "mode": 2,
-          "value": "and(@originator.isAttacker, eq(@defender.details.type.value, \"plant\"))",
-          "priority": 20
-        }
-      ],
-      "tint": null,
-      "transfer": false,
-      "flags": {
-        "wire": {
-          "applyOnSaveOrMiss": false,
-          "applicationType": "resolving",
-          "blocksAreaConditions": false,
-          "auraTargets": "",
-          "stackEffects": false,
-          "rollEffects": false,
-          "independentDuration": false,
-          "conditions": []
+      "override": {
+        "target": {
+          "value": "1"
         }
       },
-      "_key": "!items.effects!xkwOFJkjW7CTE1M2.DKhaBunurmE6UQsj"
+      "saveImmunity": false,
+      "upcastInterval": null
     }
-  ],
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.0.3",
-    "coreVersion": "10.291",
-    "createdTime": 1661787234230,
-    "modifiedTime": 1672561444729,
-    "lastModifiedBy": "m7gKrZnSC3XR8ToV"
   },
   "folder": null,
-  "sort": 0,
-  "_id": "xkwOFJkjW7CTE1M2",
-  "_key": "!items!xkwOFJkjW7CTE1M2"
+  "img": "icons/magic/unholy/strike-beam-blood-large-red-green.webp",
+  "name": "Blight",
+  "ownership": {
+    "default": 0,
+    "m7gKrZnSC3XR8ToV": 3
+  },
+  "system": {
+    "ability": "",
+    "actionType": "save",
+    "activation": {
+      "condition": "",
+      "cost": 1,
+      "type": "action"
+    },
+    "attackBonus": 0,
+    "chatFlavor": "",
+    "components": {
+      "concentration": false,
+      "material": false,
+      "ritual": false,
+      "somatic": true,
+      "value": "",
+      "vocal": true
+    },
+    "consume": {
+      "amount": null,
+      "target": "",
+      "type": ""
+    },
+    "cover": null,
+    "crewed": false,
+    "critical": {
+      "damage": "",
+      "threshold": null
+    },
+    "damage": {
+      "parts": [
+        [
+          "8d8",
+          "necrotic"
+        ]
+      ],
+      "versatile": ""
+    },
+    "description": {
+      "chat": "",
+      "unidentified": "",
+      "value": "<p>Necromantic energy washes over a creature of your choice that you can see within range, draining moisture and vitality from it. The target must make a Constitution saving throw. The target takes 8d8 necrotic damage on a failed save, or half as much damage on a successful one. This spell has no effect on undead or constructs.</p><p>If you target a plant creature or a magical plant, it makes the saving throw with disadvantage, and the spell deals maximum damage to it.</p><p>If you target a nonmagical plant that isn't a creature, such as a tree or shrub, it doesn't make a saving throw, it simply withers and dies.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 5th level or higher, the damage increases by 1d8 for each slot level above 4th.</p>"
+    },
+    "duration": {
+      "units": "inst",
+      "value": null
+    },
+    "formula": "",
+    "level": 4,
+    "materials": {
+      "consumed": false,
+      "cost": 0,
+      "supply": 0,
+      "value": ""
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "range": {
+      "long": 0,
+      "units": "ft",
+      "value": 30
+    },
+    "save": {
+      "ability": "con",
+      "dc": 0,
+      "scaling": "spell"
+    },
+    "scaling": {
+      "formula": "1d8",
+      "mode": "level"
+    },
+    "school": "nec",
+    "source": "PHB pg. 219",
+    "target": {
+      "type": "creature",
+      "units": "",
+      "value": 1,
+      "width": null
+    },
+    "uses": {
+      "max": "0",
+      "per": "",
+      "recovery": "",
+      "value": 0
+    }
+  },
+  "type": "spell"
 }

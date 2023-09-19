@@ -1,57 +1,102 @@
 {
+  "_id": "P17Ydx0ReTfPyYXG",
+  "_key": "!items!P17Ydx0ReTfPyYXG",
+  "effects": [
+    {
+      "_id": "jD5PvKKHg19sIoYI",
+      "_key": "!items.effects!P17Ydx0ReTfPyYXG.jD5PvKKHg19sIoYI",
+      "changes": [
+        {
+          "key": "system.attributes.hp.max",
+          "mode": 2,
+          "priority": 20,
+          "value": "-@config.damage"
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "combat": null,
+        "rounds": null,
+        "seconds": 3600,
+        "startRound": null,
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
+      },
+      "flags": {
+        "wire": {
+          "applicationType": "immediate",
+          "applyOnSaveOrMiss": false,
+          "auraTargets": "",
+          "blocksAreaConditions": false,
+          "conditions": [],
+          "independentDuration": true,
+          "rollEffects": true,
+          "stackEffects": false
+        }
+      },
+      "icon": "icons/magic/unholy/strike-beam-blood-large-red-purple.webp",
+      "label": "Harm",
+      "origin": "Actor.isYKP74w0SIExUvl.Item.zFa2NDCkTp71Uwg1",
+      "tint": null,
+      "transfer": false
+    }
+  ],
+  "flags": {
+    "wire": {
+      "checkedAbility": "",
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.11.0",
+      "damageParts": [
+        {
+          "application": "immediate",
+          "halving": "half"
+        }
+      ],
+      "override": {
+        "target": {
+          "value": "1"
+        }
+      },
+      "saveImmunity": false,
+      "script": "this.registerFlowStep(\"damage\", true, async (activation) => {\n    const item = activation.item;\n    const target = activation.singleTarget.actor;\n    \n    const rolledDamage = await activation.damageParts.appliedToActor(item, target, activation.isTargetEffective(target));\n    const actorHp = target.system.attributes.hp.value;\n    const damage = Math.min(rolledDamage.damage, Math.max(actorHp - 1, 0));\n    \n    await game.wire.declareDamage(damage, target, activation.item.actor);\n    await activation.updateConfig({ damage });\n});\n\nreturn this.applySelectedTargets(\n    this.performSavingThrow(\n        this.performSaveDamageRoll(\n            this.performCustomStep(\"damage\",\n                this.applyEffects()\n            )\n        )\n    )\n)"
+    }
+  },
+  "folder": null,
+  "img": "icons/magic/unholy/strike-beam-blood-large-red-purple.webp",
   "name": "Harm",
   "ownership": {
     "default": 0,
     "m7gKrZnSC3XR8ToV": 3
   },
-  "type": "spell",
   "system": {
-    "description": {
-      "value": "<p>You unleash a virulent disease on a creature that you can see within range. The target must make a Constitution saving throw. On a failed save, it takes 14d6 necrotic damage, or half as much damage on a successful save. The damage can't reduce the target's Hit Points below 1. If the target fails the saving throw, its hit point maximum is reduced for 1 Hour by an amount equal to the necrotic damage it took. Any effect that removes a disease allows a creature's hit point maximum to return to normal before that time passes.</p>",
-      "chat": "",
-      "unidentified": ""
-    },
-    "source": "PHB pg. 249",
+    "ability": "",
+    "actionType": "save",
     "activation": {
-      "type": "action",
+      "condition": "",
       "cost": 1,
-      "condition": ""
+      "type": "action"
     },
-    "duration": {
-      "value": null,
-      "units": "inst"
+    "attackBonus": 0,
+    "chatFlavor": "",
+    "components": {
+      "concentration": false,
+      "material": false,
+      "ritual": false,
+      "somatic": true,
+      "value": "",
+      "vocal": true
+    },
+    "consume": {
+      "amount": null,
+      "target": "",
+      "type": ""
     },
     "cover": null,
     "crewed": false,
-    "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature"
-    },
-    "range": {
-      "value": 60,
-      "long": 0,
-      "units": "ft"
-    },
-    "uses": {
-      "value": 0,
-      "max": "0",
-      "per": "",
-      "recovery": ""
-    },
-    "consume": {
-      "type": "",
-      "target": "",
-      "amount": null
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": 0,
-    "chatFlavor": "",
     "critical": {
-      "threshold": null,
-      "damage": ""
+      "damage": "",
+      "threshold": null
     },
     "damage": {
       "parts": [
@@ -62,109 +107,55 @@
       ],
       "versatile": ""
     },
+    "description": {
+      "chat": "",
+      "unidentified": "",
+      "value": "<p>You unleash a virulent disease on a creature that you can see within range. The target must make a Constitution saving throw. On a failed save, it takes 14d6 necrotic damage, or half as much damage on a successful save. The damage can't reduce the target's Hit Points below 1. If the target fails the saving throw, its hit point maximum is reduced for 1 Hour by an amount equal to the necrotic damage it took. Any effect that removes a disease allows a creature's hit point maximum to return to normal before that time passes.</p>"
+    },
+    "duration": {
+      "units": "inst",
+      "value": null
+    },
     "formula": "",
-    "save": {
-      "ability": "con",
-      "dc": null,
-      "scaling": "spell"
-    },
     "level": 6,
-    "school": "nec",
-    "components": {
-      "vocal": true,
-      "somatic": true,
-      "material": false,
-      "ritual": false,
-      "concentration": false,
-      "value": ""
-    },
     "materials": {
-      "value": "",
       "consumed": false,
       "cost": 0,
-      "supply": 0
+      "supply": 0,
+      "value": ""
     },
     "preparation": {
       "mode": "prepared",
       "prepared": false
     },
+    "range": {
+      "long": 0,
+      "units": "ft",
+      "value": 60
+    },
+    "save": {
+      "ability": "con",
+      "dc": null,
+      "scaling": "spell"
+    },
     "scaling": {
-      "mode": "none",
-      "formula": ""
+      "formula": "",
+      "mode": "none"
+    },
+    "school": "nec",
+    "source": "PHB pg. 249",
+    "target": {
+      "type": "creature",
+      "units": "",
+      "value": 1,
+      "width": null
+    },
+    "uses": {
+      "max": "0",
+      "per": "",
+      "recovery": "",
+      "value": 0
     }
   },
-  "flags": {
-    "wire": {
-      "override": {
-        "target": {
-          "value": "1"
-        }
-      },
-      "checkedAbility": "",
-      "saveImmunity": false,
-      "damageParts": [
-        {
-          "halving": "half",
-          "application": "immediate"
-        }
-      ],
-      "compendiumSource": "wire-srd.spells",
-      "compendiumVersion": "0.11.0",
-      "script": "this.registerFlowStep(\"damage\", true, async (activation) => {\n    const item = activation.item;\n    const target = activation.singleTarget.actor;\n    \n    const rolledDamage = await activation.damageParts.appliedToActor(item, target, activation.isTargetEffective(target));\n    const actorHp = target.system.attributes.hp.value;\n    const damage = Math.min(rolledDamage.damage, Math.max(actorHp - 1, 0));\n    \n    await game.wire.declareDamage(damage, target, activation.item.actor);\n    await activation.updateConfig({ damage });\n});\n\nreturn this.applySelectedTargets(\n    this.performSavingThrow(\n        this.performSaveDamageRoll(\n            this.performCustomStep(\"damage\",\n                this.applyEffects()\n            )\n        )\n    )\n)"
-    }
-  },
-  "img": "icons/magic/unholy/strike-beam-blood-large-red-purple.webp",
-  "effects": [
-    {
-      "label": "Harm",
-      "icon": "icons/magic/unholy/strike-beam-blood-large-red-purple.webp",
-      "origin": "Actor.isYKP74w0SIExUvl.Item.zFa2NDCkTp71Uwg1",
-      "duration": {
-        "startTime": null,
-        "seconds": 3600,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "disabled": false,
-      "_id": "jD5PvKKHg19sIoYI",
-      "changes": [
-        {
-          "key": "system.attributes.hp.max",
-          "mode": 2,
-          "value": "-@config.damage",
-          "priority": 20
-        }
-      ],
-      "tint": null,
-      "transfer": false,
-      "flags": {
-        "wire": {
-          "applyOnSaveOrMiss": false,
-          "applicationType": "immediate",
-          "blocksAreaConditions": false,
-          "auraTargets": "",
-          "stackEffects": false,
-          "rollEffects": true,
-          "independentDuration": true,
-          "conditions": []
-        }
-      },
-      "_key": "!items.effects!P17Ydx0ReTfPyYXG.jD5PvKKHg19sIoYI"
-    }
-  ],
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.2.2",
-    "coreVersion": "11.306",
-    "createdTime": 1661787234234,
-    "modifiedTime": 1694774675129,
-    "lastModifiedBy": "dBglmdrMUDMEh6ZW"
-  },
-  "folder": null,
-  "sort": 0,
-  "_id": "P17Ydx0ReTfPyYXG",
-  "_key": "!items!P17Ydx0ReTfPyYXG"
+  "type": "spell"
 }

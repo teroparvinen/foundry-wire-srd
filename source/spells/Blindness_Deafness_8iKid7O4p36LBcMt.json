@@ -1,204 +1,197 @@
 {
-  "name": "Blindness/Deafness",
-  "type": "spell",
-  "img": "icons/magic/perception/eye-ringed-glow-angry-red.webp",
-  "system": {
-    "description": {
-      "value": "<p>You can blind or deafen a foe. Choose one creature that you can see within range to make a Constitution saving throw. If it fails, the target is either blinded or deafened (your choice) for the duration. At the end of each of its turns, the target can make a Constitution saving throw. On a success, the spell ends.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd.</p>",
-      "chat": "",
-      "unidentified": ""
-    },
-    "source": "PHB pg. 219",
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": 1,
-      "units": "minute"
-    },
-    "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature"
-    },
-    "range": {
-      "value": 30,
-      "long": 0,
-      "units": "ft"
-    },
-    "uses": {
-      "value": 0,
-      "max": "0",
-      "per": "",
-      "recovery": ""
-    },
-    "consume": {
-      "type": "",
-      "target": "",
-      "amount": null
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": 0,
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": "",
-      "value": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "con",
-      "dc": 0,
-      "scaling": "spell"
-    },
-    "level": 2,
-    "school": "nec",
-    "components": {
-      "value": "",
-      "vocal": true,
-      "somatic": false,
-      "material": false,
-      "ritual": false,
-      "concentration": false
-    },
-    "materials": {
-      "value": "",
-      "consumed": false,
-      "cost": 0,
-      "supply": 0
-    },
-    "preparation": {
-      "mode": "prepared",
-      "prepared": false
-    },
-    "scaling": {
-      "mode": "level",
-      "formula": ""
-    },
-    "attunement": null
-  },
+  "_id": "8iKid7O4p36LBcMt",
+  "_key": "!items!8iKid7O4p36LBcMt",
   "effects": [
     {
       "_id": "frqmfffz3dpr4xch",
+      "_key": "!items.effects!8iKid7O4p36LBcMt.frqmfffz3dpr4xch",
       "changes": [
         {
           "key": "wire.custom.statusEffect",
           "mode": 0,
-          "value": "Blinded",
-          "priority": 20
+          "priority": 20,
+          "value": "Blinded"
         }
       ],
       "disabled": false,
       "duration": {
-        "startTime": null,
-        "seconds": null,
         "combat": null,
         "rounds": null,
-        "turns": null,
+        "seconds": null,
         "startRound": null,
-        "startTurn": null
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
+      },
+      "flags": {
+        "wire": {
+          "applicationType": "immediate",
+          "applyOnSaveOrMiss": false,
+          "conditions": [
+            {
+              "condition": "end-of-turn-target",
+              "update": "end-on-save"
+            }
+          ],
+          "independentDuration": false
+        }
       },
       "icon": "icons/magic/perception/eye-ringed-glow-angry-red.webp",
       "label": "Blindness",
       "origin": "Actor.isYKP74w0SIExUvl.Item.MwKOWca1FG0VwvMC",
-      "transfer": false,
-      "flags": {
-        "wire": {
-          "applyOnSaveOrMiss": false,
-          "applicationType": "immediate",
-          "independentDuration": false,
-          "conditions": [
-            {
-              "condition": "end-of-turn-target",
-              "update": "end-on-save"
-            }
-          ]
-        }
-      },
       "tint": null,
-      "_key": "!items.effects!8iKid7O4p36LBcMt.frqmfffz3dpr4xch"
+      "transfer": false
     },
     {
       "_id": "kz5svbr030bk9v67",
+      "_key": "!items.effects!8iKid7O4p36LBcMt.kz5svbr030bk9v67",
       "changes": [
         {
           "key": "wire.custom.statusEffect",
           "mode": 0,
-          "value": "Deafened",
-          "priority": 20
+          "priority": 20,
+          "value": "Deafened"
         }
       ],
       "disabled": false,
       "duration": {
-        "startTime": null,
-        "seconds": null,
         "combat": null,
         "rounds": null,
-        "turns": null,
+        "seconds": null,
         "startRound": null,
-        "startTurn": null
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
       },
-      "icon": "icons/magic/perception/eye-ringed-glow-angry-red.webp",
-      "label": "Deafness",
-      "origin": "Actor.isYKP74w0SIExUvl.Item.MwKOWca1FG0VwvMC",
-      "transfer": false,
       "flags": {
         "wire": {
-          "applyOnSaveOrMiss": false,
           "applicationType": "immediate",
-          "independentDuration": false,
+          "applyOnSaveOrMiss": false,
           "conditions": [
             {
               "condition": "end-of-turn-target",
               "update": "end-on-save"
             }
-          ]
+          ],
+          "independentDuration": false
         }
       },
+      "icon": "icons/magic/perception/eye-ringed-glow-angry-red.webp",
+      "label": "Deafness",
+      "origin": "Actor.isYKP74w0SIExUvl.Item.MwKOWca1FG0VwvMC",
       "tint": null,
-      "_key": "!items.effects!8iKid7O4p36LBcMt.kz5svbr030bk9v67"
+      "transfer": false
     }
   ],
   "flags": {
     "wire": {
+      "checkedAbility": "",
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.10.1",
       "override": {
         "target": {
           "value": "1"
         }
       },
-      "checkedAbility": "",
+      "saveImmunity": false,
       "upcastInterval": null,
-      "compendiumSource": "wire-srd.spells",
-      "compendiumVersion": "0.10.1",
       "variants": [
         "Blindness",
         "Deafness"
-      ],
-      "saveImmunity": false
+      ]
     }
   },
+  "folder": null,
+  "img": "icons/magic/perception/eye-ringed-glow-angry-red.webp",
+  "name": "Blindness/Deafness",
   "ownership": {
     "default": 0,
     "m7gKrZnSC3XR8ToV": 3
   },
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.0.3",
-    "coreVersion": "10.291",
-    "createdTime": 1670081482608,
-    "modifiedTime": 1672219461755,
-    "lastModifiedBy": "m7gKrZnSC3XR8ToV"
+  "system": {
+    "ability": "",
+    "actionType": "save",
+    "activation": {
+      "condition": "",
+      "cost": 1,
+      "type": "action"
+    },
+    "attackBonus": 0,
+    "attunement": null,
+    "chatFlavor": "",
+    "components": {
+      "concentration": false,
+      "material": false,
+      "ritual": false,
+      "somatic": false,
+      "value": "",
+      "vocal": true
+    },
+    "consume": {
+      "amount": null,
+      "target": "",
+      "type": ""
+    },
+    "cover": null,
+    "crewed": false,
+    "critical": {
+      "damage": "",
+      "threshold": null
+    },
+    "damage": {
+      "parts": [],
+      "value": "",
+      "versatile": ""
+    },
+    "description": {
+      "chat": "",
+      "unidentified": "",
+      "value": "<p>You can blind or deafen a foe. Choose one creature that you can see within range to make a Constitution saving throw. If it fails, the target is either blinded or deafened (your choice) for the duration. At the end of each of its turns, the target can make a Constitution saving throw. On a success, the spell ends.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd.</p>"
+    },
+    "duration": {
+      "units": "minute",
+      "value": 1
+    },
+    "formula": "",
+    "level": 2,
+    "materials": {
+      "consumed": false,
+      "cost": 0,
+      "supply": 0,
+      "value": ""
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "range": {
+      "long": 0,
+      "units": "ft",
+      "value": 30
+    },
+    "save": {
+      "ability": "con",
+      "dc": 0,
+      "scaling": "spell"
+    },
+    "scaling": {
+      "formula": "",
+      "mode": "level"
+    },
+    "school": "nec",
+    "source": "PHB pg. 219",
+    "target": {
+      "type": "creature",
+      "units": "",
+      "value": 1,
+      "width": null
+    },
+    "uses": {
+      "max": "0",
+      "per": "",
+      "recovery": "",
+      "value": 0
+    }
   },
-  "folder": null,
-  "sort": 0,
-  "_id": "8iKid7O4p36LBcMt",
-  "_key": "!items!8iKid7O4p36LBcMt"
+  "type": "spell"
 }

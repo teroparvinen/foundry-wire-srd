@@ -1,101 +1,49 @@
 {
-  "name": "Grease",
-  "ownership": {
-    "default": 0,
-    "m7gKrZnSC3XR8ToV": 3
-  },
-  "type": "spell",
-  "system": {
-    "description": {
-      "value": "<p>Slick grease covers the ground in a 10-foot square centered on a point within range and turns it into difficult terrain for the duration.</p><p>When the grease appears, each creature standing in its area must succeed on a Dexterity saving throw or fall prone. A creature that enters the area or ends its turn there must also succeed on a Dexterity saving throw or fall prone.</p>",
-      "chat": "",
-      "unidentified": ""
-    },
-    "source": "PHB pg. 246",
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": 1,
-      "units": "minute"
-    },
-    "target": {
-      "value": 10,
-      "width": null,
-      "units": "ft",
-      "type": "square"
-    },
-    "range": {
-      "value": 60,
-      "long": 0,
-      "units": "ft"
-    },
-    "uses": {
-      "value": 0,
-      "max": "0",
-      "per": "",
-      "recovery": ""
-    },
-    "consume": {
-      "type": "",
-      "target": "",
-      "amount": null
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": 0,
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": "",
-      "value": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "dex",
-      "dc": 0,
-      "scaling": "spell"
-    },
-    "level": 1,
-    "school": "con",
-    "components": {
-      "value": "",
-      "vocal": true,
-      "somatic": true,
-      "material": true,
-      "ritual": false,
-      "concentration": false
-    },
-    "materials": {
-      "value": "A bit of pork rind or butter",
-      "consumed": false,
-      "cost": 0,
-      "supply": 0
-    },
-    "preparation": {
-      "mode": "prepared",
-      "prepared": false
-    },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    }
-  },
-  "flags": {
-    "wire": {
-      "override": {
-        "target": {
-          "value": "10"
+  "_id": "E50EBxVqTCamJ9UI",
+  "_key": "!items!E50EBxVqTCamJ9UI",
+  "effects": [
+    {
+      "_id": "rLV7D3SAr794QRQ0",
+      "_key": "!items.effects!E50EBxVqTCamJ9UI.rLV7D3SAr794QRQ0",
+      "changes": [
+        {
+          "key": "wire.custom.persistentStatusEffect",
+          "mode": 2,
+          "priority": 20,
+          "value": "Prone"
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "combat": null,
+        "rounds": null,
+        "seconds": null,
+        "startRound": null,
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
+      },
+      "flags": {
+        "wire": {
+          "applicationType": "immediate",
+          "applyOnSaveOrMiss": false,
+          "auraTargets": "",
+          "blocksAreaConditions": false,
+          "independentDuration": false
         }
       },
+      "icon": "icons/magic/air/fog-gas-smoke-orange.webp",
+      "label": "Grease",
+      "origin": "Actor.m4mjuiVrcZHbrj00.Item.QKczLMuUEj5OSR5C",
+      "tint": null,
+      "transfer": false
+    }
+  ],
+  "flags": {
+    "wire": {
       "checkedAbility": "",
-      "saveImmunity": false,
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.10.1",
       "conditions": [
         {
           "condition": "area-envelops-creature",
@@ -110,59 +58,104 @@
           "update": "end"
         }
       ],
-      "compendiumSource": "wire-srd.spells",
-      "compendiumVersion": "0.10.1"
-    }
-  },
-  "img": "icons/magic/air/fog-gas-smoke-orange.webp",
-  "effects": [
-    {
-      "label": "Grease",
-      "icon": "icons/magic/air/fog-gas-smoke-orange.webp",
-      "origin": "Actor.m4mjuiVrcZHbrj00.Item.QKczLMuUEj5OSR5C",
-      "duration": {
-        "startTime": null,
-        "seconds": null,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "disabled": false,
-      "_id": "rLV7D3SAr794QRQ0",
-      "changes": [
-        {
-          "key": "wire.custom.persistentStatusEffect",
-          "mode": 2,
-          "value": "Prone",
-          "priority": 20
-        }
-      ],
-      "tint": null,
-      "transfer": false,
-      "flags": {
-        "wire": {
-          "applyOnSaveOrMiss": false,
-          "blocksAreaConditions": false,
-          "auraTargets": "",
-          "applicationType": "immediate",
-          "independentDuration": false
+      "override": {
+        "target": {
+          "value": "10"
         }
       },
-      "_key": "!items.effects!E50EBxVqTCamJ9UI.rLV7D3SAr794QRQ0"
+      "saveImmunity": false
     }
-  ],
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.0.3",
-    "coreVersion": "10.291",
-    "createdTime": 1661787234187,
-    "modifiedTime": 1671885766614,
-    "lastModifiedBy": "m7gKrZnSC3XR8ToV"
   },
   "folder": null,
-  "sort": 0,
-  "_id": "E50EBxVqTCamJ9UI",
-  "_key": "!items!E50EBxVqTCamJ9UI"
+  "img": "icons/magic/air/fog-gas-smoke-orange.webp",
+  "name": "Grease",
+  "ownership": {
+    "default": 0,
+    "m7gKrZnSC3XR8ToV": 3
+  },
+  "system": {
+    "ability": "",
+    "actionType": "save",
+    "activation": {
+      "condition": "",
+      "cost": 1,
+      "type": "action"
+    },
+    "attackBonus": 0,
+    "chatFlavor": "",
+    "components": {
+      "concentration": false,
+      "material": true,
+      "ritual": false,
+      "somatic": true,
+      "value": "",
+      "vocal": true
+    },
+    "consume": {
+      "amount": null,
+      "target": "",
+      "type": ""
+    },
+    "cover": null,
+    "crewed": false,
+    "critical": {
+      "damage": "",
+      "threshold": null
+    },
+    "damage": {
+      "parts": [],
+      "value": "",
+      "versatile": ""
+    },
+    "description": {
+      "chat": "",
+      "unidentified": "",
+      "value": "<p>Slick grease covers the ground in a 10-foot square centered on a point within range and turns it into difficult terrain for the duration.</p><p>When the grease appears, each creature standing in its area must succeed on a Dexterity saving throw or fall prone. A creature that enters the area or ends its turn there must also succeed on a Dexterity saving throw or fall prone.</p>"
+    },
+    "duration": {
+      "units": "minute",
+      "value": 1
+    },
+    "formula": "",
+    "level": 1,
+    "materials": {
+      "consumed": false,
+      "cost": 0,
+      "supply": 0,
+      "value": "A bit of pork rind or butter"
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "range": {
+      "long": 0,
+      "units": "ft",
+      "value": 60
+    },
+    "save": {
+      "ability": "dex",
+      "dc": 0,
+      "scaling": "spell"
+    },
+    "scaling": {
+      "formula": "",
+      "mode": "none"
+    },
+    "school": "con",
+    "source": "PHB pg. 246",
+    "target": {
+      "type": "square",
+      "units": "ft",
+      "value": 10,
+      "width": null
+    },
+    "uses": {
+      "max": "0",
+      "per": "",
+      "recovery": "",
+      "value": 0
+    }
+  },
+  "type": "spell"
 }

@@ -1,159 +1,46 @@
 {
-  "name": "Hideous Laughter",
-  "ownership": {
-    "default": 0,
-    "m7gKrZnSC3XR8ToV": 3
-  },
-  "type": "spell",
-  "system": {
-    "description": {
-      "value": "<p>A creature of your choice that you can see within range perceives everything as hilariously funny and falls into fits of laughter if this spell affects it. The target must succeed on a Wisdom saving throw or fall prone, becoming Incapacitated and unable to stand up for the Duration. A creature with an Intelligence score of 4 or less isn't affected.</p><p>At the end of each of its turns, and each time it takes damage, the target can make another Wisdom saving throw. The target has advantage on the saving throw if it's triggered by damage. On a success, the spell ends.</p>",
-      "chat": "",
-      "unidentified": ""
-    },
-    "source": "",
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": 1,
-      "units": "minute"
-    },
-    "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature"
-    },
-    "range": {
-      "value": 30,
-      "long": 0,
-      "units": "ft"
-    },
-    "uses": {
-      "value": 0,
-      "max": "0",
-      "per": "",
-      "recovery": ""
-    },
-    "consume": {
-      "type": "",
-      "target": "",
-      "amount": null
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": 0,
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": "",
-      "value": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "wis",
-      "dc": 0,
-      "scaling": "spell"
-    },
-    "level": 1,
-    "school": "enc",
-    "components": {
-      "value": "",
-      "vocal": true,
-      "somatic": true,
-      "material": true,
-      "ritual": false,
-      "concentration": true
-    },
-    "materials": {
-      "value": "Tiny tarts and a feather that is waved in the air",
-      "consumed": false,
-      "cost": 0,
-      "supply": 0
-    },
-    "preparation": {
-      "mode": "prepared",
-      "prepared": false
-    },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    }
-  },
-  "flags": {
-    "wire": {
-      "override": {
-        "target": {
-          "value": "1"
-        }
-      },
-      "checkedAbility": "",
-      "saveImmunity": false,
-      "immunities": [
-        {
-          "type": "formula",
-          "value": "lte(@target.abilities.int.value, 4)"
-        }
-      ],
-      "compendiumSource": "wire-srd.spells",
-      "compendiumVersion": "0.10.2"
-    }
-  },
-  "img": "icons/creatures/unholy/demon-horned-winged-laughing.webp",
+  "_id": "asWuXETL6Q8zrvsv",
+  "_key": "!items!asWuXETL6Q8zrvsv",
   "effects": [
     {
-      "label": "Hideous Laughter",
-      "icon": "icons/creatures/unholy/demon-horned-winged-laughing.webp",
-      "origin": "Actor.9z8mm9ZzK1lsUOub.Item.nrGVs6jUlBTsags6",
-      "duration": {
-        "startTime": null,
-        "seconds": null,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "disabled": false,
       "_id": "19i5pmq5NL9S4HLg",
+      "_key": "!items.effects!asWuXETL6Q8zrvsv.19i5pmq5NL9S4HLg",
       "changes": [
         {
           "key": "wire.custom.persistentStatusEffect",
           "mode": 2,
-          "value": "Prone",
-          "priority": 20
+          "priority": 20,
+          "value": "Prone"
         },
         {
           "key": "wire.custom.statusEffect",
           "mode": 2,
-          "value": "Incapacitated",
-          "priority": 20
+          "priority": 20,
+          "value": "Incapacitated"
         },
         {
           "key": "flags.wire.advantage.ability.save.wis",
           "mode": 2,
-          "value": "eq(@condition.condition, \"takes-damage\")",
-          "priority": 20
+          "priority": 20,
+          "value": "eq(@condition.condition, \"takes-damage\")"
         }
       ],
-      "tint": null,
-      "transfer": false,
+      "disabled": false,
+      "duration": {
+        "combat": null,
+        "rounds": null,
+        "seconds": null,
+        "startRound": null,
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
+      },
       "flags": {
         "wire": {
-          "applyOnSaveOrMiss": false,
           "applicationType": "immediate",
-          "blocksAreaConditions": false,
+          "applyOnSaveOrMiss": false,
           "auraTargets": "",
-          "stackEffects": false,
-          "rollEffects": false,
-          "independentDuration": false,
+          "blocksAreaConditions": false,
           "conditions": [
             {
               "condition": "end-of-turn-target",
@@ -163,22 +50,128 @@
               "condition": "takes-damage",
               "update": "end-on-save"
             }
-          ]
+          ],
+          "independentDuration": false,
+          "rollEffects": false,
+          "stackEffects": false
         }
       },
-      "_key": "!items.effects!asWuXETL6Q8zrvsv.19i5pmq5NL9S4HLg"
+      "icon": "icons/creatures/unholy/demon-horned-winged-laughing.webp",
+      "label": "Hideous Laughter",
+      "origin": "Actor.9z8mm9ZzK1lsUOub.Item.nrGVs6jUlBTsags6",
+      "tint": null,
+      "transfer": false
     }
   ],
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.0.3",
-    "coreVersion": "10.291",
-    "createdTime": 1661787234092,
-    "modifiedTime": 1672301249259,
-    "lastModifiedBy": "m7gKrZnSC3XR8ToV"
+  "flags": {
+    "wire": {
+      "checkedAbility": "",
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.10.2",
+      "immunities": [
+        {
+          "type": "formula",
+          "value": "lte(@target.abilities.int.value, 4)"
+        }
+      ],
+      "override": {
+        "target": {
+          "value": "1"
+        }
+      },
+      "saveImmunity": false
+    }
   },
   "folder": null,
-  "sort": 0,
-  "_id": "asWuXETL6Q8zrvsv",
-  "_key": "!items!asWuXETL6Q8zrvsv"
+  "img": "icons/creatures/unholy/demon-horned-winged-laughing.webp",
+  "name": "Hideous Laughter",
+  "ownership": {
+    "default": 0,
+    "m7gKrZnSC3XR8ToV": 3
+  },
+  "system": {
+    "ability": "",
+    "actionType": "save",
+    "activation": {
+      "condition": "",
+      "cost": 1,
+      "type": "action"
+    },
+    "attackBonus": 0,
+    "chatFlavor": "",
+    "components": {
+      "concentration": true,
+      "material": true,
+      "ritual": false,
+      "somatic": true,
+      "value": "",
+      "vocal": true
+    },
+    "consume": {
+      "amount": null,
+      "target": "",
+      "type": ""
+    },
+    "cover": null,
+    "crewed": false,
+    "critical": {
+      "damage": "",
+      "threshold": null
+    },
+    "damage": {
+      "parts": [],
+      "value": "",
+      "versatile": ""
+    },
+    "description": {
+      "chat": "",
+      "unidentified": "",
+      "value": "<p>A creature of your choice that you can see within range perceives everything as hilariously funny and falls into fits of laughter if this spell affects it. The target must succeed on a Wisdom saving throw or fall prone, becoming Incapacitated and unable to stand up for the Duration. A creature with an Intelligence score of 4 or less isn't affected.</p><p>At the end of each of its turns, and each time it takes damage, the target can make another Wisdom saving throw. The target has advantage on the saving throw if it's triggered by damage. On a success, the spell ends.</p>"
+    },
+    "duration": {
+      "units": "minute",
+      "value": 1
+    },
+    "formula": "",
+    "level": 1,
+    "materials": {
+      "consumed": false,
+      "cost": 0,
+      "supply": 0,
+      "value": "Tiny tarts and a feather that is waved in the air"
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "range": {
+      "long": 0,
+      "units": "ft",
+      "value": 30
+    },
+    "save": {
+      "ability": "wis",
+      "dc": 0,
+      "scaling": "spell"
+    },
+    "scaling": {
+      "formula": "",
+      "mode": "none"
+    },
+    "school": "enc",
+    "source": "",
+    "target": {
+      "type": "creature",
+      "units": "",
+      "value": 1,
+      "width": null
+    },
+    "uses": {
+      "max": "0",
+      "per": "",
+      "recovery": "",
+      "value": 0
+    }
+  },
+  "type": "spell"
 }

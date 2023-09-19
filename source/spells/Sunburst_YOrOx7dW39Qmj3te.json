@@ -1,55 +1,151 @@
 {
+  "_id": "YOrOx7dW39Qmj3te",
+  "_key": "!items!YOrOx7dW39Qmj3te",
+  "effects": [
+    {
+      "_id": "PEkAZ5eOZakbEbWP",
+      "_key": "!items.effects!YOrOx7dW39Qmj3te.PEkAZ5eOZakbEbWP",
+      "changes": [
+        {
+          "key": "flags.wire.disadvantage.ability.save.all",
+          "mode": 2,
+          "priority": 20,
+          "value": "and(@isFromItem, includes(\"undead\", \"ooze\", @actor.details.type.value))"
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "combat": null,
+        "rounds": null,
+        "seconds": null,
+        "startRound": null,
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
+      },
+      "flags": {
+        "wire": {
+          "applicationType": "resolving",
+          "applyOnSaveOrMiss": false,
+          "auraTargets": "",
+          "blocksAreaConditions": false,
+          "conditions": [],
+          "independentDuration": false,
+          "rollEffects": false,
+          "stackEffects": false
+        }
+      },
+      "icon": "icons/magic/fire/explosion-fireball-large-purple-orange.webp",
+      "label": "Sunburst Saves",
+      "origin": "Actor.isYKP74w0SIExUvl.Item.jnNuU9V0WphQYDsK",
+      "tint": null,
+      "transfer": false
+    },
+    {
+      "_id": "hPja3YdCh3JFlws4",
+      "_key": "!items.effects!YOrOx7dW39Qmj3te.hPja3YdCh3JFlws4",
+      "changes": [
+        {
+          "key": "wire.custom.statusEffect",
+          "mode": 2,
+          "priority": 20,
+          "value": "Blinded"
+        },
+        {
+          "key": "flags.wire.disadvantage.ability.save.all",
+          "mode": 2,
+          "priority": 20,
+          "value": "and(@isFromItem, includes(\"undead\", \"ooze\", @actor.details.type.value))"
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "combat": null,
+        "rounds": null,
+        "seconds": 60,
+        "startRound": null,
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
+      },
+      "flags": {
+        "wire": {
+          "applicationType": "immediate",
+          "applyOnSaveOrMiss": false,
+          "auraTargets": "",
+          "blocksAreaConditions": false,
+          "conditions": [
+            {
+              "condition": "end-of-turn-target",
+              "update": "end-on-save"
+            }
+          ],
+          "independentDuration": true,
+          "rollEffects": false,
+          "stackEffects": false
+        }
+      },
+      "icon": "icons/magic/fire/explosion-fireball-large-purple-orange.webp",
+      "label": "Sunburst",
+      "origin": "Actor.isYKP74w0SIExUvl.Item.jnNuU9V0WphQYDsK",
+      "tint": null,
+      "transfer": false
+    }
+  ],
+  "flags": {
+    "wire": {
+      "checkedAbility": "",
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.10.2",
+      "damageParts": [
+        {
+          "application": "immediate",
+          "halving": "half"
+        }
+      ],
+      "override": {
+        "target": {
+          "value": "60"
+        }
+      },
+      "saveImmunity": false
+    }
+  },
+  "folder": null,
+  "img": "icons/magic/fire/explosion-fireball-large-purple-orange.webp",
   "name": "Sunburst",
   "ownership": {
     "default": 0,
     "m7gKrZnSC3XR8ToV": 3
   },
-  "type": "spell",
   "system": {
-    "description": {
-      "value": "<p>Brilliant sunlight flashes in a 60-foot radius centered on a point you choose within range. Each creature in that light must make a Constitution saving throw. On a failed save, a creature takes 12d6 radiant damage and is Blinded for 1 minute. On a successful save, it takes half as much damage and isn't blinded by this spell. Undead and oozes have disadvantage on this saving throw.</p><p>A creature Blinded by this spell makes another Constitution saving throw at the end of each of its turns. On a successful save, it is no longer blinded.</p><p>This spell dispels any Darkness in its area that was created by a spell.</p>",
-      "chat": "",
-      "unidentified": ""
-    },
-    "source": "PHB pg. 279",
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": null,
-      "units": "inst"
-    },
-    "target": {
-      "value": 60,
-      "width": null,
-      "units": "ft",
-      "type": "radius"
-    },
-    "range": {
-      "value": 150,
-      "long": 0,
-      "units": "ft"
-    },
-    "uses": {
-      "value": 0,
-      "max": "0",
-      "per": "",
-      "recovery": ""
-    },
-    "consume": {
-      "type": "",
-      "target": "",
-      "amount": null
-    },
     "ability": "",
     "actionType": "save",
+    "activation": {
+      "condition": "",
+      "cost": 1,
+      "type": "action"
+    },
     "attackBonus": 0,
     "chatFlavor": "",
+    "components": {
+      "concentration": false,
+      "material": true,
+      "ritual": false,
+      "somatic": true,
+      "value": "",
+      "vocal": true
+    },
+    "consume": {
+      "amount": null,
+      "target": "",
+      "type": ""
+    },
+    "cover": null,
+    "crewed": false,
     "critical": {
-      "threshold": null,
-      "damage": ""
+      "damage": "",
+      "threshold": null
     },
     "damage": {
       "parts": [
@@ -60,158 +156,55 @@
       ],
       "versatile": ""
     },
+    "description": {
+      "chat": "",
+      "unidentified": "",
+      "value": "<p>Brilliant sunlight flashes in a 60-foot radius centered on a point you choose within range. Each creature in that light must make a Constitution saving throw. On a failed save, a creature takes 12d6 radiant damage and is Blinded for 1 minute. On a successful save, it takes half as much damage and isn't blinded by this spell. Undead and oozes have disadvantage on this saving throw.</p><p>A creature Blinded by this spell makes another Constitution saving throw at the end of each of its turns. On a successful save, it is no longer blinded.</p><p>This spell dispels any Darkness in its area that was created by a spell.</p>"
+    },
+    "duration": {
+      "units": "inst",
+      "value": null
+    },
     "formula": "",
-    "save": {
-      "ability": "con",
-      "dc": 0,
-      "scaling": "spell"
-    },
     "level": 8,
-    "school": "evo",
-    "components": {
-      "value": "",
-      "vocal": true,
-      "somatic": true,
-      "material": true,
-      "ritual": false,
-      "concentration": false
-    },
     "materials": {
-      "value": "Fire and a piece of sunstone",
       "consumed": false,
       "cost": 0,
-      "supply": 0
+      "supply": 0,
+      "value": "Fire and a piece of sunstone"
     },
     "preparation": {
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    }
-  },
-  "flags": {
-    "wire": {
-      "override": {
-        "target": {
-          "value": "60"
-        }
-      },
-      "checkedAbility": "",
-      "saveImmunity": false,
-      "damageParts": [
-        {
-          "halving": "half",
-          "application": "immediate"
-        }
-      ],
-      "compendiumSource": "wire-srd.spells",
-      "compendiumVersion": "0.10.2"
-    }
-  },
-  "img": "icons/magic/fire/explosion-fireball-large-purple-orange.webp",
-  "effects": [
-    {
-      "label": "Sunburst Saves",
-      "icon": "icons/magic/fire/explosion-fireball-large-purple-orange.webp",
-      "origin": "Actor.isYKP74w0SIExUvl.Item.jnNuU9V0WphQYDsK",
-      "duration": {
-        "startTime": null,
-        "seconds": null,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "disabled": false,
-      "_id": "PEkAZ5eOZakbEbWP",
-      "changes": [
-        {
-          "key": "flags.wire.disadvantage.ability.save.all",
-          "mode": 2,
-          "value": "and(@isFromItem, includes(\"undead\", \"ooze\", @actor.details.type.value))",
-          "priority": 20
-        }
-      ],
-      "tint": null,
-      "transfer": false,
-      "flags": {
-        "wire": {
-          "applyOnSaveOrMiss": false,
-          "applicationType": "resolving",
-          "blocksAreaConditions": false,
-          "auraTargets": "",
-          "stackEffects": false,
-          "rollEffects": false,
-          "independentDuration": false,
-          "conditions": []
-        }
-      },
-      "_key": "!items.effects!YOrOx7dW39Qmj3te.PEkAZ5eOZakbEbWP"
+    "range": {
+      "long": 0,
+      "units": "ft",
+      "value": 150
     },
-    {
-      "label": "Sunburst",
-      "icon": "icons/magic/fire/explosion-fireball-large-purple-orange.webp",
-      "origin": "Actor.isYKP74w0SIExUvl.Item.jnNuU9V0WphQYDsK",
-      "duration": {
-        "startTime": null,
-        "seconds": 60,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "disabled": false,
-      "_id": "hPja3YdCh3JFlws4",
-      "changes": [
-        {
-          "key": "wire.custom.statusEffect",
-          "mode": 2,
-          "value": "Blinded",
-          "priority": 20
-        },
-        {
-          "key": "flags.wire.disadvantage.ability.save.all",
-          "mode": 2,
-          "value": "and(@isFromItem, includes(\"undead\", \"ooze\", @actor.details.type.value))",
-          "priority": 20
-        }
-      ],
-      "tint": null,
-      "transfer": false,
-      "flags": {
-        "wire": {
-          "applyOnSaveOrMiss": false,
-          "applicationType": "immediate",
-          "blocksAreaConditions": false,
-          "auraTargets": "",
-          "stackEffects": false,
-          "rollEffects": false,
-          "independentDuration": true,
-          "conditions": [
-            {
-              "condition": "end-of-turn-target",
-              "update": "end-on-save"
-            }
-          ]
-        }
-      },
-      "_key": "!items.effects!YOrOx7dW39Qmj3te.hPja3YdCh3JFlws4"
+    "save": {
+      "ability": "con",
+      "dc": 0,
+      "scaling": "spell"
+    },
+    "scaling": {
+      "formula": "",
+      "mode": "none"
+    },
+    "school": "evo",
+    "source": "PHB pg. 279",
+    "target": {
+      "type": "radius",
+      "units": "ft",
+      "value": 60,
+      "width": null
+    },
+    "uses": {
+      "max": "0",
+      "per": "",
+      "recovery": "",
+      "value": 0
     }
-  ],
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.0.3",
-    "coreVersion": "10.291",
-    "createdTime": 1661787234209,
-    "modifiedTime": 1672389716398,
-    "lastModifiedBy": "m7gKrZnSC3XR8ToV"
   },
-  "folder": null,
-  "sort": 0,
-  "_id": "YOrOx7dW39Qmj3te",
-  "_key": "!items!YOrOx7dW39Qmj3te"
+  "type": "spell"
 }

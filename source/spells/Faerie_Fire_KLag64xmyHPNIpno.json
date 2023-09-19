@@ -1,147 +1,62 @@
 {
-  "name": "Faerie Fire",
-  "type": "spell",
-  "img": "icons/magic/fire/projectile-meteor-salvo-strong-teal.webp",
-  "system": {
-    "description": {
-      "value": "<p>Each object in a 20-foot cube within range is outlined in blue, green, or violet light (your choice). Any creature in the area when the spell is cast is also outlined in light if it fails a Dexterity saving throw. For the duration, objects and affected creatures shed dim light in a 10-foot radius.</p><p>Any attack roll against an affected creature or object has advantage if the attacker can see it, and the affected creature or object can't benefit from being invisible.</p>",
-      "chat": "",
-      "unidentified": ""
-    },
-    "source": "PHB pg. 239",
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": 1,
-      "units": "minute"
-    },
-    "cover": null,
-    "crewed": false,
-    "target": {
-      "value": 20,
-      "width": null,
-      "units": "ft",
-      "type": "cube"
-    },
-    "range": {
-      "value": 60,
-      "long": 0,
-      "units": "ft"
-    },
-    "uses": {
-      "value": 0,
-      "max": "0",
-      "per": "",
-      "recovery": ""
-    },
-    "consume": {
-      "type": "",
-      "target": "",
-      "amount": null
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": 0,
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": "",
-      "value": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "dex",
-      "dc": 0,
-      "scaling": "spell"
-    },
-    "level": 1,
-    "school": "evo",
-    "components": {
-      "vocal": true,
-      "somatic": false,
-      "material": false,
-      "ritual": false,
-      "concentration": true,
-      "value": ""
-    },
-    "materials": {
-      "value": "",
-      "consumed": false,
-      "cost": 0,
-      "supply": 0
-    },
-    "preparation": {
-      "mode": "prepared",
-      "prepared": false
-    },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "attunement": 0
-  },
+  "_id": "KLag64xmyHPNIpno",
+  "_key": "!items!KLag64xmyHPNIpno",
   "effects": [
     {
       "_id": "3ywwkohkvhj5kbr9",
+      "_key": "!items.effects!KLag64xmyHPNIpno.3ywwkohkvhj5kbr9",
       "changes": [
         {
           "key": "flags.wire.grants.advantage.attack.all",
           "mode": 2,
-          "value": "not(includes(@attacker.traits.ci.value, \"blinded\"))",
-          "priority": 20
+          "priority": 20,
+          "value": "not(includes(@attacker.traits.ci.value, \"blinded\"))"
         },
         {
           "key": "wire.custom.tokenFX",
           "mode": 0,
-          "value": "glow",
-          "priority": 0
+          "priority": 0,
+          "value": "glow"
         },
         {
           "key": "system.traits.ci.value",
           "mode": 2,
-          "value": "invisible",
-          "priority": 20
+          "priority": 20,
+          "value": "invisible"
         }
       ],
       "disabled": false,
       "duration": {
-        "startTime": null,
-        "seconds": null,
         "combat": null,
         "rounds": null,
-        "turns": null,
+        "seconds": null,
         "startRound": null,
-        "startTurn": null
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
+      },
+      "flags": {
+        "wire": {
+          "applicationType": "immediate",
+          "applyOnSaveOrMiss": false,
+          "auraTargets": "",
+          "blocksAreaConditions": false,
+          "conditions": [],
+          "independentDuration": false,
+          "rollEffects": false,
+          "stackEffects": false
+        }
       },
       "icon": "icons/magic/fire/projectile-meteor-salvo-strong-teal.webp",
       "label": "Faerie Fire",
       "origin": "Actor.DYtIju3AiBnowE65.Item.UqOqLfZAi9asytrP",
-      "transfer": false,
-      "flags": {
-        "wire": {
-          "applyOnSaveOrMiss": false,
-          "applicationType": "immediate",
-          "independentDuration": false,
-          "blocksAreaConditions": false,
-          "auraTargets": "",
-          "stackEffects": false,
-          "rollEffects": false,
-          "conditions": []
-        }
-      },
       "tint": null,
-      "_key": "!items.effects!KLag64xmyHPNIpno.3ywwkohkvhj5kbr9"
+      "transfer": false
     }
   ],
   "flags": {
     "wire": {
+      "checkedAbility": "",
       "compendiumSource": "wire-srd.spells",
       "compendiumVersion": "0.11.0",
       "override": {
@@ -149,26 +64,102 @@
           "value": "20"
         }
       },
-      "checkedAbility": "",
       "saveImmunity": false,
       "script": "return this.applyConcentration(\n    this.confirmTargets(\n        this.removeTemplate(\n            this.performSavingThrow(\n                this.applyEffects()\n            )\n        )\n    )\n)"
     }
   },
+  "folder": null,
+  "img": "icons/magic/fire/projectile-meteor-salvo-strong-teal.webp",
+  "name": "Faerie Fire",
   "ownership": {
-    "default": 0,
     "BDWtlDQYkOI4gQqd": 3,
+    "default": 0,
     "m7gKrZnSC3XR8ToV": 3
   },
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.2.2",
-    "coreVersion": "11.306",
-    "createdTime": 1672219757015,
-    "modifiedTime": 1694774675077,
-    "lastModifiedBy": "dBglmdrMUDMEh6ZW"
+  "system": {
+    "ability": "",
+    "actionType": "save",
+    "activation": {
+      "condition": "",
+      "cost": 1,
+      "type": "action"
+    },
+    "attackBonus": 0,
+    "attunement": 0,
+    "chatFlavor": "",
+    "components": {
+      "concentration": true,
+      "material": false,
+      "ritual": false,
+      "somatic": false,
+      "value": "",
+      "vocal": true
+    },
+    "consume": {
+      "amount": null,
+      "target": "",
+      "type": ""
+    },
+    "cover": null,
+    "crewed": false,
+    "critical": {
+      "damage": "",
+      "threshold": null
+    },
+    "damage": {
+      "parts": [],
+      "value": "",
+      "versatile": ""
+    },
+    "description": {
+      "chat": "",
+      "unidentified": "",
+      "value": "<p>Each object in a 20-foot cube within range is outlined in blue, green, or violet light (your choice). Any creature in the area when the spell is cast is also outlined in light if it fails a Dexterity saving throw. For the duration, objects and affected creatures shed dim light in a 10-foot radius.</p><p>Any attack roll against an affected creature or object has advantage if the attacker can see it, and the affected creature or object can't benefit from being invisible.</p>"
+    },
+    "duration": {
+      "units": "minute",
+      "value": 1
+    },
+    "formula": "",
+    "level": 1,
+    "materials": {
+      "consumed": false,
+      "cost": 0,
+      "supply": 0,
+      "value": ""
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "range": {
+      "long": 0,
+      "units": "ft",
+      "value": 60
+    },
+    "save": {
+      "ability": "dex",
+      "dc": 0,
+      "scaling": "spell"
+    },
+    "scaling": {
+      "formula": "",
+      "mode": "none"
+    },
+    "school": "evo",
+    "source": "PHB pg. 239",
+    "target": {
+      "type": "cube",
+      "units": "ft",
+      "value": 20,
+      "width": null
+    },
+    "uses": {
+      "max": "0",
+      "per": "",
+      "recovery": "",
+      "value": 0
+    }
   },
-  "folder": null,
-  "sort": 0,
-  "_id": "KLag64xmyHPNIpno",
-  "_key": "!items!KLag64xmyHPNIpno"
+  "type": "spell"
 }

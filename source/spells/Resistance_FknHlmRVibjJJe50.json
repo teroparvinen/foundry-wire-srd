@@ -1,11 +1,19 @@
 {
-  "_id": "mwba9gpklgQQazHm",
-  "_key": "!items!mwba9gpklgQQazHm",
+  "_id": "FknHlmRVibjJJe50",
+  "_key": "!items!FknHlmRVibjJJe50",
   "effects": [
     {
-      "_id": "GhsNlaQkiQX0MIzW",
-      "_key": "!items.effects!mwba9gpklgQQazHm.GhsNlaQkiQX0MIzW",
-      "changes": [],
+      "_id": "tr0x1botcgqhda6e",
+      "_key": "!items.effects!FknHlmRVibjJJe50.tr0x1botcgqhda6e",
+      "changes": [
+        {
+          "key": "placeholder",
+          "mode": 0,
+          "priority": null,
+          "value": "0"
+        }
+      ],
+      "description": "",
       "disabled": false,
       "duration": {
         "combat": null,
@@ -24,16 +32,23 @@
           "blocksAreaConditions": false,
           "conditions": [
             {
-              "condition": "takes-damage",
-              "update": "apply-delayed"
+              "condition": "prepare-ability-save",
+              "update": "Apply Resistance bonus"
+            },
+            {
+              "condition": "complete-ability-save",
+              "update": "Expire Resistance bonus"
             }
           ],
-          "independentDuration": false
+          "independentDuration": false,
+          "rollEffects": false,
+          "stackEffects": false
         }
       },
-      "icon": "icons/magic/control/fear-fright-monster-purple-blue.webp",
-      "label": "Death Ward",
-      "origin": "Actor.isYKP74w0SIExUvl.Item.19QfMKw2YnkID3Gq",
+      "icon": "icons/magic/defensive/shield-barrier-glowing-triangle-purple-orange.webp",
+      "name": "Resistance",
+      "origin": "Actor.isYKP74w0SIExUvl.Item.TdxfUNbnWBsCPTls",
+      "statuses": [],
       "tint": null,
       "transfer": false
     }
@@ -43,26 +58,20 @@
       "checkedAbility": "",
       "compendiumSource": "wire-srd.spells",
       "compendiumVersion": "0.11.0",
-      "conditions": [],
-      "damageParts": [
-        {
-          "application": "delayed",
-          "halving": "none"
-        }
-      ],
       "override": {
         "target": {
           "value": "1"
         }
       },
       "saveImmunity": false,
-      "script": "this.registerFlowStep(\"checkDeath\", true, (activation, details) => {\n    if (details?.hp > 0) {\n        return false;\n    }\n});\n\nreturn this.pick(\n    this.isDelayedApplication(\n        this.performCustomStep(\"checkDeath\",\n            this.defaultFlow(\n                this.endEffect()\n            )\n        )\n    ),\n    this.defaultFlow()\n)"
+      "script": "this.registerUpdater(\"Apply Resistance bonus\", false, async (condition, item, effect, details) => {\n    const doApply = await Dialog.confirm({ title: \"Apply Resistance?\", content: \"<h1>+1d4</h1>\" });\n    if (doApply) {\n        return \"1d4\";\n    }\n});\n\nthis.registerUpdater(\"Expire Resistance bonus\", false, async (condition, item, effect, details) => {\n    if (details) game.wire.getMasterEffect(effect)?.delete();\n});\n"
     }
   },
   "folder": null,
-  "img": "icons/magic/control/fear-fright-monster-purple-blue.webp",
-  "name": "Death Ward",
+  "img": "icons/magic/defensive/shield-barrier-glowing-triangle-purple-orange.webp",
+  "name": "Resistance",
   "ownership": {
+    "dBglmdrMUDMEh6ZW": 3,
     "default": 0,
     "m7gKrZnSC3XR8ToV": 3
   },
@@ -74,14 +83,13 @@
       "cost": 1,
       "type": "action"
     },
-    "attackBonus": 0,
+    "attackBonus": "",
     "chatFlavor": "",
     "components": {
-      "concentration": false,
-      "material": false,
+      "concentration": true,
+      "material": true,
       "ritual": false,
       "somatic": true,
-      "value": "",
       "vocal": true
     },
     "consume": {
@@ -96,34 +104,28 @@
       "threshold": null
     },
     "damage": {
-      "parts": [
-        [
-          "1",
-          "healing"
-        ]
-      ],
-      "value": "",
+      "parts": [],
       "versatile": ""
     },
     "description": {
       "chat": "",
       "unidentified": "",
-      "value": "<p>You touch a creature and grant it a measure of protection from death.</p><p>The first time the target would drop to 0 hit points as a result of taking damage, the target instead drops to 1 hit point, and the spell ends.</p><p>If the spell is still in effect when the target is subjected to an effect that would kill it instantaneously without dealing damage, that effect is instead negated against the target, and the spell ends.</p>"
+      "value": "<p>You touch one willing creature. Once before the spell ends, the target can roll a d4 and add the number rolled to one saving throw of its choice. It can roll the die before or after making the saving throw. The spell then ends.</p>"
     },
     "duration": {
-      "units": "hour",
-      "value": 8
+      "units": "minute",
+      "value": "1"
     },
-    "formula": "",
-    "level": 4,
+    "formula": "1d4",
+    "level": 0,
     "materials": {
       "consumed": false,
       "cost": 0,
       "supply": 0,
-      "value": ""
+      "value": "A miniature clock"
     },
     "preparation": {
-      "mode": "prepared",
+      "mode": "always",
       "prepared": false
     },
     "range": {
@@ -134,15 +136,14 @@
     "save": {
       "ability": "",
       "dc": null,
-      "scaling": "spell",
-      "value": ""
+      "scaling": "spell"
     },
     "scaling": {
       "formula": "",
       "mode": "none"
     },
     "school": "abj",
-    "source": "PHB pg. 230",
+    "source": "PHB pg. 272",
     "target": {
       "type": "creature",
       "units": "",
@@ -150,8 +151,8 @@
       "width": null
     },
     "uses": {
-      "max": "0",
-      "per": "",
+      "max": "",
+      "per": null,
       "recovery": "",
       "value": 0
     }

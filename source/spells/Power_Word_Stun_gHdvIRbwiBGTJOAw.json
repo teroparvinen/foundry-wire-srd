@@ -1,168 +1,161 @@
 {
-  "name": "Power Word Stun",
-  "ownership": {
-    "default": 0,
-    "m7gKrZnSC3XR8ToV": 3
-  },
-  "type": "spell",
-  "system": {
-    "description": {
-      "value": "<p>You speak a word of power that can overwhelm the mind of one creature you can see within range, leaving it dumbfounded. If the target has 150 Hit Points or fewer, it is Stunned. Otherwise, the spell has no effect.</p><p>The stunned target must make a Constitution saving throw at the end of each of its turns. On a successful save, this stunning effect ends.</p>",
-      "chat": "",
-      "unidentified": ""
-    },
-    "source": "PHB pg. 267",
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": null,
-      "units": "inst"
-    },
-    "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature"
-    },
-    "range": {
-      "value": 60,
-      "long": 0,
-      "units": "ft"
-    },
-    "uses": {
-      "value": 0,
-      "max": "0",
-      "per": "",
-      "recovery": ""
-    },
-    "consume": {
-      "type": "",
-      "target": "",
-      "amount": null
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": 0,
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": "",
-      "value": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "con",
-      "dc": 0,
-      "scaling": "spell"
-    },
-    "level": 8,
-    "school": "enc",
-    "components": {
-      "value": "",
-      "vocal": true,
-      "somatic": false,
-      "material": false,
-      "ritual": false,
-      "concentration": false
-    },
-    "materials": {
-      "value": "",
-      "consumed": false,
-      "cost": 0,
-      "supply": 0
-    },
-    "preparation": {
-      "mode": "prepared",
-      "prepared": false
-    },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    }
-  },
-  "flags": {
-    "wire": {
-      "override": {
-        "target": {
-          "value": "1"
+  "_id": "gHdvIRbwiBGTJOAw",
+  "_key": "!items!gHdvIRbwiBGTJOAw",
+  "effects": [
+    {
+      "_id": "63Z9WpAwQ7CZKQXX",
+      "_key": "!items.effects!gHdvIRbwiBGTJOAw.63Z9WpAwQ7CZKQXX",
+      "changes": [
+        {
+          "key": "wire.custom.statusEffect",
+          "mode": 2,
+          "priority": 20,
+          "value": "Stunned"
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "combat": null,
+        "rounds": null,
+        "seconds": 31536000,
+        "startRound": null,
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
+      },
+      "flags": {
+        "wire": {
+          "applicationType": "immediate",
+          "applyOnSaveOrMiss": true,
+          "auraTargets": "",
+          "blocksAreaConditions": false,
+          "conditions": [
+            {
+              "condition": "end-of-turn-target",
+              "update": "end-on-save"
+            }
+          ],
+          "independentDuration": true,
+          "rollEffects": false,
+          "stackEffects": false
         }
       },
+      "icon": "icons/magic/control/debuff-chains-ropes-red.webp",
+      "label": "Power Word Stun",
+      "origin": "Actor.m4mjuiVrcZHbrj00.Item.ZVnb97I2892IWd6A",
+      "tint": null,
+      "transfer": false
+    }
+  ],
+  "flags": {
+    "wire": {
       "checkedAbility": "",
-      "saveImmunity": false,
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.10.2",
       "immunities": [
         {
           "type": "formula",
           "value": "gt(@target.attributes.hp.value, 150)"
         }
       ],
-      "compendiumSource": "wire-srd.spells",
-      "compendiumVersion": "0.10.2"
-    }
-  },
-  "img": "icons/magic/control/debuff-chains-ropes-red.webp",
-  "effects": [
-    {
-      "label": "Power Word Stun",
-      "icon": "icons/magic/control/debuff-chains-ropes-red.webp",
-      "origin": "Actor.m4mjuiVrcZHbrj00.Item.ZVnb97I2892IWd6A",
-      "duration": {
-        "startTime": null,
-        "seconds": 31536000,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "disabled": false,
-      "_id": "63Z9WpAwQ7CZKQXX",
-      "changes": [
-        {
-          "key": "wire.custom.statusEffect",
-          "mode": 2,
-          "value": "Stunned",
-          "priority": 20
-        }
-      ],
-      "tint": null,
-      "transfer": false,
-      "flags": {
-        "wire": {
-          "applyOnSaveOrMiss": true,
-          "applicationType": "immediate",
-          "blocksAreaConditions": false,
-          "auraTargets": "",
-          "stackEffects": false,
-          "rollEffects": false,
-          "independentDuration": true,
-          "conditions": [
-            {
-              "condition": "end-of-turn-target",
-              "update": "end-on-save"
-            }
-          ]
+      "override": {
+        "target": {
+          "value": "1"
         }
       },
-      "_key": "!items.effects!gHdvIRbwiBGTJOAw.63Z9WpAwQ7CZKQXX"
+      "saveImmunity": false
     }
-  ],
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.0.3",
-    "coreVersion": "10.291",
-    "createdTime": 1661787234062,
-    "modifiedTime": 1672323558923,
-    "lastModifiedBy": "m7gKrZnSC3XR8ToV"
   },
   "folder": null,
-  "sort": 0,
-  "_id": "gHdvIRbwiBGTJOAw",
-  "_key": "!items!gHdvIRbwiBGTJOAw"
+  "img": "icons/magic/control/debuff-chains-ropes-red.webp",
+  "name": "Power Word Stun",
+  "ownership": {
+    "default": 0,
+    "m7gKrZnSC3XR8ToV": 3
+  },
+  "system": {
+    "ability": "",
+    "actionType": "save",
+    "activation": {
+      "condition": "",
+      "cost": 1,
+      "type": "action"
+    },
+    "attackBonus": 0,
+    "chatFlavor": "",
+    "components": {
+      "concentration": false,
+      "material": false,
+      "ritual": false,
+      "somatic": false,
+      "value": "",
+      "vocal": true
+    },
+    "consume": {
+      "amount": null,
+      "target": "",
+      "type": ""
+    },
+    "cover": null,
+    "crewed": false,
+    "critical": {
+      "damage": "",
+      "threshold": null
+    },
+    "damage": {
+      "parts": [],
+      "value": "",
+      "versatile": ""
+    },
+    "description": {
+      "chat": "",
+      "unidentified": "",
+      "value": "<p>You speak a word of power that can overwhelm the mind of one creature you can see within range, leaving it dumbfounded. If the target has 150 Hit Points or fewer, it is Stunned. Otherwise, the spell has no effect.</p><p>The stunned target must make a Constitution saving throw at the end of each of its turns. On a successful save, this stunning effect ends.</p>"
+    },
+    "duration": {
+      "units": "inst",
+      "value": null
+    },
+    "formula": "",
+    "level": 8,
+    "materials": {
+      "consumed": false,
+      "cost": 0,
+      "supply": 0,
+      "value": ""
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "range": {
+      "long": 0,
+      "units": "ft",
+      "value": 60
+    },
+    "save": {
+      "ability": "con",
+      "dc": 0,
+      "scaling": "spell"
+    },
+    "scaling": {
+      "formula": "",
+      "mode": "none"
+    },
+    "school": "enc",
+    "source": "PHB pg. 267",
+    "target": {
+      "type": "creature",
+      "units": "",
+      "value": 1,
+      "width": null
+    },
+    "uses": {
+      "max": "0",
+      "per": "",
+      "recovery": "",
+      "value": 0
+    }
+  },
+  "type": "spell"
 }

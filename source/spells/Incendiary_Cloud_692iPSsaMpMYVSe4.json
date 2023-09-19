@@ -1,113 +1,12 @@
 {
-  "name": "Incendiary Cloud",
-  "ownership": {
-    "default": 0,
-    "m7gKrZnSC3XR8ToV": 3
-  },
-  "type": "spell",
-  "system": {
-    "description": {
-      "value": "<p>A swirling cloud of smoke shot through with white-hot embers appears in a 20-foot-radius Sphere centered on a point within range. The cloud spreads around corners and is heavily obscured. It lasts for the Duration or until a wind of moderate or greater speed (at least 10 miles per hour) disperses it.</p><p>When the cloud appears, each creature in it must make a Dexterity saving throw. A creature takes 10d8 fire damage on a failed save, or half as much damage on a successful one. A creature must also make this saving throw when it enters the spell's area for the first time on a turn or ends its turn there.</p><p>The cloud moves 10 feet directly away from you in a direction that you choose at the start of each of your turns.</p>",
-      "chat": "",
-      "unidentified": ""
-    },
-    "source": "PHB pg. 253",
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": 1,
-      "units": "minute"
-    },
-    "cover": null,
-    "crewed": false,
-    "target": {
-      "value": 20,
-      "width": null,
-      "units": "ft",
-      "type": "sphere"
-    },
-    "range": {
-      "value": 150,
-      "long": 0,
-      "units": "ft"
-    },
-    "uses": {
-      "value": 0,
-      "max": "0",
-      "per": "",
-      "recovery": ""
-    },
-    "consume": {
-      "type": "",
-      "target": "",
-      "amount": null
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": 0,
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "10d8",
-          "fire"
-        ]
-      ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "dex",
-      "dc": 0,
-      "scaling": "spell"
-    },
-    "level": 8,
-    "school": "con",
-    "components": {
-      "vocal": true,
-      "somatic": true,
-      "material": false,
-      "ritual": false,
-      "concentration": true,
-      "value": ""
-    },
-    "materials": {
-      "value": "",
-      "consumed": false,
-      "cost": 0,
-      "supply": 0
-    },
-    "preparation": {
-      "mode": "prepared",
-      "prepared": false
-    },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    }
-  },
+  "_id": "692iPSsaMpMYVSe4",
+  "_key": "!items!692iPSsaMpMYVSe4",
+  "effects": [],
   "flags": {
     "wire": {
-      "override": {
-        "target": {
-          "value": "20"
-        }
-      },
       "checkedAbility": "",
-      "saveImmunity": false,
-      "damageParts": [
-        {
-          "halving": "half",
-          "application": "immediate"
-        }
-      ],
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.11.0",
       "conditions": [
         {
           "condition": "creature-enters-area",
@@ -122,23 +21,115 @@
           "update": "apply-delayed"
         }
       ],
-      "compendiumSource": "wire-srd.spells",
-      "compendiumVersion": "0.11.0",
+      "damageParts": [
+        {
+          "application": "immediate",
+          "halving": "half"
+        }
+      ],
+      "override": {
+        "target": {
+          "value": "20"
+        }
+      },
+      "saveImmunity": false,
       "script": "this.registerFlowStep(\"reminder\", true, (activation) => {\n    activation.assignCustomHtml(\"Cloud moves 10 feet away from you\");\n});\n\nreturn this.pick(\n    this.isDelayedApplication(\n        this.performCustomStep(\"reminder\")\n    ),\n    this.defaultFlow()\n)"
     }
   },
-  "img": "icons/magic/air/fog-gas-smoke-swirling-orange.webp",
-  "effects": [],
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.2.2",
-    "coreVersion": "11.306",
-    "createdTime": 1661787234228,
-    "modifiedTime": 1694774674991,
-    "lastModifiedBy": "dBglmdrMUDMEh6ZW"
-  },
   "folder": null,
-  "sort": 0,
-  "_id": "692iPSsaMpMYVSe4",
-  "_key": "!items!692iPSsaMpMYVSe4"
+  "img": "icons/magic/air/fog-gas-smoke-swirling-orange.webp",
+  "name": "Incendiary Cloud",
+  "ownership": {
+    "default": 0,
+    "m7gKrZnSC3XR8ToV": 3
+  },
+  "system": {
+    "ability": "",
+    "actionType": "save",
+    "activation": {
+      "condition": "",
+      "cost": 1,
+      "type": "action"
+    },
+    "attackBonus": 0,
+    "chatFlavor": "",
+    "components": {
+      "concentration": true,
+      "material": false,
+      "ritual": false,
+      "somatic": true,
+      "value": "",
+      "vocal": true
+    },
+    "consume": {
+      "amount": null,
+      "target": "",
+      "type": ""
+    },
+    "cover": null,
+    "crewed": false,
+    "critical": {
+      "damage": "",
+      "threshold": null
+    },
+    "damage": {
+      "parts": [
+        [
+          "10d8",
+          "fire"
+        ]
+      ],
+      "versatile": ""
+    },
+    "description": {
+      "chat": "",
+      "unidentified": "",
+      "value": "<p>A swirling cloud of smoke shot through with white-hot embers appears in a 20-foot-radius Sphere centered on a point within range. The cloud spreads around corners and is heavily obscured. It lasts for the Duration or until a wind of moderate or greater speed (at least 10 miles per hour) disperses it.</p><p>When the cloud appears, each creature in it must make a Dexterity saving throw. A creature takes 10d8 fire damage on a failed save, or half as much damage on a successful one. A creature must also make this saving throw when it enters the spell's area for the first time on a turn or ends its turn there.</p><p>The cloud moves 10 feet directly away from you in a direction that you choose at the start of each of your turns.</p>"
+    },
+    "duration": {
+      "units": "minute",
+      "value": 1
+    },
+    "formula": "",
+    "level": 8,
+    "materials": {
+      "consumed": false,
+      "cost": 0,
+      "supply": 0,
+      "value": ""
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "range": {
+      "long": 0,
+      "units": "ft",
+      "value": 150
+    },
+    "save": {
+      "ability": "dex",
+      "dc": 0,
+      "scaling": "spell"
+    },
+    "scaling": {
+      "formula": "",
+      "mode": "none"
+    },
+    "school": "con",
+    "source": "PHB pg. 253",
+    "target": {
+      "type": "sphere",
+      "units": "ft",
+      "value": 20,
+      "width": null
+    },
+    "uses": {
+      "max": "0",
+      "per": "",
+      "recovery": "",
+      "value": 0
+    }
+  },
+  "type": "spell"
 }

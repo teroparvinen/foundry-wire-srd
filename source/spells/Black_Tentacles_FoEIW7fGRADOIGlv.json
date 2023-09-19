@@ -1,113 +1,63 @@
 {
-  "name": "Black Tentacles",
-  "ownership": {
-    "default": 0,
-    "m7gKrZnSC3XR8ToV": 3
-  },
-  "type": "spell",
-  "system": {
-    "description": {
-      "value": "<p>Squirming, ebony tentacles fill a 20-foot square on ground that you can see within range. For the Duration, these tentacles turn the ground in the area into difficult terrain.</p><p>When a creature enters the affected area for the first time on a turn or starts its turn there, the creature must succeed on a Dexterity saving throw or take 3d6 bludgeoning damage and be @UUID[Compendium.dnd5e.rules.w7eitkpD7QQTB6j0.JournalEntryPage.cSVcyZyNe2iG1fIc]{Restrained} by the tentacles until the spell ends. A creature that starts its turn in the area and is already @UUID[Compendium.dnd5e.rules.w7eitkpD7QQTB6j0.JournalEntryPage.cSVcyZyNe2iG1fIc]{Restrained} by the tentacles takes 3d6 bludgeoning damage.</p><p>A creature @UUID[Compendium.dnd5e.rules.w7eitkpD7QQTB6j0.JournalEntryPage.cSVcyZyNe2iG1fIc]{Restrained} by the tentacles can use its action to make a Strength or Dexterity check (its choice) against your spell save DC. On a success, it frees itself.</p>",
-      "chat": "",
-      "unidentified": ""
-    },
-    "source": "",
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": 1,
-      "units": "minute"
-    },
-    "cover": null,
-    "crewed": false,
-    "target": {
-      "value": 20,
-      "width": null,
-      "units": "ft",
-      "type": "square"
-    },
-    "range": {
-      "value": 90,
-      "long": 0,
-      "units": "ft"
-    },
-    "uses": {
-      "value": 0,
-      "max": "0",
-      "per": "",
-      "recovery": ""
-    },
-    "consume": {
-      "type": "",
-      "target": "",
-      "amount": null
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": 0,
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "3d6",
-          "bludgeoning"
-        ]
+  "_id": "FoEIW7fGRADOIGlv",
+  "_key": "!items!FoEIW7fGRADOIGlv",
+  "effects": [
+    {
+      "_id": "6p01xTyMnLWZdVfb",
+      "_key": "!items.effects!FoEIW7fGRADOIGlv.6p01xTyMnLWZdVfb",
+      "changes": [
+        {
+          "key": "flags.wire.fail.ability.save.all",
+          "mode": 2,
+          "priority": 20,
+          "value": "@isFromItem"
+        },
+        {
+          "key": "wire.custom.statusEffect",
+          "mode": 2,
+          "priority": 20,
+          "value": "Restrained"
+        }
       ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "dex",
-      "dc": 0,
-      "scaling": "spell"
-    },
-    "level": 4,
-    "school": "con",
-    "components": {
-      "vocal": true,
-      "somatic": true,
-      "material": true,
-      "ritual": false,
-      "concentration": true,
-      "value": ""
-    },
-    "materials": {
-      "value": "A piece of tentacle from a giant octopus or a giant squid",
-      "consumed": false,
-      "cost": 0,
-      "supply": 0
-    },
-    "preparation": {
-      "mode": "prepared",
-      "prepared": false
-    },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    }
-  },
-  "flags": {
-    "wire": {
-      "override": {
-        "target": {
-          "value": "20"
+      "disabled": false,
+      "duration": {
+        "combat": null,
+        "rounds": null,
+        "seconds": null,
+        "startRound": null,
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
+      },
+      "flags": {
+        "wire": {
+          "applicationType": "overtime",
+          "applyOnSaveOrMiss": false,
+          "auraTargets": "",
+          "blocksAreaConditions": false,
+          "conditions": [
+            {
+              "condition": "take-an-action",
+              "update": "end-on-check"
+            }
+          ],
+          "independentDuration": false,
+          "rollEffects": false,
+          "stackEffects": false
         }
       },
+      "icon": "icons/magic/nature/vines-thorned-curled-glow-teal-purple.webp",
+      "label": "Black Tentacles",
+      "origin": "Actor.m4mjuiVrcZHbrj00.Item.4CtgPXMvynXxl684",
+      "tint": null,
+      "transfer": false
+    }
+  ],
+  "flags": {
+    "wire": {
       "checkedAbility": "",
-      "saveImmunity": false,
-      "damageParts": [
-        {
-          "halving": "none",
-          "application": "overtime"
-        }
-      ],
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.11.0",
       "conditions": [
         {
           "condition": "creature-enters-area",
@@ -122,74 +72,115 @@
           "update": "Difficult Terrain"
         }
       ],
-      "compendiumSource": "wire-srd.spells",
-      "compendiumVersion": "0.11.0",
+      "damageParts": [
+        {
+          "application": "overtime",
+          "halving": "none"
+        }
+      ],
+      "override": {
+        "target": {
+          "value": "20"
+        }
+      },
+      "saveImmunity": false,
       "script": "this.registerUpdater(\"Difficult Terrain\", true, (condition, item, effect, details) => {\n    const actor = game.wire.fromUuid(details.actorUuid);\n    game.wire.createScrollingText(game.wire.getActorToken(actor), \"Difficult Terrain\");\n});"
     }
   },
-  "img": "icons/magic/nature/vines-thorned-curled-glow-teal-purple.webp",
-  "effects": [
-    {
-      "label": "Black Tentacles",
-      "icon": "icons/magic/nature/vines-thorned-curled-glow-teal-purple.webp",
-      "origin": "Actor.m4mjuiVrcZHbrj00.Item.4CtgPXMvynXxl684",
-      "duration": {
-        "startTime": null,
-        "seconds": null,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "disabled": false,
-      "_id": "6p01xTyMnLWZdVfb",
-      "changes": [
-        {
-          "key": "flags.wire.fail.ability.save.all",
-          "mode": 2,
-          "value": "@isFromItem",
-          "priority": 20
-        },
-        {
-          "key": "wire.custom.statusEffect",
-          "mode": 2,
-          "value": "Restrained",
-          "priority": 20
-        }
-      ],
-      "tint": null,
-      "transfer": false,
-      "flags": {
-        "wire": {
-          "applyOnSaveOrMiss": false,
-          "applicationType": "overtime",
-          "blocksAreaConditions": false,
-          "auraTargets": "",
-          "stackEffects": false,
-          "rollEffects": false,
-          "independentDuration": false,
-          "conditions": [
-            {
-              "condition": "take-an-action",
-              "update": "end-on-check"
-            }
-          ]
-        }
-      },
-      "_key": "!items.effects!FoEIW7fGRADOIGlv.6p01xTyMnLWZdVfb"
-    }
-  ],
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.2.2",
-    "coreVersion": "11.306",
-    "createdTime": 1661787234098,
-    "modifiedTime": 1694774675040,
-    "lastModifiedBy": "dBglmdrMUDMEh6ZW"
-  },
   "folder": null,
-  "sort": 0,
-  "_id": "FoEIW7fGRADOIGlv",
-  "_key": "!items!FoEIW7fGRADOIGlv"
+  "img": "icons/magic/nature/vines-thorned-curled-glow-teal-purple.webp",
+  "name": "Black Tentacles",
+  "ownership": {
+    "default": 0,
+    "m7gKrZnSC3XR8ToV": 3
+  },
+  "system": {
+    "ability": "",
+    "actionType": "save",
+    "activation": {
+      "condition": "",
+      "cost": 1,
+      "type": "action"
+    },
+    "attackBonus": 0,
+    "chatFlavor": "",
+    "components": {
+      "concentration": true,
+      "material": true,
+      "ritual": false,
+      "somatic": true,
+      "value": "",
+      "vocal": true
+    },
+    "consume": {
+      "amount": null,
+      "target": "",
+      "type": ""
+    },
+    "cover": null,
+    "crewed": false,
+    "critical": {
+      "damage": "",
+      "threshold": null
+    },
+    "damage": {
+      "parts": [
+        [
+          "3d6",
+          "bludgeoning"
+        ]
+      ],
+      "versatile": ""
+    },
+    "description": {
+      "chat": "",
+      "unidentified": "",
+      "value": "<p>Squirming, ebony tentacles fill a 20-foot square on ground that you can see within range. For the Duration, these tentacles turn the ground in the area into difficult terrain.</p><p>When a creature enters the affected area for the first time on a turn or starts its turn there, the creature must succeed on a Dexterity saving throw or take 3d6 bludgeoning damage and be @UUID[Compendium.dnd5e.rules.w7eitkpD7QQTB6j0.JournalEntryPage.cSVcyZyNe2iG1fIc]{Restrained} by the tentacles until the spell ends. A creature that starts its turn in the area and is already @UUID[Compendium.dnd5e.rules.w7eitkpD7QQTB6j0.JournalEntryPage.cSVcyZyNe2iG1fIc]{Restrained} by the tentacles takes 3d6 bludgeoning damage.</p><p>A creature @UUID[Compendium.dnd5e.rules.w7eitkpD7QQTB6j0.JournalEntryPage.cSVcyZyNe2iG1fIc]{Restrained} by the tentacles can use its action to make a Strength or Dexterity check (its choice) against your spell save DC. On a success, it frees itself.</p>"
+    },
+    "duration": {
+      "units": "minute",
+      "value": 1
+    },
+    "formula": "",
+    "level": 4,
+    "materials": {
+      "consumed": false,
+      "cost": 0,
+      "supply": 0,
+      "value": "A piece of tentacle from a giant octopus or a giant squid"
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "range": {
+      "long": 0,
+      "units": "ft",
+      "value": 90
+    },
+    "save": {
+      "ability": "dex",
+      "dc": 0,
+      "scaling": "spell"
+    },
+    "scaling": {
+      "formula": "",
+      "mode": "none"
+    },
+    "school": "con",
+    "source": "",
+    "target": {
+      "type": "square",
+      "units": "ft",
+      "value": 20,
+      "width": null
+    },
+    "uses": {
+      "max": "0",
+      "per": "",
+      "recovery": "",
+      "value": 0
+    }
+  },
+  "type": "spell"
 }

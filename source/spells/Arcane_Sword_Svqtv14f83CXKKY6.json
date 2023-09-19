@@ -1,57 +1,72 @@
 {
+  "_id": "Svqtv14f83CXKKY6",
+  "_key": "!items!Svqtv14f83CXKKY6",
+  "effects": [],
+  "flags": {
+    "wire": {
+      "checkedAbility": "",
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.11.0",
+      "conditions": [
+        {
+          "condition": "take-an-action",
+          "update": "apply-delayed"
+        }
+      ],
+      "damageParts": [
+        {
+          "application": "immediate",
+          "halving": "none"
+        },
+        {
+          "application": "delayed",
+          "halving": "none"
+        }
+      ],
+      "override": {
+        "target": {
+          "value": "5"
+        }
+      },
+      "saveImmunity": false,
+      "script": "const attack = this.confirmTargets(\n    this.performAttackRoll(\n        this.performAttackDamageRoll(\n            this.applyDamage(\n                this.attackCompleted()\n            )\n        )\n    )\n)\n\nreturn this.pick(\n    this.isImmediateApplication(\n        this.applyConcentration(\n            attack\n        )\n    ),\n    this.isDelayedApplication(\n        attack\n    )\n)"
+    }
+  },
+  "folder": null,
+  "img": "icons/skills/melee/strike-blade-hooked-orange-blue.webp",
   "name": "Arcane Sword",
   "ownership": {
     "default": 0,
     "m7gKrZnSC3XR8ToV": 3
   },
-  "type": "spell",
   "system": {
-    "description": {
-      "value": "<p>You create a sword-shaped plane of force that hovers within range. It lasts for the Duration.</p><p>When the sword appears, you make a melee spell Attack against a target of your choice within 5 feet of the sword. On a hit, the target takes 3d10 force damage. Until the spell ends, you can use a Bonus Action on each of your turns to move the sword up to 20 feet to a spot you can see and repeat this Attack against the same target or a different one.</p>",
-      "chat": "",
-      "unidentified": ""
-    },
-    "source": "",
+    "ability": "",
+    "actionType": "msak",
     "activation": {
-      "type": "action",
+      "condition": "",
       "cost": 1,
-      "condition": ""
+      "type": "action"
     },
-    "duration": {
-      "value": 1,
-      "units": "minute"
+    "attackBonus": "0",
+    "chatFlavor": "",
+    "components": {
+      "concentration": true,
+      "material": true,
+      "ritual": false,
+      "somatic": true,
+      "value": "",
+      "vocal": true
+    },
+    "consume": {
+      "amount": null,
+      "target": "",
+      "type": ""
     },
     "cover": null,
     "crewed": false,
-    "target": {
-      "value": 1,
-      "width": null,
-      "units": "ft",
-      "type": "square"
-    },
-    "range": {
-      "value": 60,
-      "long": 0,
-      "units": "ft"
-    },
-    "uses": {
-      "value": 0,
-      "max": "0",
-      "per": "",
-      "recovery": ""
-    },
-    "consume": {
-      "type": "",
-      "target": "",
-      "amount": null
-    },
-    "ability": "",
-    "actionType": "msak",
-    "attackBonus": "0",
-    "chatFlavor": "",
     "critical": {
-      "threshold": null,
-      "damage": ""
+      "damage": "",
+      "threshold": null
     },
     "damage": {
       "parts": [
@@ -66,80 +81,56 @@
       ],
       "versatile": ""
     },
+    "description": {
+      "chat": "",
+      "unidentified": "",
+      "value": "<p>You create a sword-shaped plane of force that hovers within range. It lasts for the Duration.</p><p>When the sword appears, you make a melee spell Attack against a target of your choice within 5 feet of the sword. On a hit, the target takes 3d10 force damage. Until the spell ends, you can use a Bonus Action on each of your turns to move the sword up to 20 feet to a spot you can see and repeat this Attack against the same target or a different one.</p>"
+    },
+    "duration": {
+      "units": "minute",
+      "value": 1
+    },
     "formula": "",
+    "level": 7,
+    "materials": {
+      "consumed": false,
+      "cost": 250,
+      "supply": 0,
+      "value": "A miniature platinum sword with a grip and pommel of copper and zinc, worth 250gp"
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "range": {
+      "long": 0,
+      "units": "ft",
+      "value": 60
+    },
     "save": {
       "ability": "",
       "dc": null,
       "scaling": "spell",
       "value": ""
     },
-    "level": 7,
-    "school": "evo",
-    "components": {
-      "vocal": true,
-      "somatic": true,
-      "material": true,
-      "ritual": false,
-      "concentration": true,
-      "value": ""
-    },
-    "materials": {
-      "value": "A miniature platinum sword with a grip and pommel of copper and zinc, worth 250gp",
-      "consumed": false,
-      "cost": 250,
-      "supply": 0
-    },
-    "preparation": {
-      "mode": "prepared",
-      "prepared": false
-    },
     "scaling": {
-      "mode": "none",
-      "formula": ""
+      "formula": "",
+      "mode": "none"
+    },
+    "school": "evo",
+    "source": "",
+    "target": {
+      "type": "square",
+      "units": "ft",
+      "value": 1,
+      "width": null
+    },
+    "uses": {
+      "max": "0",
+      "per": "",
+      "recovery": "",
+      "value": 0
     }
   },
-  "flags": {
-    "wire": {
-      "override": {
-        "target": {
-          "value": "5"
-        }
-      },
-      "checkedAbility": "",
-      "saveImmunity": false,
-      "damageParts": [
-        {
-          "halving": "none",
-          "application": "immediate"
-        },
-        {
-          "halving": "none",
-          "application": "delayed"
-        }
-      ],
-      "conditions": [
-        {
-          "condition": "take-an-action",
-          "update": "apply-delayed"
-        }
-      ],
-      "compendiumSource": "wire-srd.spells",
-      "compendiumVersion": "0.11.0",
-      "script": "const attack = this.confirmTargets(\n    this.performAttackRoll(\n        this.performAttackDamageRoll(\n            this.applyDamage(\n                this.attackCompleted()\n            )\n        )\n    )\n)\n\nreturn this.pick(\n    this.isImmediateApplication(\n        this.applyConcentration(\n            attack\n        )\n    ),\n    this.isDelayedApplication(\n        attack\n    )\n)"
-    }
-  },
-  "img": "icons/skills/melee/strike-blade-hooked-orange-blue.webp",
-  "effects": [],
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.2.2",
-    "coreVersion": "11.306",
-    "createdTime": 1661787234120,
-    "modifiedTime": 1694774675164,
-    "lastModifiedBy": "dBglmdrMUDMEh6ZW"
-  },
-  "folder": null,
-  "sort": 0,
-  "_id": "Svqtv14f83CXKKY6",
-  "_key": "!items!Svqtv14f83CXKKY6"
+  "type": "spell"
 }

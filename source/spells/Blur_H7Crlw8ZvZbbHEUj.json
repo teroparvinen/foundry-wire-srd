@@ -1,155 +1,148 @@
 {
+  "_id": "H7Crlw8ZvZbbHEUj",
+  "_key": "!items!H7Crlw8ZvZbbHEUj",
+  "effects": [
+    {
+      "_id": "Vbq0MZVxT69ny4aV",
+      "_key": "!items.effects!H7Crlw8ZvZbbHEUj.Vbq0MZVxT69ny4aV",
+      "changes": [
+        {
+          "key": "flags.wire.grants.disadvantage.attack.all",
+          "mode": 2,
+          "priority": 20,
+          "value": "and(@originator.isDefender, not(or(@attacker.attributes.senses.blindsight, @attacker.attributes.senses.truesight, @attacker.attributes.senses.tremorsense)))"
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "combat": null,
+        "rounds": null,
+        "seconds": null,
+        "startRound": null,
+        "startTime": null,
+        "startTurn": null,
+        "turns": null
+      },
+      "flags": {
+        "wire": {
+          "applicationType": "immediate",
+          "applyOnSaveOrMiss": false,
+          "auraTargets": "",
+          "blocksAreaConditions": false,
+          "independentDuration": false
+        }
+      },
+      "icon": "icons/magic/air/air-burst-spiral-blue-gray.webp",
+      "label": "Blur",
+      "origin": "Actor.m4mjuiVrcZHbrj00.Item.bACtapQnc2dnua8t",
+      "tint": null,
+      "transfer": false
+    }
+  ],
+  "flags": {
+    "wire": {
+      "checkedAbility": "",
+      "compendiumSource": "wire-srd.spells",
+      "compendiumVersion": "0.10.1",
+      "override": {
+        "target": {
+          "value": ""
+        }
+      },
+      "saveImmunity": false
+    }
+  },
+  "folder": null,
+  "img": "icons/magic/air/air-burst-spiral-blue-gray.webp",
   "name": "Blur",
   "ownership": {
     "default": 0,
     "m7gKrZnSC3XR8ToV": 3
   },
-  "type": "spell",
   "system": {
-    "description": {
-      "value": "<p>Your body becomes blurred, shifting and wavering to all who can see you. For the duration, any creature has disadvantage on attack rolls against you. An attacker is immune to this effect if it doesn't rely on sight, as with blindsight, or can see through illusions, as with truesight.</p>",
-      "chat": "",
-      "unidentified": ""
-    },
-    "source": "PHB pg. 219",
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": 1,
-      "units": "minute"
-    },
-    "target": {
-      "value": null,
-      "width": null,
-      "units": "",
-      "type": "self"
-    },
-    "range": {
-      "value": null,
-      "long": null,
-      "units": "self"
-    },
-    "uses": {
-      "value": 0,
-      "max": "0",
-      "per": "",
-      "recovery": ""
-    },
-    "consume": {
-      "type": "",
-      "target": "",
-      "amount": null
-    },
     "ability": "",
     "actionType": "util",
+    "activation": {
+      "condition": "",
+      "cost": 1,
+      "type": "action"
+    },
     "attackBonus": 0,
     "chatFlavor": "",
+    "components": {
+      "concentration": true,
+      "material": false,
+      "ritual": false,
+      "somatic": false,
+      "value": "",
+      "vocal": true
+    },
+    "consume": {
+      "amount": null,
+      "target": "",
+      "type": ""
+    },
+    "cover": null,
+    "crewed": false,
     "critical": {
-      "threshold": null,
-      "damage": ""
+      "damage": "",
+      "threshold": null
     },
     "damage": {
       "parts": [],
-      "versatile": "",
-      "value": ""
+      "value": "",
+      "versatile": ""
+    },
+    "description": {
+      "chat": "",
+      "unidentified": "",
+      "value": "<p>Your body becomes blurred, shifting and wavering to all who can see you. For the duration, any creature has disadvantage on attack rolls against you. An attacker is immune to this effect if it doesn't rely on sight, as with blindsight, or can see through illusions, as with truesight.</p>"
+    },
+    "duration": {
+      "units": "minute",
+      "value": 1
     },
     "formula": "",
+    "level": 2,
+    "materials": {
+      "consumed": false,
+      "cost": 0,
+      "supply": 0,
+      "value": ""
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "range": {
+      "long": null,
+      "units": "self",
+      "value": null
+    },
     "save": {
       "ability": "",
       "dc": null,
       "scaling": "spell",
       "value": ""
     },
-    "level": 2,
-    "school": "ill",
-    "components": {
-      "value": "",
-      "vocal": true,
-      "somatic": false,
-      "material": false,
-      "ritual": false,
-      "concentration": true
-    },
-    "materials": {
-      "value": "",
-      "consumed": false,
-      "cost": 0,
-      "supply": 0
-    },
-    "preparation": {
-      "mode": "prepared",
-      "prepared": false
-    },
     "scaling": {
-      "mode": "none",
-      "formula": ""
+      "formula": "",
+      "mode": "none"
+    },
+    "school": "ill",
+    "source": "PHB pg. 219",
+    "target": {
+      "type": "self",
+      "units": "",
+      "value": null,
+      "width": null
+    },
+    "uses": {
+      "max": "0",
+      "per": "",
+      "recovery": "",
+      "value": 0
     }
   },
-  "flags": {
-    "wire": {
-      "override": {
-        "target": {
-          "value": ""
-        }
-      },
-      "checkedAbility": "",
-      "saveImmunity": false,
-      "compendiumSource": "wire-srd.spells",
-      "compendiumVersion": "0.10.1"
-    }
-  },
-  "img": "icons/magic/air/air-burst-spiral-blue-gray.webp",
-  "effects": [
-    {
-      "label": "Blur",
-      "icon": "icons/magic/air/air-burst-spiral-blue-gray.webp",
-      "origin": "Actor.m4mjuiVrcZHbrj00.Item.bACtapQnc2dnua8t",
-      "duration": {
-        "startTime": null,
-        "seconds": null,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "disabled": false,
-      "_id": "Vbq0MZVxT69ny4aV",
-      "changes": [
-        {
-          "key": "flags.wire.grants.disadvantage.attack.all",
-          "mode": 2,
-          "value": "and(@originator.isDefender, not(or(@attacker.attributes.senses.blindsight, @attacker.attributes.senses.truesight, @attacker.attributes.senses.tremorsense)))",
-          "priority": 20
-        }
-      ],
-      "tint": null,
-      "transfer": false,
-      "flags": {
-        "wire": {
-          "applyOnSaveOrMiss": false,
-          "blocksAreaConditions": false,
-          "auraTargets": "",
-          "applicationType": "immediate",
-          "independentDuration": false
-        }
-      },
-      "_key": "!items.effects!H7Crlw8ZvZbbHEUj.Vbq0MZVxT69ny4aV"
-    }
-  ],
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "2.0.3",
-    "coreVersion": "10.291",
-    "createdTime": 1661787234147,
-    "modifiedTime": 1671783323474,
-    "lastModifiedBy": "m7gKrZnSC3XR8ToV"
-  },
-  "folder": null,
-  "sort": 0,
-  "_id": "H7Crlw8ZvZbbHEUj",
-  "_key": "!items!H7Crlw8ZvZbbHEUj"
+  "type": "spell"
 }

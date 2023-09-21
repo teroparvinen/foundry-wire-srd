@@ -6,6 +6,7 @@
       "_id": "k5m65t5rpzu3aetz",
       "_key": "!items.effects!m73ibOeovWHoS00H.k5m65t5rpzu3aetz",
       "changes": [],
+      "description": "",
       "disabled": false,
       "duration": {
         "combat": null,
@@ -32,12 +33,15 @@
               "update": "end"
             }
           ],
-          "independentDuration": false
+          "independentDuration": true,
+          "rollEffects": false,
+          "stackEffects": false
         }
       },
       "icon": "icons/magic/acid/projectile-bolts-salvo-green.webp",
-      "label": "Acid Arrow",
+      "name": "Acid Arrow",
       "origin": "Actor.m4mjuiVrcZHbrj00.Item.MPCDurY6PqgaSlOE",
+      "statuses": [],
       "tint": null,
       "transfer": false
     }
@@ -46,7 +50,7 @@
     "wire": {
       "checkedAbility": "",
       "compendiumSource": "wire-srd.spells",
-      "compendiumVersion": "0.10",
+      "compendiumVersion": "0.11.1",
       "damageParts": [
         {
           "application": "immediate",

@@ -1,5 +1,11 @@
 # Changes by version number
 
+### 0.11.1
+
+Updated spells
+
+- Acid Arrow
+
 ### 0.11.0
 
 Migrated to the V11 compendium format

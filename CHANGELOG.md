@@ -1,5 +1,11 @@
 # Changes by version number
 
+### 0.11.2
+
+Updated class features
+
+- Aura of Protection
+
 ### 0.11.1
 
 Updated spells

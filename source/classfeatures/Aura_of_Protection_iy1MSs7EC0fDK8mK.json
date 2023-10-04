@@ -19,6 +19,7 @@
           "value": "auraOfProtection"
         }
       ],
+      "description": "",
       "disabled": false,
       "duration": {
         "combat": null,
@@ -35,12 +36,16 @@
           "applyOnSaveOrMiss": false,
           "auraTargets": "ally",
           "blocksAreaConditions": false,
-          "independentDuration": false
+          "conditions": [],
+          "independentDuration": false,
+          "rollEffects": true,
+          "stackEffects": false
         }
       },
       "icon": "icons/magic/air/wind-tornado-wall-blue.webp",
-      "label": "Aura of Protection",
+      "name": "Aura of Protection",
       "origin": "Actor.9z8mm9ZzK1lsUOub.Item.9imkhj8ukk53x9mj",
+      "statuses": [],
       "tint": null,
       "transfer": true
     }
@@ -53,7 +58,7 @@
     "wire": {
       "checkedAbility": "",
       "compendiumSource": "wire-srd.classfeatures",
-      "compendiumVersion": "0.10",
+      "compendiumVersion": "0.11.2",
       "override": {
         "target": {
           "value": 10
